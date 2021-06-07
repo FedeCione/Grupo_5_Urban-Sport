@@ -15,5 +15,8 @@ Por la estetica que presenta y sus funcionalidades ,nos hemos inspirados princip
 
                      Nuestro 5 sitios web de referencias
                     
-1_  ADIDAS ,pagina web :https://www.adidas.com.ar
+1_ ADIDAS ,pagina web :https://www.adidas.com.ar
 2_ REBOOK,pagina web: https://www.reebok.com.ar/
+3_ FILA, pagina web: https://tienda.fila.com.ar/
+4_ HUSH PUPPIES, pagina web: https://hushpuppies.grimoldi.com/
+5_ NIKE, pagina web: https://www.nike.com/ar/

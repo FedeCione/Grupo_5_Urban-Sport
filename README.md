@@ -20,3 +20,30 @@ Por la estetica que presenta y sus funcionalidades ,nos hemos inspirados princip
 3_ FILA, pagina web: https://tienda.fila.com.ar/
 4_ HUSH PUPPIES, pagina web: https://hushpuppies.grimoldi.com/
 5_ NIKE, pagina web: https://www.nike.com/ar/
+
+
+        <----Sobre nosotros---->    
+
+Elias Kannemann:
+    Edad:
+    Localidad:
+    Sobre mi:
+
+
+Matias Ibarra:
+    Edad:
+    Localidad:
+    Sobre mi:
+
+
+Federico Cione:
+    Edad: 24
+    Localidad: Buenos Aires, Campana
+    Sobre mi: Actualmente estoy haciendo un curso de Programador Web Full Stack Developer con NodeJS con
+              varios conocimientos previos sobre programacion y desarrollo web por hacer cursos
+              de Platzi desde 2020.
+
+Ramiro Maidana:
+    Edad:
+    Localidad:
+    Sobre mi:

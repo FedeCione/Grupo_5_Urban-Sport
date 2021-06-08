@@ -16,7 +16,12 @@
 * Por la estetica que presenta y sus funcionalidades, nos hemos inspirados principalmente  en la pagina web de Adidas.
 
  ##                 Nuestro 5 sitios web de referencias 🕵
-                    
+
+     ### Por los productos que ofrece creemos que es plenamente lider en el mercado  Adidas por eso la hemos elegido .
+     ###Por los clientes a los que apuntan las 5 páginas ,se condice  con nuestro objetivo como proyecto.
+     ###Las funcionalidades  vamos a tomar algunas de los ditintos sitios.
+     ### Hemos elegido los 5 sitios por que a nuestor parecer cumplen con las caracteristicas que queremos implementar en nuestro sitio web,tomando asi     funcionalidades ,diseño o implementaciones
+     
 1. __ADIDAS__ ,pagina web :https://www.adidas.com.ar
 2. __REBOOK__ ,pagina web: https://www.reebok.com.ar/
 3. __FILA__ , pagina web: https://tienda.fila.com.ar/

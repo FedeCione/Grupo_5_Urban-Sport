@@ -33,9 +33,9 @@
 
 
 * __Matias Ibarra__:
-    * Edad:
-    * Localidad:
-    * Sobre mi:
+    * Edad:24
+    * Localidad:Alta Gracia-Córdoba 
+    * Sobre mi:Curioso y autodidacta con respecto a la ciencia y  tegnologia ,con gran interes en la programación.
 
 
 * __Federico Cione__:

@@ -33,9 +33,9 @@
 ##                 Sobre nosotros 🤜🤛
 
 * __Elias Kannemann__:
-    * Edad:
-    * Localidad:
-    * Sobre mi:
+    * Edad:30
+    * Localidad: Rosario, Santa Fe
+    * Sobre mi: Apasionado por la programación, desentrañando el desarrollo web con Formar y Digital House, con el stack MERN tanto del lado Cliente como del Servidor.
 
 
 * __Matias Ibarra__:

@@ -33,7 +33,7 @@
 
 ##                  WIREFRAMES 
 
-[✅ DESKTOP](https://github.com/MatiasRaulIbarra/Grupo_5_Urban-Sport/tree/master/Wireframe/escritorio)
+[✅ DESKTOP](https://github.com/MatiasRaulIbarra/Grupo_5_Urban-Sport/tree/master/Wireframe/desktop)
 [✅ MOBILE](https://github.com/MatiasRaulIbarra/Grupo_5_Urban-Sport/tree/master/Wireframe/mobile)
 [✅ TABLET](https://github.com/MatiasRaulIbarra/Grupo_5_Urban-Sport/tree/master/Wireframe/tablet)
 

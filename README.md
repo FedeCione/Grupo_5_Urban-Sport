@@ -33,9 +33,9 @@
 
 ##                  WIREFRAMES 
 
-[✅ DESKTOP](https://github.com/MatiasRaulIbarra/Grupo_5_Urban-Sport/tree/master/Wireframe/desktop)
-[✅ MOBILE](https://github.com/MatiasRaulIbarra/Grupo_5_Urban-Sport/tree/master/Wireframe/mobile)
-[✅ TABLET](https://github.com/MatiasRaulIbarra/Grupo_5_Urban-Sport/tree/master/Wireframe/tablet)
+[✅ DESKTOP](https://github.com/MatiasRaulIbarra/Grupo_5_Urban-Sport/tree/master/wireframe-mockup-design/Wireframe/desktop)
+[✅ MOBILE](https://github.com/MatiasRaulIbarra/Grupo_5_Urban-Sport/tree/master/wireframe-mockup-design/Wireframe/mobile)
+[✅ TABLET](https://github.com/MatiasRaulIbarra/Grupo_5_Urban-Sport/tree/master/wireframe-mockup-design/Wireframe/tablet)
 
 ##                  Retrospectiva de cada Sprint
 

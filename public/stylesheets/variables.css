@@ -1,0 +1,12 @@
+/* Variables */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --primary: #003F49;
+    --secondary: #008489;
+    --tertiary: #F0BB3C;
+    --light-grey: #F5F5F5;
+    --grey: #7C7C7C;
+    --font_roboto: 'Roboto', sans-serif;
+} 

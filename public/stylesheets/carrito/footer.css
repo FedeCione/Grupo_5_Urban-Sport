@@ -1,0 +1,27 @@
+/* Footer */
+
+.footer {
+    height: 100px;
+    background-color: var(--light-grey);
+    box-shadow: 0 0 10px rgb(100 100 100);
+}
+
+.footer .footer-nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Icons footer */
+
+.footer .icons-footer {
+    width: 45px;
+    padding: 5px 0;
+}
+
+.footer .icons-footer-div p{
+    text-align-last: center;
+}
+
+.footer .icons-footer-div a {
+    color: var(--grey);
+}

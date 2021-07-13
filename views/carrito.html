@@ -1,13 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Urban-Sport</title>
-<link rel="stylesheet" href="/stylesheets/carrito.css">
-</head>
-<body>
-    <header><h1>CARRITO</h1></header>
-</body>
+    <!-- Font awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google font Roboto -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    </style>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/stylesheets/carrito/style.css" />
+    <!-- Javascript -->
+    <script src="/javascripts/carrito.js" defer></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="cart-header">
+      <div class="logo-div">
+        <a href="">
+          <img class="logo" src="/images/logo_transparent.png" alt="Logo" />
+        </a>
+      </div>
+
+      <!-- Menu hamburguesa -->
+      <div>
+        <i class="fas fa-bars burguer-menu-icon" onclick="dropMenu()"></i>
+      </div>
+
+      <!-- Iconos header -->
+      <nav class="navigation-bar" id="navigation-bar">
+        <div class="div-icons">
+          <a href=""
+            ><img
+              class="img-icons"
+              src="/images/login.svg"
+              alt="Icono de persona"
+          /></a>
+          <a href=""
+            ><img
+              class="img-icons"
+              src="/images/like-icon.svg"
+              alt="Icono de corazón"
+          /></a>
+          <a href=""
+            ><img
+              class="img-icons"
+              src="/images/cart-icon.svg"
+              alt="Icono de carrito"
+          /></a>
+        </div>
+
+        <!-- Menú de navegación -->
+        <ul class="menú">
+          <a href=""><li>Niños</li></a>
+          <a href=""><li>Hombre</li></a>
+          <a href=""><li>Mujer</li></a>
+          <a href=""><li>Colecciones</li></a>
+        </ul>
+      </nav>
+
+      <!-- Icono del buscador -->
+      <div class="search-icon" onclick="dropSearch()">
+        <i class="fas fa-search"></i>
+      </div>
+
+      <!-- Buscador escritorio -->
+      <form action="#" class="search-form-desktop">
+        <div class="search-bar">
+          <input type="search" name="busqueda" id="" />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+      </form>
+
+      <!-- Buscador mobile -->
+
+      <form action="#" class="search-form-mobile" id="search">
+        <div class="search-bar">
+          <input type="search" name="busqueda" id="" placeholder="Buscar" />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+      </form>
+    </header>
+
+    <!-- MAIN -->
+    <main class="cart-home">
+      <div class="title-cart-container">
+        <div class="title-cart-div">
+          <h2 class="title-cart">Mi Carrito</h2>
+        </div>
+        <div class="keep-buying-div">
+          <a href=""><h4 class="keep-buying">Seguir Comprando</h4></a>
+        </div>
+      </div>
+      <article class="product-container">
+        <div class="title-trash-div">
+          <div class="title-product-div">
+            <h3 class="title-product">Nombre del producto</h3>
+          </div>
+          <div class="trash-icon-div">
+            <button>
+              <img src="/images/trash-icon.png" alt="Icono tacho" />
+            </button>
+          </div>
+        </div>
+        <div class="img-details-container">
+          <div class="img-product-div">
+            <img class="img-product" src="/images/image-article.png" alt="Imagen del articulo"/>
+          </div>
+          <div class="product-details">
+            <p>Talle:</p>
+            <p>Item Nº:</p>
+            <a href=""><p>Editar</p></a>
+            <p class="quantity">Cantidad</p>
+            <select name="Cantidad">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+        <div class="total-article-container">
+          <p class="total-article-p">Total</p>
+          <p>$ 0</p>
+        </div>
+      </article>
+      <article class="product-container">
+        <div class="title-trash-div">
+          <div class="title-product-div">
+            <h3 class="title-product">Nombre del producto</h3>
+          </div>
+          <div class="trash-icon-div">
+            <button>
+              <img src="/images/trash-icon.png" alt="Icono tacho" />
+            </button>
+          </div>
+        </div>
+        <div class="img-details-container">
+          <div class="img-product-div">
+            <img class="img-product" src="/images/image-article.png" alt="Imagen del articulo"/>
+          </div>
+          <div class="product-details">
+            <p>Talle:</p>
+            <p>Item Nº:</p>
+            <a href=""><p>Editar</p></a>
+            <p class="quantity">Cantidad</p>
+            <select name="Cantidad">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+        <div class="total-article-container">
+          <p class="total-article-p">Total</p>
+          <p>$ 0</p>
+        </div>
+      </article>
+      <article class="product-container">
+        <div class="title-trash-div">
+          <div class="title-product-div">
+            <h3 class="title-product">Nombre del producto</h3>
+          </div>
+          <div class="trash-icon-div">
+            <button>
+              <img src="/images/trash-icon.png" alt="Icono tacho" />
+            </button>
+          </div>
+        </div>
+        <div class="img-details-container">
+          <div class="img-product-div">
+            <img class="img-product" src="/images/image-article.png" alt="Imagen del articulo"/>
+          </div>
+          <div class="product-details">
+            <p>Talle:</p>
+            <p>Item Nº:</p>
+            <a href=""><p>Editar</p></a>
+            <p class="quantity">Cantidad</p>
+            <select name="Cantidad">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+        <div class="total-article-container">
+          <p class="total-article-p">Total</p>
+          <p>$ 0</p>
+        </div>
+      </article>
+      <div class="promo-shipping-div">
+        <div class="promotional-code-div">
+          <p class="promotional-code-p">¿Tenés un código de promoción?</p>
+          <input type="text" placeholder="Ingresá tu Código" />
+          <button>Validar</button>
+        </div>
+        <div class="input-shipping-cost-div">
+          <p class="input-shipping-cost-p">Calculá el costo de envío</p>
+          <input type="text" placeholder="Código Postal" />
+          <button>Calcular</button>
+        </div>
+        <div class="cost-shipping-div">
+          <p class="cost-shipping-p">Costo de envío.......</p>
+          <p>$0</p>
+        </div>
+        <div class="subtotal-div">
+          <p class="subtotal-p">Subtotal.......</p>
+          <p>$0</p>
+        </div>
+        <div class="total-div">
+          <p class="total-p">Total.......</p>
+          <p class="total-p-price">$0</p>
+        </div>
+        <div class="buy-button-div">
+          <button class="buy-button">Comprar</button>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <nav class="footer-nav">
+          <div class="icons-footer-div">
+            <a href="">
+                <img class="icons-footer" src="/images/home-footer-icon.svg" alt="Icono de home">
+                <p class="home-footer">Home</p>
+            </a>
+          </div>
+          <div class="icons-footer-div">
+            <a href="">
+                <img class="icons-footer" src="/images/chat-footer-icon.svg" alt="Icono de chat">
+                <p class="chat-footer">Chat</p>
+            </a>
+          </div>
+          <div class="icons-footer-div">
+            <a href="">
+                <img class="icons-footer" src="/images/profile-footer-icon.svg" alt="Icono de perfil">
+                <p class="profile-footer">Perfil</p>
+            </a>
+          </div>
+          <div class="icons-footer-div">
+              <a href="">
+                <img class="icons-footer" src="/images/cart-footer-icon.svg" alt="Icono de carrito">
+                <p class="cart-footer">Carrito</p>
+              </a>
+          </div>
+      </nav>
+    </footer>
+  </body>
 </html>

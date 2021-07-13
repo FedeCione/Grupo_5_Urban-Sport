@@ -1,0 +1,114 @@
+.cart-header {
+    display: flex;
+    font-family: var(--font_roboto);
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    font-size: 1rem;
+    height: 200px;
+    background-color: var(--primary);
+}
+
+.cart-header .navigation-bar {
+    display: none;
+}
+
+.cart-header .logo-div {
+    order: 1;
+    width: 160px;
+}
+
+.cart-header .logo-div .logo {
+    width: 100%;
+}
+
+.cart-header .burguer-menu-icon {
+    order: 0;
+    font-size: 40px;
+    color: var(--tertiary);
+}
+
+.cart-header .search-icon {
+    order: 2;
+    font-size: 35px;
+}
+
+.cart-header .search-icon i {
+    cursor: pointer;
+    color: var(--tertiary);
+}
+
+.cart-header .search-form-desktop {
+    display: none;
+}
+
+.cart-header .div-icons {
+    display: none;
+}
+
+.cart-header nav ul li {
+    color: azure;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+/* Boton y barra de búsqueda mobile */
+
+.cart-header .search-form-mobile {
+    display: none;
+    order: 3;
+    width: 100%;
+    text-align-last: center;
+}
+
+.cart-header .search-bar {
+    border: 1px solid var(--secondary);
+    border-radius: 50px;
+    box-shadow: 0 0 4px rgb(0 0 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    margin: 0 10px;
+}
+
+.cart-header .search-bar input {
+    border: none;
+    flex-grow: 1;
+    background-color: var(--primary);
+}
+
+.cart-header .search-bar input:focus {
+    outline: none;
+}
+
+.cart-header .search-bar input ::placeholder {
+    font-family: var(--font_roboto);
+}
+
+.cart-header .search-bar button {
+    border: none;
+    background-color: var(--primary);
+    color: var(--tertiary);
+}
+
+/* Boton y barra de búsqueda mobile */
+
+/* Boton y menú desplegable mobile*/
+
+.cart-header .navigation-bar {
+    order: 3;
+    padding: 15px;
+    width: 100%;
+}
+
+.cart-header .navigation-bar .user-icons-mobile {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart-header .navigation-bar .user-icons-mobile i {
+    font-size: 24px;
+    margin-left: 10px;
+}

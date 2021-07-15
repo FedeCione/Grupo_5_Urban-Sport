@@ -1,14 +1,306 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urban-Sport</title>
-    <link rel="stylesheet" href="/stylesheets/home.css">
-</head>
-<body>
-    <header><h1>HOME</h1></header>
-     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, voluptatibus ipsum expedita deserunt quasi quia?</p>
-</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce</title>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- js glider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css" />
+    <!-- styles -->
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- HEADER -->
+      <header class="main-header">
+        <img src="images/img/logo.png" alt="logotipo" />
+
+        <a href="#" class="toggle-nav">
+          <span class="fa fa-bars" onclick="openNav()"></span>
+        </a>
+        <!-- MENU DESKTOP -->
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Hombre</a></li>
+            <li><a href="#">Mujer</a></li>
+            <li><a href="#">Niños</a></li>
+            <li><a href="#">Novedades</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+        <!-- search box -->
+        <div class="search-box">
+          <input
+            class="search-txt"
+            type="text"
+            name=""
+            placeholder="to search"
+          />
+          <a href="#" class="search-btn">
+            <i class="fas fa-search"></i>
+          </a>
+        </div>
+        <!-- MENU MOBILE -->
+        <div id="myNav" class="overlay">
+          <!-- <div class="search">
+            <input type="text" class="input" placeholder="Search..." />
+            <button class="btn-1">
+              <i class="fas fa-search"></i>
+            </button>
+          </div> -->
+          <div class="header-overlay">
+            <img src="images/img/logo.png" alt="logotipo" />
+
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+              >&times;</a
+            >
+          </div>
+
+          <nav class="menu-mobile overlay-content">
+            <ul class="main-menu">
+              <li>
+                <a href="#">Hombre <i class="fas fa-angle-right"></i></a>
+              </li>
+              <li><a href="#">Mujer</a></li>
+              <li><a href="#">Niños</a></li>
+              <li><a href="#">Colecciones</a></li>
+              <li><a href="#">Marcas</a></li>
+              <li><a href="#">Deportes</a></li>
+              <li><a href="#">Training</a></li>
+              <li><a href="#">Mi cuenta</a></li>
+              <li><a href="#">Buscador de tiendas</a></li>
+              <li><a href="#">Ayuda</a></li>
+              <li><a href="#">Autogestion de Devolucion</a></li>
+              <li><a href="#">Seguimiento de Pedidos</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- menu del header mobile icons -->
+        <div class="icon-btn">
+          <i class="fas fa-user"></i>
+          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-heart"></i>
+        </div>
+      </header>
+
+      <!-- Banner ONE  -->
+
+      <section class="banner-one">
+        <!-- <img src="img/banner-one.jpg" alt="" /> -->
+        <h2>You can do it.</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+          voluptatem sed quaerat nobis, illum explicabo?
+        </p>
+      </section>
+      <!-- CAROUSEL ONE-->
+      <div class="carousel-one">
+        <div class="section-product">Categorias Destacadas</div>
+        <div class="carousel-container-one">
+          <div class="carousel-list-1">
+            <div class="carousel-element">
+              <img src="images/img/sport-1.jpg" alt="" />
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p class="btn-r">Leer más</p>
+            </div>
+
+            <div class="carousel-element">
+              <img src="images/img/sport-2.jpg" alt="" />
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p class="btn-r">Leer más</p>
+            </div>
+            <div class="carousel-element">
+              <img src="images/img/sport-3.jpg" alt="" />
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p class="btn-r">Leer más</p>
+            </div>
+            <div class="carousel-element">
+              <img src="images/img/sport-4.jpg" alt="" />
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p class="btn-r">Leer más</p>
+            </div>
+            <div class="carousel-element">
+              <img src="images/img/sport-5.jpg" alt="" />
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p class="btn-r">Comprar</p>
+            </div>
+            <div class="carousel-element">
+              <img src="images/img/sport-6.jpg" alt="" />
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p class="btn-r">Comprar</p>
+            </div>
+          </div>
+          <div role="tablist" class="carousel-arrows"></div>
+        </div>
+      </div>
+      <!-- PRODUCT MAIN -->
+      <section class="product-main">
+        <article class="product">
+          <div class="img-container">
+            <img src="images/img/product-4.jpg" alt="" />
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum,
+              in.
+            </p>
+            <a class="btn" href="#">Comprar ahora!</a>
+          </div>
+        </article>
+        <article class="product">
+          <div class="img-container">
+            <img src="images/img/product-1.jpg" alt="" />
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum,
+              in.
+            </p>
+            <a class="btn" href="#">Comprar ahora!</a>
+          </div>
+        </article>
+        <article class="product">
+          <div class="img-container">
+            <img src="images/img/product-2.jpg" alt="" />
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum,
+              in.
+            </p>
+            <a class="btn" href="#">Comprar ahora!</a>
+          </div>
+        </article>
+        <article class="product">
+          <div class="img-container">
+            <img src="images/img/product-3.jpg" alt="" />
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum,
+              in.
+            </p>
+            <a class="btn" href="#">Comprar ahora!</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- CAROUSEL TWO-->
+
+      <div class="carousel-two">
+        <div class="new-product">Novedades</div>
+        <div class="carousel-container">
+          <button aria-label="Anterior" class="carousel-anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div class="carousel-list">
+            <div class="carousel-element">
+              <img src="images/img/sport-1.jpg" alt="" />
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Dolore, mollitia.
+              </p>
+              <p>Comprar</p>
+            </div>
+
+            <div class="carousel-element">
+              <img src="images/img/sport-2.jpg" alt="" />
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Dolore, mollitia.
+              </p>
+              <p>Comprar</p>
+            </div>
+            <div class="carousel-element">
+              <img src="images/img/sport-3.jpg" alt="" />
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Dolore, mollitia.
+              </p>
+              <p>Comprar</p>
+            </div>
+            <div class="carousel-element">
+              <img src="images/img/sport-4.jpg" alt="" />
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Dolore, mollitia.
+              </p>
+              <p>Comprar</p>
+            </div>
+            <div class="carousel-element">
+              <img src="images/img/sport-5.jpg" alt="" />
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Dolore, mollitia.
+              </p>
+              <p>Comprar</p>
+            </div>
+            <div class="carousel-element">
+              <img src="images/img/sport-6.jpg" alt="" />
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Dolore, mollitia.
+              </p>
+              <p>Comprar</p>
+            </div>
+          </div>
+
+          <button aria-label="Siguiente" class="carousel-siguiente">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <div role="tablist" class="carousel-indicadores"></div>
+        </div>
+      </div>
+      <button class="more-btn"><a href="#">Ver mas Productos</a></button>
+
+      <div class="news-letter">
+        <h3>Urban-style</h3>
+        <p>
+          Registrate a nuestro newslletter y obtene un <span>15% off</span> en
+          tu primera compra
+        </p>
+        <div class="purchase-info .btn-info">
+          <input
+            type="email"
+            name=""
+            id="email"
+            placeholder="ingresa tu email"
+          />
+          <input type="submit" value="enviar" />
+        </div>
+      </div>
+      <!-- social media -->
+      <div class="social-media">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fas fa-envelope"></i>
+      </div>
+
+      <!-- go to up -->
+      <div class="top-container">
+        <div class="top-button">
+          <i class="fas fa-chevron-up"></i>
+        </div>
+      </div>
+      <!-- FOOTER -->
+      <footer class="main-footer">
+        <ul>
+          <li><a href="#">Buscador de tiendas</a></li>
+          <li><a href="#">Envio</a></li>
+          <li><a href="#">Botón de arrepentimiento</a></li>
+          <li><a href="#">Devoluciones</a></li>
+          <li><a href="#">Guia de talles</a></li>
+          <li><a href="#">Formas de Pago</a></li>
+          <li><a href="#">Servicio al cliente</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <script src="/javascripts/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+  </body>
 </html>

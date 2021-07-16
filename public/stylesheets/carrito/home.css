@@ -1,58 +1,60 @@
 /* HOME */
 
 .cart-home {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    background-color: var(--light-grey);
+    padding: 25px;
+    display: inline-block;
+    width: 100%;
+    color: var(--primary);
+    min-height: 672px;
 }
 
 .cart-home .title-cart-container {
     display: flex;
-    width: 100%;
     justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
 }
 
-.cart-home .title-cart {
-    color: var(--primary);
-}
+/* Product and prices container */
 
-.cart-home .title-cart-container .keep-buying-div {
+.cart-home .articles-subtitles-div {
     display: flex;
-    align-self: center;
-    padding-top: 4px;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Article container */
+
+.cart-home .articles-div {
+    width: -webkit-fill-available;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
 }
 
 /* Product container */
 
-.cart-home .img-product {
-    width: 100%;
-}
-
-.cart-home .img-product-div {
-    width: 140px;
-    border: 2px solid var(--grey);
-    height: fit-content;
-    margin-right: 5px;
-}
-
 .cart-home .product-container {
-    border: 2px solid var(--grey);
-    width: 100%;
+    border: 1px solid black;
     padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    height: 230px;
-    justify-content: space-between;
-    margin-bottom: 5px;
+    width: 90%;
+    margin: 4px;
+    min-width: 270px;
+}
+
+.cart-home .product-container .img-product {
+    width: 100%;
+}
+
+.cart-home .product-container .img-product-div {
+    width: 140px;
+    border: 1px solid black;
+    margin-right: 5px;
 }
 
 .cart-home .img-details-container {
     display: inline-flex;
-}
-
-.cart-home .trash-icon-div {
-    padding: 5px 5px 0 0;
 }
 
 .cart-home .trash-icon-div button {
@@ -62,10 +64,6 @@
 
 .cart-home .title-product-div {
     width: 100%;
-}
-
-.cart-home .title-product {
-    color: var(--primary);
 }
 
 .cart-home .title-trash-div {
@@ -78,13 +76,8 @@
     padding: 0 15px 10px 0;
 }
 
-.cart-home .total-article-p {
-    color: var(--primary);
-}
-
 .cart-home .product-details p {
-    padding-bottom: 8px;
-    color: var(--primary);
+    padding: 2px 0;
 }
 
 .cart-home .product-details .quantity {
@@ -98,37 +91,21 @@
 /* Shipping, subtotal and total cost */
 
 .cart-home .promo-shipping-div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: 8px 0 15px 0;
     text-align: center;
-    width: 100%;
-    padding: 15px 0 15px 0;
+    width: fit-content;
 }
 
 .cart-home .promotional-code-div {
-    text-align: center;
-    width: 100%;
     padding-bottom: 15px;
 }
 
 .cart-home .input-shipping-cost-div {
-    text-align: center;
-    width: 100%;
     padding-bottom: 15px;
-}
-
-.cart-home .promo-shipping-div .cost-shipping-p{
-    color: var(--primary);
-}
-
-.cart-home .promo-shipping-div .subtotal-p {
-    color: var(--primary);
 }
 
 .cart-home .promo-shipping-div .total-p {
     padding: 10px 0 10px 0;
-    color: var(--primary);
     font-size: 20px;
 }
 
@@ -137,7 +114,6 @@
 }
 
 .cart-home .promotional-code-p {
-    color: var(--primary);
     font-size: 18px;
 }
 
@@ -151,7 +127,6 @@
     height: 30px;
     width: 110px;
     background-color: var(--tertiary);
-    color: var(--primary);
     border: none;
     border-radius: 8px;
 }
@@ -166,7 +141,6 @@
     height: 30px;
     width: 110px;
     background-color: var(--tertiary);
-    color: var(--primary);
     border: none;
     border-radius: 8px;
 }
@@ -177,19 +151,16 @@
 }
 
 .cart-home .cost-shipping-div {
-    width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .cart-home .subtotal-div {
-    width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .cart-home .total-div {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,10 +168,106 @@
 
 .cart-home .buy-button {
     height: 40px;
-    width: 300px;
+    width: 270px;
     background-color: var(--tertiary);
-    color: var(--primary);
     border: none;
     border-radius: 8px;
     font-size: 20px;
+}
+
+/* Media Queries */
+/* Tablet */
+@media (min-width: 361px){
+    .cart-home {
+        min-height: 654px;
+    }
+    .cart-home .buy-button {
+        height: 45px;
+        width: 350px;
+        font-size: 22px;
+    }
+    .cart-home .promotional-code-div input {
+        height: 35px;
+    }
+    .cart-home .promotional-code-div button {
+        height: 35px;
+        width: 120px;
+        font-size: 15px;
+    }
+    .cart-home .input-shipping-cost-div input {
+        height: 35px;
+    }
+    .cart-home .input-shipping-cost-div button {
+        height: 35px;
+        width: 120px;
+        font-size: 15px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 769px){
+    .cart-home {
+        height: 622px;
+    }
+    .cart-home .title-cart-container {
+        font-size: 18px;
+    }
+    .cart-home .articles-subtitles-div {
+        flex-direction: initial;
+    }
+    .cart-home .product-container {
+        max-width: none;
+    }
+    .cart-home .buy-button {
+        height: 50px;
+        width: 380px;
+        font-size: 24px;
+    }
+    .cart-home .promotional-code-p {
+        font-size: 20px;
+        padding-bottom: 12px;
+    }
+    .cart-home .promotional-code-div button {
+        height: 40px;
+        width: 135px;
+        font-size: 18px;
+        padding-bottom: 2px;
+    }
+    .cart-home .promotional-code-div input {
+        height: 40px;
+        width: 200px;
+    }
+    .cart-home .promotional-code-div input::placeholder {
+        font-size: 15px;
+    }
+    .cart-home .input-shipping-cost-p {
+        font-size: 20px;
+        padding-bottom: 12px;
+    }
+    .cart-home .input-shipping-cost-div button {
+        height: 40px;
+        width: 135px;
+        font-size: 18px;
+        padding-bottom: 2px;
+    }
+    .cart-home .input-shipping-cost-div input {
+        height: 40px;
+        width: 200px;
+    }
+    .cart-home .input-shipping-cost-div input::placeholder {
+        font-size: 15px;
+    }
+    .cart-home .cost-shipping-div {
+        font-size: 19px;
+    }
+    .cart-home .subtotal-div {
+        font-size: 19px;
+    }
+    .cart-home .promo-shipping-div .total-p {
+        padding: 20px 0 20px 0;
+        font-size: 22px;
+    }
+    .cart-home .promo-shipping-div .total-p-price {
+        font-size: 22px;
+    }
 }

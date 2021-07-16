@@ -24,8 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get("/",(req,res)=>{
   res.sendFile(path.join(__dirname,"/views/home.html"))
 })
-app.get("/detalleproducto",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/detalleproducto.html"))
+app.get("/productDetail",(req,res)=>{
+  res.sendFile(path.join(__dirname,"/views/productDetail.html"))
 })
 app.get("/carrito",(req,res)=>{
   res.sendFile(path.join(__dirname,"/views/carrito.html"))

@@ -65,7 +65,7 @@
                 varios conocimientos previos sobre programacion y desarrollo web por hacer cursos
                 de Platzi desde 2020.
 
-* __Ramiro Maidana__:
+* __Juliana Lezcano__:
     * Edad:
     * Localidad:
     * Sobre mi:

@@ -4,90 +4,89 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registro-Urban-Sport</title>
-    <!-- Font awesome -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      rel="stylesheet"
-    />
-    <!-- Google font Roboto -->
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-    </style>
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <!-- Javascript -->
-    <script src="/javascripts/login.js" defer></script>
+    <title>registro.Urban-Sport</title>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- js glider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css" />
+    <!-- styles -->
+    <link rel="stylesheet" href="/stylesheets/registro.css" />
   </head>
+
   <body>
-    <!-- HEADER -->
-    <header class="cart-header">
-      <div class="logo-div">
-        <a href="">
-          <img class="logo" src="/images/logo_transparent.png" alt="Logo" />
+    <div class="container">
+      <!-- HEADER -->
+      <header class="main-header">
+        <img src="/images/logo_transparent.png" alt="logotipo" />
+
+        <a href="#" class="toggle-nav">
+          <span class="fa fa-bars" onclick="openNav()"></span>
         </a>
-      </div>
-
-      <!-- Menu hamburguesa -->
-      <div>
-        <i class="fas fa-bars burguer-menu-icon" onclick="dropMenu()"></i>
-      </div>
-
-      <!-- Iconos header -->
-      <nav class="navigation-bar" id="navigation-bar">
-        <div class="div-icons">
-          <a href=""
-            ><img
-              class="img-icons"
-              src="/images/login.svg"
-              alt="Icono de persona"
-          /></a>
-          <a href=""
-            ><img
-              class="img-icons"
-              src="/images/like-icon.svg"
-              alt="Icono de corazón"
-          /></a>
-          <a href=""
-            ><img
-              class="img-icons"
-              src="/images/cart-icon.svg"
-              alt="Icono de carrito"
-          /></a>
+        <!-- MENU DESKTOP -->
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Hombre</a></li>
+            <li><a href="#">Mujer</a></li>
+            <li><a href="#">Niños</a></li>
+            <li><a href="#">Novedades</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+        <!-- search box -->
+        <div class="search-box">
+          <input
+            class="search-txt"
+            type="text"
+            name=""
+            placeholder="to search"
+          />
+          <a href="#" class="search-btn">
+            <i class="fas fa-search"></i>
+          </a>
         </div>
+        <!-- MENU MOBILE -->
+        <div id="myNav" class="overlay">
+          <!-- <div class="search">
+            <input type="text" class="input" placeholder="Search..." />
+            <button class="btn-1">
+              <i class="fas fa-search"></i>
+            </button>
+          </div> -->
+          <div class="header-overlay">
+            <img src="/images/logo_transparent.png" alt="logotipo" />
 
-        <!-- Menú de navegación -->
-        <ul class="menú">
-          <a href=""><li>Niños</li></a>
-          <a href=""><li>Hombre</li></a>
-          <a href=""><li>Mujer</li></a>
-          <a href=""><li>Colecciones</li></a>
-        </ul>
-      </nav>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+              >&times;</a
+            >
+          </div>
 
-      <!-- Icono del buscador -->
-      <div class="search-icon" onclick="dropSearch()">
-        <i class="fas fa-search"></i>
-      </div>
-
-      <!-- Buscador escritorio -->
-      <form action="#" class="search-form-desktop">
-        <div class="search-bar">
-          <input type="search" name="busqueda" id="" />
-          <button type="submit"><i class="fas fa-search"></i></button>
+          <nav class="menu-mobile overlay-content">
+            <ul class="main-menu">
+              <li>
+                <a href="#">Hombre <i class="fas fa-angle-right"></i></a>
+              </li>
+              <li><a href="#">Mujer</a></li>
+              <li><a href="#">Niños</a></li>
+              <li><a href="#">Colecciones</a></li>
+              <li><a href="#">Marcas</a></li>
+              <li><a href="#">Deportes</a></li>
+              <li><a href="#">Training</a></li>
+              <li><a href="#">Mi cuenta</a></li>
+              <li><a href="#">Buscador de tiendas</a></li>
+              <li><a href="#">Ayuda</a></li>
+              <li><a href="#">Autogestion de Devolucion</a></li>
+              <li><a href="#">Seguimiento de Pedidos</a></li>
+            </ul>
+          </nav>
         </div>
-      </form>
-
-      <!-- Buscador mobile -->
-
-      <form action="#" class="search-form-mobile" id="search">
-        <div class="search-bar">
-          <input type="search" name="busqueda" id="" placeholder="Buscar" />
-          <button type="submit"><i class="fas fa-search"></i></button>
+        <!-- menu del header mobile icons -->
+        <div class="icon-btn">
+          <i class="fas fa-user"></i>
+          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-heart"></i>
         </div>
-      </form>
-     
-    </header>
+      </header>
     
     <form  class="form-register"  action="registro" method="POST">
       <h4>Formulario  de Registro</h4>
@@ -99,6 +98,22 @@
       <input class="botons" type="submit" value="Registrar" required/>
       <p class="condiciones"><a class="condiciones" href="http://localhost:3000/login">¿Ya tengo Cuenta?</a></p>
     </form>
-  
+   <!-- FOOTER -->
+   <footer class="main-footer">
+    <ul>
+      <li><a href="#">Buscador de tiendas</a></li>
+      <li><a href="#">Envio</a></li>
+      <li><a href="#">Botón de arrepentimiento</a></li>
+      <li><a href="#">Devoluciones</a></li>
+      <li><a href="#">Guia de talles</a></li>
+      <li><a href="#">Formas de Pago</a></li>
+      
+    </ul>
+  </footer>
+</div>
+
+<script src="/javascripts/registro.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
 </body>
+
 </html>

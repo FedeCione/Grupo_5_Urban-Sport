@@ -66,6 +66,6 @@
                 de Platzi desde 2020.
 
 * __Juliana Lezcano__:
-    * Edad:
-    * Localidad:
-    * Sobre mi:
+    * Edad: 28
+    * Localidad: Buenos Aires, Lanús
+    * Sobre mi: Estudiante de contaduria transitando el camino desconocido de la programación mediante el curso Programación Web Fullstack con Formar y Digital House descubriendo que quiere solo profesionalizarse cada vez mas en este ambito.

@@ -254,6 +254,9 @@ a{
   .search.active .btn-1 {
     transform: translateX(198px);
   } */
+
+
+                
   /*----------------------INICIA LOGIN--------------*/
   .titulo {
     text-align: center;
@@ -295,10 +298,10 @@ a{
   }
   
   .form-register p {
-    height: 40px;
+    height: 71px;
     text-align: center;
-    font-size: 18px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 24px;
   }
   
   .form-register a {
@@ -320,6 +323,16 @@ a{
     margin: 16px 0;
     font-size: 16px;
   }
+  .condiciones p{
+
+    font-size: 10px;
+  }
+  .condiciones p{
+    font-size: 10px;
+  }
+  /*____________FIN LOGIN_________________________*/
+
+
 
   /*  --------------- FOOTER ---------------  */
 .main-footer{
@@ -354,7 +367,12 @@ a{
             margin-bottom: 112px;
             
         }
-    }
+        .form-register p {
+          height: 40px;
+          
+          font-size: 18px;
+          line-height: 23px;
+        }
     .banner-one{
         display: block;
     }
@@ -416,3 +434,4 @@ a{
         flex-direction: row;
     }
   }
+}

@@ -1,15 +1,14 @@
 /* HEADER MOBILE/TABLET */
 .cart-header-mobile {
     display: flex;
-    font-family: var(--font_roboto);
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     padding: 10px 15px;
     font-size: 1rem;
     height: fit-content;
-    background-color: var(--primary);
     box-shadow: 0px 0px 10px 0px rgb(100 100 100);
+    border-bottom: 1px solid black;
 }
 
 .cart-header-mobile .navigation-bar {
@@ -28,7 +27,6 @@
 .cart-header-mobile .burguer-menu-icon {
     order: 0;
     font-size: 30px;
-    color: var(--tertiary);
 }
 
 .cart-header-mobile .search-icon {
@@ -38,7 +36,6 @@
 
 .cart-header-mobile .search-icon i {
     cursor: pointer;
-    color: var(--tertiary);
 }
 
 .cart-header-mobile .div-icons {
@@ -46,10 +43,8 @@
 }
 
 .cart-header-mobile nav ul li {
-    color: azure;
     font-weight: bold;
     padding-bottom: 5px;
-    text-decoration-line: underline;
 }
 
 /* Boton y barra de búsqueda mobile */
@@ -75,21 +70,15 @@
 .cart-header-mobile .search-bar input {
     border: none;
     flex-grow: 1;
-    background-color: var(--primary);
 }
 
 .cart-header-mobile .search-bar input:focus {
     outline: none;
 }
 
-.cart-header-mobile .search-bar input ::placeholder {
-    font-family: var(--font_roboto);
-}
-
 .cart-header-mobile .search-bar button {
     border: none;
-    background-color: var(--primary);
-    color: var(--tertiary);
+    background-color: initial;
 }
 
 /* Boton y menú desplegable mobile*/
@@ -116,9 +105,9 @@
         display: none;
         justify-content: space-between;
         align-items: center;
-        padding: 5px 5px 0;
-        background-color: aliceblue;
+        padding: 5px 10px 0;
         box-shadow: 0px 0px 20px 0px rgb(100 100 100);
+        border-bottom: 1px solid black;
 }  
 
 /* LOGO */
@@ -135,6 +124,10 @@
 
 .cart-header-desktop .menú {
     display: contents;
+}
+
+.cart-header-desktop .menú a:hover {
+    color: var(--tertiary);
 }
 
 /* Search bar */
@@ -165,22 +158,19 @@
 }
 
 .cart-header-desktop .search-bar input::placeholder {
-    font-family: var(--font_roboto);
-    color: var(--primary);
     font-size: 16px;
-    
 }
 
 .cart-header-desktop .search-bar button {
     border: none;
     background-color: initial;
     font-size: 20px;
-    color: var(--primary);
 }
 
 /* Icons  */
 .cart-header-desktop .header-icons-container {
     display: contents;
+    font-size: 26px;
 }
 
 /* Media Queries */

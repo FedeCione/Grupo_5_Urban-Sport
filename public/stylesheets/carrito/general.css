@@ -13,6 +13,22 @@ a {
     color: var(--primary);
 }
 
+i {
+    color: var(--primary);
+}
+
 ul {
     list-style: none;
+}
+
+/* Media Queries */
+/* Desktop */
+@media (min-width: 769px){
+    i:hover {
+        color: var(--tertiary);
+    }
+
+    a:hover {
+    color: var(--tertiary);
+    }
 }

@@ -4,8 +4,8 @@
     padding: 25px;
     display: inline-block;
     width: 100%;
-    color: var(--primary);
     min-height: 672px;
+    color: var(--primary);
 }
 
 .cart-home .title-cart-container {
@@ -13,6 +13,8 @@
     justify-content: space-between;
     width: 100%;
     font-size: 14px;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
 }
 
 /* Product and prices container */
@@ -25,12 +27,15 @@
 
 /* Article container */
 
-.cart-home .articles-div {
+.cart-home .articles-container {
     width: -webkit-fill-available;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
     align-content: center;
+    overflow-y: scroll;
+    align-items: center;
+    max-height: 640px;
 }
 
 /* Product container */
@@ -91,7 +96,7 @@
 /* Shipping, subtotal and total cost */
 
 .cart-home .promo-shipping-div {
-    padding: 8px 0 15px 0;
+    padding: 8px 10px 15px 10px;
     text-align: center;
     width: fit-content;
 }
@@ -146,7 +151,6 @@
 }
 
 .cart-home .input-shipping-cost-p {
-    color: var(--primary);
     font-size: 18px;
 }
 
@@ -178,9 +182,6 @@
 /* Media Queries */
 /* Tablet */
 @media (min-width: 361px){
-    .cart-home {
-        min-height: 654px;
-    }
     .cart-home .buy-button {
         height: 45px;
         width: 350px;
@@ -206,9 +207,6 @@
 
 /* Desktop */
 @media (min-width: 769px){
-    .cart-home {
-        height: 622px;
-    }
     .cart-home .title-cart-container {
         font-size: 18px;
     }
@@ -265,9 +263,6 @@
     }
     .cart-home .promo-shipping-div .total-p {
         padding: 20px 0 20px 0;
-        font-size: 22px;
-    }
-    .cart-home .promo-shipping-div .total-p-price {
         font-size: 22px;
     }
 }

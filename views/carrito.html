@@ -5,23 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Urban-Sport</title>
+
     <!-- Font awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
+
     <!-- Google font Roboto -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
     </style>
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/stylesheets/carrito/style.css" />
+
     <!-- Javascript -->
     <script src="/javascripts/carrito.js" defer></script>
   </head>
   <body>
+
     <!-- HEADER MOBILE/TABLET -->
     <header class="cart-header-mobile">
+
       <!-- Logo -->
       <div class="logo-div">
         <a href="">
@@ -37,10 +43,18 @@
       <!-- Menú de navegación -->
       <nav class="navigation-bar" id="navigation-bar">
         <ul class="menú">
-          <a href=""><li>Niños</li></a>
-          <a href=""><li>Hombre</li></a>
-          <a href=""><li>Mujer</li></a>
-          <a href=""><li>Colecciones</li></a>
+              <li><a href="#">Hombre</a></li>
+              <li><a href="#">Mujer</a></li>
+              <li><a href="#">Niños</a></li>
+              <li><a href="#">Colecciones</a></li>
+              <li><a href="#">Marcas</a></li>
+              <li><a href="#">Deportes</a></li>
+              <li><a href="#">Training</a></li>
+              <li><a href="#">Mi cuenta</a></li>
+              <li><a href="#">Buscador de tiendas</a></li>
+              <li><a href="#">Ayuda</a></li>
+              <li><a href="#">Autogestion de Devolucion</a></li>
+              <li><a href="#">Seguimiento de Pedidos</a></li>
         </ul>
       </nav>
 
@@ -87,24 +101,9 @@
 
       <!-- Iconos header -->
       <div class="header-icons-container">
-        <a href=""
-          ><img
-            class="img-icons"
-            src="/images/login-icon.svg"
-            alt="Icono de persona"
-        /></a>
-        <a href=""
-          ><img
-            class="img-icons"
-            src="/images/like-icon.svg"
-            alt="Icono de corazón"
-        /></a>
-        <a href=""
-          ><img
-            class="img-icons"
-            src="/images/cart-icon.svg"
-            alt="Icono de carrito"
-        /></a>
+        <a href=""><i class="fas fa-user"></i></a>
+        <a href=""><i class="fas fa-shopping-cart"></i></a>
+        <a href=""><i class="fas fa-heart"></i></a>
       </div>
     </header>
 
@@ -116,7 +115,79 @@
       </div>
       <div class="articles-subtitles-div">
         <!-- ARTICLES -->
-        <div class="articles-div">
+        <div class="articles-container">
+          <article class="product-container">
+            <div class="title-trash-div">
+              <div class="title-product-div">
+                <h3 class="title-product">Nombre del producto</h3>
+              </div>
+              <div class="trash-icon-div">
+                <button>
+                  <img src="/images/trash-icon.png" alt="Icono tacho" />
+                </button>
+              </div>
+            </div>
+            <div class="img-details-container">
+              <div class="img-product-div">
+                <img
+                  class="img-product"
+                  src="/images/image-article.png"
+                  alt="Imagen del articulo"
+                />
+              </div>
+              <div class="product-details">
+                <p>Talle:</p>
+                <p>Item Nº:</p>
+                <a href=""><p>Editar</p></a>
+                <p class="quantity">Cantidad</p>
+                <select name="Cantidad">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <p class="total-article-p">Total</p>
+                <p>$ 0</p>
+              </div>
+            </div>
+          </article>
+          <article class="product-container">
+            <div class="title-trash-div">
+              <div class="title-product-div">
+                <h3 class="title-product">Nombre del producto</h3>
+              </div>
+              <div class="trash-icon-div">
+                <button>
+                  <img src="/images/trash-icon.png" alt="Icono tacho" />
+                </button>
+              </div>
+            </div>
+            <div class="img-details-container">
+              <div class="img-product-div">
+                <img
+                  class="img-product"
+                  src="/images/image-article.png"
+                  alt="Imagen del articulo"
+                />
+              </div>
+              <div class="product-details">
+                <p>Talle:</p>
+                <p>Item Nº:</p>
+                <a href=""><p>Editar</p></a>
+                <p class="quantity">Cantidad</p>
+                <select name="Cantidad">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <p class="total-article-p">Total</p>
+                <p>$ 0</p>
+              </div>
+            </div>
+          </article>
           <article class="product-container">
             <div class="title-trash-div">
               <div class="title-product-div">
@@ -229,41 +300,25 @@
       <nav class="footer-nav">
         <div class="icons-footer-div">
           <a href="">
-            <img
-              class="icons-footer"
-              src="/images/home-footer-icon.svg"
-              alt="Icono de home"
-            />
+            <i class="fas fa-home icons-footer"></i>
             <p class="home-footer">Home</p>
           </a>
         </div>
         <div class="icons-footer-div">
           <a href="">
-            <img
-              class="icons-footer"
-              src="/images/chat-footer-icon.svg"
-              alt="Icono de chat"
-            />
+            <i class="fas fa-comment icons-footer"></i>
             <p class="chat-footer">Chat</p>
           </a>
         </div>
         <div class="icons-footer-div">
           <a href="">
-            <img
-              class="icons-footer"
-              src="/images/profile-footer-icon.svg"
-              alt="Icono de perfil"
-            />
+            <i class="fas fa-user icons-footer"></i>
             <p class="profile-footer">Perfil</p>
           </a>
         </div>
         <div class="icons-footer-div">
           <a href="">
-            <img
-              class="icons-footer"
-              src="/images/cart-footer-icon.svg"
-              alt="Icono de carrito"
-            />
+            <i class="fas fa-shopping-cart icons-footer"></i>
             <p class="cart-footer">Carrito</p>
           </a>
         </div>
@@ -298,6 +353,13 @@
         </div>
       </nav>
       <div class="footer-desktop-subtitle">
+              <!-- social media -->
+        <div class="social-media">
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-facebook-square"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fas fa-envelope"></i>
+        </div>
         <p>Powered by EQUIPO 5</p>
       </div>
     </footer>

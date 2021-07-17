@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login.Urban-Sport</title>
+    <title>Recupera tu cuenta.Urban-Sport</title>
 
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <!-- js glider -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css" />
     <!-- styles -->
-    <link rel="stylesheet" href="/stylesheets/login.css" />
+    <link rel="stylesheet" href="/stylesheets/olvidecuenta.css" />
   </head>
 
   <body>
@@ -87,36 +87,19 @@
           <i class="fas fa-heart"></i>
         </div>
       </header>
-      <form class="form-register">
-        <h4 class="titulo">Iniciar Sesión</h4>
-        <input
-          class="controls"
-          type="email"
-          name="correo"
-          id="correo"
-          placeholder="Ingrese su Email"
-          required
-        />
-        <input
-          class="controls"
-          type="password"
-          name="correo"
-          id="correo"
-          placeholder="Ingrese su Contraseña"
-          required
-        />
-        <p class="condiciones">
-          <input type="checkbox" name="recordar sesion" required />
-          <label for="recordar sesion">¿Recordar usuario?</label>
-        </p> 
-        <button class="botons" type="submit" required>Ingresar</button>
-      
-        <p class="condiciones">
-          <a class="condiciones" href="http://localhost:3020/recovery">¿Olvidaste tu contraseña?</a>
-        </p>
-      </form>
-  <!-- FOOTER -->
-  <footer class="main-footer">
+    <form  class="form-register"  action="registro" method="POST">
+      <h4>Recupera tu cuenta</h4>
+      <h5>Introduce tu correo electrónico  para buscar tu cuenta.</h5>
+      <input class="controls" type="email" name="correo" id="correo " placeholder="Ingrese su Correo Electronico" required>
+
+     <div class="botones">
+      <button class="botons" type="submit" > Cancelar</button>
+      <button class="botons1" type="submit" > Buscar</button>
+    </div>
+   
+    </form>
+   <!-- FOOTER -->
+   <footer class="main-footer">
     <ul>
       <li><a href="#">Buscador de tiendas</a></li>
       <li><a href="#">Envio</a></li>
@@ -129,7 +112,8 @@
   </footer>
 </div>
 
-<script src="/javascripts/login.js"></script>
+<script src="/javascripts/olvidecuenta.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
 </body>
+
 </html>

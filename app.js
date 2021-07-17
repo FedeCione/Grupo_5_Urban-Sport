@@ -36,6 +36,9 @@ app.get("/registro",(req,res)=>{
 app.get("/login",(req,res)=>{
   res.sendFile(path.join(__dirname,"/views/login.html"))
 })
+app.get("/recovery",(req,res)=>{
+  res.sendFile(path.join(__dirname,"/views/olvidecuenta.html"))
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

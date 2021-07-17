@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 :root{
@@ -255,6 +254,9 @@ a{
   .search.active .btn-1 {
     transform: translateX(198px);
   } */
+
+
+                
   /*----------------------INICIA LOGIN--------------*/
   .titulo {
     text-align: center;
@@ -296,10 +298,10 @@ a{
   }
   
   .form-register p {
-    height: 40px;
+    height: 71px;
     text-align: center;
-    font-size: 18px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 24px;
   }
   
   .form-register a {
@@ -311,20 +313,39 @@ a{
     color: white;
     text-decoration: underline;
   }
-  
-  .form-register .botons {
+  .botones{
+    margin: 1px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .form-register .botons , .botons1{
+    
     width: 100%;
-    background: #1f53c5;
-    border: none;
+    background:var(--amarillo);
+    border: solid 1px black;
     padding: 12px;
-    color: white;
-    margin: 16px 0;
+    color:var(--azul-oscuro);
+    margin: 16px 7px;
     font-size: 16px;
+    transition: border-radius 450ms;
   }
-  .botons :hover{
-   transition: all;
-   border-radius: 18px;
+  
+   .botones :hover{
+     color: var(--amarillo);
+     background:var(--azul-oscuro);
+    transition: all;
+    border-radius: 18px;
   }
+  .condiciones p{
+
+    font-size: 10px;
+  }
+  .condiciones p{
+    font-size: 10px;
+  }
+  /*____________FIN LOGIN_________________________*/
+
+
 
   /*  --------------- FOOTER ---------------  */
 .main-footer{
@@ -359,7 +380,12 @@ a{
             margin-bottom: 112px;
             
         }
-    }
+        .form-register p {
+          height: 40px;
+          
+          font-size: 18px;
+          line-height: 23px;
+        }
     .banner-one{
         display: block;
     }
@@ -421,3 +447,4 @@ a{
         flex-direction: row;
     }
   }
+}

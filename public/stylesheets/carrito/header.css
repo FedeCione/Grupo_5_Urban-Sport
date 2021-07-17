@@ -1,0 +1,210 @@
+/* HEADER MOBILE/TABLET */
+.cart-header-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    font-size: 1rem;
+    height: fit-content;
+    box-shadow: 0px 0px 10px 0px rgb(100 100 100);
+    border-bottom: 1px solid black;
+}
+
+.cart-header-mobile .navigation-bar {
+    display: none;
+}
+
+.cart-header-mobile .logo-div {
+    order: 1;
+    width: 140px;
+}
+
+.cart-header-mobile .logo-div .logo {
+    width: 100%;
+}
+
+.cart-header-mobile .burguer-menu-icon {
+    order: 0;
+    font-size: 30px;
+}
+
+.cart-header-mobile .search-icon {
+    order: 2;
+    font-size: 26px;
+}
+
+.cart-header-mobile .search-icon i {
+    cursor: pointer;
+}
+
+.cart-header-mobile .div-icons {
+    display: none;
+}
+
+.cart-header-mobile nav ul li {
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+/* Boton y barra de búsqueda mobile */
+
+.cart-header-mobile .search-form-mobile {
+    display: none;
+    order: 3;
+    width: 100%;
+    text-align-last: center;
+}
+
+.cart-header-mobile .search-bar {
+    border: 1px solid var(--secondary);
+    border-radius: 50px;
+    box-shadow: 0 0 4px rgb(0 0 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    margin: 10px 10px;
+}
+
+.cart-header-mobile .search-bar input {
+    border: none;
+    flex-grow: 1;
+}
+
+.cart-header-mobile .search-bar input:focus {
+    outline: none;
+}
+
+.cart-header-mobile .search-bar button {
+    border: none;
+    background-color: initial;
+}
+
+/* Boton y menú desplegable mobile*/
+
+.cart-header-mobile .navigation-bar {
+    order: 3;
+    padding: 15px;
+    width: 100%;
+}
+
+.cart-header-mobile .navigation-bar .user-icons-mobile {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart-header-mobile .navigation-bar .user-icons-mobile i {
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+/* HEADER DESKTOP */
+
+.cart-header-desktop {
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px 0;
+        box-shadow: 0px 0px 20px 0px rgb(100 100 100);
+        border-bottom: 1px solid black;
+}  
+
+/* LOGO */
+
+.cart-header-desktop .logo-div {
+    width: 170px;
+}
+
+.cart-header-desktop .logo {
+    width: 100%;
+}
+
+/* Menú */
+
+.cart-header-desktop .menú {
+    display: contents;
+}
+
+.cart-header-desktop .menú a:hover {
+    color: var(--tertiary);
+}
+
+/* Search bar */
+
+.cart-header-desktop .search-form-desktop {
+    display: flex;
+}
+
+.cart-header-desktop .search-bar {
+    border: 1px solid var(--secondary);
+    border-radius: 50px;
+    box-shadow: 0 0 4px rgb(0 0 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    margin: 0 10px;
+}
+
+.cart-header-desktop .search-bar input {
+    border: none;
+    text-align: center;
+    background-color: initial;
+}
+
+.cart-header-desktop .search-bar input:focus {
+    outline: none;
+}
+
+.cart-header-desktop .search-bar input::placeholder {
+    font-size: 16px;
+}
+
+.cart-header-desktop .search-bar button {
+    border: none;
+    background-color: initial;
+    font-size: 20px;
+}
+
+/* Icons  */
+.cart-header-desktop .header-icons-container {
+    display: contents;
+    font-size: 26px;
+}
+
+/* Media Queries */
+/* Tablet */
+@media (min-width: 361px){
+    .cart-header-mobile .search-bar {
+        height: 30px;
+        margin: 20px 10px;
+        width: 75%;
+    }
+    .cart-header-mobile .search-bar input {
+        font-size: 16px;
+    }
+    .cart-header-mobile .search-form-mobile {
+        text-align: -webkit-center;
+    }
+    .cart-header-mobile .logo-div {
+        order: 1;
+        width: 200px;
+    }
+    .cart-header-mobile .search-icon {
+        font-size: 36px;
+    }
+    .cart-header-mobile .burguer-menu-icon {
+        font-size: 45px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 769px){
+    .cart-header-mobile {
+        display: none;
+    }
+    .cart-header-desktop {
+        display: flex;
+    }
+}

@@ -20,15 +20,21 @@ i {
 ul {
     list-style: none;
 }
-
-/* Media Queries */
-/* Desktop */
-@media (min-width: 769px){
     i:hover {
         color: var(--tertiary);
+        cursor: pointer;
     }
 
     a:hover {
     color: var(--tertiary);
+    cursor: pointer;
     }
+
+    button:hover {
+        cursor: pointer;
+    }
+/* Media Queries */
+/* Desktop */
+@media (min-width: 769px){
+
 }

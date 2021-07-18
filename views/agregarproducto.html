@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agregar producto.Urban-Sport</title>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- js glider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css" />
+    <!-- styles -->
+    <link rel="stylesheet" href="/stylesheets/registro.css" />
+    <link rel="stylesheet" href="/stylesheets/agregarproducto.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- HEADER -->
+      <header class="main-header">
+        <img src="/images/logo_transparent.png" alt="logotipo" />
+
+        <a href="#" class="toggle-nav">
+          <span class="fa fa-bars" onclick="openNav()"></span>
+        </a>
+        <!-- MENU DESKTOP -->
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Hombre</a></li>
+            <li><a href="#">Mujer</a></li>
+            <li><a href="#">Niños</a></li>
+            <li><a href="#">Novedades</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+        <!-- search box -->
+        <div class="search-box">
+          <input
+            class="search-txt"
+            type="text"
+            name=""
+            placeholder="to search"
+          />
+          <a href="#" class="search-btn">
+            <i class="fas fa-search"></i>
+          </a>
+        </div>
+        <!-- MENU MOBILE -->
+        <div id="myNav" class="overlay">
+          <!-- <div class="search">
+            <input type="text" class="input" placeholder="Search..." />
+            <button class="btn-1">
+              <i class="fas fa-search"></i>
+            </button>
+          </div> -->
+          <div class="header-overlay">
+            <img src="/images/logo_transparent.png" alt="logotipo" />
+
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+              >&times;</a
+            >
+          </div>
+
+          <nav class="menu-mobile overlay-content">
+            <ul class="main-menu">
+              <li>
+                <a href="#">Hombre <i class="fas fa-angle-right"></i></a>
+              </li>
+              <li><a href="#">Mujer</a></li>
+              <li><a href="#">Niños</a></li>
+              <li><a href="#">Colecciones</a></li>
+              <li><a href="#">Marcas</a></li>
+              <li><a href="#">Deportes</a></li>
+              <li><a href="#">Training</a></li>
+              <li><a href="#">Mi cuenta</a></li>
+              <li><a href="#">Buscador de tiendas</a></li>
+              <li><a href="#">Ayuda</a></li>
+              <li><a href="#">Autogestion de Devolucion</a></li>
+              <li><a href="#">Seguimiento de Pedidos</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- menu del header mobile icons -->
+        <div class="icon-btn">
+          <i class="fas fa-user"></i>
+          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-heart"></i>
+        </div>
+      </header>
+
+        <main class='container-newprod'>
+
+            <section class='administrador'>
+                <h4>Administrador</h4>
+                <ul>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Ventas</a></li>
+                    <li class='agregar'><a href="#">Agregar producto</a></li>
+                    
+                  </ul>
+
+
+            </section>
+
+            <section class='datos-new'>
+                <form action="/productos" method="post">
+                    <h1>Agregar producto</h1>
+                    <input type="text" placeholder="Nombre del producto" name="name-new-prod" id="name-new-prod" required>
+                    <textarea name="description-new-prod" id="description-new-prod" cols="20" rows="20" placeholder="Descripción"></textarea>
+                    <input type="number" placeholder="Precio" name="price-new-prod" id="price-new-prod" required>
+                    <input type="file" name="img-new-prod" id="img-new-prod" multiple required>
+                    
+                    <button type="submit">Guardar</button><button type="reset">Borrar</button>
+                </form>
+            </section>
+
+
+
+        </main>
+    
+
+
+ <!-- FOOTER -->
+ <footer class="main-footer">
+    <ul>
+      <li><a href="#">Buscador de tiendas</a></li>
+      <li><a href="#">Envio</a></li>
+      <li><a href="#">Botón de arrepentimiento</a></li>
+      <li><a href="#">Devoluciones</a></li>
+      <li><a href="#">Guia de talles</a></li>
+      <li><a href="#">Formas de Pago</a></li>
+      
+    </ul>
+  </footer>
+</div>
+
+<script src="/javascripts/registro.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+</body>
+
+</html>

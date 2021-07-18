@@ -1,0 +1,52 @@
+
+:root {
+    --primary: #003F49;
+    --secondary: #008489;
+    --tertiary: #F0BB3C;
+    --light-grey: #F5F5F5;
+    --grey: #7C7C7C;
+    --font_roboto: 'Roboto', sans-serif;}
+
+
+.container-newprod{
+
+display: grid;
+grid-template-columns: 20% 80%;
+line-height: 3.5;
+text-align: center;
+}
+
+.administrador{
+border: solid var(--grey) ;
+background-color: var(--primary);
+color:var(--light-grey)
+}
+h4{
+    background-color: var(--grey);
+}
+.administrador li a{
+    color: var(--light-grey);
+}
+
+.datos-new{
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+    justify-self:right;
+    opacity: 0;
+}
+
+.administrador li a:hover{
+color:var(--tertiary);
+transition:all 1s ease-in-out;
+}
+
+.administrador li a:hover .datos-new{
+    opacity: 1;
+    animation-name: slide;
+    transition: 1s;
+}
+@keyframes slide{
+    transition: delay 0.5s;
+}
+
+

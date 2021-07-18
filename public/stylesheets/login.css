@@ -321,6 +321,10 @@ a{
     margin: 16px 0;
     font-size: 16px;
   }
+  .botons :hover{
+   transition: all;
+   border-radius: 18px;
+  }
 
   /*  --------------- FOOTER ---------------  */
 .main-footer{

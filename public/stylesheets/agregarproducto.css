@@ -45,8 +45,4 @@ transition:all 1s ease-in-out;
     animation-name: slide;
     transition: 1s;
 }
-@keyframes slide{
-    transition: delay 0.5s;
-}
-
 

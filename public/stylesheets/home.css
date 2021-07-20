@@ -3,6 +3,7 @@
 @import url('/stylesheets/home-header.css');
 
 @import url('/stylesheets/home-footer.css');
+
 :root{
     --azul-oscuro: #003f49;
     --azul-claro: #008489;

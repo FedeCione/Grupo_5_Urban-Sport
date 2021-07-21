@@ -27,22 +27,68 @@ h4{
 .administrador li a{
     color: var(--light-grey);
 }
-
-.datos-new{
-    display: grid;
-    grid-template-columns: repeat(4,25%);
-    justify-self:right;
-    opacity: 0;
+h1{
+    line-height: 2;
 }
 
 .administrador li a:hover{
-color:var(--tertiary);
-transition:all 1s ease-in-out;
+    color:var(--tertiary);
+    transition:all 1s ease-in-out;
+    }
+    
+.datos-new{
+ opacity: 0;
+}
+.agregar::selection .datos-new:active{
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+    margin-left: 35px;
+    opacity: 1;
+
+    animation-name: slidein;
+    animation-duration: 4s;
 }
 
-.administrador li a:hover .datos-new{
-    opacity: 1;
-    animation-name: slide;
-    transition: 1s;
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    75% {
+      font-size: 200%;
+      margin-left:5%;
+      width: 100%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1024px){
+
+
+  
+
 }
+
+
+
+
+
+
+
+  /* @media screen and (max-height: 450px) {
+    
+    @media screen and (min-width:768px){ */
 

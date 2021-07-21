@@ -2,6 +2,8 @@
 
 @import url('/stylesheets/home-header.css');
 
+@import url('/stylesheets/home-footer.css');
+
 :root{
     --azul-oscuro: #003f49;
     --azul-claro: #008489;
@@ -28,8 +30,8 @@ a{
     text-decoration: none;
 }
 .container{
+    max-width: 1300px;
     margin: 0 auto;
-    max-width: 1400px;
 }
 
 /*  --------------- BANNER ---------------  */
@@ -44,7 +46,7 @@ a{
     width: 100%;
     height: 180px;
     padding: 10px ;
-    margin-bottom: 15px;
+    margin: 70px 0;
 }
 .banner-one h2{
     text-transform: uppercase;
@@ -53,6 +55,48 @@ a{
 .banner-one p{
     text-align: center;
 }
+/* -------------------categories------------------ */
+
+
+.categories{
+    margin: 70px 0;
+    
+}
+.categories .small-container .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.categories .col-3{
+    flex-basis: 30%;
+    min-width: 220px;
+    margin-bottom: 30px;
+    position: relative;
+
+}
+.categories .col-3 a{
+    position:absolute;
+    text-transform: uppercase;
+    color: #555;
+    font-size: 2rem;
+    top: 40%;
+    left: 30%;
+}
+
+
+
+.categories .col-3 img{
+    width: 100%;
+}
+.categories .col-3 img:hover{
+    opacity: .5;
+}
+
 /*  --------------- CAROUSEL ONE ---------------  */
 
 .carousel-container-one .carousel-element{ 
@@ -88,13 +132,13 @@ a{
     margin-bottom: 15px;
 }
 
-.carousel-one .section-product{
+/* .carousel-one .section-product{
     text-transform: uppercase;
     text-align: center;
     font-weight: bold;
     font-size: 1rem;
     margin: 15px 0;
-}
+} */
 /*  --------------- CAROUSEL TWO ---------------  */
 .carousel-container{
     position: relative;
@@ -141,7 +185,27 @@ a{
     width: 100%;
     object-fit: cover ;
 }
+/*------------- titulos de los productos --------------- */
+.title-products{
 
+    text-transform: uppercase;
+    text-align: center;
+    margin: 30px auto 50px;
+    position: relative;
+    line-height: 40px;
+    color: #555;
+}
+.title-products::after{
+    content: '';
+    background-color: #ff523b;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
 /*  --------------- PRODUCTO MAIN ---------------  */
 .product-main{
     display: flex;
@@ -151,13 +215,15 @@ a{
     padding: 10px;
     /* border: 3px solid red; */
 }
+
+
 .product-main .img-container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 10px;
-    max-width: 355px;
+    min-width: 200px;
     margin: 15px 0;
 }
 .product-main .img-container img{
@@ -166,6 +232,7 @@ a{
 
 .product-main .img-container h3{
     margin: 5px 0;
+    font-size: 1.2rem;
     text-transform: uppercase;
 }
 
@@ -182,29 +249,10 @@ a{
 
 }
 .product-main .img-container .btn:hover {
-    color: darkseagreen;
+    opacity: .9;
 }
-
-/*  --------------- FOOTER ---------------  */
-.main-footer{
-    background-color: var(--azul-oscuro);
-    
-}
-.main-footer ul{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.main-footer ul li{
-    width: 50%;
-    margin-bottom: .5px;
-    padding: 5px;
-    text-transform: capitalize ;
-    text-align: center;
-    
-}
-.main-footer ul li a{
-    color: #ffffff;
+.product-main .img-container .rating i{
+    color: var(--amarillo);
 }
 
 /* NEWSLETTER */
@@ -414,12 +462,17 @@ button.more-btn a:hover{
         left: 50px;
         bottom: -5px;
     }
+
+    .categories .small-container .row{
+        flex-direction: row;
+    }
+    
 }
 
 
 @media screen and (min-width: 1024px){
     .product-main .img-container{
-        max-width: 321px;
+        max-width: 320px;
 
     }
     .main-header .main-nav{

@@ -1,0 +1,91 @@
+/*  --------------- FOOTER ---------------  */
+.footer-container{
+    background: linear-gradient(to right, #00093c, #2d0b00);
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.footer-container .main-container{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.footer-container .main-container .logo-container{
+    flex-basis: 25%;
+    padding: 10px;
+}
+
+.logo-container .logo-footer{
+    width: 180px;
+    margin-bottom: 30px;
+}
+/* .footer-container ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+} */
+.footer-container ul li{
+   
+    margin-bottom: .5px;
+    padding: 5px;
+    text-transform: capitalize ;    
+}
+.footer-container ul li a{
+    color: #ffffff;
+}
+.footer-container hr{
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+}
+.footer-container p {
+    text-align: center;
+    color: #b5b5b5;
+}
+
+.footer-container h3{
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer-container .main-container form{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ff523b;
+    margin-bottom: 50px;
+    color: #fff;
+
+}
+
+.footer-container .main-container form i .fas{
+    font-size: 18px;
+    margin-right: 10px;
+    
+}
+
+.footer-container .main-container form input{
+    width: 100%;
+    background: transparent;
+    color: #ff523b;
+    border: 0;
+    outline: none;
+    padding-left: 5px;
+}
+.footer-container .main-container form button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+}

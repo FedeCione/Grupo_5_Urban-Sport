@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ecommerce</title>
+    <title>Urban-Sport</title>
 
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -15,8 +15,8 @@
   </head>
 
   <body>
-    <div class="container">
-      <!-- HEADER -->
+    
+      <!------------- HEADER -------------------->
       <header class="main-header">
         <img src="images/img/logo.png" alt="logotipo" />
 
@@ -87,7 +87,8 @@
           <i class="fas fa-heart"></i>
         </div>
       </header>
-
+      <!-- -----------------------Fin Header------------------------- -->
+    <div class="container"></div>
       <!-- Banner ONE  -->
 
       <section class="banner-one">
@@ -97,10 +98,29 @@
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
           voluptatem sed quaerat nobis, illum explicabo?
         </p>
+      <!---------------- CATEGORIES---------- -->
       </section>
+      <div class="categories">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <a href="#">hombre</a>
+                    <img src="/images/img/category-1.jpg" alt="">
+                </div>
+                <div class="col-3">
+                    <a href="#">Mujer</a>
+                    <img src="/images/img/category-3.jpg" alt="">
+                </div>
+                <div class="col-3">
+                    <a href="#">niños</a>
+                    <img src="/images/img/category-2.jpg" alt="">
+                </div>
+            </div>                   
+        </div>
+      </div>
       <!-- CAROUSEL ONE-->
       <div class="carousel-one">
-        <div class="section-product">Categorias Destacadas</div>
+        <h2 class="title-products">Categorias Destacadas</h2>
         <div class="carousel-container-one">
           <div class="carousel-list-1">
             <div class="carousel-element">
@@ -138,15 +158,22 @@
           <div role="tablist" class="carousel-arrows"></div>
         </div>
       </div>
-      <!-- PRODUCT MAIN -->
+      <!----------------- PRODUCT MAIN -------------------->
+      <h2 class="title-products">Productos</h2>
       <section class="product-main">
         <article class="product">
           <div class="img-container">
             <img src="images/img/product-4.jpg" alt="" />
             <h3>Lorem, ipsum dolor.</h3>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum,
-              in.
+              Lorem ipsum, dolor sit amet consectetur adipisicing
             </p>
             <a class="btn" href="#">Comprar ahora!</a>
           </div>
@@ -155,6 +182,13 @@
           <div class="img-container">
             <img src="images/img/product-1.jpg" alt="" />
             <h3>Lorem, ipsum dolor.</h3>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half"></i>
+            </div>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum,
               in.
@@ -166,6 +200,13 @@
           <div class="img-container">
             <img src="images/img/product-2.jpg" alt="" />
             <h3>Lorem, ipsum dolor.</h3>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum,
               in.
@@ -177,6 +218,13 @@
           <div class="img-container">
             <img src="images/img/product-3.jpg" alt="" />
             <h3>Lorem, ipsum dolor.</h3>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum,
               in.
@@ -189,7 +237,7 @@
       <!-- CAROUSEL TWO-->
 
       <div class="carousel-two">
-        <div class="new-product">Novedades</div>
+        <h2 class="title-products">Novedades</h2>
         <div class="carousel-container">
           <button aria-label="Anterior" class="carousel-anterior">
             <i class="fas fa-chevron-left"></i>
@@ -286,19 +334,40 @@
           <i class="fas fa-chevron-up"></i>
         </div>
       </div>
-      <!-- FOOTER -->
-      <footer class="main-footer">
-        <ul>
-          <li><a href="#">Buscador de tiendas</a></li>
-          <li><a href="#">Envio</a></li>
-          <li><a href="#">Botón de arrepentimiento</a></li>
-          <li><a href="#">Devoluciones</a></li>
-          <li><a href="#">Guia de talles</a></li>
-          <li><a href="#">Formas de Pago</a></li>
-          <li><a href="#">Servicio al cliente</a></li>
-        </ul>
-      </footer>
     </div>
+      <!-------------- FOOTER ------------------------>
+
+      <footer class="footer-container">
+        <div class="main-container">
+          <div class="logo-container">
+            <img src="/images/img/logo.png" class="logo-footer">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe repudiandae quidem quisquam optio exercitationem corrupti eius non facilis.</p>
+          </div>
+          <ul>
+            <li><a href="#">Buscador de tiendas</a></li>
+            <li><a href="#">Envio</a></li>
+            <li><a href="#">Botón de arrepentimiento</a></li>
+            <li><a href="#">Devoluciones</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Guia de talles</a></li>
+            <li><a href="#">Formas de Pago</a></li>
+            <li><a href="#">Servicio al cliente</a></li>
+            <li><a href="#">servicio@urbansport.com</a></li>
+          </ul>
+          <div class="newsletter-footer">
+            <h3>newslletter</h3>
+            <form action="">
+              <i class="fas fa-envelope"></i>
+              <input type="email" name="name" placeholder="ingresa tu email" required>
+              <button type="submit"><i class="fas fa-arrow-right"></i></button>
+            </form>
+          </div> 
+        </div>
+        <hr>
+          <p class="copyright">Copyright 2021 - Powered by Grupo5</p>
+      </footer>
+    
 
     <script src="/javascripts/home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>

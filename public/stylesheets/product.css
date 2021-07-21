@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+@import url('/stylesheets/home-header.css');
+
+@import url('/stylesheets/home-footer.css');
+
+@import url('/stylesheets/home.css');
 *{
     box-sizing: border-box;
     padding: 0;
@@ -10,20 +15,27 @@
 body{
     line-height: 1.2;
 }
-
+ul{
+    list-style-type: none;
+ }
+ul li a{
+    text-decoration: none;
+}
 .card-wrapper{
-    max-width: 1100px;
-    margin: 0 auto;
-
+   
+    max-width: 1000px;
+    margin: 10px auto;
+    padding-bottom: 50px;
 }
 img{
     width: 100%;
- 
-    object-fit: cover;
-    display: block;
+    object-fit: cover; 
+   
 }
 .img-display{
     overflow: hidden;
+    width: 100%;
+    height: 50%; 
 }
 
 .img-showcase{
@@ -39,6 +51,8 @@ img{
 }
 .img-item{
     margin: 0.3rem;
+    width: 100%;
+    height: 180px;
 }
 .img-item:nth-child(1),
 .img-item:nth-child(2),
@@ -144,7 +158,7 @@ img{
 
 .purchase-info input,
 .purchase-info .btn{
-    border: 1.5px solid #fff;
+    border: 1.5px solid rgb(245, 109, 109);
     border-radius: 25px;
     text-align: center;
     padding: 0.45rem 0.8rem;
@@ -196,13 +210,17 @@ img{
     border-color: transparent;
     color: #fff;
 }
-
+@media screen and (min-width: 768px){
+    .product-content{
+        margin-top: 43px;
+    }
+}
 @media screen and (min-width: 992px){
     .card{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1rem;
-        height: 100vh;
+        height: 700px;
     }
     .card-wrapper{
   
@@ -213,7 +231,7 @@ img{
     .product-imgs{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
 
     }
     .product-content{

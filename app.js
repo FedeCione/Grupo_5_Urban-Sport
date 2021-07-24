@@ -36,11 +36,23 @@ app.get("/registro",(req,res)=>{
 app.get("/login",(req,res)=>{
   res.sendFile(path.join(__dirname,"/views/login.html"))
 })
-app.get("/agregarproducto",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/agregarproducto.html"))
-})
 app.get("/recovery",(req,res)=>{
   res.sendFile(path.join(__dirname,"/views/olvidecuenta.html"))
+})
+app.get("/loginAdministrador",(req,res)=>{
+  res.sendFile(path.join(__dirname,"/views/admin/loginAdministrador.html"))
+})
+app.get("/panel",(req,res)=>{
+  res.sendFile(path.join(__dirname,"/views/admin/panel.html"))
+})
+app.get("/agregar",(req,res)=>{
+  res.sendFile(path.join(__dirname,"/views/admin/agregar.html"))
+})
+app.get("/editar",(req,res)=>{
+  res.sendFile(path.join(__dirname,"/views/admin/editar.html"))
+})
+app.get("/eliminar",(req,res)=>{
+  res.sendFile(path.join(__dirname,"/views/admin/eliminar.html"))
 })
 
 app.use('/', indexRouter);

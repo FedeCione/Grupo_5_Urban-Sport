@@ -1,0 +1,28 @@
+h1{
+    font-size: 20px;
+text-align: center;
+}
+.caja-agregar{
+    width: 210px;
+    margin:auto;
+    height: 250px;
+    gap: 5px;
+}
+.input:hover{
+    background:white;
+    color: var(--primary);
+}
+
+@media screen and (min-width:768px){
+    h1{
+        font-size: 25px;
+    }
+.caja-agregar{
+    display:flex;
+    flex-direction: column;
+}
+.input{
+    width: 350px;
+}
+}
+

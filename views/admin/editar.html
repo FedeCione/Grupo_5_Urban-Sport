@@ -4,15 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agregar producto.Urban-Sport</title>
+    <title>Administrador.Urban-Sport</title>
 
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <!-- js glider -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css" />
     <!-- styles -->
-    <link rel="stylesheet" href="/stylesheets/registro.css" />
-    <link rel="stylesheet" href="/stylesheets/agregarproducto.css">
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+    <link rel="stylesheet" href="/stylesheets/admin/loginAdministrador.css">
+    <link rel="stylesheet" href="/stylesheets/admin/agregar.css">
+
+
   </head>
 
   <body>
@@ -89,54 +92,59 @@
         </div>
       </header>
 
-        <main class='container-newprod'>
-
-            <section class='administrador'>
-                <h4>Administrador</h4>
-                <ul>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Ventas</a></li>
-                    <li class='agregar'><a href="#">Agregar producto</a></li>
-                    
-                  </ul>
-
-
-            </section>
-
-            <section class='datos-new'>
-                <form action="/productos" method="post">
-                    <h1>Agregar producto</h1>
-                    <input type="text" placeholder="Nombre del producto" name="name-new-prod" id="name-new-prod" required>
-                    <textarea name="description-new-prod" id="description-new-prod" cols="20" rows="20" placeholder="Descripción"></textarea>
-                    <input type="number" placeholder="Precio" name="price-new-prod" id="price-new-prod" required>
-                    <input type="file" name="img-new-prod" id="img-new-prod" multiple required>
-                    
-                    <button type="submit">Guardar</button><button type="reset">Borrar</button>
+        <main>
+            <div>
+                <h1>Editar Producto</h1>
+                <form action="#" method="get"   style="margin-top:5.5em">
+                    <div class='form caja-agregar'>
+                      <label for="">Nombre<input class='input style-admin' type="text" name="nombre-producto" required placeholder="Nombre del producto"> </label>
+                      <label for="">Descripción<textarea id="" cols="30" rows="10" class='input style-admin'  name="descripción-producto" ></textarea></label>
+                      <label for="">Costo<input class='input style-admin' type="number" name="costo-producto" required placeholder="Costo del producto"> </label>
+                      <label for="">Imagen<input class='input style-admin' type="file" name="imagen-producto" multiple required placeholder=none> </label>
+                      <label for="">Contraseña: <input class='input style-admin' type="password" name="password" required placeholder="Contraseña de administrador"> </label>
+                    </div>
+                    <div  class='form'>
+                        <input type="submit" class='btn-admin style-admin' value="Editar">
+                    </div>
                 </form>
-            </section>
-
-
+            </div>
 
         </main>
     
-
-
- <!-- FOOTER -->
- <footer class="main-footer">
-    <ul>
-      <li><a href="#">Buscador de tiendas</a></li>
-      <li><a href="#">Envio</a></li>
-      <li><a href="#">Botón de arrepentimiento</a></li>
-      <li><a href="#">Devoluciones</a></li>
-      <li><a href="#">Guia de talles</a></li>
-      <li><a href="#">Formas de Pago</a></li>
-      
-    </ul>
-  </footer>
-</div>
-
-<script src="/javascripts/registro.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+        <!-------------- FOOTER ------------------------>
+       
+        <footer class="footer-container">
+         <div class="main-container">
+           <div class="logo-container">
+             <img src="/images/img/logo.png" class="logo-footer">
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe repudiandae quidem quisquam optio exercitationem corrupti eius non facilis.</p>
+           </div>
+           <ul>
+             <li><a href="#">Buscador de tiendas</a></li>
+             <li><a href="#">Envio</a></li>
+             <li><a href="#">Botón de arrepentimiento</a></li>
+             <li><a href="#">Devoluciones</a></li>
+           </ul>
+           <ul>
+             <li><a href="#">Guia de talles</a></li>
+             <li><a href="#">Formas de Pago</a></li>
+             <li><a href="#">Servicio al cliente</a></li>
+             <li><a href="#">servicio@urbansport.com</a></li>
+           </ul>
+           <div class="newsletter-footer">
+             <h3>newslletter</h3>
+             <form action="">
+               <i class="fas fa-envelope"></i>
+               <input type="email" name="name" placeholder="ingresa tu email" required>
+               <button type="submit"><i class="fas fa-arrow-right"></i></button>
+             </form>
+           </div> 
+         </div>
+         <hr>
+           <p class="copyright">Copyright 2021 - Powered by Grupo5</p>
+       </footer>
+       
+       <script src="/javascripts/home.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
 </body>
-
 </html>

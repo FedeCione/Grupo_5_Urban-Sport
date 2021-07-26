@@ -210,9 +210,16 @@ img{
     border-color: transparent;
     color: #fff;
 }
+/* agregue esta vista porque se superponia en la img */
+@media screen and (min-width: 640px){
+    .product-content{
+        margin-top: 50px;
+    }
+}
+/*y modifique el margin de esta por lo mismo*/
 @media screen and (min-width: 768px){
     .product-content{
-        margin-top: 43px;
+        margin-top: 115px;
     }
 }
 @media screen and (min-width: 992px){

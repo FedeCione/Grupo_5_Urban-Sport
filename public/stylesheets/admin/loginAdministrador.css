@@ -1,3 +1,5 @@
+
+
 :root {
     --primary: #003F49;
     --secondary: #008489;
@@ -6,7 +8,8 @@
     --grey: #7C7C7C;
     --font_roboto: 'Roboto', sans-serif;
 } 
-main{
+
+.container-admin{
     color: #003F49;
     width: 80%;
    margin: auto;

@@ -12,11 +12,12 @@
     line-height: 50px;
     width: 95%;
    margin: auto;
+   margin-bottom: 60px;
+
 }
 table{
     height: 200px;
     width: 100%;
-    margin-bottom: 50px;
     
 }
 caption{
@@ -47,15 +48,32 @@ table, th, td {
     transition:all 1.5s ease-in-out;
     background-color: var(--tertiary);
     }
+
+   
+@media  screen and  (max-width: 361px){
+  
+  .panel{
+    font-size: 15px;
+    line-height: 15px;
+    height: 500px;
+}
+h1, caption{
+    font-size: 15px;
+    text-align: justify;
+}
+}
  
 @media screen and (max-width:768px){
+
+  
     .panel{
-        font-size: 13px;
-    line-height: 20px;
-    height: 500px;
-    }
-    h1, caption{
-        font-size: 15px;
-        text-align: justify;
-    }
+      font-size: 18px;
+      line-height: 22px;
+      height: 500px;
+  }
+  h1, caption{
+    font-size: 20px;
+    text-align: justify;
 }
+}
+

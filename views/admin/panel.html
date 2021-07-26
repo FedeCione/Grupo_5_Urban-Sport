@@ -11,13 +11,13 @@
     <!-- js glider -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css" />
     <!-- styles -->
+    <link rel="stylesheet" href="/stylesheets/general.css" />
     <link rel="stylesheet" href="/stylesheets/home.css" />
     <link rel="stylesheet" href="/stylesheets/admin/panel.css">
-
+    <link rel="stylesheet" href="/stylesheets/darkMode.css">
   </head>
 
   <body>
-    <div class="container">
       <!-- HEADER -->
       <header class="main-header">
         <img src="/images/logo_transparent.png" alt="logotipo" />
@@ -89,6 +89,12 @@
           <i class="fas fa-heart"></i>
         </div>
       </header>
+      <!-------------- Dark Mode----------- -->
+      <button class="dark-mode" id="dark-mode">
+        <span><i class="fas fa-sun"></i></span>
+        <span><i class="fas fa-moon"></i></span>
+      </button>
+      <!--------------Fin Dark Mode----------- -->
 
         <main>
             <h1>Panel de Administración</h1>
@@ -147,6 +153,38 @@
                     <td colspan="5" scope="col"><a href="#">Ver imagen</a></td>
                     <td colspan="6" scope="col"><a href="#">Editar</a> - <a href="#">Eliminar</a></td>
                   </tr>
+                  <tr>
+                    <td colspan="1" scope="col" >product.id</td>
+                    <td colspan="2" scope="col">product.title</td>
+                    <td colspan="3" scope="col">product.description</td>
+                    <td colspan="4" scope="col">product.pricing</td>
+                    <td colspan="5" scope="col"><a href="#">Ver imagen</a></td>
+                    <td colspan="6" scope="col"><a href="#">Editar</a> - <a href="#">Eliminar</a></td>
+                  </tr>
+                  <tr>
+                    <td colspan="1" scope="col" >product.id</td>
+                    <td colspan="2" scope="col">product.title</td>
+                    <td colspan="3" scope="col">product.description</td>
+                    <td colspan="4" scope="col">product.pricing</td>
+                    <td colspan="5" scope="col"><a href="#">Ver imagen</a></td>
+                    <td colspan="6" scope="col"><a href="#">Editar</a> - <a href="#">Eliminar</a></td>
+                  </tr>
+                  <tr>
+                    <td colspan="1" scope="col" >product.id</td>
+                    <td colspan="2" scope="col">product.title</td>
+                    <td colspan="3" scope="col">product.description</td>
+                    <td colspan="4" scope="col">product.pricing</td>
+                    <td colspan="5" scope="col"><a href="#">Ver imagen</a></td>
+                    <td colspan="6" scope="col"><a href="#">Editar</a> - <a href="#">Eliminar</a></td>
+                  </tr>
+                  <tr>
+                    <td colspan="1" scope="col" >product.id</td>
+                    <td colspan="2" scope="col">product.title</td>
+                    <td colspan="3" scope="col">product.description</td>
+                    <td colspan="4" scope="col">product.pricing</td>
+                    <td colspan="5" scope="col"><a href="#">Ver imagen</a></td>
+                    <td colspan="6" scope="col"><a href="#">Editar</a> - <a href="#">Eliminar</a></td>
+                  </tr>
                 
                 </tbody>
                 <tfoot>
@@ -159,9 +197,7 @@
               </table>
           
           
-          </div>  
-
-
+          </div> 
             
         </main>
     
@@ -198,7 +234,7 @@
          <hr>
            <p class="copyright">Copyright 2021 - Powered by Grupo5</p>
        </footer>
-       
+       <script src="/javascripts/darkMode.js"></script>
        <script src="/javascripts/home.js"></script>
        <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
 </body>

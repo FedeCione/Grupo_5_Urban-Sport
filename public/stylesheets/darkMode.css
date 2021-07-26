@@ -55,6 +55,10 @@
     background: black;
   
   }
+  .carousel-container-one .carousel-element,.carousel-container .carousel-element{
+    filter:invert(0%)
+  }
+  
  
   body.dark img,.active{
     filter: invert(100%);

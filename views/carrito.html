@@ -32,17 +32,21 @@
       <!-- Logo -->
       <div class="logo-div">
         <a href="">
-          <img class="logo" src="/images/logo_transparent.png" alt="Logo" />
+          <img class="logo" src="/images/img/logo.png" alt="Logo" />
         </a>
       </div>
 
       <!-- Menu hamburguesa -->
-      <div class="burger-menu-container">
-        <i class="fas fa-bars burguer-menu-icon" onclick="dropMenu()"></i>
+      <div class="burger-menu-container" id="burger-menu-container" onclick="openNav()">
+        <i class="fas fa-bars burguer-menu-icon"></i>
       </div>
 
       <!-- Menú de navegación -->
       <nav class="navigation-bar" id="navigation-bar">
+        <div class="logo-closebtn-div">
+            <img class="logo" src="/images/img/logo.png" alt="Logo"/>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        </div>
         <ul class="menú">
               <li><a href="#">Hombre</a></li>
               <li><a href="#">Mujer</a></li>
@@ -80,24 +84,23 @@
     <header class="cart-header-desktop">
       <div class="logo-div">
         <a href="">
-          <img class="logo" src="/images/logo_transparent.png" alt="Logo" />
+          <img class="logo" src="/images/img/logo.png" alt="Logo" />
         </a>
       </div>
 
       <!-- Menú de navegación -->
-      <ul class="menú">
-        <a href=""><li>Niños</li></a>
-        <a href=""><li>Hombre</li></a>
-        <a href=""><li>Mujer</li></a>
-        <a href=""><li>Colecciones</li></a>
-      </ul>
+        <ul class="menú">
+          <a href=""><li>Niños</li></a>
+          <a href=""><li>Hombre</li></a>
+          <a href=""><li>Mujer</li></a>
+          <a href=""><li>Colecciones</li></a>
+        </ul>
 
       <!-- Buscador escritorio -->
       <div class="search-box">
         <input
           class="search-txt"
           type="text"
-          name=""
           placeholder="Buscar"
         />
         <a href="#" class="search-btn">
@@ -136,7 +139,7 @@
               </div>
               <div class="trash-icon-div">
                 <button>
-                  <img src="/images/trash-icon.png" alt="Icono tacho" />
+                  <i class="fas fa-trash-alt"></i>
                 </button>
               </div>
             </div>
@@ -172,7 +175,7 @@
               </div>
               <div class="trash-icon-div">
                 <button>
-                  <img src="/images/trash-icon.png" alt="Icono tacho" />
+                  <i class="fas fa-trash-alt"></i>
                 </button>
               </div>
             </div>
@@ -208,7 +211,7 @@
               </div>
               <div class="trash-icon-div">
                 <button>
-                  <img src="/images/trash-icon.png" alt="Icono tacho" />
+                  <i class="fas fa-trash-alt"></i>
                 </button>
               </div>
             </div>
@@ -244,7 +247,7 @@
               </div>
               <div class="trash-icon-div">
                 <button>
-                  <img src="/images/trash-icon.png" alt="Icono tacho" />
+                  <i class="fas fa-trash-alt"></i>
                 </button>
               </div>
             </div>
@@ -304,66 +307,43 @@
           </div>
         </div>
       </div>
+
+      <!-- ICON ADD PRODUCT -->
+        <a href="" class="plus-icon"><i class="fas fa-cart-plus"></i></a>
+        
     </main>
 
-    <!-- FOOTERS -->
+    <!-- FOOTER -->
 
-    <!-- Mobile/tablet footer -->
-    <footer class="footer-mobile-tablet">
-      <nav class="footer-nav">
-        <div class="icons-footer-div">
-          <a href="">
-            <i class="fas fa-home icons-footer"></i>
-            <p class="home-footer">Home</p>
-          </a>
+    <footer class="footer-container">
+      <div class="main-container">
+        <div class="logo-container">
+          <img src="/images/img/logo.png" class="logo-footer">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe repudiandae quidem quisquam optio exercitationem corrupti eius non facilis.</p>
         </div>
-        <div class="icons-footer-div">
-          <a href="">
-            <i class="fas fa-comment icons-footer"></i>
-            <p class="chat-footer">Chat</p>
-          </a>
-        </div>
-        <div class="icons-footer-div">
-          <a href="">
-            <i class="fas fa-user icons-footer"></i>
-            <p class="profile-footer">Perfil</p>
-          </a>
-        </div>
-        <div class="icons-footer-div">
-          <a href="">
-            <i class="fas fa-shopping-cart icons-footer"></i>
-            <p class="cart-footer">Carrito</p>
-          </a>
-        </div>
-      </nav>
-    </footer>
-    <!-- Desktop footer -->
-    <footer class="footer-desktop">
-        <ul class="footer-desktop-ul">
-          <div class="footer-desktop-div">
-            <li><a href="#">Buscador de tiendas</a></li>
-            <li><a href="#">Envio</a></li>
-          </div>
-          <div class="footer-desktop-div">
-            <li><a href="#">Botón de arrepentimiento</a></li>
-            <li><a href="#">Devoluciones</a></li>
-            <li><a href="#">Guia de talles</a></li>
-          </div>
-          <div class="footer-desktop-div">
-            <li><a href="#">Formas de Pago</a></li>
-            <li><a href="#">Servicio al cliente</a></li>
-          </div>
+        <ul>
+          <li><a href="#">Buscador de tiendas</a></li>
+          <li><a href="#">Envio</a></li>
+          <li><a href="#">Botón de arrepentimiento</a></li>
+          <li><a href="#">Devoluciones</a></li>
         </ul>
-      <div class="footer-desktop-subtitle">
-              <!-- social media -->
-        <div class="social-media">
-          <a href=""><i class="fab fa-twitter"></i></a>
-          <a href=""><i class="fab fa-facebook-square"></i></a>
-          <a href=""><i class="fab fa-instagram"></i></a>
-          <a href=""><i class="fas fa-envelope"></i></a>
-        </div>
-        <p>Powered by EQUIPO 5</p>
+        <ul>
+          <li><a href="#">Guia de talles</a></li>
+          <li><a href="#">Formas de Pago</a></li>
+          <li><a href="#">Servicio al cliente</a></li>
+          <li><a href="#">servicio@urbansport.com</a></li>
+        </ul>
+        <div class="newsletter-footer">
+          <h3>newslletter</h3>
+          <form action="">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="name" placeholder="ingresa tu email" required>
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+          </form>
+        </div> 
       </div>
+      <hr>
+        <p class="copyright">Copyright 2021 - Powered by Grupo5</p>
     </footer>
     
 </body>

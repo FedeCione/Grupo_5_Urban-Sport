@@ -9,7 +9,7 @@
     display: flex;
     outline: none;
     top: 5px;
-    left:87%;
+    left:80%;
   }
   .dark-mode:hover{
     box-shadow: 0 0 4px 4px rgba(0, 0, 0, .2);

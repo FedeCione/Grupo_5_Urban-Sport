@@ -67,6 +67,7 @@
 .cart-home .trash-icon-div button {
     border: none;
     background: bottom;
+    font-size: 24px;
 }
 
 .cart-home .title-product-div {
@@ -183,6 +184,18 @@
     border-radius: 8px;
     font-size: 20px;
     border: 1px solid black;
+}
+
+/* Plus Icon */
+.cart-home .plus-icon {
+    font-size: 40px;
+    position: fixed;
+    right: 40px;
+    bottom: 30px;
+    border: 2px solid var(--secondary);
+    border-radius: 50%;
+    padding: 15px;
+    background-color: var(--tertiary);
 }
 
 /* Media Queries */

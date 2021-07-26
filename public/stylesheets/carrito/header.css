@@ -11,9 +11,56 @@
     border-bottom: 1px solid black;
 }
 
-.cart-header-mobile .navigation-bar {
-    display: none;
+/* Burger menu */
+
+.cart-header-mobile .burguer-menu-icon {
+    order: 0;
+    font-size: 30px;
 }
+
+.cart-header-mobile .navigation-bar {
+    display: flex;
+    position: fixed;
+    height: 105vh;
+    width: 0;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-color: rgb(250, 250, 246);
+    overflow-x: hidden;
+    transition: all 0.5s ease 0s;
+    flex-direction: column;
+}
+
+.cart-header-mobile .navigation-bar .logo-closebtn-div {
+    align-self: center;
+    padding: 15px;
+}
+
+.cart-header-mobile .navigation-bar .logo-closebtn-div .closebtn {
+    position: absolute;
+    top: 0px;
+    right: 40px;
+    font-size: 60px;
+}
+
+.cart-header-mobile .menú {
+    padding: 50px 0;
+}
+
+.cart-header-mobile .menú a {
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 100;
+}
+
+.cart-header-mobile .navigation-bar .logo-closebtn-div .logo {
+    width: 100px;
+}
+
+/* Logo */
 
 .cart-header-mobile .logo-div {
     order: 1;
@@ -24,10 +71,7 @@
     width: 100%;
 }
 
-.cart-header-mobile .burguer-menu-icon {
-    order: 0;
-    font-size: 30px;
-}
+/* Boton y barra de búsqueda mobile */
 
 .cart-header-mobile .search-icon {
     order: 2;
@@ -37,17 +81,6 @@
 .cart-header-mobile .search-icon i {
     cursor: pointer;
 }
-
-.cart-header-mobile .div-icons {
-    display: none;
-}
-
-.cart-header-mobile nav ul li {
-    font-weight: bold;
-    padding-bottom: 5px;
-}
-
-/* Boton y barra de búsqueda mobile */
 
 .cart-header-mobile .search-form-mobile {
     display: none;
@@ -81,13 +114,7 @@
     background-color: initial;
 }
 
-/* Boton y menú desplegable mobile*/
-
-.cart-header-mobile .navigation-bar {
-    order: 3;
-    padding: 15px;
-    width: 100%;
-}
+/* Iconos */
 
 .cart-header-mobile .navigation-bar .user-icons-mobile {
     display: flex;
@@ -97,6 +124,10 @@
 .cart-header-mobile .navigation-bar .user-icons-mobile i {
     font-size: 24px;
     margin-left: 10px;
+}
+
+.cart-header-mobile .div-icons {
+    display: none;
 }
 
 /* HEADER DESKTOP */
@@ -110,7 +141,7 @@
         border-bottom: 1px solid black;
 }  
 
-/* LOGO */
+/* Logo */
 
 .cart-header-desktop .logo-div {
     width: 170px;

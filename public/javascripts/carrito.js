@@ -1,21 +1,16 @@
-let navBar = document.getElementById("navigation-bar");
 let searchBar = document.getElementById("search");
 
-function dropMenu(){
-    if (navBar.style.display === "block") {
-        navBar.style.display = "none";
-    } else {
-        navBar.style.display = "block";
-        searchBar.style.display = "none";
-
-    }
-}
+function openNav() {
+    document.getElementById("navigation-bar").style.width = "100%";
+  }
+function closeNav() {
+    document.getElementById("navigation-bar").style.width = "0%";
+  }  
 
 function dropSearch(){
     if (searchBar.style.display === "block") {
         searchBar.style.display = "none";
     } else {
         searchBar.style.display = "block";
-        navBar.style.display = "none";
     }
 }

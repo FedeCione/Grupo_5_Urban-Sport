@@ -71,6 +71,10 @@
     transition:all .3s ease-in ;
   
   }
+  body.dark .search-box{
+    background: var(--azul-oscuro)
+  }
+  
   
   /* FIN DARK MODE */
 

@@ -25,21 +25,17 @@
     width: 180px;
     margin-bottom: 30px;
 }
-/* .footer-container ul{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: auto;
-} */
+
 .footer-container ul li{
-   
     margin-bottom: .5px;
     padding: 5px;
     text-transform: capitalize ;    
 }
+
 .footer-container ul li a{
     color: #ffffff;
 }
+
 .footer-container hr{
     border: none;
     background: #b5b5b5;

@@ -53,8 +53,8 @@
     filter: invert(100%);
     transition:all .3s ease-in-out ;
     background: black;
-  
   }
+
   .carousel-container-one .carousel-element,.carousel-container .carousel-element{
     filter:invert(0%)
   }
@@ -69,12 +69,7 @@
   body.dark i:hover{
     filter: invert(100%);
     transition:all .3s ease-in ;
-  
   }
-  body.dark .search-box{
-    background: var(--azul-oscuro)
-  }
-  
   
   /* FIN DARK MODE */
 

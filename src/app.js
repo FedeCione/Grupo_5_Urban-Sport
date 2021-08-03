@@ -17,7 +17,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 
 /* RUTEO DE LAS DIFERENTES PAG*/ 
@@ -25,19 +25,19 @@ app.get("/",(req,res)=>{
   res.sendFile(path.join(__dirname,"/views/home.html"))
 })
 app.get("/productDetail",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/productDetail.html"))
+  res.sendFile(path.join(__dirname,"/views/products/productDetail.html"))
 })
 app.get("/carrito",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/carrito.html"))
+  res.sendFile(path.join(__dirname,"/views/products/carrito.html"))
 })
 app.get("/registro",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/registro.html"))
+  res.sendFile(path.join(__dirname,"/views/users/registro.html"))
 })
 app.get("/login",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/login.html"))
+  res.sendFile(path.join(__dirname,"/views/users/login.html"))
 })
 app.get("/recovery",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/olvidecuenta.html"))
+  res.sendFile(path.join(__dirname,"/views/users/olvidecuenta.html"))
 })
 app.get("/loginAdministrador",(req,res)=>{
   res.sendFile(path.join(__dirname,"/views/admin/loginAdministrador.html"))

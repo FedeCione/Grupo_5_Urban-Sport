@@ -34,18 +34,18 @@
   >* Reunión para trello y distribución de tareas.
 
 3. __Continuar haciendo:__
-4. >* Mantener comunicación.
-5. >* Hacer mas de lo que pide el sprint.
-6. >* Pedir ayuda a los demás.
-7. >* Reunión para trello y distribución de tareas.
-8. >* Revisar repositorio y hacer pull si hay cambios.
-9. >* Seguir usando trello.
-10. >* Ver errores.
-11. >* Ser proactivos.
+  >* Mantener comunicación.
+  >* Hacer mas de lo que pide el sprint.
+  >* Pedir ayuda a los demás.
+  >* Reunión para trello y distribución de tareas.
+  >* Revisar repositorio y hacer pull si hay cambios.
+  >* Seguir usando trello.
+  >* Ver errores.
+  >* Ser proactivos.
 
 4. __Hacer menos:__
-5. >* Utilizar mucho código innecesario.
-6. >* Autoexigirse demasiado.
+  >* Utilizar mucho código innecesario.
+  >* Autoexigirse demasiado.
 
 5. __Dejar de hacer:__
   >* Estudiar hasta tan tarde.

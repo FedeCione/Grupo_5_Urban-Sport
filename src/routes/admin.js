@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-let controller = require("../controllers/adminControllers")
+let {agregar,editar,eliminar,loginAdministrador,panel} = require("../controllers/adminControllers")
 
 /* GET  admin*/
-router.get('/agregar',controller.agregar);
-router.get("/editar",controller.editar);
-router.get("/eliminar",controller.eliminar);
-router.get("/loginAdministrador",controller.loginAdministrador);
-router.get("/panel",controller.panel);
+router.get('/agregar',agregar);
+router.get("/editar",editar);
+router.get("/eliminar",eliminar);
+router.get("/loginAdministrador",loginAdministrador);
+router.get("/panel",panel);
 
 module.exports = router;

@@ -13,7 +13,9 @@
     <!-- styles -->
     <link rel="stylesheet" href="/stylesheets/variables.css" />
     <link rel="stylesheet" href="/stylesheets/darkMode.css">
-    <link rel="stylesheet" href="/stylesheets/olvidecuenta.css" />
+    <link rel="stylesheet" href="/stylesheets/registro.css" />
+   
+
   </head>
 
   <body>
@@ -89,24 +91,27 @@
           <i class="fas fa-heart"></i>
         </div>
       </header>
- <!-- --------------Dark Mode----------------- -->
- <button class="dark-mode" id="dark-mode">
-     <span><i class="fas fa-sun"></i></span>
-     <span><i class="fas fa-moon"></i></span>
- </button>
- <!-- -----------Fin Dark Mode---------------- -->
-
-      <!-------------- FORMULARIO ------------------------>
+    
+       <!-- --------------Dark Mode----------------- -->
+       <button class="dark-mode" id="dark-mode">
+           <span><i class="fas fa-sun"></i></span>
+           <span><i class="fas fa-moon"></i></span>
+       </button>
+       <!-- -----------Fin Dark Mode---------------- -->
+ 
     <form  class="form-register"  action="registro" method="POST">
-      <h4>Recupera tu cuenta</h4>
-      <h5>Introduce tu correo electrónico  para buscar tu cuenta.</h5>
-      <input class="controls" type="email" name="correo" id="correo " placeholder="Ingrese su Correo Electronico" required>
-
-     <div class="botones">
-      <button class="botons" type="submit" > Cancelar</button>
-      <button class="botons1" type="submit" > Buscar</button>
-    </div>
-   
+      <h4>Formulario  de Registro</h4>
+      <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre" required>
+      <input class="controls" type="text" name="apellido" id="apellido" placeholder="Ingrese su Apellido" required>
+      <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" required>
+      <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña" required>
+      <p class="condiciones">
+        <input type="checkbox" name="terminos" required />
+        <label for="terminos">Estoy de acuerdo con <a class="condiciones" href="#">Terminos y condiciones</a></label>
+      </p>
+     
+      <input class="botons" type="submit" value="Registrar" href="#" required/>
+      <p class="condiciones"><a class="condiciones" href="http://localhost:3020/login">¿Ya tengo Cuenta?</a></p>
     </form>
    <!-------------- FOOTER ------------------------>
 
@@ -140,10 +145,10 @@
     <hr>
       <p class="copyright">Copyright 2021 - Powered by Grupo5</p>
   </footer>
-  
- <script src="/javascripts/darkMode.js"></script>
-  <script src="/javascripts/home.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+
+<script src="/javascripts/darkMode.js"></script>
+<script src="/javascripts/home.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
 </body>
 
 </html>

@@ -13,14 +13,16 @@
     <!-- styles -->
     <link rel="stylesheet" href="/stylesheets/variables.css" />
     <link rel="stylesheet" href="/stylesheets/darkMode.css">
-    <link rel="stylesheet" href="/stylesheets/login.css" />
+    <link rel="stylesheet" href="/stylesheets/registro.css" />
+   
+
   </head>
 
   <body>
     
       <!------------- HEADER -------------------->
       <header class="main-header">
-        <img src="images/img/logo.png" alt="logotipo" />
+        <img src="/images/img/logo.png" alt="logotipo" />
 
         <a href="#" class="toggle-nav">
           <span class="fa fa-bars" onclick="openNav()"></span>
@@ -56,7 +58,7 @@
             </button>
           </div> -->
           <div class="header-overlay">
-            <img src="images/img/logo.png" alt="logotipo" />
+            <img src="/images/img/logo.png" alt="logotipo" />
 
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
               >&times;</a
@@ -89,43 +91,31 @@
           <i class="fas fa-heart"></i>
         </div>
       </header>
+    
        <!-- --------------Dark Mode----------------- -->
        <button class="dark-mode" id="dark-mode">
            <span><i class="fas fa-sun"></i></span>
            <span><i class="fas fa-moon"></i></span>
        </button>
        <!-- -----------Fin Dark Mode---------------- -->
-      <form class="form-register">
-        <h4 class="titulo">Iniciar Sesión</h4>
-        <input
-          class="controls"
-          type="email"
-          name="correo"
-          id="correo"
-          placeholder="Ingrese su Email"
-          required
-        />
-        <input
-          class="controls"
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Ingrese su Contraseña"
-          required
-        />
-        <p class="condiciones">
-          <input type="checkbox" name="recordar sesion" required />
-          <label for="recordar sesion">¿Recordar usuario?</label>
-        </p> 
-        <button class="botons" type="submit" required>Ingresar</button>
-      
-        <p class="condiciones">
-          <a class="condiciones" href="http://localhost:3020/recovery">¿Olvidaste tu contraseña?</a>
-        </p>
-      </form>
-  <!-------------- FOOTER ------------------------>
+ 
+    <form  class="form-register"  action="registro" method="POST">
+      <h4>Formulario  de Registro</h4>
+      <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre" required>
+      <input class="controls" type="text" name="apellido" id="apellido" placeholder="Ingrese su Apellido" required>
+      <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" required>
+      <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña" required>
+      <p class="condiciones">
+        <input type="checkbox" name="terminos" required />
+        <label for="terminos">Estoy de acuerdo con <a class="condiciones" href="#">Terminos y condiciones</a></label>
+      </p>
+     
+      <input class="botons" type="submit" value="Registrar" href="#" required/>
+      <p class="condiciones"><a class="condiciones" href="http://localhost:3020/login">¿Ya tengo Cuenta?</a></p>
+    </form>
+   <!-------------- FOOTER ------------------------>
 
-  <footer class="footer-container">
+   <footer class="footer-container">
     <div class="main-container">
       <div class="logo-container">
         <img src="/images/img/logo.png" class="logo-footer">
@@ -156,9 +146,9 @@
       <p class="copyright">Copyright 2021 - Powered by Grupo5</p>
   </footer>
 
-
-       <script src="/javascripts/darkMode.js"></script>
-       <script src="/javascripts/home.js"></script>
+<script src="/javascripts/darkMode.js"></script>
+<script src="/javascripts/home.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
 </body>
+
 </html>

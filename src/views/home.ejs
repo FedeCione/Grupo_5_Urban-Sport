@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- HEAD-->
+ <%- include("partials/head.ejs") %> 
+  <!-- styles -->
+  <link rel="stylesheet" href="/stylesheets/variables.css" />
+  <link rel="stylesheet" href="/stylesheets/home.css" />
+  <link rel="stylesheet" href="/stylesheets/darkMode.css">
+
+  <body>
+           <!-- HEADER-->
+    <%- include("partials/header.ejs") %> 
+            <!-- DARK MODE-->
+      <%- include("partials/darkMode.ejs")  %>  
+
+    <div class="container"></div>
+      <!-- Banner ONE  -->
+
+      <section class="banner-one">
+        <!-- <img src="img/banner-one.jpg" alt="" /> -->
+        <h2>You can do it.</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+          voluptatem sed quaerat nobis, illum explicabo?
+        </p>
+      <!---------------- CATEGORIES---------- -->
+      </section>
+      <div class="categories">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <a href="#">hombre</a>
+                    <img src="/images/img/category-1.jpg" alt="">
+                </div>
+                <div class="col-3">
+                    <a href="#">Mujer</a>
+                    <img src="/images/img/category-3.jpg" alt="">
+                </div>
+                <div class="col-3">
+                    <a href="#">niños</a>
+                    <img src="/images/img/category-2.jpg" alt="">
+                </div>
+            </div>                   
+        </div>
+      </div>
+       <!-- FIN-CATEGORIAS-->
+
+
+      <!-- CAROUSEL ONE-->
+            <%- include("partials/carouselOne.ejs") %> 
+         <!----------------- FIN-CAROUSEL-ONE-------------------->
+
+
+      <!----------------- PRODUCT MAIN -------------------->
+            <%- include("partials/productMain.ejs") %> 
+       <!-- FIN-PRODUCT-MAIN-->
+
+      <!-- CAROUSEL TWO-->
+
+      <%- include("partials/carouselTwo.ejs") %> 
+      <!-- FIN-CAROUSEL-TWO -->
+
+
+      <!-- social media -->
+      <div class="social-media">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fas fa-envelope"></i>
+      </div>
+
+      <!-- go to up -->
+      <div class="top-container">
+        <div class="top-button">
+          <i class="fas fa-chevron-up"></i>
+        </div>
+      </div>
+
+
+        <!-- FOOTER-->
+      <%- include("partials/footer.ejs")  %> 
+      <!-- FIN-FOOTER-->
+    
+
+      <script src="/javascripts/darkMode.js"></script>
+      <script src="/javascripts/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+  </body>
+</html>

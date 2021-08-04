@@ -4,14 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -19,44 +18,33 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
+/* ENRUTADORES*/ 
 
-/* RUTEO DE LAS DIFERENTES PAG*/ 
-app.get("/",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/home.html"))
-})
-app.get("/productDetail",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/products/productDetail.html"))
-})
-app.get("/carrito",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/products/carrito.html"))
-})
-app.get("/registro",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/users/registro.html"))
-})
-app.get("/login",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/users/login.html"))
-})
-app.get("/recovery",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/users/olvidecuenta.html"))
-})
-app.get("/loginAdministrador",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/admin/loginAdministrador.html"))
-})
-app.get("/panel",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/admin/panel.html"))
-})
-app.get("/agregar",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/admin/agregar.html"))
-})
-app.get("/editar",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/admin/editar.html"))
-})
-app.get("/eliminar",(req,res)=>{
-  res.sendFile(path.join(__dirname,"/views/admin/eliminar.html"))
-})
+let homeRouter = require("./routes/home");
 
-app.use('/', indexRouter);
+let adminRouter = require("./routes/admin");
+
+let usersRouter = require("./routes/users");
+
+let productsRouter = require("./routes/products")
+/*FINALIZA ENRUTADORES */
+
+/*----RUTAS---- */
+
+/*----HOME---- */
+app.use('/', homeRouter);
+
+/*----ADMIN---- */
+app.use("/admin", adminRouter)
+
+/*----USERS---- */
 app.use('/users', usersRouter);
+
+/*----PRODUCTS---- */
+app.use("/products",productsRouter);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

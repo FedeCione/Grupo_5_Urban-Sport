@@ -35,12 +35,11 @@ let productsRouter = require("./routes/products")
 app.use('/', homeRouter);
 
 /*----ADMIN---- */
-
 app.use("/admin", adminRouter)
 
 /*----USERS---- */
-
 app.use('/users', usersRouter);
+
 /*----PRODUCTS---- */
 app.use("/products",productsRouter);
 

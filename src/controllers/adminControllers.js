@@ -8,8 +8,8 @@ module.exports = {
     eliminar:(req,res)=>{
         res.render("eliminar");
     },
-    loginAdministrador:(req,res)=>{
-        res.render("loginAdministrador");
+    admin:(req,res)=>{
+        res.render("admin");
     },
     panel:(req,res)=>{
         res.render("panel");

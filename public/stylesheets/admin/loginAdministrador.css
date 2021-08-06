@@ -39,14 +39,14 @@
   
 }
 
-.style-admin:hover{
+/* .style-admin:hover{
     color:var(--tertiary);
     border: 3px solid;
     transition:all 1s ease-in-out;
     background: linear-gradient(to right, #00093c, #2d0b00);
 
     }
-  
+   */
 @media screen and (max-width:768px){
     .form{
         display:flex;

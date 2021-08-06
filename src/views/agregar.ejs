@@ -21,11 +21,28 @@
                 <h1>Agregar Producto</h1>
                 <form action="#" method="get"   style="margin-top:5.5em">
                     <div class='form caja-agregar'>
-                      <label for="">Nombre<input class='input style-admin' type="text" name="nombre-producto" required placeholder="Nombre del producto"> </label>
-                      <label for="">Descripción<textarea id="" cols="30" rows="10" class='input style-admin'  name="descripción-producto" required placeholder="Descripción del producto"></textarea></label>
-                      <label for="">Costo<input class='input style-admin' type="number" name="costo-producto" required placeholder="Costo del producto"> </label>
-                      <label for="">Imagen<input class='input style-admin' type="file" name="imagen-producto" multiple required placeholder=none> </label>
-                      <label for="">Contraseña: <input class='input style-admin' type="password" name="password" required placeholder="Contraseña de administrador"> </label>
+                      Nombre<input class='input style-admin' type="text" name="nombre-producto" id="nombre-producto" required placeholder="Nombre del producto"> 
+                      <label for="descripción-producto">Descripción<textarea id="descripción-producto" cols="30" rows="10" class='input style-admin'  name="descripción-producto" required placeholder="Descripción del producto"></textarea></label>
+                      Categorías <select  class='input style-admin' name="categoria-producto" id="categoria-producto">
+                        <option value="">Seleccionar categoría</option>
+                        <option value="cat-hombre">Hombre</option>
+                        <option value="cat-mujer">Mujer</option>
+                        <option value="cat-niños">Niños</option>
+                      </select> 
+                      Colores<select  class='input style-admin' name="colores-producto" id="colores-producto">
+                        <option value="">Seleccionar color</option>
+                        <option value="negro">Negro</option>
+                        <option value="blanco">Blanco</option>
+                        <option value="azul">Azul</option>
+                      </select>
+                      Talles<select  class='input style-admin' name="talles-producto" id="talles-producto">
+                        <option value="">Seleccionar talle</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                      </select> 
+                      Precio<input class='input style-admin' type="number" name="precio-producto" required placeholder="Precio del producto"> 
+                      <label for="imagen-producto">Imagen<input class='input style-admin' type="file" name="imagen-producto" multiple required > </label>
                     </div>
                     <div  class='form'>
                         <input type="submit" class='btn-admin style-admin' value="Guardar">

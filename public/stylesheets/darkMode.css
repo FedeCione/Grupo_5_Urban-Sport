@@ -58,17 +58,23 @@
   .carousel-container-one .carousel-element,.carousel-container .carousel-element{
     filter:invert(0%)
   }
-  
  
   body.dark img,.active{
     filter: invert(100%);
     transition:all .3s ease-in ;
-  
   }
   
   body.dark i:hover{
     filter: invert(100%);
     transition:all .3s ease-in ;
+  }
+  
+  body.dark footer{
+    filter: invert(100%);
+  }
+
+  body.dark footer img{
+    filter: inherit;
   }
   
   /* FIN DARK MODE */

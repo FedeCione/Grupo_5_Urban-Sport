@@ -13,7 +13,7 @@
        <!-- --------------Dark Mode----------------- -->
        <%- include("partials/darkMode.ejs") %> 
        <!-- -----------Fin Dark Mode---------------- -->
- 
+    <main id="main-dark">
     <form  class="form-register"  action="registro" method="POST">
       <h4>Formulario  de Registro</h4>
       <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre" required>
@@ -28,6 +28,7 @@
       <input class="botons" type="submit" value="Registrar" href="#" required/>
       <p class="condiciones"><a class="condiciones" href="http://localhost:3020/login">¿Ya tengo Cuenta?</a></p>
     </form>
+  </main>
    <!-------------- FOOTER ------------------------>
      <%- include("partials/footer.ejs") %> 
       <!--------------FIN- FOOTER ------------------------>

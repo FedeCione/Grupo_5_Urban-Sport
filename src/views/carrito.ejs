@@ -18,109 +18,24 @@
     </style>
 
     <!-- Stylesheets -->
-  <link rel="stylesheet" href="/stylesheets/carrito/style.css" />
+    <link rel="stylesheet" href="/stylesheets/carrito.css" />
+    <link rel="stylesheet" href="/stylesheets/variables.css" />
+    <link rel="stylesheet" href="/stylesheets/general.css" />
+    <link rel="stylesheet" href="/stylesheets/darkMode.css" />
 
     <!-- Javascript -->
- <script src="/javascripts/darkMode.js" defer></script>
- <script src="/javascripts/carrito.js" defer></script>
+    <script src="/javascripts/darkMode.js" defer></script>
+    <script src="/javascripts/carrito.js" defer></script>
   </head>
   <body>
+    <!-- Header -->
+    <%- include("partials/header.ejs") %>
+    <!-- --------------Dark Mode----------------- -->
+    <%- include("partials/darkMode.ejs") %>
+    <!-- -----------Fin Dark Mode---------------- -->
 
-    <!-- HEADER MOBILE/TABLET -->
-    <header class="cart-header-mobile">
-
-      <!-- Logo -->
-      <div class="logo-div">
-        <a href="">
-          <img class="logo" src="/images/img/logo.png" alt="Logo" />
-        </a>
-      </div>
-
-      <!-- Menu hamburguesa -->
-      <div class="burger-menu-container" id="burger-menu-container" onclick="openNav()">
-        <i class="fas fa-bars burguer-menu-icon"></i>
-      </div>
-
-      <!-- Menú de navegación -->
-      <nav class="navigation-bar" id="navigation-bar">
-        <div class="logo-closebtn-div">
-            <img class="logo" src="/images/img/logo.png" alt="Logo"/>
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        </div>
-        <ul class="menú">
-              <li><a href="#">Hombre</a></li>
-              <li><a href="#">Mujer</a></li>
-              <li><a href="#">Niños</a></li>
-              <li><a href="#">Colecciones</a></li>
-              <li><a href="#">Marcas</a></li>
-              <li><a href="#">Deportes</a></li>
-              <li><a href="#">Training</a></li>
-              <li><a href="#">Mi cuenta</a></li>
-              <li><a href="#">Buscador de tiendas</a></li>
-              <li><a href="#">Ayuda</a></li>
-              <li><a href="#">Autogestion de Devolucion</a></li>
-              <li><a href="#">Seguimiento de Pedidos</a></li>
-        </ul>
-      </nav>
-
-      <!-- Icono del buscador -->
-      <div class="search-icon" onclick="dropSearch()">
-        <i class="fas fa-search"></i>
-      </div>
-
-      <!-- Buscador mobile -->
-
-      <form action="#" class="search-form-mobile" id="search">
-        <div class="search-bar">
-          <input type="search" name="busqueda" id="" placeholder="Buscar" />
-          <button type="submit"><i class="fas fa-search"></i></button>
-        </div>
-      </form>
-    </header>
-
-    <!-- HEADER DESKTOP -->
-    <!-- Logo -->
-    <header class="cart-header-desktop">
-      <div class="logo-div">
-        <a href="">
-          <img class="logo" src="/images/img/logo.png" alt="Logo" />
-        </a>
-      </div>
-
-      <!-- Menú de navegación -->
-        <ul class="menú">
-          <a href=""><li>Niños</li></a>
-          <a href=""><li>Hombre</li></a>
-          <a href=""><li>Mujer</li></a>
-          <a href=""><li>Colecciones</li></a>
-        </ul>
-
-      <!-- Buscador escritorio -->
-      <div class="search-box">
-        <input
-          class="search-txt"
-          type="text"
-          placeholder="Buscar"
-        />
-        <a href="#" class="search-btn">
-          <i class="fas fa-search"></i>
-        </a>
-      </div>
-
-      <!-- Iconos header -->
-      <div class="header-icons-container">
-        <a href=""><i class="fas fa-user"></i></a>
-        <a href=""><i class="fas fa-shopping-cart"></i></a>
-        <a href=""><i class="fas fa-heart"></i></a>
-      </div>
-    </header>
-
- <!-- --------------Dark Mode----------------- -->
- <%- include("partials/darkMode.ejs") %> 
- <!-- -----------Fin Dark Mode---------------- -->
-
- <!-- MAIN -->
-    <main class="cart-home">
+    <!-- MAIN -->
+    <main class="cart-home" id="main-dark">
       <div class="title-cart-container">
         <h2 class="title-cart">Mi Carrito</h2>
         <a href=""><h2 class="keep-buying">Seguir Comprando</h2></a>
@@ -305,11 +220,11 @@
       </div>
     </main>
 
-    <!-- FOOTER -->
-
-    <%- include("partials/footer.ejs") %> 
     <!-- ICON ADD PRODUCT -->
-    <a href="" class="plus-icon"><i class="fas fa-cart-plus"></i></a>
-</body>
-    
+    <div class="plus-icon-container">
+      <a href="" class="plus-icon"><i class="fas fa-cart-plus"></i></a>
+    </div>
+    <!-- FOOTER -->
+    <%- include("partials/footer.ejs") %>
+  </body>
 </html>

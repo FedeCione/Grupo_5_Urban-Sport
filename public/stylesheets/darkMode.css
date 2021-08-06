@@ -1,86 +1,120 @@
- /* DARK-MODE */
-  
- .dark-mode{
-    background: linear-gradient(to right, #00093c, #2d0b00);
-    border-radius: 1000px;
-    border:none;
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    outline: none;
-    top: 5px;
-    left:80%;
-  }
-  .dark-mode:hover{
-    box-shadow: 0 0 4px 4px rgba(0, 0, 0, .2);
-  }
-  
-  .dark-mode span{
-      width: 25px;
-      height: 25px;
-      line-height: 25px;
-      display: block;
-      background: none;
-      color:var(--tertiary);
-  }
-  .dark-mode::after{
-    content: "";
-    display: block;
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    background:white;
-    top:0;
-    left: 0;
-    right: unset;
-    border-radius: 100px;
-    transition:all .3s ease ;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2);
-  }
-  
-   .active {
-    background: var(--tertiary);
-   }
-   .active span{
-    color: #00093c
-  }
-   .active::after{
-    right: 0;
-    left: unset;
-  }
-  
-  body.dark{
-    filter: invert(100%);
-    transition:all .3s ease-in-out ;
-    background: black;
-  }
-
-  .carousel-container-one .carousel-element,.carousel-container .carousel-element{
-    filter:invert(0%)
-  }
-  
- 
-  body.dark img,.active{
-    filter: invert(100%);
-    transition:all .3s ease-in ;
-  
-  }
-  
-  body.dark i:hover{
-    filter: invert(100%);
-    transition:all .3s ease-in ;
-  }
-  
-  /* FIN DARK MODE */
-
-
-@media screen and (min-width:768px){
-  .dark-mode{
-    left:90%
+/* DARK-MODE */
+.dark-mode {
+  background: linear-gradient(to right, #00093c, #2d0b00);
+  border-radius: 1000px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  top: 5px;
+  left: 80%;
 }
+
+.dark-mode:hover {
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.2);
 }
-@media screen and (min-width: 1024px){
-  .dark-mode{
-    left:94%
+
+.dark-mode span {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  display: block;
+  background: none;
+  color: var(--tertiary);
 }
+
+.dark-mode::after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  background: white;
+  top: 0;
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.active {
+  background: var(--tertiary);
+}
+
+.active span {
+  color: #00093c;
+}
+
+.active::after {
+  right: 0;
+  left: unset;
+}
+
+body.dark {
+  background-color: black;
+}
+
+/* Header dark */
+.main-header.dark {
+  color: white;
+}
+
+.main-header.dark .fa-bars {
+  color: white;
+}
+
+.main-header.dark .main-nav ul li a {
+  color: white;
+}
+
+.main-header.dark .overlay {
+  background-color: black;
+}
+
+/* Main dark */
+main.dark {
+  filter: invert(100%);
+  transition: all 0.3s ease-in-out;
+}
+
+main.dark .news-letter {
+  filter: invert(100%);
+}
+
+main.dark img {
+  filter: invert(100%);
+}
+
+main.dark .col-3 a {
+  color: darkcyan;
+}
+
+/* Cart dark */
+.cart-home.dark {
+  filter: invert(100%);
+  transition: all 0.3s ease-in-out;
+}
+
+.cart-home > img {
+  filter: invert(100%);
+}
+
+.carousel-container-one .carousel-element,
+.carousel-container .carousel-element {
+  filter: invert(0%);
+}
+
+/* FIN DARK MODE */
+@media screen and (min-width: 768px) {
+  .dark-mode {
+    left: 90%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .dark-mode {
+    left: 94%;
+  }
 }

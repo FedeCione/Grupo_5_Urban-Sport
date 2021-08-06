@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("partials/head.ejs") %> 
+   <!-- styles -->
+   <link rel="stylesheet" href="/stylesheets/home.css" />
+   <link rel="stylesheet" href="/stylesheets/general.css" />
+   <link rel="stylesheet" href="/stylesheets/darkMode.css">
+   <link rel="stylesheet" href="/stylesheets/admin/loginAdministrador.css">
+
+  <body>
+      <!-- HEADER -->
+       <%- include("partials/header.ejs") %> 
+       <!-- --------------Dark Mode----------------- -->
+
+       <%- include("partials/darkMode.ejs") %> 
+       <!-- -----------Fin Dark Mode---------------- -->
+
+        <main id="main-dark">
+            <div class="container-admin">
+                <h1>Login Administradores</h1>
+                <form action="#" method="get"  autocomplete="on"  style="margin-top:1.5em">
+                    <div class='form'>
+                      <label for="">Administrador: <input class='input style-admin' type="text" name="admin" required placeholder="Nombre de administrador"> </label>
+                      <label for="">Contraseña: <input class='input style-admin' type="password" name="password" required placeholder="Contraseña de administrador"> </label>
+                    </div>
+                    <div  class='form'>
+                        <input type="submit" class='btn-admin style-admin' value="Login">
+                    </div>
+                </form>
+            </div>
+
+        </main>
+    
+
+        <!-------------- FOOTER ------------------------>
+       
+        <%- include("partials/footer") %> 
+       
+       <script src="/javascripts/darkMode.js"></script>
+       <script src="/javascripts/home.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+</body>
+</html>

@@ -18,26 +18,24 @@
     </style>
 
     <!-- Stylesheets -->
-  <link rel="stylesheet" href="/stylesheets/carrito.css" />
-  <link rel="stylesheet" href="/stylesheets/variables.css" />
-  <link rel="stylesheet" href="/stylesheets/general.css" />
-  <link rel="stylesheet" href="/stylesheets/darkMode.css" />
-  
-  
+    <link rel="stylesheet" href="/stylesheets/carrito.css" />
+    <link rel="stylesheet" href="/stylesheets/variables.css" />
+    <link rel="stylesheet" href="/stylesheets/general.css" />
+    <link rel="stylesheet" href="/stylesheets/darkMode.css" />
 
     <!-- Javascript -->
- <script src="/javascripts/darkMode.js" defer></script>
- <script src="/javascripts/carrito.js" defer></script>
+    <script src="/javascripts/darkMode.js" defer></script>
+    <script src="/javascripts/carrito.js" defer></script>
   </head>
   <body>
-  <!-- Header -->
- <%- include("partials/header.ejs") %>
- <!-- --------------Dark Mode----------------- -->
- <%- include("partials/darkMode.ejs") %> 
- <!-- -----------Fin Dark Mode---------------- -->
+    <!-- Header -->
+    <%- include("partials/header.ejs") %>
+    <!-- --------------Dark Mode----------------- -->
+    <%- include("partials/darkMode.ejs") %>
+    <!-- -----------Fin Dark Mode---------------- -->
 
- <!-- MAIN -->
-    <main class="cart-home">
+    <!-- MAIN -->
+    <main class="cart-home" id="main-dark">
       <div class="title-cart-container">
         <h2 class="title-cart">Mi Carrito</h2>
         <a href=""><h2 class="keep-buying">Seguir Comprando</h2></a>
@@ -221,14 +219,12 @@
         </div>
       </div>
     </main>
-    
-      <!-- ICON ADD PRODUCT -->
-      <!-- <div class="plus-icon-container">
-        <a href="" class="plus-icon"><i class="fas fa-cart-plus"></i></a>
-      </div> -->
+
+    <!-- ICON ADD PRODUCT -->
+    <div class="plus-icon-container">
+      <a href="" class="plus-icon"><i class="fas fa-cart-plus"></i></a>
+    </div>
     <!-- FOOTER -->
     <%- include("partials/footer.ejs") %>
-
-
   </body>
 </html>

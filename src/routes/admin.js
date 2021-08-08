@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-let {agregar,formAgregar,editar,formEditar,eliminar,admin,panelProductos} = require("../controllers/adminControllers")
+let {admin,panelProductos,formAgregar,agregar,formEditar,editar,eliminar} = require("../controllers/adminControllers")
 
 /* GET  admin*/
 router.get("/",admin);

@@ -6,7 +6,7 @@ module.exports = {
         res.render("admin");
     },
 
-    panelProductos: (req, res) => {
+    panelProductos:(req, res) => {
 
         res.render('panelProductos',{
             getproductos
@@ -73,12 +73,12 @@ module.exports = {
             }
         }) 
         writeJSON(getproductos)
-        res.redirect('/panelProductos')
+        res.redirect('panelProductos')
      },
 
     //  NOSE PORQUE  no edita
 
-    eliminar:(req,res)=>{
+   eliminar:(req,res)=>{
         getproductos.forEach(element =>{
             if (element.id === +req.params.id){
                 let deleteProduct = getproductos.indexOf(element);
@@ -86,7 +86,7 @@ module.exports = {
             }
         })
         writeJSON(getproductos)
-        res.redirect('/panelProductos')
+        res.redirect('panelProductos')
     }
   
 // NOSE PORQUE no elimina y NO ME ENVIA AL PANEL DE PRODUCTOS 

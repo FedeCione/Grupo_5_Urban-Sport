@@ -1,12 +1,20 @@
 var express = require('express');
 var router = express.Router();
-let {agregar,editar,eliminar,admin,panel} = require("../controllers/adminControllers")
+let {agregar,formAgregar,editar,formEditar,eliminar,admin,panelProductos} = require("../controllers/adminControllers")
 
 /* GET  admin*/
-router.get('/agregar',agregar);
-router.get("/editar",editar);
-router.get("/eliminar",eliminar);
 router.get("/",admin);
-router.get("/panel",panel);
 
+router.get("/panelProductos",panelProductos);
+
+router.get('/agregar',formAgregar);
+router.post('/agregar',agregar);
+
+router.get("/editar/:id",formEditar);
+router.put("/editar/:id",editar);
+
+router.delete("/eliminar/:id",eliminar);
+
+
+ 
 module.exports = router;

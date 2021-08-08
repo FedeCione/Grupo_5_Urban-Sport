@@ -94,7 +94,9 @@ header{
     display: none;
 }
 
-
+header h2{
+    color:var(--primary);
+}
 header label span{
     cursor: pointer;
     font-size: 1.7rem;
@@ -268,18 +270,11 @@ tr td:last-child{
     .sidebar-admin{
         width: 70px;
     }
-    .sidebar-admin-principal,
-    .sidebar-admin li{
-        padding-left: 1rem;
-        text-align: center;
-    }
-    .sidebar-admin li a{
-        padding-left: 0rem;
-    }
-    
+ 
 .sidebar-admin .sidebar-admin-principal h2 span:last-child,
 .sidebar-admin li a span:last-child{
     display: none;
+    
 }
 .admin-content{
     margin-left: 70px;
@@ -289,6 +284,28 @@ header{
     width: calc(100% - 70px);
     
 }
+
+#nav-toggle-admin:checked+.sidebar-admin{
+    left: 0 !important;
+    z-index: 11;
+    width: 345px;
+}
+#nav-toggle-admin:checked+.sidebar-admin:hover{
+    width: 345px;
+    z-index: 12;
+}
+#nav-toggle-admin:checked+.sidebar-admin .sidebar-admin-principal,
+#nav-toggle-admin:checked+.sidebar-admin:hover li{
+        padding-left: 2rem;
+}
+#nav-toggle-admin:checked+.sidebar-admin li a{
+    padding-left: 1rem;
+}
+#nav-toggle-admin:checked+.sidebar-admin .sidebar-admin-principal h2 span:last-child,
+#nav-toggle-admin:checked+.sidebar-admin li a span:last-child{
+    display: inline;
+}
+
 
 }
 
@@ -335,27 +352,6 @@ header h2 span{
 header{
     width: 100% !important;
     left: 0 !important;
-}
-#nav-toggle-admin:checked+.sidebar-admin{
-    left: 0 !important;
-    z-index: 11;
-    width: 345px;
-}
-#nav-toggle-admin:checked+.sidebar-admin:hover{
-    width: 345px;
-    z-index: 12;
-}
-#nav-toggle-admin:checked+.sidebar-admin .sidebar-admin-principal,
-#nav-toggle-admin:checked+.sidebar-admin:hover li{
-        padding-left: 2rem;
-        text-align: left;
-}
-#nav-toggle-admin:checked+.sidebar-admin li a{
-    padding-left: 1rem;
-}
-#nav-toggle-admin:checked+.sidebar-admin .sidebar-admin-principal h2 span:last-child,
-#nav-toggle-admin:checked+.sidebar-admin li a span:last-child{
-    display: inline;
 }
 
 }

@@ -19,33 +19,38 @@
         <main id="main-dark">
             <div>
                 <h1>Agregar Producto</h1>
-                <form action="#" method="get"   style="margin-top:5.5em">
+                <form action="agregar" method="POST"   style="margin-top:5.5em">
                     <div class='form caja-agregar'>
-                      Nombre<input class='input style-admin' type="text" name="nombre-producto" id="nombre-producto" required placeholder="Nombre del producto"> 
-                      <label for="descripción-producto">Descripción<textarea id="descripción-producto" cols="30" rows="10" class='input style-admin'  name="descripción-producto" required placeholder="Descripción del producto"></textarea></label>
-                      Categorías <select  class='input style-admin' name="categoria-producto" id="categoria-producto">
+                      Marca:<label for=""><input class='input style-admin' type="text" name="marca" id="marca-producto" required placeholder="Nombre del producto"> </label>
+                      Descripción:<label for="descripción-producto"><textarea id="descripción-producto" cols="30" rows="10" class='input style-admin'  name="descripcion" required placeholder="Descripción del producto"></textarea></label>
+                      Categorías:<label for=""> <select  class='input style-admin' name="categoria" id="categoria-producto">
                         <option value="">Seleccionar categoría</option>
-                        <option value="cat-hombre">Hombre</option>
-                        <option value="cat-mujer">Mujer</option>
-                        <option value="cat-niños">Niños</option>
-                      </select> 
-                      Colores<select  class='input style-admin' name="colores-producto" id="colores-producto">
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                        <option value="niños">Niños</option>
+                      </select> </label>
+                      Subcategorías:<label for="">  <select  class='input style-admin' name="subcategoria" id="subcategoria-producto">
+                        <option value="">Seleccionar categoría</option>
+                        <option value="pantalon">pantalon</option>
+                        <option value="remera">remera</option>
+                      </select> </label>
+                      Colores:<label for=""><select  class='input style-admin' name="color" id="colores-producto">
                         <option value="">Seleccionar color</option>
                         <option value="negro">Negro</option>
                         <option value="blanco">Blanco</option>
                         <option value="azul">Azul</option>
-                      </select>
-                      Talles<select  class='input style-admin' name="talles-producto" id="talles-producto">
+                      </select></label>
+                      Talles:<label for=""> <select  class='input style-admin' name="talle" id="talles-producto">
                         <option value="">Seleccionar talle</option>
                         <option value="S">S</option>
                         <option value="M">M</option>
                         <option value="L">L</option>
-                      </select> 
-                      Precio<input class='input style-admin' type="number" name="precio-producto" required placeholder="Precio del producto"> 
-                      <label for="imagen-producto">Imagen<input class='input style-admin' type="file" name="imagen-producto" multiple required > </label>
+                      </select> </label>
+                      Precio:<label for=""> <input class='input style-admin' type="number" name="precio" required placeholder="Precio del producto"> </label>
+                      Imagen:<label for="imagen-producto"><input class='input style-admin' type="file" name="imagen-producto" multiple  > </label>
                     </div>
                     <div  class='form'>
-                        <input type="submit" class='btn-admin style-admin' value="Guardar">
+                        <button type="submit" class='btn-admin style-admin' value="guardar">GUARDAR</button>
                     </div>
                 </form>
             </div>

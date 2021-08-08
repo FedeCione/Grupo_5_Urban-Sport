@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <link rel="stylesheet" href="/stylesheets/general.css" />
+  <link rel="stylesheet" href="/stylesheets/admin/loginAdministrador.css">
+  <link rel="stylesheet" href="/stylesheets/variables.css" />
+    <link rel="stylesheet" href="/stylesheets/admin/adminHeader.css">
+  <link rel="stylesheet" href="/stylesheets/admin/panel.css" />
+  <link rel="stylesheet" href="/stylesheets/darkMode.css" />
+
+
+</head>
+<body>
+    
+    <input type="checkbox"  id="nav-toggle-admin">
+    <div class='sidebar-admin '>
+        <div class="sidebar-admin-principal">
+            <h2>
+                <img class='icons8-casa' src="/images/admin/icons8-casa.gif" alt="">
+                <span>Administrador</span>
+            </h2>
+        </div>    
+
+        <!-- dashboard admin -->
+        <div class='sidebar-admin-menu'>
+            <ul>
+                <li>
+                    <a href="" class="active"><span class="las la-home"></span>
+                        <span>Productos</span> </a>
+                </li>
+                <li>
+                    <a href=""><span class="las la-history"></span>
+                        <span>Stock</span> </a>
+                </li>
+                <li>
+                    <a href=""> <span class="las la-book"></span>
+                        <span>Clientes</span></a>
+                </li>
+                <li>
+                    <a href="" ><span class="las la-user"></span>
+                        <span>Proveedores</span></a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="admin-content">
+        <header>
+            <h2>
+                <label for="nav-toggle-admin">
+                    <span class="las la-bars"></span>
+                </label>Panel de Productos
+            </h2>
+
+            <div class="search-wrapper">
+                <span class="las la-search"></span>
+                <input type="search"  placeholder="Buscar aquí"/>
+            </div>
+
+            <div class='user-admin'>
+                <img src="/images/admin/admin/20190126_104320.jpg" width="40px" height="40px" alt="">
+                <div>
+                    <h4>Administrador</h4>
+                    <small>Super Admin</small>
+                </div>
+            </div>
+        </header>
+
+    <main id="main-dark">
+      
+    <!-------------- Dark Mode----------- -->
+    <button class="dark-mode" id="dark-mode">
+      <span><i class="fas fa-sun"></i></span>
+      <span><i class="fas fa-moon"></i></span>
+    </button>
+
+    <!--------------Fin Dark Mode----------- -->
+      <h1>Panel de Productos</h1>
+      <div style="overflow:auto" class="panel">
+        <table>
+          <caption>
+            Productos Actuales
+          </caption>
+          <thead>
+            <tr>
+              <th colspan="1" scope="col">#</th>
+              <th colspan="2" scope="col">Marca</th>
+              <th colspan="3" scope="col">Descripción</th>
+              <th colspan="4" scope="col">Categoría</th>
+              <th colspan="5" scope="col">Subcategoría</th>
+              <th colspan="6" scope="col">Color</th>
+              <th colspan="7" scope="col">Talle</th>
+              <th colspan="8" scope="col">Precio</th>
+              <th colspan="9" scope="col">Imagen</th>
+              <th colspan="10" scope="col">Acciones</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <% getproductos.forEach(element => { %>
+             
+            
+            <tr>
+              <td colspan="1" scope="col"><%- element.id %></td>
+              <td colspan="2" scope="col"><%- element.marca %></td>
+              <td colspan="3" scope="col"><%- element.descripcion %></td>
+              <td colspan="4" scope="col"><%- element.categoria %></td>
+              <td colspan="5" scope="col"><%- element.subcategoria %></td>
+              <td colspan="6" scope="col"><%- element.color %></td>
+              <td colspan="7" scope="col"><%- element.talle %></td>
+              <td colspan="8" scope="col">$<%- element.precio %></td>
+              <td colspan="9" scope="col"><img width="30px"   src="/images/img/<%- element.imagen %>"></td>
+              <td colspan="10" scope="col">
+                <a href="editar/<%- element.id %>?_method=PUT">Editar</a> - 
+                <form action="panelProductos/<%- element.id %>?_method=DELETE" method="post">
+                  <button class="btn-admin style-admin" type="submit">Eliminar</button>
+                </form>
+              </td>
+            </tr>
+
+            <% }) %>
+
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="20" scope="col">Total productos:<%- getproductos.length %></th>
+              <th colspan="40" scope="col">Total precio:$
+              </th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </main>
+
+
+  </div>
+
+  
+    <!-------------- FOOTER ------------------------>
+
+    <script src="/javascripts/darkMode.js"></script>
+    <script src="/javascripts/home.js"></script>
+  </body>
+</html>

@@ -1,498 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-  <link rel="stylesheet" href="/stylesheets/general.css" />
-  <link rel="stylesheet" href="/stylesheets/variables.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/general.css" />
+    <link rel="stylesheet" href="/stylesheets/variables.css" />
 
-    <link rel="stylesheet" href="/stylesheets/admin/adminHeader.css">
-</head>
-<body>
-    
-    <input type="checkbox"  id="nav-toggle-admin">
-    <div class='sidebar-admin '>
-        <div class="sidebar-admin-principal">
-            <h2>
-                <img class='icons8-casa' src="/images/admin/icons8-casa.gif" alt="">
-                <span>Administrador</span>
-            </h2>
-        </div>    
+    <link rel="stylesheet" href="/stylesheets/admin/adminHeader.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="nav-toggle-admin" />
+    <div class="sidebar-admin">
+      <div class="sidebar-admin-principal">
+        <h2>
+          <img class="icons8-casa" src="/images/admin/icons8-casa.gif" alt="" />
+          <a href="admin" class="active">
+          <span >Administrador</span>
+        </a>
 
-        <!-- dashboard admin -->
-        <div class='sidebar-admin-menu'>
-            <ul>
-                <li>
-                    <a href="" class="active"><span class="las la-home"></span>
-                        <span>Panel de Productos</span> </a>
-                </li>
-                <li>
-                    <a href=""><span class="las la-home"></span>
-                        <span>Agregar</span> </a>
-                </li>
-                <li>
-                    <a href=""> <span class="las la-history"></span>
-                        <span>Editar</span></a>
-                </li>
-                <li>
-                    <a href="" ><span class="las la-user"></span>
-                        <span>Eliminar</span></a>
-                </li>
-            </ul>
+        </h2>
+      </div>
 
-        </div>
+      <!-- dashboard admin -->
+      <div class="sidebar-admin-menu">
+        <ul>
+          <li>
+            <a href="admin/panelProductos" class="active"
+              ><span class="las la-home"></span> <span>Panel de Productos</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin/agregar"
+              ><span class="las la-home"></span> <span>Agregar Producto</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="las la-history"></span> <span>Clientes</span></a
+            >
+          </li>
+          <li>
+            <a href="/"
+              ><span class="las la-user"></span> <span>Salir</span></a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div class="admin-content">
-        <header>
-            <h2>
-                <label for="nav-toggle-admin">
-                    <span class="las la-bars"></span>
-                </label>Panel de Productos
-            </h2>
+      <header>
+        <h2>
+          <label for="nav-toggle-admin">
+            <span class="las la-bars"></span> </label
+          >Panel de Productos
+        </h2>
 
-            <div class="search-wrapper">
-                <span class="las la-search"></span>
-                <input type="search"  placeholder="Buscar aquí"/>
-            </div>
+        <div class="search-wrapper">
+          <span class="las la-search"></span>
+          <input type="search" placeholder="Buscar aquí" />
+        </div>
 
-            <div class='user-admin'>
-                <img src="/images/admin/admin/20190126_104320.jpg" width="40px" height="40px" alt="">
-                <div>
-                    <h4>Administrador</h4>
-                    <small>Super Admin</small>
-                </div>
-            </div>
-        </header>
+        <div class="user-admin">
+          <img
+            src="/images/admin/admin/20190126_104320.jpg"
+            width="40px"
+            height="40px"
+            alt=""
+          />
+          <div>
+            <h4>Administrador</h4>
+            <small>Super Admin</small>
+          </div>
+        </div>
+      </header>
 
-        <main>
-            
-                <div class="card-content-admin">
-                    <div class="card-admin">
-                        <div>
-                            <h1>5</h1>
-                            <span>Manejo de clientes</span>
-                        </div>
-                        <div>
-                            <span class="las la-users"></span>
-                        </div>
-                    </div>
-                    <div class="card-admin">
-                        <div>
-                            <h1>12</h1>
-                            <span>Manejo de productos</span>
-                        </div>
-                        <div>
-                            <span class="las la-users"></span>
-                        </div>
-                    </div>
-                    <div class="card-admin">
-                        <div>
-                            <h1>25</h1>
-                            <span>Manejo de proveedores</span>
-                        </div>
-                        <div>
-                            <span class="las la-users"></span>
-                        </div>
-                    </div>
-                    <div class="card-admin">
-                        <div>
-                            <h1>2</h1>
-                            <span>Manejo de stock</span>
-                        </div>
-                        <div>
-                            <span class="las la-users"></span>
-                        </div>
-                    </div>
-                    
-                </div>
+      
 
-                <!-- tabla admin -->
-                <div class="table-admin">
-                    <div class="table-admin-user-card">
-                        <div class="table-admin-card">
-                            <div class="table-admin-card-header">
-                                <h3>Clientes recientes</h3>
-
-                                <button>Mostrar todo <span class="las la-arrow-right"></span></button>
-                            </div>
-
-                            <div class="table-admin-card-content-body">
-                                <div class='table-admin-card-body'>
-                                    <table width='100%'>
-                                        <thead>
-                                            <tr>
-                                                <td>Nombre</td>
-                                                <td>Apellido</td>
-                                                <td>Localidad</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Juliana</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad lanus"></span>Lanus
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jose</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad gerli"></span>Gerli
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Domingo</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad avellaneda"></span>Avellaneda
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Juliana</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad lanus"></span>Lanus
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jose</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad gerli"></span>Gerli
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Domingo</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad avellaneda"></span>Avellaneda
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Juliana</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad lanus"></span>Lanus
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jose</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad gerli"></span>Gerli
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Domingo</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad avellaneda"></span>Avellaneda
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Juliana</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad lanus"></span>Lanus
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jose</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad gerli"></span>Gerli
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Domingo</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad avellaneda"></span>Avellaneda
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Juliana</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad lanus"></span>Lanus
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jose</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad gerli"></span>Gerli
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Domingo</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad avellaneda"></span>Avellaneda
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Juliana</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad lanus"></span>Lanus
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jose</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad gerli"></span>Gerli
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Domingo</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad avellaneda"></span>Avellaneda
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Juliana</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad lanus"></span>Lanus
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jose</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad gerli"></span>Gerli
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Domingo</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad avellaneda"></span>Avellaneda
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Juliana</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad lanus"></span>Lanus
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jose</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad gerli"></span>Gerli
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Domingo</td>
-                                                <td>Lezcano</td>
-                                                <td>
-                                                    <span class="localidad avellaneda"></span>Avellaneda
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="table-admin-user-new-card">
-                        <div class="table-admin-card">
-                            <div class="table-admin-card-header">
-                                <h3>Clientes Nuevos</h3>
-
-                                <button>Mostrar todo <span class="las la-arrow-right"></span></button>
-                            </div>
-                            <div class="table-admin-card-content-body">
-                                <div class="table-admin-user-new">
-                                    <div class="table-admin-user-new-info">
-                                        <img src="/images/admin/user/20210309_164357.jpg" width="40px"  alt="">
-                                        <div>
-                                            <h4>Claudia Tuñon</h4>
-                                            <small>Lanus</small>
-                                        </div>
-                                    </div>
-                                    <div class="table-admin-user-new-contact">
-                                        <span class="las la-user-circle"></span>
-                                        <span class="lab la-whatsapp"></span>
-                                        <span class="las la-phone"></span>
-                                    </div>
-
-                                </div>
-                                <div class="table-admin-user-new">
-                                    <div class="table-admin-user-new-info">
-                                        <img src="/images/admin/user/20210309_164357.jpg" width="40px"  alt="">
-                                        <div>
-                                            <h4>Claudia Tuñon</h4>
-                                            <small>Lanus</small>
-                                        </div>
-                                    </div>
-                                    <div class="table-admin-user-new-contact">
-                                        <span class="las la-user-circle"></span>
-                                        <span class="lab la-whatsapp"></span>
-                                        <span class="las la-phone"></span>
-                                    </div>
-
-                                </div>
-                                <div class="table-admin-user-new">
-                                    <div class="table-admin-user-new-info">
-                                        <img src="/images/admin/user/20210309_164357.jpg" width="40px"  alt="">
-                                        <div>
-                                            <h4>Claudia Tuñon</h4>
-                                            <small>Lanus</small>
-                                        </div>
-                                    </div>
-                                    <div class="table-admin-user-new-contact">
-                                        <span class="las la-user-circle"></span>
-                                        <span class="lab la-whatsapp"></span>
-                                        <span class="las la-phone"></span>
-                                    </div>
-
-                                </div>
-                                <div class="table-admin-user-new">
-                                    <div class="table-admin-user-new-info">
-                                        <img src="/images/admin/user/20210309_164357.jpg" width="40px"  alt="">
-                                        <div>
-                                            <h4>Claudia Tuñon</h4>
-                                            <small>Lanus</small>
-                                        </div>
-                                    </div>
-                                    <div class="table-admin-user-new-contact">
-                                        <span class="las la-user-circle"></span>
-                                        <span class="lab la-whatsapp"></span>
-                                        <span class="las la-phone"></span>
-                                    </div>
-
-                                </div>
-                                <div class="table-admin-user-new">
-                                    <div class="table-admin-user-new-info">
-                                        <img src="/images/admin/user/20210309_164357.jpg" width="40px"  alt="">
-                                        <div>
-                                            <h4>Claudia Tuñon</h4>
-                                            <small>Lanus</small>
-                                        </div>
-                                    </div>
-                                    <div class="table-admin-user-new-contact">
-                                        <span class="las la-user-circle"></span>
-                                        <span class="lab la-whatsapp"></span>
-                                        <span class="las la-phone"></span>
-                                    </div>
-
-                                </div>
-                                <div class="table-admin-user-new">
-                                    <div class="table-admin-user-new-info">
-                                        <img src="/images/admin/user/20210309_164357.jpg" width="40px"  alt="">
-                                        <div>
-                                            <h4>Claudia Tuñon</h4>
-                                            <small>Lanus</small>
-                                        </div>
-                                    </div>
-                                    <div class="table-admin-user-new-contact">
-                                        <span class="las la-user-circle"></span>
-                                        <span class="lab la-whatsapp"></span>
-                                        <span class="las la-phone"></span>
-                                    </div>
-
-                                </div>
-                                <div class="table-admin-user-new">
-                                    <div class="table-admin-user-new-info">
-                                        <img src="/images/admin/user/20210309_164357.jpg" width="40px"  alt="">
-                                        <div>
-                                            <h4>Claudia Tuñon</h4>
-                                            <small>Lanus</small>
-                                        </div>
-                                    </div>
-                                    <div class="table-admin-user-new-contact">
-                                        <span class="las la-user-circle"></span>
-                                        <span class="lab la-whatsapp"></span>
-                                        <span class="las la-phone"></span>
-                                    </div>
-
-                                </div>
-                                <div class="table-admin-user-new">
-                                    <div class="table-admin-user-new-info">
-                                        <img src="/images/admin/user/20210309_164357.jpg" width="40px"  alt="">
-                                        <div>
-                                            <h4>Claudia Tuñon</h4>
-                                            <small>Lanus</small>
-                                        </div>
-                                    </div>
-                                    <div class="table-admin-user-new-contact">
-                                        <span class="las la-user-circle"></span>
-                                        <span class="lab la-whatsapp"></span>
-                                        <span class="las la-phone"></span>
-                                    </div>
-
-                                </div>
-                                <div class="table-admin-user-new">
-                                    <div class="table-admin-user-new-info">
-                                        <img src="/images/admin/user/20210309_164357.jpg" width="40px"  alt="">
-                                        <div>
-                                            <h4>Claudia Tuñon</h4>
-                                            <small>Lanus</small>
-                                        </div>
-                                    </div>
-                                    <div class="table-admin-user-new-contact">
-                                        <span class="las la-user-circle"></span>
-                                        <span class="lab la-whatsapp"></span>
-                                        <span class="las la-phone"></span>
-                                    </div>
-
-                                </div>
-                                <div class="table-admin-user-new">
-                                    <div class="table-admin-user-new-info">
-                                        <img src="/images/admin/user/20210309_164357.jpg" width="40px"  alt="">
-                                        <div>
-                                            <h4>Claudia Tuñon</h4>
-                                            <small>Lanus</small>
-                                        </div>
-                                    </div>
-                                    <div class="table-admin-user-new-contact">
-                                        <span class="las la-user-circle"></span>
-                                        <span class="lab la-whatsapp"></span>
-                                        <span class="las la-phone"></span>
-                                    </div>
-
-                                </div>
-                                <div class="table-admin-user-new">
-                                    <div class="table-admin-user-new-info">
-                                        <img src="/images/admin/user/20210309_164357.jpg" width="40px"  alt="">
-                                        <div>
-                                            <h4>Claudia Tuñon</h4>
-                                            <small>Lanus</small>
-                                        </div>
-                                    </div>
-                                    <div class="table-admin-user-new-contact">
-                                        <span class="las la-user-circle"></span>
-                                        <span class="lab la-whatsapp"></span>
-                                        <span class="las la-phone"></span>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        
-                        </div>
-
-                    </div>
-                
-                </div>
-        </main>
-
+      
     </div>
-    
-</body>
+  </body>
 </html>

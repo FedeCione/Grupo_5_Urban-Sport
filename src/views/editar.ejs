@@ -1,69 +1,131 @@
 <!DOCTYPE html>
 <html lang="es">
-
-    <%- include("partials/head.ejs") %> 
-    <!-- styles -->
- <link rel="stylesheet" href="/stylesheets/darkMode.css">
- <link rel="stylesheet" href="/stylesheets/home.css" />
-    <link rel="stylesheet" href="/stylesheets/admin/loginAdministrador.css">
-    <link rel="stylesheet" href="/stylesheets/admin/agregar.css">
+  <%- include("partials/head.ejs") %>
+  <!-- styles -->
+  <link rel="stylesheet" href="/stylesheets/darkMode.css" />
+  <link rel="stylesheet" href="/stylesheets/home.css" />
+  <link rel="stylesheet" href="/stylesheets/admin/loginAdministrador.css" />
+  <link rel="stylesheet" href="/stylesheets/admin/agregar.css" />
 
   <body>
-      <!-- HEADER -->
-      <%- include("partials/header.ejs") %> 
- <!-- --------------Dark Mode----------------- -->
+    <!-- HEADER -->
+    <%- include("partials/header.ejs") %>
+    <!-- --------------Dark Mode----------------- -->
 
- <%- include("partials/darkMode.ejs") %> 
- <!-- -----------Fin Dark Mode---------------- -->
-        <main id="main-dark">
-            <div>
-                <h1>Editar Producto <%= product.marca %></h1>
-                <form action="panel?_method=PUT" method="POST"   style="margin-top:5.5em">
-                    <div class='form caja-agregar'>
-                        Marca:<label for="marca-producto"><input class='input style-admin'  type="text" name="marca" id="marca-producto" required placeholder="Marca del producto" value="<%= product.marca %> "> </label>
-                        Descripción:<label for="descripción-producto"><input id="descripción-producto" cols="30" rows="10" class='input style-admin'   name="descripcion" required placeholder="Descripción del producto" value="<%= product.descripcion %> "></label>
-                        Categorías:<label for="categoria-producto"> <select  class='input style-admin' name="categoria" id="categoria-producto" value="<%= product.categoria %>  ">
-                          <option value="">Seleccionar categoría</option>
-                          <option value="hombre">Hombre</option>
-                          <option value="mujer">Mujer</option>
-                          <option value="niños">Niños</option>
-                        </select> </label>
-                        Subcategorías:<label for="subcategoria-producto">  <select  class='input style-admin' name="subcategoria" id="subcategoria-producto" value="<%= product.subcategoria %>  ">
-                          <option value="">Seleccionar categoría</option>
-                          <option value="pantalon">pantalon</option>
-                          <option value="remera">remera</option>
-                        </select> </label>
-                        Colores:<label for="colores-producto"><select   class='input style-admin' name="color" id="colores-producto" value="<%= product.color %>  ">
-                          <option value="">Seleccionar color</option>
-                          <option value="negro">Negro</option>
-                          <option value="blanco">Blanco</option>
-                          <option value="azul">Azul</option>
-                        </select></label>
-                        Talles:<label for="talles-producto"> <select  class='input style-admin'  name="talle" id="talles-producto" value="<%= product.talle %> ">
-                          <option value="">Seleccionar talle</option>
-                          <option value="S">S</option>
-                          <option value="M">M</option>
-                          <option value="L">L</option>
-                        </select> </label>
-                        Precio:<label for="precio-producto"> <input id="precio-producto" class='input style-admin'  " type="number" name="precio" required placeholder="Precio del producto" value="<%= product.precio %>"> </label>
-                        Imagen:<label for="imagen-producto"><input id="imagen-producto" class='input style-admin' type="file" name="imagen-producto"  multiple value="<%= product.imagen %> "  > </label>
-                      </div>
-                    <div  class='form'>
-                        <button type="submit" class='btn-admin style-admin' >EDITAR</button>
-                    </div>
-                </form>
-            </div>
+    <%- include("partials/darkMode.ejs") %>
+    <!-- -----------Fin Dark Mode---------------- -->
+    <main id="main-dark">
+      <div>
+        <h1>Editar Producto <%= product.marca %></h1>
+        <form
+          action="admin/<%= product.id %>?_method=PUT"
+          method="POST"
+          style="margin-top: 5.5em"
+        >
+          <div class="form caja-agregar">
+            Marca:<label for="marca-producto"
+              ><input
+                class="input style-admin"
+                type="text"
+                name="marca"
+                id="marca-producto"
+                required
+                placeholder="Marca del producto"
+                value="<%= product.marca %> "
+              />
+            </label>
+            Descripción:<label for="descripción-producto"
+              ><input
+                id="descripción-producto"
+                cols="30"
+                rows="10"
+                class="input style-admin"
+                name="descripcion"
+                required
+                placeholder="Descripción del producto"
+                value="<%= product.descripcion %> "
+            /></label>
+            Categorías:<label for="categoria-producto">
+              <select
+                class="input style-admin"
+                name="categoria"
+                id="categoria-producto"
+                value="<%= product.categoria %>  "
+              >
+                <option value="">Seleccionar categoría</option>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+                <option value="niños">Niños</option>
+              </select>
+            </label>
+            Subcategorías:<label for="subcategoria-producto">
+              <select
+                class="input style-admin"
+                name="subcategoria"
+                id="subcategoria-producto"
+                value="<%= product.subcategoria %>  "
+              >
+                <option value="">Seleccionar categoría</option>
+                <option value="pantalon">pantalon</option>
+                <option value="remera">remera</option>
+              </select>
+            </label>
+            Colores:<label for="colores-producto"
+              ><select
+                class="input style-admin"
+                name="color"
+                id="colores-producto"
+                value="<%= product.color %>  "
+              >
+                <option value="">Seleccionar color</option>
+                <option value="negro">Negro</option>
+                <option value="blanco">Blanco</option>
+                <option value="azul">Azul</option>
+              </select></label
+            >
+            Talles:<label for="talles-producto">
+              <select
+                class="input style-admin"
+                name="talle"
+                id="talles-producto"
+                value="<%= product.talle %> "
+              >
+                <option value="">Seleccionar talle</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+            </label>
+            Precio:<label for="precio-producto">
+              <input id="precio-producto" class='input style-admin' "
+              type="number" name="precio" required placeholder="Precio del
+              producto" value="<%= product.precio %>">
+            </label>
+            Imagen:<label for="imagen-producto"
+              ><input
+                id="imagen-producto"
+                class="input style-admin"
+                type="file"
+                name="imagen-producto"
+                multiple
+                value="<%= product.imagen %> "
+              />
+            </label>
+          </div>
+          <div class="form">
+            <button type="submit" class="btn-admin style-admin">EDITAR</button>
+          </div>
+        </form>
+      </div>
 
-<!-- los values del select no funcan -->
+      <!-- los values del select no funcan -->
+    </main>
 
+    <!-------------- FOOTER ------------------------>
+    <%- include("partials/footer.ejs") %>
 
-        </main>
-    
-        <!-------------- FOOTER ------------------------>
-       <%- include("partials/footer.ejs") %> 
-       
- <script src="/javascripts/darkMode.js"></script>
- <script src="/javascripts/home.js"></script>
-</body>
+    <script src="/javascripts/darkMode.js"></script>
+    <script src="/javascripts/home.js"></script>
+  </body>
 </html>
 © 2021 GitHub, Inc.

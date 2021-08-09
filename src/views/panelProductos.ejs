@@ -32,8 +32,8 @@
         <div class='sidebar-admin-menu'>
             <ul>
                 <li>
-                    <a href="" class="active"><span class="las la-home"></span>
-                        <span>Productos</span> </a>
+                    <a href="agregar" class="active"><span class="las la-home"></span>
+                        <span>Agregar Productos</span> </a>
                 </li>
                 <li>
                     <a href=""><span class="las la-history"></span>
@@ -83,12 +83,10 @@
     </button>
 
     <!--------------Fin Dark Mode----------- -->
-      <h1>Panel de Productos</h1>
+      <h1 >Productos Actuales</h1>
       <div style="overflow:auto" class="panel">
         <table>
-          <caption>
-            Productos Actuales
-          </caption>
+         
           <thead>
             <tr>
               <th colspan="1" scope="col">#</th>
@@ -119,9 +117,11 @@
               <td colspan="8" scope="col">$<%- element.precio %></td>
               <td colspan="9" scope="col"><img width="30px"   src="/images/img/<%- element.imagen %>"></td>
               <td colspan="10" scope="col">
-                <a href="editar/<%- element.id %>?_method=PUT">Editar</a> - 
+                <button style="cursor: pointer;"  type="submit" class="btn-admin style-admin">
+                <a href="editar/<%- element.id %>?_method=PUT">Editar</a>
+                </button> 
                 <form action="eliminar/<%- element.id %>?_method=DELETE" method="post">
-                  <button class="btn-admin style-admin" type="submit">Eliminar</button>
+                  <button style="cursor: pointer;" class="btn-admin style-admin" type="submit">Eliminar</button>
                 </form>
               </td>
             </tr>

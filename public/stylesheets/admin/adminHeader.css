@@ -145,6 +145,7 @@ main{
     padding: 2rem 1.5rem;
     min-height: calc(100vh - 90px);
 }
+/* 
 .card-content-admin{
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -264,7 +265,7 @@ tr td:last-child{
     display: inline-block;
     margin-left: .5rem;
     color:var(--secondary)
-}
+} */
 
 @media only screen and (max-width:1200px) {
     .sidebar-admin{

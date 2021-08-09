@@ -18,8 +18,9 @@ module.exports = {
     },
 
     agregar:(req,res)=>{
+       
 
-        let lastId = 1;
+       let lastId = 1;
 
         getproductos.forEach(element=> {
             if(element.id > lastId){
@@ -27,7 +28,7 @@ module.exports = {
             }
         })
 
-        let{marca, descripcion, categoria, subcategoria,color,talle,precio} = req.body
+        let{marca, descripcion, categoria, subcategoria,color,talle,precio} = req.body;
 
         let newProducto = {
             id: lastId +1,
@@ -60,34 +61,34 @@ module.exports = {
     editar:(req,res)=>{
             let{marca, descripcion, categoria, subcategoria,color,talle,precio} = req.body;
 
-        getproductos.forEach(element => {
-            if(element.id === +req.params.id){
-                element.id = element.id,
-                element.marca = marca,
-                element.descripcion = descripcion,
-                element.categoria = categoria,
-                element.subcategoria = subcategoria,
-                element.color = color,
-                element.talle =talle,
-                element.precio = precio
+        getproductos.forEach(product => {
+            if(product.id === +req.params.id){
+                product.id = product.id,
+                product.marca = marca,
+                product.descripcion = descripcion,
+                product.categoria = categoria,
+                product.subcategoria = subcategoria,
+                product.color = color,
+                product.talle =talle,
+                product.precio = precio
             }
-        }) git
+        })
         writeJSON(getproductos)
-        res.render('panelProductos')
+        res.redirect('panelProductos')
      },
 
     //  NOSE PORQUE  no edita
 
    eliminar:(req,res)=>{
-        getproductos.forEach(element =>{
-            if (element.id === +req.params.id){
-                let deleteProduct = getproductos.indexOf(element);
+        getproductos.forEach(product =>{
+            if (product.id === +req.params.id){
+                let deleteProduct = getproductos.indexOf(product);
                 getproductos.splice(deleteProduct,1)
             }
         })
         writeJSON(getproductos)
-        res.render('panelProductos')
+        res.redirect('panelProductos')
     }
   
-// NOSE PORQUE no elimina y NO ME ENVIA AL PANEL DE PRODUCTOS 
+// NOSE PORQUE elimina pero NO ME ENVIA AL PANEL DE PRODUCTOS 
 }

@@ -1,0 +1,10 @@
+.not-found{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+#imagen{
+    width: 50%;
+}
+

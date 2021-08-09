@@ -18,8 +18,9 @@ module.exports = {
     },
 
     agregar:(req,res)=>{
+       
 
-        let lastId = 1;
+       let lastId = 1;
 
         getproductos.forEach(element=> {
             if(element.id > lastId){
@@ -27,7 +28,7 @@ module.exports = {
             }
         })
 
-        let{marca, descripcion, categoria, subcategoria,color,talle,precio} = req.body
+        let{marca, descripcion, categoria, subcategoria,color,talle,precio} = req.body;
 
         let newProducto = {
             id: lastId +1,

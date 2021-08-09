@@ -119,8 +119,9 @@
               <td colspan="8" scope="col">$<%- element.precio %></td>
               <td colspan="9" scope="col"><img width="30px"   src="/images/img/<%- element.imagen %>"></td>
               <td colspan="10" scope="col">
-                <a href="editar/<%- element.id %>?_method=PUT">Editar</a> - 
-                <form action="panelProductos/<%- element.id %>?_method=DELETE" method="post">
+      
+                <a href="/admin/editar/<%- element.id %>?_method=PUT">Editar</a> - 
+                <form action="/admin/eliminar<%- element.id %>?_method=DELETE" method="post">
                   <button class="btn-admin style-admin" type="submit">Eliminar</button>
                 </form>
               </td>

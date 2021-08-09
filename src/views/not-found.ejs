@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("partials/head.ejs") %> 
+     <!-- styles -->
+  <link rel="stylesheet" href="/stylesheets/variables.css" />
+  <link rel="stylesheet" href="/stylesheets/home.css" />
+  <link rel="stylesheet" href="/stylesheets/not-found.css">
+
+<body>
+    <!----------HEADER-->
+    <%- include("partials/header.ejs") %>
+    <!---------FIN-HEADER--> 
+    <div class="not-found">
+    <img id="imagen"  src="/images/404 error page.png" alt="">
+</div>
+    <!-----FOOTER-->
+    <%- include("partials/footer.ejs") %> 
+<!---------FIN-FOOTER-->
+    <script src="/javascripts/darkMode.js"></script>
+      <script src="/javascripts/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+</body>
+</html>

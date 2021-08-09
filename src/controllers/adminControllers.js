@@ -71,9 +71,9 @@ module.exports = {
                 element.talle =talle,
                 element.precio = precio
             }
-        }) 
+        }) git
         writeJSON(getproductos)
-        res.redirect('panelProductos')
+        res.render('panelProductos')
      },
 
     //  NOSE PORQUE  no edita
@@ -86,7 +86,7 @@ module.exports = {
             }
         })
         writeJSON(getproductos)
-        res.redirect('panelProductos')
+        res.render('panelProductos')
     }
   
 // NOSE PORQUE no elimina y NO ME ENVIA AL PANEL DE PRODUCTOS 

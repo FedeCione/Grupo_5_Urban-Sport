@@ -18,7 +18,7 @@
         <main id="main-dark">
             <div>
                 <h1>Editar Producto <%= product.marca %></h1>
-                <form action="editar/<%= product.id %>?_method=PUT" method="POST"   style="margin-top:5.5em">
+                <form action="panel?_method=PUT" method="POST"   style="margin-top:5.5em">
                     <div class='form caja-agregar'>
                         Marca:<label for="marca-producto"><input class='input style-admin'  type="text" name="marca" id="marca-producto" required placeholder="Marca del producto" value="<%= product.marca %> "> </label>
                         Descripción:<label for="descripción-producto"><input id="descripción-producto" cols="30" rows="10" class='input style-admin'   name="descripcion" required placeholder="Descripción del producto" value="<%= product.descripcion %> "></label>

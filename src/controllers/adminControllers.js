@@ -38,7 +38,9 @@ module.exports = {
             subcategoria: subcategoria.trim(),
             color: color.trim(),
             talle: talle.trim(),
-            precio: precio.trim()
+            precio: precio.trim(),
+            imagen: req.file ? req.file.filename : "sinFoto-image.png" //Si existe req.file (si subieron un archivo), guarda el nombre de ese archivo en el JSON, y si no guarda el "default-image.png".
+
         }
 
         getproductos.push(newProducto);
@@ -74,10 +76,9 @@ module.exports = {
             }
         })
         writeJSON(getproductos)
-        res.redirect('panelProductos')
+        res.redirect('/admin/panelProductos')
      },
 
-    //  NOSE PORQUE  no edita
 
    eliminar:(req,res)=>{
         getproductos.forEach(product =>{
@@ -87,8 +88,7 @@ module.exports = {
             }
         })
         writeJSON(getproductos)
-        res.redirect('panelProductos')
+        res.redirect('/admin/panelProductos')
     }
   
-// NOSE PORQUE elimina pero NO ME ENVIA AL PANEL DE PRODUCTOS 
 }

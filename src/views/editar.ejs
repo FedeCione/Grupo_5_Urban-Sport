@@ -1,24 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include("partials/head.ejs") %>
-  <!-- styles -->
-  <link rel="stylesheet" href="/stylesheets/darkMode.css" />
-  <link rel="stylesheet" href="/stylesheets/home.css" />
-  <link rel="stylesheet" href="/stylesheets/admin/loginAdministrador.css" />
-  <link rel="stylesheet" href="/stylesheets/admin/agregar.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/general.css" />
+    <link rel="stylesheet" href="/stylesheets/variables.css" />
+    <link rel="stylesheet" href="/stylesheets/admin/loginAdministrador.css">
+    <link rel="stylesheet" href="/stylesheets/admin/adminHeader.css" />
 
+  </head>
   <body>
-    <!-- HEADER -->
-    <%- include("partials/header.ejs") %>
-    <!-- --------------Dark Mode----------------- -->
+    <input type="checkbox" id="nav-toggle-admin" />
+    <div class="sidebar-admin">
+      <div class="sidebar-admin-principal">
+        <h2>
+          <img class="icons8-casa" src="/images/admin/icons8-casa.gif" alt="" />
+          <a href="/admin/editar/<%= product.id %>?_method=PUT" class="active">
+          <span >Administrador
+          <i class="las la-times"></i>
 
-    <%- include("partials/darkMode.ejs") %>
-    <!-- -----------Fin Dark Mode---------------- -->
+          </span>
+
+        </a>
+
+        </h2>
+      </div>
+
+      <!-- dashboard admin -->
+      <div class="sidebar-admin-menu">
+        <ul>
+          <li>
+            <a href="/admin/panelProductos" class="active"
+              ><span class="lab la-dropbox"></span> <span>Panel de Productos</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/agregar"
+              ><span class="las la-plus-circle"></span> <span>Agregar Producto</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="las la-users"></span> <span>Clientes</span></a
+            >
+          </li>
+          <li>
+            <a href="/"
+              ><span class="las la-user-slash"></span> <span>Salir</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="admin-content">
+
+      <%- include("partials/admin/header.ejs") %> 
+     
+
     <main id="main-dark">
       <div>
         <h1>Editar Producto <%= product.marca %></h1>
         <form
-          action="admin/<%= product.id %>?_method=PUT"
+          action="/admin/editar/<%= product.id %>?_method=PUT"
           method="POST"
           style="margin-top: 5.5em"
         >
@@ -120,12 +170,10 @@
 
       <!-- los values del select no funcan -->
     </main>
+  </div>
 
-    <!-------------- FOOTER ------------------------>
-    <%- include("partials/footer.ejs") %>
 
     <script src="/javascripts/darkMode.js"></script>
     <script src="/javascripts/home.js"></script>
   </body>
 </html>
-© 2021 GitHub, Inc.

@@ -1,88 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/general.css" />
+    <link rel="stylesheet" href="/stylesheets/variables.css" />
+    <link rel="stylesheet" href="/stylesheets/admin/loginAdministrador.css">
 
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-  <link rel="stylesheet" href="/stylesheets/general.css" />
-  <link rel="stylesheet" href="/stylesheets/admin/loginAdministrador.css">
-  <link rel="stylesheet" href="/stylesheets/variables.css" />
-    <link rel="stylesheet" href="/stylesheets/admin/adminHeader.css">
-  <link rel="stylesheet" href="/stylesheets/admin/panel.css" />
-  <link rel="stylesheet" href="/stylesheets/darkMode.css" />
+    <link rel="stylesheet" href="/stylesheets/admin/panel.css">
+
+    <link rel="stylesheet" href="/stylesheets/admin/adminHeader.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="nav-toggle-admin" />
+    <div class="sidebar-admin">
+      <div class="sidebar-admin-principal">
+        <h2>
+          <img class="icons8-casa" src="/images/admin/icons8-casa.gif" alt="" />
+          <a href="panelProductos" class="active">
+          <span >Administrador
+          <i class="las la-times"></i>
+
+          </span>
+
+        </a>
+
+        </h2>
+      </div>
+
+      <!-- dashboard admin -->
+      <%- include("partials/admin/menu.ejs") %> 
+     
 
 
-</head>
-<body>
-    
-    <input type="checkbox"  id="nav-toggle-admin">
-    <div class='sidebar-admin '>
-        <div class="sidebar-admin-principal">
-            <h2>
-                <img class='icons8-casa' src="/images/admin/icons8-casa.gif" alt="">
-                <span>Administrador</span>
-            </h2>
-        </div>    
-
-        <!-- dashboard admin -->
-        <div class='sidebar-admin-menu'>
-            <ul>
-                <li>
-                    <a href="agregar" class="active"><span class="las la-home"></span>
-                        <span>Agregar Productos</span> </a>
-                </li>
-                <li>
-                    <a href=""><span class="las la-history"></span>
-                        <span>Stock</span> </a>
-                </li>
-                <li>
-                    <a href=""> <span class="las la-book"></span>
-                        <span>Clientes</span></a>
-                </li>
-                <li>
-                    <a href="" ><span class="las la-user"></span>
-                        <span>Proveedores</span></a>
-                </li>
-            </ul>
-
-        </div>
     </div>
 
     <div class="admin-content">
-        <header>
-            <h2>
-                <label for="nav-toggle-admin">
-                    <span class="las la-bars"></span>
-                </label>Panel de Productos
-            </h2>
+     
+      
+      <%- include("partials/admin/header.ejs") %> 
 
-            <div class="search-wrapper">
-                <span class="las la-search"></span>
-                <input type="search"  placeholder="Buscar aquí"/>
-            </div>
-
-            <div class='user-admin'>
-                <img src="/images/admin/admin/20190126_104320.jpg" width="40px" height="40px" alt="">
-                <div>
-                    <h4>Administrador</h4>
-                    <small>Super Admin</small>
-                </div>
-            </div>
-        </header>
 
     <main id="main-dark">
       
-    <!-------------- Dark Mode----------- -->
-    <button class="dark-mode" id="dark-mode">
-      <span><i class="fas fa-sun"></i></span>
-      <span><i class="fas fa-moon"></i></span>
-    </button>
-
-    <!--------------Fin Dark Mode----------- -->
       <h1 >Productos Actuales</h1>
       <div style="overflow:auto" class="panel">
         <table>
@@ -115,7 +81,7 @@
               <td colspan="6" scope="col"><%- element.color %></td>
               <td colspan="7" scope="col"><%- element.talle %></td>
               <td colspan="8" scope="col">$<%- element.precio %></td>
-              <td colspan="9" scope="col"><img width="30px"   src="/images/img/<%- element.imagen %>"></td>
+              <td colspan="9" scope="col"><img width="40%"   src="/images/<%- element.imagen %>"></td>
               <td colspan="10" scope="col">
                 <button style="cursor: pointer;"  type="submit" class="btn-admin style-admin">
                 <a href="editar/<%- element.id %>?_method=PUT">Editar</a>
@@ -144,7 +110,6 @@
   </div>
 
   
-    <!-------------- FOOTER ------------------------>
 
     <script src="/javascripts/darkMode.js"></script>
     <script src="/javascripts/home.js"></script>

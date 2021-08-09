@@ -19,9 +19,13 @@
     <div class="sidebar-admin">
       <div class="sidebar-admin-principal">
         <h2>
-          <img class="icons8-casa" src="/images/admin/icons8-casa.gif" alt="" />
+          <a href="/">
+            <img class="icons8-casa" src="/images/admin/icons8-casa.gif" alt="" />
+          </a>
           <a href="admin" class="active">
-          <span >Administrador</span>
+          <span >Administrador
+            <i class="las la-times"></i>
+          </span>
         </a>
 
         </h2>
@@ -55,33 +59,14 @@
     </div>
 
     <div class="admin-content">
-      <header>
-        <h2>
-          <label for="nav-toggle-admin">
-            <span class="las la-bars"></span> </label
-          >Panel de Productos
-        </h2>
 
-        <div class="search-wrapper">
-          <span class="las la-search"></span>
-          <input type="search" placeholder="Buscar aquí" />
-        </div>
+           <%- include("partials/admin/header.ejs") %> 
 
-        <div class="user-admin">
-          <img
-            src="/images/admin/admin/20190126_104320.jpg"
-            width="40px"
-            height="40px"
-            alt=""
-          />
-          <div>
-            <h4>Administrador</h4>
-            <small>Super Admin</small>
-          </div>
-        </div>
-      </header>
 
-      
+      <main>
+        <h1>Bienvenido Admin</h1>
+        <img src="images/admin/admin/business-3d.png" width="100%" alt="">
+      </main>
 
       
     </div>

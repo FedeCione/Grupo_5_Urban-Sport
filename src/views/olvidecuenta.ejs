@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
   <!------HEAD---------->
-  <%- include("partials/head.ejs") %> 
-    <!------FIN-HEAD---------->
-   <!-- styles -->
-   <link rel="stylesheet" href="/stylesheets/variables.css" />
-   <link rel="stylesheet" href="/stylesheets/darkMode.css">
-   <link rel="stylesheet" href="/stylesheets/olvidecuenta.css" />
+  <%- include("partials/head.ejs") %>
+  <!------FIN-HEAD---------->
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/stylesheets/olvidecuenta.css"/>
+
+  <!-- Javascript -->
+  <script src="/javascripts/home.js" defer></script>
 
   <body>
-    
-      <!------------- HEADER -------------------->
-      <%- include("partials/header.ejs") %> 
- <!-- --------------Dark Mode----------------- -->
- <%- include("partials/darkMode.ejs") %> 
- <!-- -----------Fin Dark Mode---------------- -->
+    <!------------- HEADER -------------------->
+    <%- include("partials/header.ejs") %>
 
-      <!-------------- FORMULARIO ------------------------>
+    <!-- --------------Dark Mode----------------- -->
+    <%- include("partials/darkMode.ejs") %>
+    <!-- -----------Fin Dark Mode---------------- -->
+
+    <!-------------- FORMULARIO ------------------------>
     <main id="main-dark">
-    <form  class="form-register"  action="registro" method="POST">
-      <h4>Recupera tu cuenta</h4>
-      <h5>Introduce tu correo electrónico  para buscar tu cuenta.</h5>
-      <input class="controls" type="email" name="correo" id="correo " placeholder="Ingrese su Correo Electronico" required>
+      <form class="form-register" action="registro" method="POST">
+        <h4>Recupera tu cuenta</h4>
+        <h5>Introduce tu correo electrónico para buscar tu cuenta.</h5>
+        <input
+          class="controls"
+          type="email"
+          name="correo"
+          id="correo "
+          placeholder="Ingrese su Correo Electronico"
+          required
+        />
 
-     <div class="botones">
-      <button class="botons" type="submit" > Cancelar</button>
-      <button class="botons1" type="submit" > Buscar</button>
-    </div>
-    </form>
-  </main>
-   <!-------------- FOOTER ------------------------>
+        <div class="botones">
+          <button class="botons" type="submit">Cancelar</button>
+          <button class="botons1" type="submit">Buscar</button>
+        </div>
+      </form>
+    </main>
 
-   <%- include("partials/footer.ejs") %> 
-   <!--------------FIN- FOOTER ------------------------>
-  
- <script src="/javascripts/darkMode.js"></script>
-  <script src="/javascripts/home.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
-</body>
+    <!-------------- FOOTER ------------------------>
+    <%- include("partials/footer.ejs") %>
+    <!--------------FIN- FOOTER ------------------------>
 
+  </body>
 </html>

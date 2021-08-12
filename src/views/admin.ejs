@@ -11,7 +11,6 @@
     />
     <link rel="stylesheet" href="/stylesheets/general.css" />
     <link rel="stylesheet" href="/stylesheets/variables.css" />
-
     <link rel="stylesheet" href="/stylesheets/admin/adminHeader.css" />
   </head>
   <body>
@@ -20,14 +19,18 @@
       <div class="sidebar-admin-principal">
         <h2>
           <a href="/">
-            <img class="icons8-casa" src="/images/admin/icons8-casa.gif" alt="" />
+            <img
+              class="icons8-casa"
+              src="/images/admin/icons8-casa.gif"
+              alt=""
+            />
           </a>
           <a href="admin" class="active">
-          <span >Administrador
-            <i class="las la-times"></i>
-          </span>
-        </a>
-
+            <span
+              >Administrador
+              <i class="las la-times"></i>
+            </span>
+          </a>
         </h2>
       </div>
 
@@ -50,25 +53,19 @@
             >
           </li>
           <li>
-            <a href="/"
-              ><span class="las la-user"></span> <span>Salir</span></a
-            >
+            <a href="/"><span class="las la-user"></span> <span>Salir</span></a>
           </li>
         </ul>
       </div>
     </div>
 
     <div class="admin-content">
-
-           <%- include("partials/admin/header.ejs") %> 
-
+      <%- include("partials/admin/header.ejs") %>
 
       <main>
         <h1>Bienvenido Admin</h1>
-        <img src="images/admin/admin/business-3d.png" width="100%" alt="">
+        <img src="images/admin/admin/business-3d.png" width="100%" alt="" />
       </main>
-
-      
     </div>
   </body>
 </html>

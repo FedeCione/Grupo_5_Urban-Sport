@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include("partials/head.ejs") %> 
-      <!-- styles -->
-    <link rel="stylesheet" href="/stylesheets/variables.css" />
-    <link rel="stylesheet" href="/stylesheets/darkMode.css">
-    <link rel="stylesheet" href="/stylesheets/login.css" />
+  <%- include("partials/head.ejs") %>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/stylesheets/login.css" />
+
+  <!-- Javascript -->
+  <script src="/javascripts/home.js" defer></script>
+
   <body>
-    
-      <!------------- HEADER -------------------->
-          <%- include("partials/header.ejs") %> 
-       <!-- --------------Dark Mode----------------- -->
-         <%- include("partials/darkMode.ejs") %> 
-       <!-- -----------Fin Dark Mode---------------- -->
-       <main id="main-dark">
+    <!------------- HEADER -------------------->
+    <%- include("partials/header.ejs") %>
+
+    <!-- --------------Dark Mode----------------- -->
+    <%- include("partials/darkMode.ejs") %>
+    <!-- -----------Fin Dark Mode---------------- -->
+
+    <main id="main-dark">
       <form class="form-register">
         <h4 class="titulo">Iniciar Sesión</h4>
         <input
@@ -34,21 +37,17 @@
         <p class="condiciones">
           <input type="checkbox" name="recordar sesion" required />
           <label for="recordar sesion">¿Recordar usuario?</label>
-        </p> 
+        </p>
         <button class="botons" type="submit" required>Ingresar</button>
-      
+
         <p class="condiciones">
-          <a class="condiciones" href="http://localhost:3020/recovery">¿Olvidaste tu contraseña?</a>
+          <a class="condiciones" href="http://localhost:3020/recovery"
+            >¿Olvidaste tu contraseña?</a
+          >
         </p>
       </form>
     </main>
-  <!-------------- FOOTER ------------------------>
- 
-    <%- include("partials/footer.ejs") %> 
-  
-
-       <script src="/javascripts/darkMode.js"></script>
-       <script src="/javascripts/home.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
-</body>
+    <!-------------- FOOTER ------------------------>
+    <%- include("partials/footer.ejs") %>
+  </body>
 </html>

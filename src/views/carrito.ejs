@@ -1,32 +1,15 @@
 <!DOCTYPE html>
 <html class="html-container" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Urban-Sport</title>
+  <!-- Head -->
+  <%- include("partials/head.ejs") %>
 
-    <!-- Font awesome -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      rel="stylesheet"
-    />
+  <!-- Styles -->
+  <link rel="stylesheet" href="/stylesheets/carrito.css"/>
+  <link rel="stylesheet" href="/stylesheets/general.css"/>
 
-    <!-- Google font Roboto -->
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-    </style>
+  <!-- Javascript -->
+  <script src="/javascripts/home.js" defer></script>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/stylesheets/carrito.css" />
-    <link rel="stylesheet" href="/stylesheets/variables.css" />
-    <link rel="stylesheet" href="/stylesheets/general.css" />
-    <link rel="stylesheet" href="/stylesheets/darkMode.css" />
-
-    <!-- Javascript -->
-    <script src="/javascripts/darkMode.js" defer></script>
-    <script src="/javascripts/carrito.js" defer></script>
-  </head>
   <body>
     <!-- Header -->
     <%- include("partials/header.ejs") %>

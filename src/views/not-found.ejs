@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+  <!-- HEAD -->
+  <%- include("partials/head.ejs") %>
 
-    <%- include("partials/head.ejs") %> 
-     <!-- styles -->
+  <!-- Styles -->
   <link rel="stylesheet" href="/stylesheets/variables.css" />
   <link rel="stylesheet" href="/stylesheets/home.css" />
-  <link rel="stylesheet" href="/stylesheets/not-found.css">
+  <link rel="stylesheet" href="/stylesheets/not-found.css" />
 
-<body>
-    <!----------HEADER-->
+  <!-- Javascript -->
+  <script src="/javascripts/darkMode.js" defer></script>
+  <script src="/javascripts/home.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js" defer></script>
+
+  <body>
+    <!----------HEADER----->
     <%- include("partials/header.ejs") %>
-    <!---------FIN-HEADER--> 
+    <!---------FIN-HEADER-->
+
     <div class="not-found">
-    <img id="imagen"  src="/images/404 error page.png" alt="">
-</div>
-    <!-----FOOTER-->
-    <%- include("partials/footer.ejs") %> 
-<!---------FIN-FOOTER-->
-    <script src="/javascripts/darkMode.js"></script>
-      <script src="/javascripts/home.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
-</body>
+      <img id="imagen" src="/images/404 error page.png" alt="" />
+    </div>
+
+    <!-----FOOTER------>
+    <%- include("partials/footer.ejs") %>
+    <!-----FIN-FOOTER-->
+  </body>
 </html>

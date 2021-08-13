@@ -1,5 +1,5 @@
 body{
-    color: var(--primary);
+    color: var(--azul-oscuro);
 }
 .icons8-casa{
     width: 20px;
@@ -18,7 +18,7 @@ body{
 .sidebar-admin-principal{
     height: 90px;
     padding: 1rem 0rem 1rem 2rem;
-    color: var(--primary);
+    color: var(--azul-oscuro);
 }
 .sidebar-admin-principal span{
     display: inline-block;
@@ -31,17 +31,17 @@ body{
     width: 100%;
     margin-bottom: 1.7rem;
     padding-left: 1rem;
-    color: var(--primary);
+    color: var(--azul-oscuro);
 
 }
 .sidebar-admin-menu ul li a{
     padding-left: 1rem;
     display: block;
-    color:var(--primary);
+    color:var(--azul-oscuro);
     font-size: 1.1rem;
 }
 .sidebar-admin-menu ul li a.active{
-    background: var(--primary);
+    background: var(--azul-oscuro);
     padding-top: 1rem;
     padding-bottom: 1rem;
     color:var(--light-grey);
@@ -103,7 +103,7 @@ header label span{
     padding-right: 1rem;
 }
 .search-wrapper{
-    border: 1px solid var(--grey);
+    border: 1px solid gray;
     border-radius: 30px;
     height: 50px;
     display: flex;
@@ -127,7 +127,7 @@ header label span{
 .user-admin{
     display: flex;
     align-items: center;
-    color:var(--primary);
+    color:var(--azul-oscuro);
 
 }
 .user-admin img{
@@ -136,7 +136,7 @@ header label span{
 }
 .user-admin small{
     display: inline-block;
-    color: var(--grey);
+    color: gray;
 }
 
 
@@ -161,19 +161,19 @@ main{
 }
   .card-admin div span{
     font-size: .8rem;
-    color: var(--grey);
+    color: gray;
 }
   .card-admin div:last-child span{
     font-size: 3rem;
-    color: var(--secondary);
+    color: var(--azul-claro);
 }
   .card-admin:last-child{
-    background: var(--secondary);
+    background: var(--azul-claro);
 }
   .card-admin:last-child h1,
   .card-admin:last-child div:first-child span,
   .card-admin:last-child div:last-child span{
-    color:var(--tertiary)
+    color:var(--amarillo)
 }
  .table-admin{
     margin-top: 3.5rem;
@@ -192,28 +192,28 @@ main{
     border-bottom: 1px solid var(--grey);
 }
 .table-admin-card-header button{
-    background: var(--secondary);
+    background: var(--azul-claro);
     border-radius: 10px;
     color: var(--light-grey);
     font-size: .8rem;
     padding: .5rem 1rem;
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--azul-claro);
 }
 table{
     border-collapse: collapse;
 }
  thead tr{
-    border-top: 1px solid var(--primary);
-    border-bottom: 1px solid var(--primary);
+    border-top: 1px solid var(--azul-oscuro);
+    border-bottom: 1px solid var(--azul-oscuro);
 }
  thead td{
     font-size: 1rem;
-    color: var(--primary);
+    color: var(--azul-oscuro);
 }
  td{
     padding: .5rem 1rem;
     font-size: .8rem;
-    color:var(--secondary);
+    color:var(--azul-claro);
 }
 .localidad{
     display: inline-block;
@@ -258,13 +258,13 @@ tr td:last-child{
 }
 .table-admin-user-new-info small{
     font-size: .8rem;
-    color:var(--grey);
+    color: gray;
 }
 .table-admin-user-new-contact{
     font-size: 1.2rem;
     display: inline-block;
     margin-left: .5rem;
-    color:var(--secondary)
+    color:var(--azul-claro)
 } */
 
 @media only screen and (max-width:1200px) {
@@ -331,13 +331,13 @@ header h2{
 header h2 label{
     display: inline-block;
     text-align: center;
-    background: var(--primary) ;
+    background: var(--azul-oscuro) ;
     padding-right: 0rem;
     margin-right: 1rem;
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    color:var(--tertiary);
+    color:var(--amarillo);
     display: flex;
     align-items: center;
     justify-content: center !important;

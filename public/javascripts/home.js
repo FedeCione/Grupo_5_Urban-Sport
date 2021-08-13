@@ -56,4 +56,10 @@ function closeNav() {
     });
   });
 
-
+  // Header Overlay
+  function openOverlayUl() {
+    document.getElementById("user-overlay-ul").style.display = 'block';
+  }
+  function closeOverlayUl() {
+    document.getElementById("user-overlay-ul").style.display = 'none';
+  }

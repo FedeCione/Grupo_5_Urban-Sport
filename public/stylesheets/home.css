@@ -1,16 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
 @import url('/stylesheets/home-header.css');
-
 @import url('/stylesheets/home-footer.css');
 
-:root{
-    --azul-oscuro: #003f49;
-    --azul-claro: #008489;
-    --amarillo: #f0bb3c;
-    --light-grey: #7c7c7c;
-    --font-roboto:'Roboto', sans-serif;
-}
 /* General */
 *{
     box-sizing: border-box;
@@ -19,7 +10,7 @@
 }
 
 body{
-    padding: 15px 10px 0 10px;
+    padding: 8px 12px 0 10px;
     font-family: var(--font-roboto);
     line-height: 1.5;
 }

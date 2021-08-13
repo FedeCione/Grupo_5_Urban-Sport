@@ -1,10 +1,9 @@
 /* Variables */
 
 :root {
-    --primary: #003F49;
-    --secondary: #008489;
-    --tertiary: #F0BB3C;
-    --light-grey: #F5F5F5;
-    --grey: #7C7C7C;
-    --font_roboto: 'Roboto', sans-serif;
+    --azul-oscuro: #003f49;
+    --azul-claro: #008489;
+    --amarillo: #f0bb3c;
+    --light-grey: #7c7c7c;
+    --font-roboto:'Roboto', sans-serif;
 } 

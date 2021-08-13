@@ -21,7 +21,7 @@
   line-height: 25px;
   display: block;
   background: none;
-  color: var(--tertiary);
+  color: var(--amarillo);
 }
 
 .dark-mode::after {
@@ -40,7 +40,7 @@
 }
 
 .active {
-  background: var(--tertiary);
+  background: var(--amarillo);
 }
 
 .active span {
@@ -57,6 +57,10 @@ body.dark {
 }
 
 /* Header dark */
+.main-header.dark .user-overlay-ul a:hover {
+  color: var(--amarillo);
+}
+
 .main-header.dark {
   color: white;
 }
@@ -71,6 +75,10 @@ body.dark {
 
 .main-header.dark .overlay {
   background-color: black;
+}
+
+.main-header.dark a {
+  color: white;
 }
 
 /* Main dark */

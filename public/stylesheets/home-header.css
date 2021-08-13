@@ -148,7 +148,7 @@
   background: #fff;
 }
 .search-btn {
-  color: #f64749;
+  color: var(--tertiary);
   float: right;
   width: 38px;
   height: 38px;
@@ -172,6 +172,48 @@
   line-height: 40px;
   width: 0px;
 }
+
+/* User Overlay */
+
+.user-overlay-ul {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: #34495e;
+  border-radius: 16px;
+  padding: 12px 5px 5px;
+  right: 10px;
+  top: 50px;
+  font-size: 18px;
+}
+
+.user-overlay-ul li {
+  padding-bottom: 10px;
+}
+
+.user-overlay-ul a i {
+  width: 10px;
+  padding-right: 30px;
+}
+
+.user-overlay-ul .fa-angle-up {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.user-overlay-ul .fa-sort-up {
+  position: absolute;
+  right: 66px;
+  top: -15px;
+  font-size: 40px;
+  color: #34495e;
+  pointer-events: none;
+}
+
+
 
 /* --------------- SEARCH ACTIVE --------------- */
 /* .search {

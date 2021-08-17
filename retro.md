@@ -21,6 +21,7 @@
   >* Hacer push sin antes revisar si hay cambios en el repositorio remoto.
   >* Comenzar a hacer tareas sin antes haberlas asignado.
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Sprint Nº 2: HTML y CSS
 1. __Comenzar a hacer:__
@@ -50,6 +51,7 @@
 5. __Dejar de hacer:__
   >* Estudiar hasta tan tarde.
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Sprint Nº 3: Templates Engines
 1. __Comenzar a hacer:__
@@ -71,7 +73,36 @@
   >* Estudiar y practicar mas antes de empezar el sprint.
 
 4. __Hacer menos:__
+  >* Utilizar mucho código innecesario.
   >* Autoexigirse demasiado.
 
 5. __Dejar de hacer:__
   >* Estudiar hasta tan tarde.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Sprint Nº 4: JSON + Métodos HTTP
+1. __Comenzar a hacer:__
+  >* Reunión semanal. 
+  
+2. __Hacer más:__
+  
+
+3. __Continuar haciendo:__
+  >* Mantener comunicación.
+  >* Hacer mas de lo que pide el sprint.
+  >* Pedir ayuda a los demás.
+  >* Reunión para trello y distribución de tareas.
+  >* Revisar repositorio y hacer pull si hay cambios.
+  >* Seguir usando trello.
+  >* Ver errores.
+  >* Ser proactivos.
+  >* Estudiar y practicar mas antes de empezar el sprint.
+  >* Adelantar trabajo para el próximo sprint.
+  
+
+4. __Hacer menos:__
+
+
+5. __Dejar de hacer:__
+

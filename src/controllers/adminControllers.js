@@ -84,11 +84,11 @@ module.exports = {
         getproductos.forEach(product =>{
             if (product.id === +req.params.id){
                 let deleteProduct = getproductos.indexOf(product);
-                getproductos.splice(deleteProduct,1)
+                getproductos.splice(deleteProduct,1);
             }
         })
         writeJSON(getproductos)
-        res.redirect('/admin/panelProductos')
+        res.redirect('/admin/panelProductos');
     }
   
 }

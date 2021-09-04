@@ -4,7 +4,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var methodOverride = require("method-override");
-
+var session = require('express-session')
 var app = express();
 
 // view engine setup
@@ -17,6 +17,13 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
+app.use(methodOverride('_method'));
+app.use(session({ 
+  secret: "mySecret", 
+  resave: false, 
+  saveUninitialized: true ,
+  cookie: { maxAge: 60000 }
+}));
 
 /* ENRUTADORES*/
 let homeRouter = require("./routes/home");

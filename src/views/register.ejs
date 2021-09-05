@@ -68,6 +68,18 @@
           placeholder="Ingrese su Contraseña"
           
         />
+
+        <% if (locals.errors && errors.password_repeat) { %>
+          <small class="text-danger"><%= errors.password_repeat.msg %> </small>
+       <% } %>
+        <input
+          class="controls"
+          type="password"
+          name="password_repeat"
+          id="password_repeat"
+          placeholder="Repite tu Contraseña"
+          
+        />
         
         <input
           class="controls"

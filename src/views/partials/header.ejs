@@ -69,5 +69,9 @@
       <a href="http://localhost:3020/products/carrito"><i class="fas fa-shopping-cart"></i></a>
       <a href=""><i class="fas fa-heart"></i></a>
   </div>
-</header>
+
 <!-- -----------------------Fin Header------------------------- -->
+<% if (typeof locals.user != "undefined") { %>
+    <h2>hola mundo</h2>
+<% } %>
+</header>

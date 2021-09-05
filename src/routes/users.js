@@ -14,7 +14,7 @@ router.post('/register', avatarUpload.single('avatar'), registerValidator, proce
 
 /* Para que ingrese loguado el usuario */
 router.get('/login',login);
-router.post('/login', loginRegister)
+router.post('/login', loginValidator, loginRegister)
 router.get('/logout', logout); //Para que cierre 
 
 

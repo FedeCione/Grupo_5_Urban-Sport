@@ -24,21 +24,32 @@
           name="email"
           id="correo"
           placeholder="Ingrese su Email"
-          required
         />
+        <% if (locals.errors && errors.email) { %>
+          <small class="text-danger"><%= errors.email.msg %> </small>
+       <% } %>
+
         <input
           class="controls"
           type="password"
           name="password"
           id="password"
           placeholder="Ingrese su Contraseña"
-          required
+          
         />
+        <% if (locals.errors && errors.password) { %>
+          <small class="text-danger"><%= errors.password.msg %> </small>
+       <% } %>
+
+        <% if (locals.errorMsg) { %>
+                <small><%= errorMsg %> </small>
+        <% } %>
+
         <p class="condiciones">
-          <input type="checkbox" name="recordar sesion" required />
-          <label for="recordar sesion">¿Recordar usuario?</label>
+          <input type="checkbox" name="remember" />
+          <label for="remember">¿Recordar usuario?</label>
         </p>
-        <button class="botons" type="submit" required>Ingresar</button>
+        <button class="botons" type="submit" >Ingresar</button>
 
         <p class="condiciones">
           <a class="condiciones" href="http://localhost:3020/recovery"

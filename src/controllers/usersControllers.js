@@ -1,11 +1,16 @@
-let { users, writeUsersJSON } = require('../data/dataBase')
+let { users, writeUsersJSON } = require('../data/dataBase');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 
 module.exports = {
-    /* RegisterForm */
+    /* Register Form */
     register:(req,res)=>{
-        res.render("register");
+        // Si esta la sesion iniciada, redirige a home, sino renderiza register
+        if(req.session.user) {
+            res.redirect('/');
+        } else {
+            res.render("register");
+        }
     },
     processRegister:(req,res)=>{
       
@@ -56,10 +61,15 @@ module.exports = {
 
     },
     login:(req,res)=>{
-        
-        res.render("login",{
-            session: req.session
-          });
+        // Si esta la sesion iniciada, redirige a perfil, sino renderiza login
+        if(req.session.user) {
+            res.redirect('/users/perfil');
+        } else {
+            res.render("login",{
+                session: req.session,
+            });
+        }
+
     },
     loginRegister:(req,res)=>{
         let errors = validationResult(req)
@@ -88,19 +98,27 @@ module.exports = {
         } else{
             res.render('login', {
                 errors: errors.mapped(), 
-                session:req.session 
+                session: req.session 
             })
         
         }
     },
-    logout:(req,res)=>{
-       
-        res.render("register");
+
+    logout:(req, res) => {
+        res.render("login");
     },
-    
+
+    perfil: (req, res) =>{
+        let user = users.find(user => user.id === req.session.user.id);
+        res.render('perfil', {
+            session: req.session,
+            user
+        });
+
+},
     
     olvidecuenta:(req,res)=>{
-        res.send('ok')
-    }
+        res.send('ok');
+    },
    
 };

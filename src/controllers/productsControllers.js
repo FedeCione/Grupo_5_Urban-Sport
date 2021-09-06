@@ -1,6 +1,8 @@
 module.exports = {
     carrito:(req,res)=>{
-        res.render("carrito");
+        res.render("carrito", {
+            session: req.session
+        });
     },
     productDetail:(req,res)=>{
         res.render("productDetail");

@@ -1,3 +1,5 @@
+
+
 /* --------------- HEADER ---------------*/
 .main-header {
   display: flex;
@@ -132,17 +134,17 @@
   border-radius: 29px;
   padding: 1px;
 }
-.search-box a i {
+.search-box button i {
   color: #000;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
-.search-box a i:hover {
+.search-box button i:hover {
   color: var(--amarillo);
   opacity: 0.9;
 }
 .search-box:hover > .search-txt {
   width: 150px;
-  padding: 0 6px;
+  padding: 0 4px;
 }
 .search-box:hover > .search-btn {
   background: #fff;

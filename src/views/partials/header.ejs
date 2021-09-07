@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!------------- HEADER -------------------->
 <header class="main-header" id="header-dark">
+  
   <a href="http://localhost:3020/"><img class="header-logo" src="/images/img/logo.png" alt="logotipo" /></a>
 
   <a href="#" class="toggle-nav">
@@ -19,13 +20,16 @@
   </nav>
 
   <!-- search box -->
+  <form action="/search" method="get">
   <div class="search-box">
-    <input class="search-txt" type="text" name="" placeholder="Buscar" />
-    <a href="#" class="search-btn">
-      <i class="fas fa-search"></i>
-    </a>
+    
+      <input class="search-txt"  type="text" name="keywords" placeholder="Buscar" />
+      <button type="submit" class="search-btn">
+        <i class="fas fa-search"></i>
+      </button>
+    
   </div>
-
+</form>
   <!-- MENU MOBILE -->
   <div id="myNav" class="overlay">
     <div class="header-overlay">
@@ -70,6 +74,7 @@
       <a href=""><i class="fas fa-heart"></i></a>
   </div>
 
+  
 <!-- -----------------------Fin Header------------------------- -->
 <% if (typeof locals.user != "undefined") { %>
     <h2>hola mundo</h2>

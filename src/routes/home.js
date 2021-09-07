@@ -1,7 +1,12 @@
 let express = require("express");
 let router = express.Router();
-let { home } = require("../controllers/homeController");
+let { home, search } = require("../controllers/homeController");
 
 router.get("/", home);
+
+
+router.get('/search', search);
+
+
 
 module.exports = router;

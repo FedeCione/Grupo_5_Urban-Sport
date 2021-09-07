@@ -61,7 +61,20 @@
   </div>
 
   <!-- menu del header mobile icons -->
-  <div class="icon-btn">
+  <% if (typeof session.user !== 'undefined') { %>
+    <div class="icon-btn">
+      <i onclick="openOverlayUl()" class="fas fa-user"></i>
+      <ul class="user-overlay-ul" id="user-overlay-ul">
+        <i class="fas fa-sort-up"></i>
+        <a href="http://localhost:3020/users/logout"><li><i class="fas fa-sign-out-alt"></i>Logout</li></a>
+        <a href="http://localhost:3020/users/perfil"><li><i class="fas fa-address-card"></i>Perfil</li></a>
+        <i class="far fa-angle-up" onclick="closeOverlayUl()"></i>
+      </ul>
+      <a href="http://localhost:3020/products/carrito"><i class="fas fa-shopping-cart"></i></a>
+      <a href=""><i class="fas fa-heart"></i></a>
+    </div>
+  <% } else { %>
+    <div class="icon-btn">
       <i onclick="openOverlayUl()" class="fas fa-user"></i>
       <ul class="user-overlay-ul" id="user-overlay-ul">
         <i class="fas fa-sort-up"></i>
@@ -72,11 +85,9 @@
       </ul>
       <a href="http://localhost:3020/products/carrito"><i class="fas fa-shopping-cart"></i></a>
       <a href=""><i class="fas fa-heart"></i></a>
-  </div>
+    </div>
+  <% } %> 
 
   
 <!-- -----------------------Fin Header------------------------- -->
-<% if (typeof locals.user != "undefined") { %>
-    <h2>hola mundo</h2>
-<% } %>
 </header>

@@ -22,7 +22,7 @@ app.use(session({
   secret: "mySecret", 
   resave: false, 
   saveUninitialized: true ,
-  cookie: { maxAge: 60000 }
+  cookie: { maxAge: 1*60*60*1000 }
 }));
 
 /* ENRUTADORES*/

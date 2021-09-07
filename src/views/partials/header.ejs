@@ -57,7 +57,7 @@
   </div>
 
   <!-- menu del header mobile icons -->
-  <% if (session.user) { %>
+  <% if (typeof session.user !== 'undefined') { %>
     <div class="icon-btn">
       <i onclick="openOverlayUl()" class="fas fa-user"></i>
       <ul class="user-overlay-ul" id="user-overlay-ul">

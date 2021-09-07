@@ -1,6 +1,7 @@
 let { users, writeUsersJSON } = require('../data/dataBase');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const session = require('express-session');
 
 module.exports = {
     /* Register Form */
@@ -9,7 +10,9 @@ module.exports = {
         if(req.session.user) {
             res.redirect('/');
         } else {
-            res.render("register");
+            res.render("register", {
+                session: req.session
+            });
         }
     },
     processRegister:(req,res)=>{

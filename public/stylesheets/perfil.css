@@ -45,6 +45,7 @@ main {
         justify-content: flex-start;
         border: 1px solid black;
         max-width: 500px;
+        padding: 8px;
     }
 
     .info-user {

@@ -91,16 +91,15 @@ module.exports = {
             }
 
             if(req.body.remember){ // Si el checkbox está seleccionado creo la cookie
-                res.cookie('kannemannCookie',req.session.user,{expires: new Date(Date.now() + 900000), httpOnly: true})
+                res.cookie('userUrbanSport',req.session.user,{expires: new Date(Date.now() + 900000), httpOnly: true})
             } 
 
             res.locals.user = req.session.user; //Creo la variable user en la propiedad locals dentro del objeto request y como valor le asigno los datos del usuario en sesión
-        
             res.redirect('/')
                      
         } else{
             res.render('login', {
-                errors: errors.mapped(), 
+                errors: errors.mapped(),
                 session: req.session 
             })
         
@@ -109,7 +108,10 @@ module.exports = {
 
     logout: (req, res) => {
         req.session.destroy();
-        return res.redirect('/')
+        if(req.cookies.userUrbanSport){
+            res.cookie('userUrbanSport','',{maxAge:-1})
+        }
+        return res.redirect('/login');
     },
 
     perfil: (req, res) =>{

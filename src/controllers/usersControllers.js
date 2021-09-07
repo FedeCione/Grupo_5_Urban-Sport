@@ -107,8 +107,9 @@ module.exports = {
         }
     },
 
-    logout:(req, res) => {
-        res.render("login");
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('/')
     },
 
     perfil: (req, res) =>{
@@ -121,7 +122,9 @@ module.exports = {
 },
     
     olvidecuenta:(req,res)=>{
-        res.send('ok');
+        res.render('olvidecuenta', {
+            session: req.session
+        });
     },
    
 };

@@ -5,6 +5,8 @@ module.exports = {
         });
     },
     productDetail:(req,res)=>{
-        res.render("productDetail");
+        res.render("productDetail", {
+            session: req.session
+        });
     }
 }

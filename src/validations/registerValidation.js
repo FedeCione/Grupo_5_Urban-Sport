@@ -17,7 +17,7 @@ module.exports = [
     check('password')
         .notEmpty().withMessage('Escribe tu contraseña').isLength({min:6, max: 12}).withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
 
-   body('password_repeat').custom((value,{req}) => value != req.body.password_repeat ? false : true).withMessage('Las contraseñas no coinciden'),
+   body('password').custom((value,{req}) => value != req.body.password2 ? false : true).withMessage('Las contraseñas no coinciden'),
 
     check('terms')
         .isString('on').withMessage('Debes aceptar las bases y condiciones')

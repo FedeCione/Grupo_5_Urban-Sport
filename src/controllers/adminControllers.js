@@ -3,18 +3,23 @@ let { getproductos, writeJSON} = require('../data/dataBase');
 module.exports = {
 
     admin:(req,res)=>{
-        res.render("admin");
+        res.render("admin",{
+            session: req.session
+        });
     },
 
     panelProductos:(req, res) => {
 
         res.render('panelProductos',{
+            session: req.session,
             getproductos
         })
     },
 
     formAgregar: (req, res) => {
-            res.render('agregar')
+            res.render('agregar',{
+                session: req.session
+            })
     },
 
     agregar:(req,res)=>{
@@ -56,6 +61,7 @@ module.exports = {
             return element.id === +req.params.id
         })
         res.render('editar',{
+            session: req.session,
             product
         })
     },

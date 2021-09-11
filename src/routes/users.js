@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let {register, processRegister, login, loginRegister, logout, olvidecuenta, perfil} = require("../controllers/usersControllers");
+let {register, processRegister, login, loginRegister, logout, olvidecuenta, perfil, editProfile} = require("../controllers/usersControllers");
 
 let avatarUpload = require('../middelwares/avatarUpload');
 let userSession = require('../middelwares/userSession');
@@ -20,6 +20,10 @@ router.get('/logout', logout); //Para que cierre
 
 /* Informacion de perfil de usuario */
 router.get('/perfil', userSession, perfil);
+
+
+router.get('/profile/edit/:id', editProfile)
+/* router.post('/profile/edit/:id', editProfile) */
 
 
 router.get('/olvidecuenta', olvidecuenta)

@@ -44,7 +44,7 @@ app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 
 app.use((req, res, next) => {
-  res.status(404).render("not-found");
+  res.status(404).render("error");
 });
 
 // catch 404 and forward to error handler

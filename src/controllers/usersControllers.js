@@ -8,7 +8,9 @@ module.exports = {
     register:(req,res)=>{
         // Si esta la sesion iniciada, redirige a home, sino renderiza register
         if(req.session.user) {
-            res.redirect('/');
+            res.redirect('/',{
+                session: req.session
+            });
         } else {
             res.render("register", {
                 session: req.session
@@ -43,6 +45,11 @@ module.exports = {
                 email,
                 pass: bcrypt.hashSync(password, 10),
                 rol: "ROl_USER",
+                tel: '',
+                address: '',
+                postal: '',
+                province: '',
+                city: '',
                 avatar : req.file ? req.file.filename : "default.png"
             };
 
@@ -57,6 +64,7 @@ module.exports = {
         } else {
             
             res.render('register',{
+                session: req.session,
                 errors: errors.mapped(),
                 old: req.body
             })
@@ -111,16 +119,23 @@ module.exports = {
         if(req.cookies.userUrbanSport){
             res.cookie('userUrbanSport','',{maxAge:-1})
         }
-        return res.redirect('/login');
+         res.redirect('login',{
+            session: req.session 
+        });
     },
 
     perfil: (req, res) =>{
         let user = users.find(user => user.id === req.session.user.id);
-        res.render('perfil', {
+        res.render('profile', {
             session: req.session,
             user
         });
 
+},
+editProfile:(req, res) => {
+    res.render('editProfile',{
+        session: req.session
+    })
 },
     
     olvidecuenta:(req,res)=>{

@@ -1,0 +1,60 @@
+<head>
+    <%- include("partials/head.ejs") %>
+    <link rel="stylesheet" href="../../stylesheets/profile.css">
+     <!-- Javascript -->
+  <script src="/javascripts/home.js" defer></script>
+</head>
+
+
+
+        <!-- HEADER -->
+        <%- include("partials/header.ejs") %>
+
+        <!-- DARK MODE -->
+        <%- include("partials/darkMode.ejs") %>
+ <body>   
+    <div class="card-profile">
+        <div class="ds-top"></div>
+        <div class="avatar-holder">
+            <img src="/images/users/<%= user.avatar %>  " alt="">
+        </div>
+        <div class="name">
+            <h2> <%= user.name %>  <%= user.last_name %></h2>
+          <h6 title="Followers"><i class="fas fa-users"></i> Datos Personales<span class="followers"></span></h6>
+        </div>
+    
+        <div class="ds-info">
+                
+                <div class="info-user posts">
+                    
+                    <h6>Email: <%= user.email ? user.email : "--------" %> </h6>      
+                </div>
+                <div class="info-user posts">
+                    
+                    <h6>Telefono: <%= user.tel ? user.tel : "--------"  %> </h6>      
+                </div>
+                <div class="info-user posts">
+                    
+                    <h6>dirección: <%= user.address ? user.address : "--------" %> </h6>      
+                </div>
+                <div class="info-user posts">
+                    
+                    <h6>Codigo Postal: <%= user.postal ? user.postal : "--------"  %> </h6>      
+                </div>
+                <div class="info-user posts">
+                    
+                    <h6>Provincia: <%= user.province ? user.province : "--------" %> </h6>      
+                </div>
+                <div class="info-user posts">
+                    
+                    <h6>Localidad: <%= user.city ? user.city : "--------"  %> </h6>      
+                </div>
+        </div>
+        <div class="ds-skill">
+            <a href="/users/profile/edit/<%= user.id %> ">Modificar</a>
+        </div>
+      </div>
+
+      
+</body>
+

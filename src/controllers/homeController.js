@@ -18,7 +18,9 @@ module.exports = {
 
       if(resultSearch !== 0){
         res.render('results', {
-          resultSearch
+          session: req.session,
+          resultSearch,
+          search: req.query.keywords
         });
       
       }

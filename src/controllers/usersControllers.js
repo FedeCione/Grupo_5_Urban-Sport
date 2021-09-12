@@ -44,7 +44,7 @@ module.exports = {
                 last_name,
                 email,
                 pass: bcrypt.hashSync(password, 10),
-                rol: "ROl_USER",
+                rol: "ROL_USER",
                 tel: '',
                 address: '',
                 postal: '',
@@ -82,7 +82,7 @@ module.exports = {
         }
 
     },
-    loginRegister:(req,res)=>{
+    processLogin:(req,res)=>{
         let errors = validationResult(req)
             
         if(errors.isEmpty()){
@@ -119,9 +119,7 @@ module.exports = {
         if(req.cookies.userUrbanSport){
             res.cookie('userUrbanSport','',{maxAge:-1})
         }
-         res.redirect('login',{
-            session: req.session 
-        });
+        res.redirect('login');
     },
 
     perfil: (req, res) =>{

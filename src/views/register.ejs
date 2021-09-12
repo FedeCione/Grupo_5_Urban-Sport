@@ -30,7 +30,7 @@
           name="name"
           id="nombre"
           placeholder="Ingrese su Nombre"
-          
+          value="<%= locals.old && old.name %>"
         />
         
         <% if (locals.errors && errors.last_name) { %>
@@ -42,7 +42,7 @@
           name="last_name"
           id="apellido"
           placeholder="Ingrese su Apellido"
-          
+          value="<%= locals.old && old.last_name %>"
         />
 
         <% if (locals.errors && errors.email) { %>
@@ -54,6 +54,7 @@
           name="email"
           id="correo"
           placeholder="Ingrese su Correo"
+          value="<%= locals.old && old.email %>"
           
         />
 
@@ -78,7 +79,6 @@
           name="password2"
           id="password_repeat"
           placeholder="Repite tu Contraseña"
-          
         />
         
         <input
@@ -86,8 +86,6 @@
           type="file"
           name="avatar"
           id="avatar"
-      
-          
         />
         
         <% if (locals.errors && errors.terms) { %>
@@ -97,8 +95,7 @@
           <input type="checkbox" name="terms"  />
           <label for="terminos"
             >Estoy de acuerdo con
-            <a class="condiciones" href="#">Terminos y condiciones</a></label
-          >
+            <a class="condiciones" href="#">Terminos y condiciones</a></label>
         </p>
 
         <button class="botons"

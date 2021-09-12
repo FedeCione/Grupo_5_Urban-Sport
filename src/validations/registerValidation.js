@@ -11,6 +11,19 @@ module.exports = [
 
     check('email')
         .isEmail().withMessage('Debes ingresar un email valido'),
+    
+    check('email').custom(value => {
+        let user = users.filter(user=>{ 
+            return user.email == value 
+        })
+            
+        if(user == false){ 
+            return true 
+        }else{
+            return false 
+        }
+    })
+    .withMessage('Este email ya está registrado'),
 
      
         
@@ -21,5 +34,4 @@ module.exports = [
 
     check('terms')
         .isString('on').withMessage('Debes aceptar las bases y condiciones')
-    
 ]

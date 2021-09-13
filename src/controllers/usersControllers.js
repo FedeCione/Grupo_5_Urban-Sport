@@ -57,9 +57,7 @@ module.exports = {
 
             writeUsersJSON(users);
 
-            res.redirect('/users/login',{
-                session: req.session
-              })
+            res.redirect('/users/login')
             
         } else {
             
@@ -74,7 +72,7 @@ module.exports = {
     login:(req,res)=>{
         // Si esta la sesion iniciada, redirige a perfil, sino renderiza login
         if(req.session.user) {
-            res.redirect('/users/perfil');
+            res.redirect('/users/profile');
         } else {
             res.render("login",{
                 session: req.session,
@@ -130,11 +128,56 @@ module.exports = {
         });
 
 },
-editProfile:(req, res) => {
-    res.render('editProfile',{
-        session: req.session
-    })
+    editProfile:(req, res) => {
+        let user = users.find(user => user.id === +req.params.id);
+
+        res.render('editProfile',{
+            session: req.session,
+            user
+        })
 },
+    updateProfile : (req , res) => {
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            let user = users.find( user => user.id === +req.params.id)
+
+            let{
+                name,
+                last_name,
+                tel,
+                address,
+                postal,
+                province,
+                city
+            } = req.body;
+
+            user.id = user.id
+            user.name = name
+            user.last_name = last_name
+            user.tel = tel 
+            user.address = address
+            user.postal = postal
+            user.province = province
+            user.city = city 
+            user.avatar = req.file ? req.file.filename : user.avatar
+
+            writeUsersJSON(users)
+
+            delete user.pass
+
+            req.session.user = user
+           
+            res.redirect('/users/profile')
+        } else {
+            res.render('editProfile', {
+                errors: errors.mapped(),
+                old: req.body,
+                session:req.session
+            })
+        }
+
+    },
     
     olvidecuenta:(req,res)=>{
         res.render('olvidecuenta', {

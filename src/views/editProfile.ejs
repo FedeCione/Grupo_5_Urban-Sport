@@ -18,8 +18,8 @@
     <!-- -----------Fin Dark Mode---------------- -->
 
     <main id="main-dark">
-      <form class="form-register" action="/users/register" method="POST" enctype="multipart/form-data">
-        <h4>Formulario de Registro</h4>
+      <form class="form-register"  action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <h4>Edita tu perfil</h4>
 
         <% if (locals.errors && errors.name) { %>
           <small class="text-danger"><%= errors.name.msg %> </small>
@@ -29,6 +29,7 @@
           type="text"
           name="name"
           id="nombre"
+          value="<%= user.name %>"
           placeholder="Ingrese su Nombre"
           
         />
@@ -41,76 +42,68 @@
           type="text"
           name="last_name"
           id="apellido"
+          value="<%= user.last_name %>"
           placeholder="Ingrese su Apellido"
           
         />
 
-        <% if (locals.errors && errors.email) { %>
-          <small class="text-danger"><%= errors.email.msg %> </small>
-       <% } %>
         <input
           class="controls"
           type="email"
           name="email"
           id="correo"
-          placeholder="Ingrese su Correo"
-          
+          value="<%= user.email %>"
+          readonly
         />
 
-        <% if (locals.errors && errors.password) { %>
-          <small class="text-danger"><%= errors.password.msg %> </small>
-       <% } %>
         <input
           class="controls"
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Ingrese su Contraseña"
-          
-        />
-
-        <% if (locals.errors && errors.password2) { %>
-          <small class="text-danger"><%= errors.password2.msg %> </small>
-       <% } %>
-        <input
-          class="controls"
-          type="password"
-          name="password2"
-          id="password_repeat"
-          placeholder="Repite tu Contraseña"
+          type="text"
+          name="address"
+          value="<%= user.address ? user.address : "" %>"
+          placeholder="Ingrese tu domicilio"
           
         />
         
         <input
           class="controls"
-          type="file"
-          name="avatar"
-          id="avatar"
-      
+          type="text"
+          name="tel"
+          value="<%= user.tel ? user.tel : "" %>"
+          placeholder="Ingrese un Telefono"
           
         />
+
+        <input
+          class="controls"
+          type="number"
+          name="postal"
+          value="<%= user.postal ? user.postal : "" %>"
+          placeholder="codigo postal"
+          
+        />
+        <div class="controls">
+          <select name="province" id="">
+              <option value="">Provincia</option>
+          </select>
+        </div>
+        <div class="controls">
+          <select name="city" id="">
+              <option value="">Localidad</option>
+          </select>
+       </div>
+        <div class="controls">
+          <p>Cambiar foto de perfil</p>
+          <input class="controls" type="file" name="avatar id="avatar" />
+        </div>
         
-        <% if (locals.errors && errors.terms) { %>
-          <small class="text-danger"><%= errors.terms.msg %> </small>
-       <% } %>
-        <p class="condiciones">
-          <input type="checkbox" name="terms"  />
-          <label for="terminos"
-            >Estoy de acuerdo con
-            <a class="condiciones" href="#">Terminos y condiciones</a></label
-          >
-        </p>
+        
 
         <button class="botons"
         type="submit"
-        > Registrate</button>
+        > guardar </button>
           
        
-        <p class="condiciones">
-          <a class="condiciones" href="http://localhost:3020/users/login"
-            >¿Ya tengo Cuenta?</a
-          >
-        </p>
       </form>
     </main>
 

@@ -34,10 +34,19 @@ module.exports =(sequelize,DataTypes)=>{
     }
     
     let Category= sequelize.define(alias,cols,config)
-   Category.hasMany(models.Subcategories,{
-        as:"subcategories",
-        foreignKey:"category_subcategories"
-    })
+   
+
+    Category.associate =models=>{
+
+        Category.hasMany(models.Subcategories,{
+            as:"subcategories",
+            foreignKey:"category_subcategories"
+        })
+
+    }
+   
+   
+   
     return Category;
     
     }

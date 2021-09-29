@@ -72,18 +72,3 @@ Product.belongTo(models.Subcategories,{
 
 
 
-
-
-
-/*id:{},
-name:{},
-description:{},
-price:{},
-discount:{},
-image:{},
-id_marca:{},
-id_subcategory:{},
-visible:{},
-stock:{},
-id_talle:{},
-id_colour:{}, */

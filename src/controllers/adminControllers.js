@@ -1,5 +1,5 @@
 let { getproductos, writeJSON} = require('../data/dataBase');
-let db = require("../database/models")
+//let db = require("../database/models")
 module.exports = {
 
     admin:(req,res)=>{

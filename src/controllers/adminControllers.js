@@ -1,5 +1,5 @@
 let { getproductos, writeJSON} = require('../data/dataBase');
-
+let db = require("../database/models")
 module.exports = {
 
     admin:(req,res)=>{
@@ -13,6 +13,10 @@ module.exports = {
         res.render('panelProductos',{
             session: req.session,
             getproductos
+            /*db.Product.findAll()
+            .then(function(products){
+                return res.render("panelProductos",{products:products})
+            })*/
         })
     },
 

@@ -25,12 +25,15 @@ app.use(session({
   cookie: { maxAge: 1*60*60*1000 }
 }));
 
+//app.use(localsCheck)
 /* ENRUTADORES*/
 let homeRouter = require("./routes/home");
 let adminRouter = require("./routes/admin");
 let usersRouter = require("./routes/users");
 let productsRouter = require("./routes/products");
 /*FINALIZA ENRUTADORES */
+//const localsCheck=require("./middelwares/localCheck")
+
 
 /*----RUTAS---- */
 app.use(methodOverride("_method"));

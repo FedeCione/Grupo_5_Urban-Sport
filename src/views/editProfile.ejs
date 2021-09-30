@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-  <!-- HEAD -->
-  <%- include("partials/head.ejs") %>
+<!-- HEAD -->
+<%- include("partials/head.ejs") %>
 
   <!-- Styles -->
   <link rel="stylesheet" href="/stylesheets/registro.css" />
@@ -13,103 +13,64 @@
     <!------------- HEADER -------------------->
     <%- include("partials/header.ejs") %>
 
-    <!-- --------------Dark Mode----------------- -->
-    <%- include("partials/darkMode.ejs") %>
-    <!-- -----------Fin Dark Mode---------------- -->
+      <!-- --------------Dark Mode----------------- -->
+      <%- include("partials/darkMode.ejs") %>
+        <!-- -----------Fin Dark Mode---------------- -->
 
-    <main id="main-dark">
-      <form class="form-register"  action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-        <h4>Edita tu perfil</h4>
+        <main id="main-dark">
+          <form class="form-register" action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST"
+            enctype="multipart/form-data">
+            <h4>Edita tu perfil</h4>
 
-        <% if (locals.errors && errors.name) { %>
-          <small class="text-danger"><%= errors.name.msg %> </small>
-       <% } %>
-        <input
-          class="controls"
-          type="text"
-          name="name"
-          id="nombre"
-          value="<%= user.name %>"
-          placeholder="Ingrese su Nombre"
-          
-        />
-        
-        <% if (locals.errors && errors.last_name) { %>
-          <small class="text-danger"><%= errors.last_name.msg %> </small>
-       <% } %>
-        <input
-          class="controls"
-          type="text"
-          name="last_name"
-          id="apellido"
-          value="<%= user.last_name %>"
-          placeholder="Ingrese su Apellido"
-          
-        />
+            <% if (locals.errors && errors.name) { %>
+              <small class="text-danger">
+                <%= errors.name.msg %>
+              </small>
+              <% } %>
+                <input class="controls" type="text" name="name" value="<%= user.name %>"
+                  placeholder="Ingrese su Nombre" />
 
-        <input
-          class="controls"
-          type="email"
-          name="email"
-          id="correo"
-          value="<%= user.email %>"
-          readonly
-        />
+                <% if (locals.errors && errors.last_name) { %>
+                  <small class="text-danger">
+                    <%= errors.last_name.msg %>
+                  </small>
+                  <% } %>
+                    <input class="controls" type="text" name="last_name" value="<%= user.last_name %>"
+                      placeholder="Ingrese su Apellido" />
 
-        <input
-          class="controls"
-          type="text"
-          name="address"
-          value="<%= user.address ? user.address : "" %>"
-          placeholder="Ingrese tu domicilio"
-          
-        />
-        
-        <input
-          class="controls"
-          type="text"
-          name="tel"
-          value="<%= user.tel ? user.tel : "" %>"
-          placeholder="Ingrese un Telefono"
-          
-        />
+                    <input class="controls" type="email" name="email" value="<%= user.email %>"
+                      placeholder="Ingrese su Email" />
 
-        <input
-          class="controls"
-          type="number"
-          name="postal"
-          value="<%= user.postal ? user.postal : "" %>"
-          placeholder="codigo postal"
-          
-        />
-        <div class="controls">
-          <select name="province" id="">
-              <option value="">Provincia</option>
-          </select>
-        </div>
-        <div class="controls">
-          <select name="city" id="">
-              <option value="">Localidad</option>
-          </select>
-       </div>
-        <div class="controls">
-          <p>Cambiar foto de perfil</p>
-          <input class="controls" type="file" name="avatar id="avatar" />
-        </div>
-        
-        
+                    <input class="controls" type="text" name="dni" value="<%= user.dni ? user.dni : "" %>"
+                      placeholder="Ingrese su DNI" />
 
-        <button class="botons"
-        type="submit"
-        > guardar </button>
-          
-       
-      </form>
-    </main>
+                    <input class="controls" type="tel" name="tel" value="<%= user.phone ? user.phone : "" %>"
+                      placeholder="Ingrese un Telefono" />
 
-    <!-------------- FOOTER ------------------------>
-    <%- include("partials/footer.ejs") %>
-    <!--------------FIN- FOOTER ------------------------>
+                    <input class="controls" type="text" name="address" value="<%= user.address ? user.address : "" %>"
+                      placeholder="Ingrese su domicilio" />
+
+                    <input class="controls" type="number" name="postalcode" value="<%= user.postalcode ? user.postalcode : "" %>"
+                      placeholder="Ingrese su Codigo Postal" />
+
+                    <input class="controls" type="text" name="province" value="<%= user.province ? user.province : "" %>"
+                      placeholder="Ingrese su Provincia" />
+
+                    <input class="controls" type="text" name="city" value="<%= user.city ? user.city : "" %>"
+                      placeholder="Ingrese su Ciudad" />
+
+                    <div class="controls">
+                      <p>Cambiar foto de perfil</p>
+                      <input class="controls" type="file" name="avatar" id="avatar" />
+                    </div>
+                    <button class="botons" type="submit"> Guardar </button>
+          </form>
+        </main>
+
+        <!-------------- FOOTER ------------------------>
+        <%- include("partials/footer.ejs") %>
+          <!--------------FIN- FOOTER ------------------------>
 
   </body>
+
 </html>

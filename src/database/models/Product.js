@@ -26,8 +26,8 @@ module.exports =(sequelize,dataTypes)=>{
       type:dataTypes.STRING(45)
     
     },
-    image:{
-      type:dataTypes.STRING(105)
+    id_image:{
+      type:dataTypes.INTEGER(11)
     },
     id_marca:{
       type:dataTypes.INTEGER(11)
@@ -59,6 +59,11 @@ module.exports =(sequelize,dataTypes)=>{
       as:"subcategory",
       foreignKey:"subcategories"
     });
+
+    Product.hasMany(models.Images,{
+      as:"images",
+      foreignKey:"productId"
+    })
   }
   return Product;
   }

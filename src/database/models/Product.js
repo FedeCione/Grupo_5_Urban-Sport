@@ -1,51 +1,51 @@
 
-module.exports =(sequelize,DataTypes)=>{
+module.exports =(sequelize,dataTypes)=>{
   let alias= "Product";
   
   let cols={
      
     id:{
-      type:DataTypes.INTEGER(11).UNSIGNED,
+      type:dataTypes.INTEGER(11).UNSIGNED,
       primaryKey:true,
       autoIncrement:true,
       allowNull:false
     },
     name:{
-      type:DataTypes.STRING(45),
+      type:dataTypes.STRING(45),
       allowNull:false
     },
     description:{
-      type:DataTypes.STRING(800),
+      type:dataTypes.STRING(800),
       
     },
     price:{
-      type:DataTypes.FLOAT(10,2),
+      type:dataTypes.FLOAT(10,2),
       allowNull:false
     },
     discount:{
-      type:DataTypes.string(45)
+      type:dataTypes.string(45)
     
     },
     image:{
-      type:DataTypes.STRING(105)
+      type:dataTypes.STRING(105)
     },
     id_marca:{
-      type:DataTypes.INTEGER(11)
+      type:dataTypes.INTEGER(11)
     },
     id_subcategory:{
-      type:DataTypes.BOOLEAN(11)
+      type:dataTypes.BOOLEAN(11)
     },
     visible:{
-      type:DataTypes.BOOLEAN(4)
+      type:dataTypes.BOOLEAN(4)
     },
     stock:{
-      type:DataTypes.INTEGER(11)
+      type:dataTypes.INTEGER(11)
     },
     id_talle:{
-      type:DataTypes.INTEGER(11)
+      type:dataTypes.INTEGER(11)
     },
     id_colour:{
-      type:DataTypes.INTEGER(11)
+      type:dataTypes.INTEGER(11)
     }
   }
   let config ={
@@ -56,8 +56,8 @@ module.exports =(sequelize,DataTypes)=>{
   let Product= sequelize.define(alias,cols,config)
   Product.associate=models=>{
 
-Product.belongTo(models.Subcategories,{
-  as:"subcategories",
+Product.belongTo(models.subcategories,{
+  as:"subcategory",
   foreignKey:"subcategories"
 })
 

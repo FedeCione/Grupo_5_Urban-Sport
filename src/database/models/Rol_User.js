@@ -1,16 +1,16 @@
-module.exports=(sequelize,DataTypes)=>{
+module.exports=(sequelize,dataTypes)=>{
 
 let alias ="Rol_User";
 
 let cols={
     id:{
-        type:DataTypes.INTEGER(11).UNSIGNED,
+        type:dataTypes.INTEGER(11).UNSIGNED,
         primaryKey:true,
         autoIncrement:true,
         allowNull:false
     },
     name:{
-        type:DataTypes.BOOLEAN(4)
+        type:dataTypes.BOOLEAN(4)
     }
 }
 let config={

@@ -1,30 +1,30 @@
 
-module.exports =(sequelize,DataTypes)=>{
+module.exports =(sequelize,dataTypes)=>{
     let alias= "Category";
     
     let cols={
        
         id:{
-            type:DataTypes.INTEGER(11).unsigned,
+            type:dataTypes.INTEGER(11).unsigned,
             primaryKey:true,
             autoIncrement:true,
             allowNull:false
 
         },
     name:{
-        type:DataTypes.STRING(45),
+        type:dataTypes.STRING(45),
         allowNull:false
     },
     visible:{
-        type:DataTypes.BOOLEAN(4),
+        type:dataTypes.BOOLEAN(4),
         allowNull:false
     },
     description:{
-        type:DataTypes.STRING(255),
+        type:dataTypes.STRING(255),
         allowNull:false
     },
     id_subcategory:{
-        type:DataTypes.INTEGER(11),
+        type:dataTypes.INTEGER(11),
         allowNull:false
     }
     }

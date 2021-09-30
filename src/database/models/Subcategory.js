@@ -20,7 +20,7 @@ let config={
 const Subcategory=sequelize.define(alias,cols,config)
 
 Subcategory.associate=models =>{
-    Subcategory.belongsTo(models.Categories,{
+    Subcategory.belongsTo(models.categories,{
      as:"category",
      foreignKey:"category_subcategories"
 

@@ -14,7 +14,7 @@ let cols={
        type:dataTypes.STRING(45),
        allowNull:false
     },
-    surname:{
+    last_name:{
        type:dataTypes.STRING(60),
        allowNull:false
     },
@@ -28,16 +28,15 @@ let cols={
     },
     phone:{
         type:dataTypes.STRING(45),
-        allowNull:false
+       
     },
     address:{
         type:dataTypes.STRING(100),
-        allowNull:false
+        
     },
     rol_id:{
-        type:dataTypes.INTEGER(11).UNSIGNED,
-        primaryKey:true,
-        allowNull:false
+        type:dataTypes.INTEGER(2).UNSIGNED,
+        
         
     },
     province:{
@@ -54,7 +53,7 @@ let cols={
     },
     dni:{
         type:dataTypes.STRING(15),
-        allowNull:false
+       
     },
     postalCode:{
         type:dataTypes.INTEGER(11),

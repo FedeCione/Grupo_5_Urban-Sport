@@ -34,12 +34,14 @@ module.exports = {
                 name,
                 last_name,
                 email,
-                pass: bcrypt.hashSync(password, 10),
-                rol: "ROL_USER",
+                password: bcrypt.hashSync(password, 10),
+                rol_id: 0,
                 avatar : req.file ? req.file.filename : "default.png"
-            });
-
-            res.redirect('/users/login')
+            }).then(() => {
+                res.redirect("/users/login")
+            })
+            .catch(err => console.log(err))
+         
             
         } else {
             res.render('register',{

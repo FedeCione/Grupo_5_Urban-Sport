@@ -12,7 +12,6 @@ let cols={
     },
     image:{
         type:dataTypes.STRING(100),
-        allowNull:false
     }
 }
 let config={

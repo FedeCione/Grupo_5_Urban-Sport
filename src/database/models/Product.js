@@ -1,6 +1,6 @@
 
 module.exports =(sequelize,dataTypes)=>{
-  let alias= "Product";
+  let alias= "Products";
   
   let cols={
      
@@ -23,7 +23,7 @@ module.exports =(sequelize,dataTypes)=>{
       allowNull:false
     },
     discount:{
-      type:dataTypes.string(45)
+      type:dataTypes.STRING(45)
     
     },
     image:{
@@ -53,20 +53,14 @@ module.exports =(sequelize,dataTypes)=>{
       timestamps:false
   }
   
-  let Product= sequelize.define(alias,cols,config)
+  let Product= sequelize.define(alias,cols,config);
   Product.associate=models=>{
-
-Product.belongTo(models.subcategories,{
-  as:"subcategory",
-  foreignKey:"subcategories"
-})
-
-
+    Product.belongsTo(models.Subcategories,{
+      as:"subcategory",
+      foreignKey:"subcategories"
+    });
   }
-
-
   return Product;
-  
   }
 
 

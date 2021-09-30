@@ -1,6 +1,6 @@
 module.exports =(sequelize,dataTypes)=>{
 
-let alias ="subcategories";
+let alias ="Subcategories";
 let cols={
     id:{
         type:dataTypes.INTEGER(11).UNSIGNED,
@@ -20,7 +20,7 @@ let config={
 const Subcategory=sequelize.define(alias,cols,config)
 
 Subcategory.associate=models =>{
-    Subcategory.belongsTo(models.categories,{
+    Subcategory.belongsTo(models.Categories,{
      as:"category",
      foreignKey:"category_subcategories"
 

@@ -1,7 +1,7 @@
 let { users, writeUsersJSON } = require('../data/dataBase');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
-const session = require('express-session');
+const db = require('../database/models');
 
 module.exports = {
     /* Register Form */
@@ -22,14 +22,6 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()){
-
-            let lastId = 0;
-
-            users.forEach( user => {
-                if(user.id > lastId){
-                    lastId = user.id
-                }
-            });
             //Capturando los datos del formulario
             let { 
                 name,
@@ -38,36 +30,24 @@ module.exports = {
                 password
             } = req.body;
 
-            let newUser = {
-                id : lastId + 1,
+            db.Users.create({
                 name,
                 last_name,
                 email,
                 pass: bcrypt.hashSync(password, 10),
                 rol: "ROL_USER",
-                tel: '',
-                address: '',
-                postal: '',
-                province: '',
-                city: '',
                 avatar : req.file ? req.file.filename : "default.png"
-            };
-
-            users.push(newUser);
-
-            writeUsersJSON(users);
+            });
 
             res.redirect('/users/login')
             
         } else {
-            
             res.render('register',{
                 session: req.session,
                 errors: errors.mapped(),
                 old: req.body
             })
         }
-
     },
     login:(req,res)=>{
         // Si esta la sesion iniciada, redirige a perfil, sino renderiza login

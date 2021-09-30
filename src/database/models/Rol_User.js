@@ -29,6 +29,5 @@ Rol_User.belongsTo(models.users,{
 
 
 }*/
-
 return Rol_User;
 }

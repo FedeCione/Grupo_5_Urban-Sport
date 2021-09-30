@@ -1,15 +1,13 @@
 
 module.exports =(sequelize,dataTypes)=>{
-    let alias= "Category";
+    let alias= "Categories";
     
     let cols={
-       
         id:{
-            type:dataTypes.INTEGER(11).unsigned,
+            type:dataTypes.INTEGER(11).UNSIGNED,
             primaryKey:true,
             autoIncrement:true,
             allowNull:false
-
         },
     name:{
         type:dataTypes.STRING(45),
@@ -34,19 +32,12 @@ module.exports =(sequelize,dataTypes)=>{
     }
     
     let Category= sequelize.define(alias,cols,config)
-   
 
-    Category.associate =models=>{
-
-        Category.hasMany(models.Subcategories,{
+    Category.associate = models => {
+        Category.hasMany(models.Subcategories, {
             as:"subcategories",
             foreignKey:"category_subcategories"
         })
-
     }
-   
-   
-   
     return Category;
-    
     }

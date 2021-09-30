@@ -1,6 +1,6 @@
 
 module.exports =(sequelize,dataTypes)=>{
-let alias= "User";
+let alias= "Users";
 
 let cols={
     id:{
@@ -15,8 +15,8 @@ let cols={
        allowNull:false
     },
     surname:{
-    type:dataTypes.STRING(60),
-    allowNull:false
+       type:dataTypes.STRING(60),
+       allowNull:false
     },
     email:{
         type:dataTypes.STRING(65),
@@ -58,7 +58,6 @@ let cols={
     },
     postalCode:{
         type:dataTypes.INTEGER(11),
-       
     }
 }
 let config ={
@@ -68,19 +67,12 @@ let config ={
 
 let User = sequelize.define(alias,cols,config)
 
-User.associate =models=>{
-
-    User.hasMany(models.Rol_User,{
-    
+User.associate = models => {
+    User.hasMany(models.Rol_User, {
         as:"user_rol",
-        foreignKey:"user_rol"
-    })
-    
-    
+        foreignKey:"rol_user"
+    });
     }
-
-
 return User;
-
 }
 

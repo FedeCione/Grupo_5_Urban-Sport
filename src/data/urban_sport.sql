@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: urban_sport
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.36-MariaDB
+-- Server version	5.5.5-10.4.20-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -335,9 +335,9 @@ CREATE TABLE `users` (
   `city` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
   `avatar` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
   `dni` varchar(15) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `postalcode` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `postalcode` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -346,6 +346,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Fede','Cione','probandoregistro@hotmail.com','$2a$10$mDhhoCdzQPIfHfkWHMXwG.kIT0TPo66x2.TC9uMJZjbWeFds7Y426',NULL,NULL,1,NULL,NULL,'1633015524058_img_.jpg',NULL,NULL),(2,'sdasdasd','dasdasdasdas','probando3@hotmail.com','$2a$10$wsOxDNZFnbTr5DLNhO8X8.r1DbG9Mg3AseHUyVaAQ9IwFj3bHFs9q',NULL,NULL,0,NULL,NULL,'1633015908849_img_.png',NULL,NULL),(3,'dasdsadsadasas','dasdsadasdasdas','probando4@hotmail.com','$2a$10$.6XqfODzKOBl9fize1lkBe6NacofBtoXcMdesmPPDxxh/8cxMO8by',NULL,NULL,1,NULL,NULL,'1633015962753_img_.png',NULL,NULL),(4,'Matias','Ibarra','matiasibarra96@hotmail.com','$2a$10$50NoaE.FLpP04lq29d8K1.WbFNBCNVmS3WYErSbNuiHtkswYYjea6',NULL,NULL,1,NULL,NULL,'default.png',NULL,NULL),(5,'Matias','Ibarra','matiasibarra96@hotmail.com','$2a$10$CwPPqVM9tq0j0LvGPcxz/u.UclRUOU.bu9hfrp8ZRjUuRluduE/da',NULL,NULL,1,NULL,NULL,'default.png',NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -362,4 +363,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-30 19:30:14
+-- Dump completed on 2021-10-01  0:24:42

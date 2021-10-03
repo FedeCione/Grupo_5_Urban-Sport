@@ -45,19 +45,32 @@
             enctype="multipart/form-data"
             style="margin-top: 5.5em"
           >
-            <div class="form caja-agregar">
-              Marca:<label for=""
+             <!-- empeiza caja con caracteristicas del producto-->
+             <div class="form caja-agregar">
+              Nombre:<label for="nombre-producto"
+                ><input
+                  class="input style-admin"
+                  type="text"
+                  name="name"
+                  id="nombre-producto"
+                  required
+                  placeholder="Nombre del producto"
+                 
+                />
+              </label>
+              Marca:<label for="marca-producto"
                 ><input
                   class="input style-admin"
                   type="text"
                   name="marca"
                   id="marca-producto"
                   required
-                  placeholder="Nombre del producto"
+                  placeholder="Marca del producto"
+                  
                 />
               </label>
-              Descripción:<label for="descripción-producto">
-                <textarea
+              Descripción:<label for="descripción-producto"
+                ><input
                   id="descripción-producto"
                   cols="30"
                   rows="10"
@@ -65,13 +78,14 @@
                   name="descripcion"
                   required
                   placeholder="Descripción del producto"
-                ></textarea>
-              </label>
-              Categorías:<label for="">
+                  
+              /></label>
+              Categoría:<label for="categoria-producto">
                 <select
                   class="input style-admin"
                   name="categoria"
                   id="categoria-producto"
+                  
                 >
                   <option value="">Seleccionar categoría</option>
                   <option value="hombre">Hombre</option>
@@ -79,34 +93,37 @@
                   <option value="niños">Niños</option>
                 </select>
               </label>
-              Subcategorías:<label for="">
+              Subcategoría:<label for="subcategoria-producto">
                 <select
                   class="input style-admin"
                   name="subcategoria"
                   id="subcategoria-producto"
+                  
                 >
-                  <option value="">Seleccionar categoría</option>
-                  <option value="pantalon">pantalon</option>
+                  <option value="">Seleccionar  Subcategoría</option>
+                  <option value="pantalon">pantalon </option>
                   <option value="remera">remera</option>
                 </select>
               </label>
-              Colores:<label for=""
+              Color:<label for="colores-producto"
                 ><select
                   class="input style-admin"
                   name="color"
                   id="colores-producto"
+                  
                 >
                   <option value="">Seleccionar color</option>
-                  <option value="negro">Negro</option>
+                  <option value="negro">Negro </option>
                   <option value="blanco">Blanco</option>
                   <option value="azul">Azul</option>
                 </select></label
               >
-              Talles:<label for="">
+              Talle:<label for="talles-producto">
                 <select
                   class="input style-admin"
                   name="talle"
                   id="talles-producto"
+                  
                 >
                   <option value="">Seleccionar talle</option>
                   <option value="S">S</option>
@@ -114,21 +131,58 @@
                   <option value="L">L</option>
                 </select>
               </label>
-              Precio:<label for="">
+              Precio:<label for="precio-producto">
                 <input
+                  id="precio-producto"
                   class="input style-admin"
                   type="number"
                   name="precio"
                   required
-                  placeholder="Precio del producto"
+                  placeholder="Modificar precio del producto"
+                  
+                />
+              </label>
+              Discontinuo:<label for="producto-discontinuo">
+                <input
+                  id="producto-discontinuo"
+                  class="input style-admin"
+                 
+                  name="discontinuo"
+                  required
+                  placeholder="Producto discontinuo?"
+                  
                 />
               </label>
               Imagen:<label for="imagen-producto"
                 ><input
+                  id="imagen-producto"
                   class="input style-admin"
                   type="file"
-                  name="imagen-producto"
+                  name="imagen"
                   multiple
+                  
+                />
+              </label>
+              Visible:<label for="producto-visible">
+                <input
+                  id="producto-visible"
+                  class="input style-admin"
+                 
+                  name="visible"
+                  required
+                  placeholder="Modificar visibilidad del producto"
+                  
+                />
+              </label>
+              Stock:<label for="stock">
+                <input
+                  id="stock"
+                  class="input style-admin"
+                 
+                  name="stock"
+                  required
+                  placeholder="Modificar stock"
+                  
                 />
               </label>
             </div>

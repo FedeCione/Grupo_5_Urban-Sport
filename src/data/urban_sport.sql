@@ -26,7 +26,7 @@ CREATE TABLE `brand` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,6 +35,7 @@ CREATE TABLE `brand` (
 
 LOCK TABLES `brand` WRITE;
 /*!40000 ALTER TABLE `brand` DISABLE KEYS */;
+INSERT INTO `brand` VALUES (1,'Adidas'),(2,'Puma'),(3,'Nike'),(4,'New Balance');
 /*!40000 ALTER TABLE `brand` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,6 +64,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Hombre',1,'seccion hombre',1);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,6 +91,7 @@ CREATE TABLE `category_subcategories` (
 
 LOCK TABLES `category_subcategories` WRITE;
 /*!40000 ALTER TABLE `category_subcategories` DISABLE KEYS */;
+INSERT INTO `category_subcategories` VALUES (1,1,1);
 /*!40000 ALTER TABLE `category_subcategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,7 +106,7 @@ CREATE TABLE `colours` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,6 +115,7 @@ CREATE TABLE `colours` (
 
 LOCK TABLES `colours` WRITE;
 /*!40000 ALTER TABLE `colours` DISABLE KEYS */;
+INSERT INTO `colours` VALUES (1,'rojo');
 /*!40000 ALTER TABLE `colours` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,6 +196,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
+INSERT INTO `images` VALUES (1,'www.google.com');
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,6 +240,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (2,'pantalon','largo',1500.00,'1',1,1,1,1,10,1,1);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -280,7 +286,7 @@ CREATE TABLE `subcategories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -289,6 +295,7 @@ CREATE TABLE `subcategories` (
 
 LOCK TABLES `subcategories` WRITE;
 /*!40000 ALTER TABLE `subcategories` DISABLE KEYS */;
+INSERT INTO `subcategories` VALUES (1,'Remeras');
 /*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -303,7 +310,7 @@ CREATE TABLE `talles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `talle` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -312,6 +319,7 @@ CREATE TABLE `talles` (
 
 LOCK TABLES `talles` WRITE;
 /*!40000 ALTER TABLE `talles` DISABLE KEYS */;
+INSERT INTO `talles` VALUES (1,42);
 /*!40000 ALTER TABLE `talles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -337,7 +345,7 @@ CREATE TABLE `users` (
   `dni` varchar(15) COLLATE utf8_spanish_ci DEFAULT NULL,
   `postalcode` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -346,7 +354,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Matias','Ibarra','matiasibarra96@hotmail.com','$2a$10$QDwMfIlMsq8ARgjrjjp4JuJ2QxsxEIWtgp5hjbdxqdITYuCZiEN3q',NULL,NULL,1,NULL,NULL,'default.png',NULL,NULL);
+INSERT INTO `users` VALUES (1,'Matias','Ibarra','matiasibarra96@hotmail.com','$2a$10$QDwMfIlMsq8ARgjrjjp4JuJ2QxsxEIWtgp5hjbdxqdITYuCZiEN3q','34343','sdsdsd',1,'cordoba','alta gracia','default.png','12400',NULL),(2,'Juliana','Lezcano','juliana@gmail.com','123456',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL),(3,'Elias','Kanneman','elias@gmail.com','123456',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL),(4,'Federico','Cione','federico@gmail.com','123456',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -363,4 +371,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-01  0:42:33
+-- Dump completed on 2021-10-03 16:28:06

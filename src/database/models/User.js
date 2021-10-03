@@ -70,7 +70,15 @@ User.associate = models => {
     User.hasMany(models.Rol_User, {
         as:"user_rol",
         foreignKey:"rol_user"
-    });
+    })
+    User.hasMany(models.Favorites,{
+        as:"favorites",
+        foreignKey:"id_user"
+    })
+    User.hasMany(models.Sales,{
+        as:"sales",
+        foreignKey:"id_user"
+    })
     }
 return User;
 }

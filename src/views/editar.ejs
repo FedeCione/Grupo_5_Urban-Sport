@@ -63,13 +63,24 @@
 
       <main id="main-dark">
         <div>
-          <h1>Editar Producto <%= product.marca %></h1>
+          <h1>Editar Producto <%= product.name %></h1>
           <form
             action="/admin/editar/<%= product.id %>?_method=PUT"
             method="POST"
             style="margin-top: 5.5em"
           >
             <div class="form caja-agregar">
+              Nombre:<label for="nombre-producto"
+                ><input
+                  class="input style-admin"
+                  type="text"
+                  name="name"
+                  id="nombre-producto"
+                  required
+                  placeholder="Nombre del producto"
+                  value="<%= product.name %> "
+                />
+              </label>
               Marca:<label for="marca-producto"
                 ><input
                   class="input style-admin"
@@ -78,7 +89,7 @@
                   id="marca-producto"
                   required
                   placeholder="Marca del producto"
-                  value="<%= product.marca %> "
+                  value="<%= product.id_marca %> "
                 />
               </label>
               Descripción:<label for="descripción-producto"
@@ -90,14 +101,14 @@
                   name="descripcion"
                   required
                   placeholder="Descripción del producto"
-                  value="<%= product.descripcion %> "
+                  value="<%= product.description %> "
               /></label>
-              Categorías:<label for="categoria-producto">
+              Categoría:<label for="categoria-producto">
                 <select
                   class="input style-admin"
                   name="categoria"
                   id="categoria-producto"
-                  value="<%= product.categoria %>  "
+                  value="<%= product.categories %>  "
                 >
                   <option value="">Seleccionar categoría</option>
                   <option value="hombre">Hombre</option>
@@ -105,37 +116,37 @@
                   <option value="niños">Niños</option>
                 </select>
               </label>
-              Subcategorías:<label for="subcategoria-producto">
+              Subcategoría:<label for="subcategoria-producto">
                 <select
                   class="input style-admin"
                   name="subcategoria"
                   id="subcategoria-producto"
-                  value="<%= product.subcategoria %>  "
+                  value="<%= product.id_subcategory %>  "
                 >
-                  <option value="">Seleccionar categoría</option>
-                  <option value="pantalon">pantalon</option>
+                  <option value="">Seleccionar  Subcategoría</option>
+                  <option value="pantalon">pantalon<%- product.id_subcategory %> </option>
                   <option value="remera">remera</option>
                 </select>
               </label>
-              Colores:<label for="colores-producto"
+              Color:<label for="colores-producto"
                 ><select
                   class="input style-admin"
                   name="color"
                   id="colores-producto"
-                  value="<%= product.color %>  "
+                  value="<%= product.id_colour %>  "
                 >
                   <option value="">Seleccionar color</option>
-                  <option value="negro">Negro</option>
+                  <option value="negro">Negro<%- product.id_colour %> </option>
                   <option value="blanco">Blanco</option>
                   <option value="azul">Azul</option>
                 </select></label
               >
-              Talles:<label for="talles-producto">
+              Talle:<label for="talles-producto">
                 <select
                   class="input style-admin"
                   name="talle"
                   id="talles-producto"
-                  value="<%= product.talle %>"
+                  value="<%= product.id_talle %>"
                 >
                   <option value="">Seleccionar talle</option>
                   <option value="S">S</option>
@@ -150,9 +161,19 @@
                   type="number"
                   name="precio"
                   required
-                  placeholder="Precio del
-              producto"
-                  value="<%= product.precio %>"
+                  placeholder="Modificar precio del producto"
+                  value="<%= product.price %>"
+                />
+              </label>
+              Discontinuo:<label for="producto-discontinuo">
+                <input
+                  id="producto-discontinuo"
+                  class="input style-admin"
+                 
+                  name="discontinuo"
+                  required
+                  placeholder="Producto discontinuo?"
+                  value="<%= product.discount %>"
                 />
               </label>
               Imagen:<label for="imagen-producto"
@@ -160,9 +181,31 @@
                   id="imagen-producto"
                   class="input style-admin"
                   type="file"
-                  name="imagen-producto"
+                  name="imagen"
                   multiple
-                  value="<%= product.imagen %> "
+                  value="<%= product.id_image %> "
+                />
+              </label>
+              Visible:<label for="producto-visible">
+                <input
+                  id="producto-visible"
+                  class="input style-admin"
+                 
+                  name="visible"
+                  required
+                  placeholder="Modificar visibilidad del producto"
+                  value="<%= product.visible %>"
+                />
+              </label>
+              Stock:<label for="stock">
+                <input
+                  id="stock"
+                  class="input style-admin"
+                 
+                  name="stock"
+                  required
+                  placeholder="Modificar stock"
+                  value="<%= product.stock %>"
                 />
               </label>
             </div>

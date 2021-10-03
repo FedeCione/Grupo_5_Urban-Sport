@@ -5,6 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var methodOverride = require("method-override");
 var session = require('express-session')
+const localsCheck=require("./middelwares/localCheck")
 var app = express();
 
 // view engine setup
@@ -32,7 +33,7 @@ let adminRouter = require("./routes/admin");
 let usersRouter = require("./routes/users");
 let productsRouter = require("./routes/products");
 /*FINALIZA ENRUTADORES */
-const localsCheck=require("./middelwares/localCheck")
+
 
 
 /*----RUTAS---- */

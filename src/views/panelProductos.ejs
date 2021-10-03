@@ -44,44 +44,48 @@
             <thead>
               <tr>
                 <th colspan="1" scope="col">#</th>
-                <th colspan="2" scope="col">Marca</th>
-                <th colspan="3" scope="col">Descripción</th>
-                <th colspan="4" scope="col">Categoría</th>
-                <th colspan="5" scope="col">Subcategoría</th>
-                <th colspan="6" scope="col">Color</th>
-                <th colspan="7" scope="col">Talle</th>
-                <th colspan="8" scope="col">Precio</th>
-                <th colspan="9" scope="col">Imagen</th>
-                <th colspan="10" scope="col">Acciones</th>
+                <th colspan="2" scope="col">Nombre</th>
+                <th colspan="3" scope="col">Marca</th>
+                <th colspan="4" scope="col">Descripcion</th>
+                <th colspan="5" scope="col">Categoria</th>
+                <th colspan="6" scope="col">Subcategoria</th>
+                <th colspan="7" scope="col">Color</th>
+                <th colspan="8" scope="col">Talle</th>
+                <th colspan="9" scope="col">Precio</th>
+                <th colspan="10" scope="col">Discontinuo</th>
+                <th colspan="11" scope="col">Imagen</th>
+                <th colspan="12" scope="col">Visible</th>
+                <th colspan="13" scope="col">Stock</th>
               </tr>
             </thead>
             <tbody>
-              <% getproductos.forEach(element => { %>
+              <% products.forEach(product => { %>
 
               <tr>
-                <td colspan="1" scope="col"><%- element.id %></td>
-                <td colspan="2" scope="col"><%- element.marca %></td>
-                <td colspan="3" scope="col"><%- element.descripcion %></td>
-                <td colspan="4" scope="col"><%- element.categoria %></td>
-                <td colspan="5" scope="col"><%- element.subcategoria %></td>
-                <td colspan="6" scope="col"><%- element.color %></td>
-                <td colspan="7" scope="col"><%- element.talle %></td>
-                <td colspan="8" scope="col">$<%- element.precio %></td>
-                <td colspan="9" scope="col">
-                  <img width="40%" src="/images/<%- element.imagen %>" />
+                <td colspan="1" scope="col"><%- product.id %></td>
+                <td colspan="2" scope="col"><%- product.name %></td>
+                <td colspan="3" scope="col"><%- product.id_marca %></td>
+                <td colspan="4" scope="col"><%- product.description %></td>
+                <td colspan="5" scope="col"><%- product.category %></td>
+                <td colspan="6" scope="col"><%- product.id_subcategory %></td>
+                <td colspan="7" scope="col"><%- product.id_colour %></td>
+                <td colspan="8" scope="col"><%- product.id_talle %></td>
+                <td colspan="9" scope="col">$<%- product.price %></td>
+                <td colspan="10" scope="col"><%- product.discount %></td>
+                <td colspan="11" scope="col"><%- product.id_image  %> 
+                  <img width="40%" src="/images/<%- product.id_image %>" />
                 </td>
-                <td colspan="10" scope="col">
+                <td colspan="12" scope="col"><%- product.visible %></td>
+                <td colspan="13" scope="col"><%- product.stock %> 
                   <button
                     style="cursor: pointer"
                     type="submit"
                     class="btn-admin style-admin"
                   >
-                    <a href="editar/<%- element.id %>?_method=PUT">Editar</a>
+                    <a href="editar/<%-product.id %>?_method=PUT">Editar</a>
                   </button>
                   <form
-                    action="eliminar/<%- element.id %>?_method=DELETE"
-                    method="post"
-                  >
+                    action="eliminar/<%-product.id %>?_method=DELETE" method="post">
                     <button
                       style="cursor: pointer"
                       class="btn-admin style-admin"
@@ -98,9 +102,9 @@
             <tfoot>
               <tr>
                 <th colspan="20" scope="col">
-                  Total productos:<%- getproductos.length %>
+                  Total productos:<%- products.length %>
                 </th>
-                <th colspan="40" scope="col">Total precio:$</th>
+                <th colspan="40" scope="col">Total precio:$ </th>
               </tr>
             </tfoot>
           </table>

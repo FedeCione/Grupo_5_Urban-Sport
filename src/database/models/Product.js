@@ -56,10 +56,25 @@ module.exports =(sequelize,dataTypes)=>{
   let Product= sequelize.define(alias,cols,config);
   Product.associate=models=>{
     Product.belongsTo(models.Subcategories,{
-      as:"subcategory",
-      foreignKey:"subcategories"
+      as:"subcategories",
+      foreignKey:"id_subcategory"
     });
-
+    Product.belongsTo(models.Talles,{
+      as:"talles",
+      foreignKey:"id_talle"
+    })
+    Product.belongsTo(models.Brands,{
+      as:"brand",
+      foreignKey:"id_marca"
+    })
+    Product.belongsTo(models.Colours,{
+      as:"colours",
+      foreignKey:"id_colour"
+    })
+    Product.hasMany(models.Favorites,{
+      as:"favorites",
+      foreignKey:"id_product"
+    })
     Product.hasMany(models.Images,{
       as:"images",
       foreignKey:"productId"

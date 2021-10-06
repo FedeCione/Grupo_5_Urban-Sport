@@ -18,10 +18,13 @@ module.exports = (sequelize, dataTypes) => {
     let Talle = sequelize.define(alias, cols, config);
 
     Talle.associate = models => {
-        Talle.hasMany(models.Products, {
+        Talle.belongsToMany(models.Products, {
             as: "products",
-            foreignKey: "id_talle"
-        })
+            through: "talle_product",
+            foreignKey: "id_talle",
+            otherKey: "id_product",
+            timestamps: false
+          })
     }
     return Talle;
 }

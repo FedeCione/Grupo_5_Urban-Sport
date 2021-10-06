@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
+-- MariaDB dump 10.19  Distrib 10.4.21-MariaDB, for Win64 (AMD64)
 --
--- Host: localhost    Database: urban_sport
+-- Host: 127.0.0.1    Database: urban_sport
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.36-MariaDB
+-- Server version	10.4.21-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -246,17 +246,11 @@ CREATE TABLE `products` (
   `id_subcategory` int(11) DEFAULT NULL,
   `visible` tinyint(4) DEFAULT NULL,
   `stock` int(11) DEFAULT NULL,
-  `id_talle` int(11) DEFAULT NULL,
-  `id_colour` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_ef2da699-323f-46c8-98f6-6282e3be8efe` (`id_marca`),
-  KEY `FK_9de9f503-acd5-434b-86c2-9c1ba5a3822d` (`id_colour`),
-  KEY `FK_be0e236c-6271-4705-b5bb-b34aab587ad7` (`id_talle`),
   KEY `FK_fbdbc21b-a531-483c-9cce-8f71e105dfe9` (`id_subcategory`),
   KEY `FK_594adef5-221a-456a-9576-ab6e226eaa39` (`id_image`),
   CONSTRAINT `FK_594adef5-221a-456a-9576-ab6e226eaa39` FOREIGN KEY (`id_image`) REFERENCES `images` (`id`),
-  CONSTRAINT `FK_9de9f503-acd5-434b-86c2-9c1ba5a3822d` FOREIGN KEY (`id_colour`) REFERENCES `colours` (`id`),
-  CONSTRAINT `FK_be0e236c-6271-4705-b5bb-b34aab587ad7` FOREIGN KEY (`id_talle`) REFERENCES `talles` (`id`),
   CONSTRAINT `FK_ef2da699-323f-46c8-98f6-6282e3be8efe` FOREIGN KEY (`id_marca`) REFERENCES `brand` (`id`),
   CONSTRAINT `FK_fbdbc21b-a531-483c-9cce-8f71e105dfe9` FOREIGN KEY (`id_subcategory`) REFERENCES `subcategories` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -268,7 +262,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (2,'pantalon','largo',1500.00,'1',1,1,1,1,10,1,1);
+INSERT INTO `products` VALUES (2,'pantalon','largo',1500.00,'1',1,1,1,1,10);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -401,7 +395,7 @@ CREATE TABLE `users` (
   `dni` varchar(15) COLLATE utf8_spanish_ci DEFAULT NULL,
   `postalcode` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -410,13 +404,8 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Matias','Ibarra','matiasibarra96@hotmail.com','$2a$10$QDwMfIlMsq8ARgjrjjp4JuJ2QxsxEIWtgp5hjbdxqdITYuCZiEN3q','34343','sdsdsd',1,'cordoba','alta gracia','default.png','12400',NULL),(2,'Juliana','Lezcano','juliana@gmail.com','123456',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL),(3,'Elias','Kanneman','elias@gmail.com','123456',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL),(4,'Federico','Cione','federico@gmail.com','123456',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL),(5,'juan','carlos','juancarlos@mail.com','$2a$10$nWWK5yx9..kkZ9u/G8eA5OeYZmyo0nMJxHgPEd1kARkZsmAfdZdQm','9823749723','Necochea 1757',1,'Santa Fe','Rosario','default.png','18093432','2000');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping routines for database 'urban_sport'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -427,4 +416,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-06 13:42:33
+-- Dump completed on 2021-10-06 15:50:01

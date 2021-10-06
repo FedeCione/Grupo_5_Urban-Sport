@@ -30,10 +30,12 @@ module.exports =(sequelize,dataTypes)=>{
       type:dataTypes.INTEGER(11)
     },
     id_marca:{
-      type:dataTypes.INTEGER(11)
+      type:dataTypes.INTEGER(11),
+      
     },
     id_subcategory:{
-      type:dataTypes.BOOLEAN(11)
+      type:dataTypes.INTEGER(11),
+      
     },
     visible:{
       type:dataTypes.BOOLEAN(4)
@@ -42,10 +44,12 @@ module.exports =(sequelize,dataTypes)=>{
       type:dataTypes.INTEGER(11)
     },
     id_talle:{
-      type:dataTypes.INTEGER(11)
+      type:dataTypes.INTEGER(11),
+      
     },
     id_colour:{
-      type:dataTypes.INTEGER(11)
+      type:dataTypes.INTEGER(11),
+      
     }
   }
   let config ={
@@ -59,7 +63,7 @@ module.exports =(sequelize,dataTypes)=>{
       as:"subcategories",
       foreignKey:"id_subcategory"
     });
-    Product.belongsTo(models.Talles,{
+    Product.hasMany(models.Talles,{
       as:"talles",
       foreignKey:"id_talle"
     })

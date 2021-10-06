@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: urban_sport
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.20-MariaDB
+-- Server version	5.5.5-10.1.36-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -96,6 +96,34 @@ INSERT INTO `category_subcategories` VALUES (1,1,1);
 UNLOCK TABLES;
 
 --
+-- Table structure for table `colour_product`
+--
+
+DROP TABLE IF EXISTS `colour_product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `colour_product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_colours` int(11) NOT NULL,
+  `id_products` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_292cb45e-fe25-4afa-9966-82f43759e2a4` (`id_colours`),
+  KEY `FK_9479cea3-81af-464b-ab28-f6d041e71149` (`id_products`),
+  CONSTRAINT `FK_292cb45e-fe25-4afa-9966-82f43759e2a4` FOREIGN KEY (`id_colours`) REFERENCES `colours` (`id`),
+  CONSTRAINT `FK_9479cea3-81af-464b-ab28-f6d041e71149` FOREIGN KEY (`id_products`) REFERENCES `products` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `colour_product`
+--
+
+LOCK TABLES `colour_product` WRITE;
+/*!40000 ALTER TABLE `colour_product` DISABLE KEYS */;
+/*!40000 ALTER TABLE `colour_product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `colours`
 --
 
@@ -104,9 +132,9 @@ DROP TABLE IF EXISTS `colours`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `colours` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -115,7 +143,7 @@ CREATE TABLE `colours` (
 
 LOCK TABLES `colours` WRITE;
 /*!40000 ALTER TABLE `colours` DISABLE KEYS */;
-INSERT INTO `colours` VALUES (1,'rojo');
+INSERT INTO `colours` VALUES (1,'Fuscia'),(2,'Aquamarine'),(3,'Mauv'),(4,'Turquoise'),(5,'Mauv'),(6,'Turquoise'),(7,'Puce'),(8,'Indigo'),(9,'Violet'),(10,'Mauv'),(11,'Puce'),(12,'Blue'),(13,'Orange'),(14,'Khaki'),(15,'Turquoise'),(16,'Violet'),(17,'Goldenrod'),(18,'Fuscia'),(19,'Orange'),(20,'Orange'),(21,'Indigo'),(22,'Pink'),(23,'Teal'),(24,'Khaki'),(25,'Turquoise'),(26,'Khaki'),(27,'Aquamarine'),(28,'Teal'),(29,'Orange'),(30,'Khaki'),(31,'Green'),(32,'Indigo'),(33,'Aquamarine'),(34,'Mauv'),(35,'Yellow'),(36,'Yellow'),(37,'Khaki'),(38,'Fuscia'),(39,'Mauv'),(40,'Pink'),(41,'Puce'),(42,'Maroon'),(43,'Fuscia'),(44,'Red'),(45,'Crimson'),(46,'Yellow'),(47,'Fuscia'),(48,'Puce'),(49,'Maroon'),(50,'Aquamarine');
 /*!40000 ALTER TABLE `colours` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -300,6 +328,34 @@ INSERT INTO `subcategories` VALUES (1,'Remeras');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `talle_product`
+--
+
+DROP TABLE IF EXISTS `talle_product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `talle_product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_talle` int(11) NOT NULL,
+  `id_product` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_091e33b8-3150-409c-8700-333337ea4dc5` (`id_talle`),
+  KEY `FK_f9d2d928-4854-4445-8f17-04aa9f9fa3ea` (`id_product`),
+  CONSTRAINT `FK_091e33b8-3150-409c-8700-333337ea4dc5` FOREIGN KEY (`id_talle`) REFERENCES `talles` (`id`),
+  CONSTRAINT `FK_f9d2d928-4854-4445-8f17-04aa9f9fa3ea` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `talle_product`
+--
+
+LOCK TABLES `talle_product` WRITE;
+/*!40000 ALTER TABLE `talle_product` DISABLE KEYS */;
+/*!40000 ALTER TABLE `talle_product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `talles`
 --
 
@@ -345,7 +401,7 @@ CREATE TABLE `users` (
   `dni` varchar(15) COLLATE utf8_spanish_ci DEFAULT NULL,
   `postalcode` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -354,7 +410,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Matias','Ibarra','matiasibarra96@hotmail.com','$2a$10$QDwMfIlMsq8ARgjrjjp4JuJ2QxsxEIWtgp5hjbdxqdITYuCZiEN3q','34343','sdsdsd',1,'cordoba','alta gracia','default.png','12400',NULL);
+INSERT INTO `users` VALUES (1,'Matias','Ibarra','matiasibarra96@hotmail.com','$2a$10$QDwMfIlMsq8ARgjrjjp4JuJ2QxsxEIWtgp5hjbdxqdITYuCZiEN3q','34343','sdsdsd',1,'cordoba','alta gracia','default.png','12400',NULL),(2,'Juliana','Lezcano','juliana@gmail.com','123456',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL),(3,'Elias','Kanneman','elias@gmail.com','123456',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL),(4,'Federico','Cione','federico@gmail.com','123456',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL),(5,'juan','carlos','juancarlos@mail.com','$2a$10$nWWK5yx9..kkZ9u/G8eA5OeYZmyo0nMJxHgPEd1kARkZsmAfdZdQm','9823749723','Necochea 1757',1,'Santa Fe','Rosario','default.png','18093432','2000');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -371,4 +427,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-03 16:28:06
+-- Dump completed on 2021-10-06 13:42:33

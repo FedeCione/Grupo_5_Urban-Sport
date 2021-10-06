@@ -85,7 +85,7 @@
                 ><input
                   class="input style-admin"
                   type="text"
-                  name="marca"
+                  name="id_marca"
                   id="marca-producto"
                   required
                   placeholder="Marca del producto"
@@ -98,7 +98,7 @@
                   cols="30"
                   rows="10"
                   class="input style-admin"
-                  name="descripcion"
+                  name="description"
                   required
                   placeholder="Descripción del producto"
                   value="<%= product.description %> "
@@ -108,7 +108,7 @@
                   class="input style-admin"
                   name="categoria"
                   id="categoria-producto"
-                  value="<%= product.categories %>  "
+                  value="  "
                 >
                   <option value="">Seleccionar categoría</option>
                   <option value="hombre">Hombre</option>
@@ -119,24 +119,24 @@
               Subcategoría:<label for="subcategoria-producto">
                 <select
                   class="input style-admin"
-                  name="subcategoria"
+                  name="id_subcategory"
                   id="subcategoria-producto"
                   value="<%= product.id_subcategory %>  "
                 >
                   <option value="">Seleccionar  Subcategoría</option>
-                  <option value="pantalon">pantalon<%- product.id_subcategory %> </option>
+                  <option value="<%- product.id_subcategory %>">pantalon </option>
                   <option value="remera">remera</option>
                 </select>
               </label>
               Color:<label for="colores-producto"
                 ><select
                   class="input style-admin"
-                  name="color"
+                  name="colour"
                   id="colores-producto"
                   value="<%= product.id_colour %>  "
                 >
                   <option value="">Seleccionar color</option>
-                  <option value="negro">Negro<%- product.id_colour %> </option>
+                  <option value="<%= product.id_colour %> ">Rojo </option>
                   <option value="blanco">Blanco</option>
                   <option value="azul">Azul</option>
                 </select></label
@@ -144,14 +144,14 @@
               Talle:<label for="talles-producto">
                 <select
                   class="input style-admin"
-                  name="talle"
+                  name="id_talle"
                   id="talles-producto"
                   value="<%= product.id_talle %>"
                 >
                   <option value="">Seleccionar talle</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
+                  <option value="<%= product.id_talle %>"> S</option>
+                  <option value="<%= product.id_talle %>">M</option>
+                  <option value="3">L</option>
                 </select>
               </label>
               Precio:<label for="precio-producto">
@@ -159,7 +159,7 @@
                   id="precio-producto"
                   class="input style-admin"
                   type="number"
-                  name="precio"
+                  name="price"
                   required
                   placeholder="Modificar precio del producto"
                   value="<%= product.price %>"
@@ -170,7 +170,7 @@
                   id="producto-discontinuo"
                   class="input style-admin"
                  
-                  name="discontinuo"
+                  name="discount"
                   required
                   placeholder="Producto discontinuo?"
                   value="<%= product.discount %>"
@@ -181,7 +181,7 @@
                   id="imagen-producto"
                   class="input style-admin"
                   type="file"
-                  name="imagen"
+                  name="image"
                   multiple
                   value="<%= product.id_image %> "
                 />

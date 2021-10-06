@@ -9,7 +9,7 @@ module.exports = [
     check('password')
         .notEmpty().withMessage('Debes escribir tu contraseña'),
 
-    body('custom')
+    body('email')
         .custom((value, {req})=> {
             return db.Users.findOne({
                 where:{

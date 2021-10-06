@@ -1,34 +1,34 @@
-module.exports=(sequelize,dataTypes)=>{
+module.exports = (sequelize, dataTypes) => {
 
-let alias ="Images";
+    let alias = "Images";
 
-let cols={
+    let cols = {
 
-    id:{
-        type:dataTypes.INTEGER(11).UNSIGNED,
-        primaryKey:true,
-        autoIncrement:true,
-        allowNull:false
-    },
-    image:{
-        type:dataTypes.STRING(100),
+        id: {
+            type: dataTypes.INTEGER(11).UNSIGNED,
+            primaryKey: true,
+            autoIncrement: true,
+            allowNull: false
+        },
+        image: {
+            type: dataTypes.STRING(100),
+        }
     }
-}
-let config={
+    let config = {
 
-    tableName:"images",
-    timestamps:false
-}
-const Image =sequelize.define(alias,cols,config)
+        tableName: "images",
+        timestamps: false
+    }
+    const Image = sequelize.define(alias, cols, config)
 
-Image.associate =models=>{
-Image.belongsTo(models.Products,{
+    Image.associate = models => {
+        Image.belongsTo(models.Products, {
 
-    as:"product",
-    foreignKey:"productId"
-})
+            as: "product",
+            foreignKey: "productId"
+        })
 
-}
-return Image;
+    }
+    return Image;
 
 }

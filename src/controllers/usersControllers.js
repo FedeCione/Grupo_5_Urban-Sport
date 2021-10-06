@@ -68,7 +68,7 @@ module.exports = {
                     email: req.body.email
                 },
             })
-                .then((user) => {
+                .then(user => {
                     req.session.user = {
                         id: user.id,
                         name: user.name,

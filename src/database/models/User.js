@@ -55,7 +55,7 @@ let cols={
         type:dataTypes.STRING(15),
        
     },
-    postalCode:{
+    postalcode:{
         type:dataTypes.INTEGER(11),
     }
 }

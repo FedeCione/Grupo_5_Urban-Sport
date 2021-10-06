@@ -354,7 +354,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Matias','Ibarra','matiasibarra96@hotmail.com','$2a$10$QDwMfIlMsq8ARgjrjjp4JuJ2QxsxEIWtgp5hjbdxqdITYuCZiEN3q','34343','sdsdsd',1,'cordoba','alta gracia','default.png','12400',NULL),(2,'Juliana','Lezcano','juliana@gmail.com','123456',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL),(3,'Elias','Kanneman','elias@gmail.com','123456',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL),(4,'Federico','Cione','federico@gmail.com','123456',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `users` VALUES (1,'Matias','Ibarra','matiasibarra96@hotmail.com','$2a$10$QDwMfIlMsq8ARgjrjjp4JuJ2QxsxEIWtgp5hjbdxqdITYuCZiEN3q','34343','sdsdsd',1,'cordoba','alta gracia','default.png','12400',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 

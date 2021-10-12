@@ -56,10 +56,13 @@ function closeNav() {
     });
   });
 
-  // Header Overlay
+  // Header Overlay modal 
+  const closeModal = document.querySelector('.modal_close');
   function openOverlayUl() {
-    document.getElementById("user-overlay-ul").style.display = 'block';
+    document.querySelector('.modal').classList.add('modal--show')
   }
-  function closeOverlayUl() {
-    document.getElementById("user-overlay-ul").style.display = 'none';
-  }
+  
+closeModal.addEventListener('click', (e)=>{
+  e.preventDefault();
+  document.querySelector('.modal').classList.remove('modal--show')
+})

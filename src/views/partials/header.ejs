@@ -64,25 +64,18 @@
   <% if (typeof session.user !== 'undefined') { %>
     <div class="icon-btn">
       <i onclick="openOverlayUl()" class="fas fa-user"></i>
-      <ul class="user-overlay-ul" id="user-overlay-ul">
-        <i class="fas fa-sort-up"></i>
-        <a href="http://localhost:3020/users/logout"><li><i class="fas fa-sign-out-alt"></i>Logout</li></a>
-        <a href="http://localhost:3020/users/profile"><li><i class="fas fa-address-card"></i>Perfil</li></a>
-        <i class="far fa-angle-up" onclick="closeOverlayUl()"></i>
-      </ul>
+      
+      <%- include("./modalSession.ejs") %>
+
       <a href="http://localhost:3020/products/carrito"><i class="fas fa-shopping-cart"></i></a>
       <a href=""><i class="fas fa-heart"></i></a>
     </div>
   <% } else { %>
     <div class="icon-btn">
       <i onclick="openOverlayUl()" class="fas fa-user"></i>
-      <ul class="user-overlay-ul" id="user-overlay-ul">
-        <i class="fas fa-sort-up"></i>
-        <a href="http://localhost:3020/users/login"><li><i class="fas fa-sign-in-alt"></i>Login</li></a>
-        <a href="http://localhost:3020/users/register"><li><i class="fas fa-user-plus"></i>Registrarme</li></a>
-        <a href="http://localhost:3020/users/olvidecuenta"><li><i class="fas fa-key"></i>Olvide mi cuenta</li></a>
-        <i class="far fa-angle-up" onclick="closeOverlayUl()"></i>
-      </ul>
+      
+      <%- include("./modal.ejs") %>
+
       <a href="http://localhost:3020/products/carrito"><i class="fas fa-shopping-cart"></i></a>
       <a href=""><i class="fas fa-heart"></i></a>
     </div>

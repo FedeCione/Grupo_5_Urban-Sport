@@ -1,4 +1,5 @@
 const db = require("../database/models");
+const {Op} = require('sequelize');
 
 module.exports = {
   admin: (req, res) => {
@@ -155,4 +156,18 @@ module.exports = {
       })
       .catch((err) => console.log(err));
   },
+  searchProducts:(req, res)=> {
+    let search = req.query.keywords
+    db.Products.findAll({
+      where: { name : {[Op.substring]: search}}
+    })
+    .then( products => {
+      
+      res.render('adminProductSearch',{
+        product : products,
+        search,
+        session : req.session
+      })
+    })
+  }
 };

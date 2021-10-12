@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 @import url('/stylesheets/home-header.css');
 @import url('/stylesheets/home-footer.css');
-
+@import url('/stylesheets/modal.css');
 /* General */
 *{
     box-sizing: border-box;
@@ -50,7 +50,8 @@ a{
 
 
 .categories{
-    margin: 70px 0;
+    max-width: 1100px;
+    margin: 70px auto;
     
 }
 .categories .small-container .row{
@@ -154,7 +155,7 @@ a{
 /*  --------------- CAROUSEL TWO ---------------  */
 .carousel-container{
     position: relative;
-    
+    margin: 15px;
 }
 
 .carousel-two .new-product{

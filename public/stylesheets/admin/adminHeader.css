@@ -139,7 +139,9 @@ header label span{
     color: gray;
 }
 
-
+.title-products{
+    padding: 170px 0 130px 0;
+}
 main{
     margin-top: 85px;
     padding: 2rem 1.5rem;

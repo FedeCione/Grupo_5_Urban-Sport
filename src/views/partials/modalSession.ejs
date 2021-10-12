@@ -1,0 +1,19 @@
+<section class="modal">
+    <div class="modal_container">
+        <img src="../../../images/logo_transparent.png" alt="" class="modal_img">
+        <h3 class="modal_title">
+            <%= session.user.name %> 
+        </h3>
+        <p class="modal_paragraph">
+            
+            <ul class=".user-overlay-ul" >
+              
+              <a href="http://localhost:3020/users/logout"><li><i class="fas fa-sign-out-alt"></i> Logout</li></a>
+              <a href="http://localhost:3020/users/profile"><li><i class="fas fa-address-card"></i> Perfil</li></a>
+              
+            </ul>
+        </p>
+        <a href="/" class="modal_close"> Cerrar </a>
+    </div>
+
+</section>

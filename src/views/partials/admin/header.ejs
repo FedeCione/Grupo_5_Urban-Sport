@@ -5,12 +5,15 @@
         <span class="las la-bars"></span> </label
       >Panel Principal
     </h2>
-
-    <div class="search-wrapper">
-      <span class="las la-search"></span>
-      <input type="search" placeholder="Buscar aquí" />
-    </div>
-
+    <form action="admin/search" method="get">
+      <div class="search-wrapper">
+        
+        <input type="text" name="keywords" placeholder="Buscar"/>
+        <button type="submit">
+            <span class="las la-search"></span>
+        </button>
+      </div>
+    </form>
     <div class="user-admin">
       <img src="/images/admin/admin/icons8-circled-user-female-skin-type-1-and-2.gif"
         width="40px"

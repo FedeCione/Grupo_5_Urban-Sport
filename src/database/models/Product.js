@@ -26,31 +26,17 @@ module.exports =(sequelize,dataTypes)=>{
       type:dataTypes.STRING(45)
     
     },
-    id_image:{
-      type:dataTypes.INTEGER(11)
-    },
-    id_marca:{
-      type:dataTypes.INTEGER(11),
-      
-    },
     id_subcategory:{
       type:dataTypes.INTEGER(11),
-      
+      allowNull:false
     },
     visible:{
-      type:dataTypes.BOOLEAN(4)
+      type:dataTypes.BOOLEAN(4),
+      allowNull:false
     },
     stock:{
       type:dataTypes.INTEGER(11)
     },
-    id_talle:{
-      type:dataTypes.INTEGER(11),
-      
-    },
-    id_colour:{
-      type:dataTypes.INTEGER(11),
-      
-    }
   }
   let config ={
       tableName:"products",
@@ -69,10 +55,6 @@ module.exports =(sequelize,dataTypes)=>{
       foreignKey: "id_product",
       otherKey: "id_talle",
       timestamps: false
-    })
-    Product.belongsTo(models.Brands,{
-      as:"brand",
-      foreignKey:"id_marca"
     })
     Product.belongsToMany(models.Colours, {
       as: "colours",

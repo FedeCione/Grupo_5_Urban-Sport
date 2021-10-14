@@ -10,8 +10,13 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             allowNull: false
         },
-        image: {
+        name: {
             type: dataTypes.STRING(100),
+            allowNull: false
+        },
+        productId: {
+            type: dataTypes.INTEGER(11),
+            allowNull: false
         }
     }
     let config = {

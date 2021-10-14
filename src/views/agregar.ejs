@@ -105,19 +105,27 @@
                   <option value="" name="id_subcategory">remera</option>
                 </select>
               </label>
-              Color:<label for="colores-producto"
-                ><select
+              Color:
+              <label for="colores-producto">
+                
+                <select
                   class="input style-admin"
                   name="colour"
                   id="colores-producto"
                   
                 >
-                  <option value="">Seleccionar color</option>
-                  <option value="" name="id_colour">Rojo </option>
-                  <option value="" name="id_colour">Blanco</option>
-                  <option value="" name="id_colour">Azul</option>
-                </select></label
-              >
+                <option value="">Seleccionar color</option>
+                <% colours.forEach(colour => { %>
+                  <option value="<%- colour.id %>" <%= locals.old && old.category == colour.id ? "selected" : "" %> ><%- colour.name %></option>
+                <% }) %>
+                 </select>
+                <% if (locals.errors && errors.colours) { %>
+                  <small class="text-danger"><%= errors.colours.msg %></small>
+                <% } %>
+                  
+                  
+                </select>
+                </label>
               Talle:<label for="talles-producto">
                 <select
                   class="input style-admin"
@@ -142,7 +150,7 @@
                   
                 />
               </label>
-              Discontinuo:<label for="producto-discontinuo">
+              Descuento:<label for="producto-discontinuo">
                 <input
                   id="producto-discontinuo"
                   class="input style-admin"

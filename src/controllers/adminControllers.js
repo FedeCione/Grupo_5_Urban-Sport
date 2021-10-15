@@ -159,15 +159,23 @@ module.exports = {
   },
 
   eliminar: (req, res) => {
-    db.Products.destroy({
+    db.Images.destroy({
       where: {
-        id: +req.params.id,
-      },
+        productId: req.params.id,
+      }
     })
-      .then(() => {
-        res.redirect("/admin/panelProductos");
+    .then(result => {
+      db.Products.destroy({
+        where: {
+          id: +req.params.id,
+        },
       })
-      .catch((err) => console.log(err));
+        .then(() => {
+          res.redirect("/admin/panelProductos");
+        })
+        .catch((err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
   },
   searchProducts:(req, res)=> {
     let search = req.query.keywords

@@ -17,9 +17,23 @@ module.exports = {
     });
   },
   formAgregar: (req, res) => {
-    res.render("agregar", {
-      session: req.session,
-    });
+    db.Colours.findAll({
+      include: [{
+          association: "products",
+          include: [{
+            association: "colours"
+          }]
+      }]
+  })
+  .then(colour => {
+      let colours = [];
+      colours.push(colour);
+        res.render("agregar", {
+          session: req.session,
+          colours
+        })
+      })
+      .catch(err => console.log(err))
   },
   agregar: (req, res) => {
     let arrayImages = [];
@@ -51,12 +65,13 @@ module.exports = {
       discount,
       visible,
       stock,
-    }).then((product) => {
+    })
+    .then((product) => {
       if (arrayImages.length > 0) {
         let images = arrayImages.map((image) => {
           return {
             name: image,
-            product_id: product.id,
+            productId: product.id,
           };
         });
         db.Images.bulkCreate(images)
@@ -65,7 +80,7 @@ module.exports = {
       } else {
         db.Images.create({
           name: "default-image.png",
-          product_id: product.id,
+          productId: product.id,
         })
           .then(() => res.redirect("/admin/panelProductos"))
           .catch((err) => console.log(err));
@@ -75,8 +90,6 @@ module.exports = {
   formEditar: (req, res) => {
     db.Products.findByPk(req.params.id).then((product) => {
       res.render("editar", {
-        //categories,
-        //subcategories,
         product,
         session: req.session,
       });

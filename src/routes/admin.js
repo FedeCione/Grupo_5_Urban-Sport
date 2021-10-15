@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 let {admin,panelProductos,formAgregar,agregar,formEditar,editar,eliminar, searchProducts} = require("../controllers/adminControllers")
 
-let uploadFile = require('../middelwares/uploadFiles');
+let upload = require('../middelwares/uploadFiles');
 let userSession = require('../middelwares/userSession');
 let adminCheckValidator = require('../middelwares/userAdminCheck');
 
@@ -12,7 +12,7 @@ router.get("/",userSession, adminCheckValidator, admin);
 router.get("/panelProductos",userSession, adminCheckValidator, panelProductos);
 
 router.get('/agregar',userSession, adminCheckValidator, formAgregar);
-router.post('/agregar',uploadFile.single('imagen-producto'),userSession, adminCheckValidator, agregar);
+router.post('/agregar',upload.array('image'),userSession, adminCheckValidator, agregar);
 
 router.get("/editar/:id",userSession, adminCheckValidator, formEditar);
 router.put("/editar/:id",userSession, adminCheckValidator, editar);

@@ -168,8 +168,10 @@
                   type="file"
                   name="image"
                   multiple
-                  
                 />
+                <% if (locals.errors && errors.image) { %>
+                  <small class="text-danger"><%= errors.image.msg %> </small>
+                <% } %>
               </label>
               Visible:<label for="producto-visible">
                 <input

@@ -59,8 +59,8 @@ module.exports =(sequelize,dataTypes)=>{
     Product.belongsToMany(models.Colours, {
       as: "colours",
       through: "colour_product",
-      foreignKey: "id_products",
-      otherKey: "id_colours",
+      foreignKey: "id_product",
+      otherKey: "id_colour",
       timestamps: false
     })
     Product.hasMany(models.Favorites,{
@@ -70,6 +70,10 @@ module.exports =(sequelize,dataTypes)=>{
     Product.hasMany(models.Images,{
       as:"images",
       foreignKey:"productId"
+    })
+    Product.belongsTo(models.Brands, {
+      as:"product_brand",
+      foreignKey:"id_marca"
     })
   }
   return Product;

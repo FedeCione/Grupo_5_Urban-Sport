@@ -55,20 +55,23 @@
                   id="nombre-producto"
                   required
                   placeholder="Nombre del producto"
-                  
                 />
               </label>
-              Marca:<label for="marca-producto"
-                ><input
-                  class="input style-admin"
-                  type="text"
-                  name="id_marca"
-                  id="marca-producto"
-                  required
-                  placeholder="Marca del producto"
-                  
-                />
+              
+              Marca:
+              <label for="marca-producto">
+                <select class="input style-admin" name="id_marca" id="marca_producto" required>
+                <option value="">Seleccionar marca</option>
+                <% brands.forEach(brand => { %>
+                  <option value="<%- brand.id %>"><%- brand.name %></option>
+                <% }) %>
+                 </select>
+                <% if (locals.errors && errors.brand) { %>
+                  <small class="text-danger"><%= errors.brand.msg %></small>
+                <% } %>
+                </select>
               </label>
+
               Descripción:<label for="descripción-producto"
                 ><input
                   id="descripción-producto"
@@ -107,15 +110,10 @@
               </label>
               Color:
               <label for="colores-producto">
-                
-                <select
-                  class="input style-admin"
-                  name="colour"
-                  id="colores-producto"
-                >
+                <select class="input style-admin" name="colour" id="colores-producto">
                 <option value="">Seleccionar color</option>
                 <% colours.forEach(colour => { %>
-                  <option value="<%- colour.id %>" <%= locals.old && old.category == colour.id ? "selected" : "" %> ><%- colour.name %></option>
+                  <option value="<%- colour.id %>"><%- colour.name %></option>
                 <% }) %>
                  </select>
                 <% if (locals.errors && errors.colours) { %>
@@ -173,15 +171,10 @@
                 <% } %>
               </label>
               Visible:<label for="producto-visible">
-                <input
-                  id="producto-visible"
-                  class="input style-admin"
-                 
-                  name="visible"
-                  required
-                  placeholder="Modificar visibilidad del producto"
-                 
-                />
+                <select class="input style-admin" name="visible" id="producto-visible" required>
+                  <option value="1">Si</option>
+                  <option value="0">No</option>
+                </select>
               </label>
               Stock:<label for="stock">
                 <input

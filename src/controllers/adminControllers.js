@@ -1,5 +1,5 @@
 const db = require("../database/models");
-const {Op} = require('sequelize');
+const { Op } = require('sequelize');
 
 module.exports = {
   admin: (req, res) => {
@@ -9,29 +9,68 @@ module.exports = {
   },
 
   panelProductos: (req, res) => {
-    db.Products.findAll().then((products) => {
-      res.render("panelProductos", {
-        products,
-        session: req.session,
-      });
-    });
+    db.Products.findAll()
+      .then((products) => {
+        db.Colours.findAll({
+          include: [{
+            association: 'products',
+            include: [{
+              association: 'colours'
+            }]
+          }]
+        })
+          .then(colours => {
+            db.Brands.findAll({
+              include: [{
+                association: 'products'
+              }]
+            })
+              .then(brands => {
+                db.Images.findAll({
+                  include: [{
+                    association: 'product'
+                  }]
+                })
+                  .then(images => {
+                    res.render("panelProductos", {
+                      session: req.session,
+                      products,
+                      colours,
+                      brands,
+                      images
+                    })
+                  })
+                  .catch(err => console.log(err))
+              })
+              .catch(err => console.log(err))
+          })
+          .catch(err => console.log(err))
+      })
+      .catch(err => console.log(err))
   },
   formAgregar: (req, res) => {
     db.Colours.findAll({
       include: [{
-          association: "products",
-          include: [{
-            association: "colours"
-          }]
+        association: 'products',
+        include: [{
+          association: 'colours'
+        }]
       }]
-  })
-  .then(colour => {
-      let colours = [];
-      colours.push(colour);
-        res.render("agregar", {
-          session: req.session,
-          colours
+    })
+      .then(colours => {
+        db.Brands.findAll({
+          include: [{
+            association: 'products'
+          }]
         })
+          .then(brands => {
+            res.render("agregar", {
+              session: req.session,
+              colours,
+              brands
+            })
+          })
+          .catch(err => console.log(err))
       })
       .catch(err => console.log(err))
   },
@@ -66,26 +105,26 @@ module.exports = {
       visible,
       stock,
     })
-    .then((product) => {
-      if (arrayImages.length > 0) {
-        let images = arrayImages.map((image) => {
-          return {
-            name: image,
+      .then((product) => {
+        if (arrayImages.length > 0) {
+          let images = arrayImages.map((image) => {
+            return {
+              name: image,
+              productId: product.id,
+            };
+          });
+          db.Images.bulkCreate(images)
+            .then(() => res.redirect("panelProductos"))
+            .catch((err) => console.log(err));
+        } else {
+          db.Images.create({
+            name: "default-image.png",
             productId: product.id,
-          };
-        });
-        db.Images.bulkCreate(images)
-          .then(() => res.redirect("panelProductos"))
-          .catch((err) => console.log(err));
-      } else {
-        db.Images.create({
-          name: "default-image.png",
-          productId: product.id,
-        })
-          .then(() => res.redirect("/admin/panelProductos"))
-          .catch((err) => console.log(err));
-      }
-    });
+          })
+            .then(() => res.redirect("/admin/panelProductos"))
+            .catch((err) => console.log(err));
+        }
+      });
   },
   formEditar: (req, res) => {
     db.Products.findByPk(req.params.id).then((product) => {
@@ -164,31 +203,31 @@ module.exports = {
         productId: req.params.id,
       }
     })
-    .then(result => {
-      db.Products.destroy({
-        where: {
-          id: +req.params.id,
-        },
-      })
-        .then(() => {
-          res.redirect("/admin/panelProductos");
+      .then(result => {
+        db.Products.destroy({
+          where: {
+            id: +req.params.id,
+          },
         })
-        .catch((err) => console.log(err));
-    })
-    .catch((err) => console.log(err));
+          .then(() => {
+            res.redirect("/admin/panelProductos");
+          })
+          .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
   },
-  searchProducts:(req, res)=> {
+  searchProducts: (req, res) => {
     let search = req.query.keywords
     db.Products.findAll({
-      where: { name : {[Op.substring]: search}}
+      where: { name: { [Op.substring]: search } }
     })
-    .then( products => {
-      
-      res.render('adminProductSearch',{
-        product : products,
-        search,
-        session : req.session
+      .then(products => {
+
+        res.render('adminProductSearch', {
+          product: products,
+          search,
+          session: req.session
+        })
       })
-    })
   }
 };

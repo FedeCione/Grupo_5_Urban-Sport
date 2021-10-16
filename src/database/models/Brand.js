@@ -8,18 +8,17 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         name: {
-            type: dataTypes.STRING(30)
+            type: dataTypes.STRING(55)
         }
 
     }
     let config = {
         tableName: "brand",
-        timestamp: false
+        timestamps: false
     }
     let Brand = sequelize.define(alias, cols, config)
 
     Brand.associate = models => {
-
         Brand.hasMany(models.Products, {
             as: "products",
             foreignKey: "id_marca"

@@ -1,4 +1,3 @@
-
 module.exports =(sequelize,dataTypes)=>{
   let alias= "Products";
   
@@ -48,7 +47,7 @@ module.exports =(sequelize,dataTypes)=>{
     Product.belongsTo(models.Subcategories,{
       as:"subcategories",
       foreignKey:"id_subcategory"
-    });
+    })
     Product.belongsToMany(models.Talles, {
       as: "talles",
       through: "talle_product",

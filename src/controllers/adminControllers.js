@@ -14,10 +14,8 @@ module.exports = {
         db.Colours.findAll({
           include: [{
             association: 'products',
-            foreignKey: 'id_product',
             include: [{
               association: 'colours',
-              foreignKey: 'id_colour'
             }]
           }]
         })
@@ -34,14 +32,19 @@ module.exports = {
                   }]
                 })
                   .then(images => {
+                    db.Colour_products.findAll()
+                      .then(colour_products => {
                         res.render("panelProductos", {
                           session: req.session,
                           products,
                           colours,
                           brands,
-                          images
+                          images,
+                          colour_products
                         })
                       })
+                      .catch(err => console.log(err))
+                  })
                   .catch(err => console.log(err))
               })
               .catch(err => console.log(err))
@@ -95,19 +98,23 @@ module.exports = {
       visible,
       stock,
     } = req.body;
+
     db.Products.create({
       name,
       id_marca,
       description,
       id_subcategory,
-      colour,
       id_talle,
       price,
       discount,
       visible,
       stock,
     })
-      .then((product) => {
+      .then(product => {
+        db.Colour_products.create({
+          id_colour: colour,
+          id_product: product.id
+        })
         if (arrayImages.length > 0) {
           let images = arrayImages.map((image) => {
             return {

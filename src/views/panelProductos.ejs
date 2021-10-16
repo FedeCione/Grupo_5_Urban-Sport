@@ -63,6 +63,7 @@
               <% brands.forEach(brand => { %>
               <% images.forEach(image => { %>
               <% colours.forEach(colour => { %>
+              <% colour_products.forEach(colour_product => { %>
               <tr>
                 <td colspan="1" scope="col"><%- product.id %></td>
                 <td colspan="2" scope="col"><%- product.name %></td>
@@ -70,7 +71,7 @@
                 <td colspan="4" scope="col"><%- product.description %></td>
                 <td colspan="5" scope="col"><%- product.category %></td>
                 <td colspan="6" scope="col"><%- product.id_subcategory %></td>
-                <td colspan="7" scope="col"><%- "Coming soon..." %></td>
+                <td colspan="7" scope="col"><%- product.id == colour_product.id_product && colour.id == colour_product.id_colour ? colour.name : "Color no definido" %></td>
                 <td colspan="8" scope="col"><%- product.id_talle %></td>
                 <td colspan="9" scope="col">$<%- product.price %></td>
                 <td colspan="10" scope="col"><%- product.discount %></td>
@@ -78,7 +79,7 @@
                   <img width="20%" src="/images/admin/productos/<%- product.id == image.productId ? image.name : 'Sin imagen' %>" />
                 </td>
                 <td colspan="12" scope="col"><%- product.visible == 1 ? "Si" : "No" %></td>
-                <td colspan="13" scope="col"><%- product.stock %></td>
+                <td colspan="13" scope="col"><%- product.stock %>
                   <form>
                     <button
                       style="cursor: pointer"
@@ -100,7 +101,9 @@
                       Eliminar
                     </button>
                   </form>
+                  </td>
               </tr>
+              <% }) %>
               <% }) %>
               <% }) %>
               <% }) %>

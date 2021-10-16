@@ -14,15 +14,17 @@ module.exports = {
         db.Colours.findAll({
           include: [{
             association: 'products',
+            foreignKey: 'id_product',
             include: [{
-              association: 'colours'
+              association: 'colours',
+              foreignKey: 'id_colour'
             }]
           }]
         })
           .then(colours => {
             db.Brands.findAll({
               include: [{
-                association: 'products'
+                association: 'products',
               }]
             })
               .then(brands => {
@@ -32,14 +34,14 @@ module.exports = {
                   }]
                 })
                   .then(images => {
-                    res.render("panelProductos", {
-                      session: req.session,
-                      products,
-                      colours,
-                      brands,
-                      images
-                    })
-                  })
+                        res.render("panelProductos", {
+                          session: req.session,
+                          products,
+                          colours,
+                          brands,
+                          images
+                        })
+                      })
                   .catch(err => console.log(err))
               })
               .catch(err => console.log(err))

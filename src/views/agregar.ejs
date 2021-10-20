@@ -97,10 +97,10 @@
                 </select>
               </label>
               Subcategoría:<label for="subcategoria-producto">
-                <select class="input style-admin" id="subcategoria-producto">
+                <select class="input style-admin" id="subcategoria-producto" name="id_subcategory">
                   <option>Seleccionar  Subcategoría</option>
                   <% subcategories.forEach(subcategory => { %>
-                    <option name="id_subcategory"><%- subcategory.name %></option>
+                    <option value="<%- subcategory.id %>"><%- subcategory.name %></option>
                   <% }) %>
                 </select>
               </label>

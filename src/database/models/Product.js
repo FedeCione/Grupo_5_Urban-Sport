@@ -14,39 +14,40 @@ module.exports =(sequelize,dataTypes)=>{
       allowNull:false
     },
     description:{
-      type:dataTypes.STRING(800),
-      
+      type:dataTypes.STRING(800)
     },
     price:{
       type:dataTypes.FLOAT(10,2),
       allowNull:false
     },
     discount:{
-      type:dataTypes.STRING(45)
-    
+      type:dataTypes.STRING(45),
+      allowNull:false
     },
     id_subcategory:{
       type:dataTypes.INTEGER(11),
-      allowNull:false
     },
     visible:{
       type:dataTypes.BOOLEAN(4),
       allowNull:false
     },
     stock:{
-      type:dataTypes.INTEGER(11)
+      type:dataTypes.INTEGER(11),
+      allowNull:false
     },
   }
   let config ={
       tableName:"products",
-      timestamps:false
+      timestamps: false
   }
   
   let Product= sequelize.define(alias,cols,config);
   Product.associate=models=>{
     Product.belongsTo(models.Subcategories,{
       as:"subcategories",
-      foreignKey:"id_subcategory"
+      foreignKey:"id_subcategory",
+      timestamps: false
+      
     })
     Product.belongsToMany(models.Talles, {
       as: "talles",

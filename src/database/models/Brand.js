@@ -24,6 +24,5 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "id_marca"
         })
     }
-
     return Brand;
 }

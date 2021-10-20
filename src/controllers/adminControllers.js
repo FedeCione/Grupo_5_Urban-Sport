@@ -34,14 +34,47 @@ module.exports = {
                   .then(images => {
                     db.Colour_products.findAll()
                       .then(colour_products => {
-                        res.render("panelProductos", {
-                          session: req.session,
-                          products,
-                          colours,
-                          brands,
-                          images,
-                          colour_products
-                        })
+                        db.Talle_products.findAll()
+                          .then(talle_products => {
+                            db.Subcategories.findAll({
+                              include: [{
+                                association: 'products',
+                                association: 'category'
+                              }]
+                            })
+                              .then(subcategories => {
+                                db.Categories.findAll({
+                                  include: [{
+                                    association: 'subcategories'
+                                  }]
+                                })
+                                  .then(categories => {
+                                    db.Talles.findAll({
+                                      include: [{
+                                        association: 'products'
+                                      }]
+                                    })
+                                      .then(talles => {
+                                        res.render("panelProductos", {
+                                          session: req.session,
+                                          products,
+                                          colours,
+                                          brands,
+                                          images,
+                                          colour_products,
+                                          talle_products,
+                                          subcategories,
+                                          categories,
+                                          talles
+                                        })
+                                      })
+                                      .catch(err => console.log(err))
+                                  })
+                                  .catch(err => console.log(err))
+                              })
+                              .catch(err => console.log(err))
+                          })
+                          .catch(err => console.log(err))
                       })
                       .catch(err => console.log(err))
                   })
@@ -69,15 +102,43 @@ module.exports = {
           }]
         })
           .then(brands => {
-            res.render("agregar", {
-              session: req.session,
-              colours,
-              brands
+            db.Categories.findAll({
+              include: [{
+                association: 'subcategories'
+              }]
             })
+            .then(categories => {
+              db.Subcategories.findAll({
+                include: [{
+                  association: 'products',
+                  association: 'category'
+                }]
+              })
+              .then(subcategories => {
+                db.Talles.findAll({
+                  include: [{
+                    association: 'products'
+                  }]
+                })
+                .then(talles => {
+                  res.render("agregar", {
+                    session: req.session,
+                    colours,
+                    brands,
+                    categories,
+                    subcategories,
+                    talles
+                  })
+                })
+                .catch(err => console.log(err))
+              })
+              .catch(err => console.log(err))
+            })
+            .catch(err => console.log(err))
           })
-          .catch(err => console.log(err))
+        .catch(err => console.log(err))
       })
-      .catch(err => console.log(err))
+    .catch(err => console.log(err))
   },
   agregar: (req, res) => {
     let arrayImages = [];
@@ -101,18 +162,21 @@ module.exports = {
 
     db.Products.create({
       name,
-      id_marca,
       description,
       id_subcategory,
-      id_talle,
       price,
       discount,
       visible,
       stock,
+      id_marca
     })
       .then(product => {
         db.Colour_products.create({
           id_colour: colour,
+          id_product: product.id
+        })
+        db.Talle_products.create({
+          id_talle: id_talle,
           id_product: product.id
         })
         if (arrayImages.length > 0) {

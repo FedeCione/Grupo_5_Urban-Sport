@@ -26,14 +26,15 @@ module.exports = (sequelize, dataTypes) => {
         Colour_product.belongsTo(models.Products, {
             as: "pivot_products",
             foreignKey: "id_product",
-            otherKey: "id_colour"
+            otherKey: "id_colour",
+            timestamps: false
         })
         Colour_product.belongsTo(models.Colours, {
             as: "pivot_colours",
             foreignKey: "id_colour",
-            otherKey: "id_product"
+            otherKey: "id_product",
+            timestamps: false
         })
     }
-
     return Colour_product;
 }

@@ -28,7 +28,8 @@ module.exports = (sequelize, dataTypes) => {
 
         Favorite.belongsTo(models.Products, {
             as: "products",
-            foreignKey: "id_product"
+            foreignKey: "id_product",
+            timestamps: false
         })
 
         Favorite.belongsTo(models.Users, {

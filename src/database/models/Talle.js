@@ -13,7 +13,7 @@ module.exports = (sequelize, dataTypes) => {
     }
     let config = {
         tableName: "talles",
-        timestamps: "false"
+        timestamps: false
     }
     let Talle = sequelize.define(alias, cols, config);
 
@@ -22,8 +22,7 @@ module.exports = (sequelize, dataTypes) => {
             as: "products",
             through: "talle_product",
             foreignKey: "id_talle",
-            otherKey: "id_product",
-            timestamps: false
+            otherKey: "id_product"
           })
     }
     return Talle;

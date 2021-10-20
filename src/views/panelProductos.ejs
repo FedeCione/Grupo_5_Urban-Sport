@@ -60,24 +60,38 @@
             </thead>
             <tbody>
               <% products.forEach(product => { %>
-              <% brands.forEach(brand => { %>
-              <% images.forEach(image => { %>
-              <% colours.forEach(colour => { %>
-              <% colour_products.forEach(colour_product => { %>
+              <% let brand = brands.find(brand => product.id_marca == brand.id) %>
+              <% let image = images.filter(image => product.id == image.productId) %>
+              <% let subcategory = subcategories.find(subcategory => product.id_subcategory == subcategory.id) %>
+              <% let category = categories.find(category => category.id == subcategory.categories_id) %>
               <tr>
                 <td colspan="1" scope="col"><%- product.id %></td>
                 <td colspan="2" scope="col"><%- product.name %></td>
-                <td colspan="3" scope="col"><%- product.id_marca == brand.id ? brand.name : "Marca no definida" %></td>
+                <td colspan="3" scope="col"><%- brand.name %></td>
                 <td colspan="4" scope="col"><%- product.description %></td>
-                <td colspan="5" scope="col"><%- product.category %></td>
-                <td colspan="6" scope="col"><%- product.id_subcategory %></td>
-                <td colspan="7" scope="col"><%- product.id == colour_product.id_product && colour.id == colour_product.id_colour ? colour.name : "Color no definido" %></td>
-                <td colspan="8" scope="col"><%- product.id_talle %></td>
+                <td colspan="5" scope="col"><%- category.name %></td>
+                <td colspan="6" scope="col"><%- subcategory.name %></td>
+                <% for(let colour_product of colour_products) { %>
+                  <% for(let colour of colours) { %>
+                    <% if(colour_product.id_product == product.id && colour_product.id_colour == colour.id) { %>
+                      <td colspan="7" scope="col"><%- colour.name %></td>
+                      <% } %>
+                  <% } %>
+                <% } %>
+                <% for(let talle_product of talle_products) { %>
+                  <% for(let talle of talles) { %>
+                    <% if(talle_product.id_product == product.id && talle_product.id_talle == talle.id) { %>
+                      <td colspan="8" scope="col"><%- talle.talle %></td>
+                    <% } %>
+                  <% } %>
+                <% } %>
                 <td colspan="9" scope="col">$<%- product.price %></td>
                 <td colspan="10" scope="col"><%- product.discount %></td>
+                <% image.forEach(image => { %>
                 <td colspan="11" scope="col">
-                  <img width="20%" src="/images/admin/productos/<%- product.id == image.productId ? image.name : 'Sin imagen' %>" />
+                  <img width="20%" src="/images/admin/productos/<%- image.name %>" />
                 </td>
+                <% }) %>
                 <td colspan="12" scope="col"><%- product.visible == 1 ? "Si" : "No" %></td>
                 <td colspan="13" scope="col"><%- product.stock %>
                   <form>
@@ -103,10 +117,6 @@
                   </form>
                   </td>
               </tr>
-              <% }) %>
-              <% }) %>
-              <% }) %>
-              <% }) %>
               <% }) %>
             </tbody>
             <tfoot>

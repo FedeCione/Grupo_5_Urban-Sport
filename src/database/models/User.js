@@ -61,16 +61,12 @@ let cols={
 }
 let config ={
     tableName:"users",
-    timestamps:false
+    timestamps: false
 }
 
 let User = sequelize.define(alias,cols,config)
 
 User.associate = models => {
-    User.hasMany(models.Rol_User, {
-        as:"user_rol",
-        foreignKey:"rol_user"
-    })
     User.hasMany(models.Favorites,{
         as:"favorites",
         foreignKey:"id_user"

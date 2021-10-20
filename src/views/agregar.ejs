@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="/stylesheets/variables.css" />
     <link rel="stylesheet" href="/stylesheets/admin/loginAdministrador.css" />
     <link rel="stylesheet" href="/stylesheets/admin/adminHeader.css" />
+
+    <script src="/javascripts/darkMode.js" defer></script>
+    <script src="/javascripts/home.js" defer></script>
+    <script src="/javascripts/productsAdd.js" defer></script>
   </head>
   <body>
     <input type="checkbox" id="nav-toggle-admin" />
@@ -44,6 +48,7 @@
             method="POST"
             enctype="multipart/form-data"
             style="margin-top: 5.5em"
+            name="formAdd"
           >
              <!-- empeiza caja con caracteristicas del producto-->
              <div class="form caja-agregar">
@@ -61,7 +66,7 @@
               Marca:
               <label for="marca-producto">
                 <select class="input style-admin" name="id_marca" id="marca_producto" required>
-                <option value="">Seleccionar marca</option>
+                <option>Seleccionar marca</option>
                 <% brands.forEach(brand => { %>
                   <option value="<%- brand.id %>"><%- brand.name %></option>
                 <% }) %>
@@ -84,28 +89,19 @@
                   
               /></label>
               Categoría:<label for="categoria-producto">
-                <select
-                  class="input style-admin"
-                  name="categoria"
-                  id="categoria-producto"
-                  value="  "
-                >
-                  <option value="">Seleccionar categoría</option>
-                  <option value="hombre">Hombre</option>
-                  <option value="mujer">Mujer</option>
-                  <option value="niños">Niños</option>
+                <select class="input style-admin" name="categoria" id="categoria-producto">
+                  <option>Seleccionar categoría</option>
+                  <% categories.forEach(category => { %> 
+                  <option value="<%- category.id %>"><%- category.name %></option>
+                  <% }) %>
                 </select>
               </label>
               Subcategoría:<label for="subcategoria-producto">
-                <select
-                  class="input style-admin"
-                  name="id_subcategory"
-                  id="subcategoria-producto"
-                 
-                >
-                  <option value="">Seleccionar  Subcategoría</option>
-                  <option value="" name="id_subcategory">pantalon </option>
-                  <option value="" name="id_subcategory">remera</option>
+                <select class="input style-admin" id="subcategoria-producto">
+                  <option>Seleccionar  Subcategoría</option>
+                  <% subcategories.forEach(subcategory => { %>
+                    <option name="id_subcategory"><%- subcategory.name %></option>
+                  <% }) %>
                 </select>
               </label>
               Color:
@@ -116,25 +112,16 @@
                   <option value="<%- colour.id %>"><%- colour.name %></option>
                 <% }) %>
                  </select>
-                <% if (locals.errors && errors.colours) { %>
-                  <small class="text-danger"><%= errors.colours.msg %></small>
-                <% } %>
-                  
                   
                 </select>
                 </label>
               Talle:<label for="talles-producto">
-                <select
-                  class="input style-admin"
-                  name="id_talle"
-                  id="talles-producto"
-                  
-                >
+                <select class="input style-admin" name="id_talle" id="talles-producto">
                   <option value="">Seleccionar talle</option>
-                  <option value="" name="id_talle">  S</option>
-                  <option value="" name="id_talle">M</option>
-                  <option value="3">3</option>
-                </select>
+                    <% talles.forEach(talle => { %>
+                      <option value="<%- talle.id %>" name="id_talle"><%- talle.talle %></option>
+                    <% }) %>
+                  </select>
               </label>
               Precio:<label for="precio-producto">
                 <input
@@ -154,7 +141,7 @@
                  
                   name="discount"
                   required
-                  placeholder="Producto discontinuo?"
+                  placeholder="Descuento"
                   
                 />
               </label>
@@ -201,8 +188,5 @@
         </div>
       </main>
     </div>
-
-    <script src="/javascripts/darkMode.js"></script>
-    <script src="/javascripts/home.js"></script>
   </body>
 </html>

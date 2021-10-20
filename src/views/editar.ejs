@@ -81,17 +81,20 @@
                   value="<%= product.name %> "
                 />
               </label>
-              Marca:<label for="marca-producto"
-                ><input
-                  class="input style-admin"
-                  type="text"
-                  name="id_marca"
-                  id="marca-producto"
-                  required
-                  placeholder="Marca del producto"
-                  value="<%= product.id_marca %> "
-                />
+              Marca:
+              <label for="marca-producto">
+                <select class="input style-admin" name="id_marca" id="marca_producto" required>
+                  <option selected hidden value="">Marca</option>
+                <% brands.forEach(brand => { %>
+                  <option value="<%- brand.id %>" <%- brand.id == product.id_marca ? "selected" : "" %>><%- brand.name %></option>
+                <% }) %>
+                 </select>
+                <% if (locals.errors && errors.brand) { %>
+                  <small class="text-danger"><%= errors.brand.msg %></small>
+                <% } %>
+                </select>
               </label>
+
               Descripción:<label for="descripción-producto"
                 ><input
                   id="descripción-producto"
@@ -104,55 +107,37 @@
                   value="<%= product.description %> "
               /></label>
               Categoría:<label for="categoria-producto">
-                <select
-                  class="input style-admin"
-                  name="categoria"
-                  id="categoria-producto"
-                  value="  "
-                >
-                  <option value="">Seleccionar categoría</option>
-                  <option value="hombre">Hombre</option>
-                  <option value="mujer">Mujer</option>
-                  <option value="niños">Niños</option>
+                <select class="input style-admin" name="categoria" id="categoria-producto">
+                  <option selected hidden value="">Categorias</option>
+                  <% categories.forEach(category => { %>
+                    <option value="<%- category.id %>"><%- category.name %></option>
+                  <% }) %>
                 </select>
               </label>
               Subcategoría:<label for="subcategoria-producto">
-                <select
-                  class="input style-admin"
-                  name="id_subcategory"
-                  id="subcategoria-producto"
-                  value="<%= product.id_subcategory %>  "
-                >
-                  <option value="">Seleccionar  Subcategoría</option>
-                  <option value="<%- product.id_subcategory %>">pantalon </option>
-                  <option value="remera">remera</option>
+                <select class="input style-admin" id="subcategoria-producto" name="id_subcategory">
+                  <option selected hidden value="">Subcategorias</option>
+                  <% subcategories.forEach(subcategory => { %>
+                    <option value="<%- subcategory.id %>" <%- subcategory.id == product.id_subcategory ? "selected" : "" %>><%- subcategory.name %></option>
+                  <% }) %>
                 </select>
               </label>
-              Color:<label for="colores-producto"
-                ><select
-                  class="input style-admin"
-                  name="colour"
-                  id="colores-producto"
-                  value="<%= product.id_colour %>  "
-                >
-                  <option value="">Seleccionar color</option>
-                  <option value="<%= product.id_colour %> ">Rojo </option>
-                  <option value="blanco">Blanco</option>
-                  <option value="azul">Azul</option>
-                </select></label
-              >
-              Talle:<label for="talles-producto">
-                <select
-                  class="input style-admin"
-                  name="id_talle"
-                  id="talles-producto"
-                  value="<%= product.id_talle %>"
-                >
-                  <option value="">Seleccionar talle</option>
-                  <option value="<%= product.id_talle %>"> S</option>
-                  <option value="<%= product.id_talle %>">M</option>
-                  <option value="3">L</option>
+              Color:
+              <label for="colores-producto">
+                <select class="input style-admin" name="colour" id="colores-producto">
+                  <option selected hidden value="">Colores</option>
+                  <% colours.forEach(colour => { %>
+                    <option value="<%- colour.id %>" <%- colour.id ==  colour_product.id_colour ? "selected" : "" %>><%- colour.name %></option>
+                  <% }) %>
                 </select>
+              </label>
+              Talle:<label for="talles-producto">
+                <select class="input style-admin" name="id_talle" id="talles-producto">
+                  <option selected hidden value="">Talles</option>
+                    <% talles.forEach(talle => { %>
+                      <option value="<%- talle.id %>" name="id_talle" <%- talle.id == talle_product.id_talle ? "selected" : "" %>><%- talle.talle %></option>
+                    <% }) %>
+                  </select>
               </label>
               Precio:<label for="precio-producto">
                 <input
@@ -165,14 +150,13 @@
                   value="<%= product.price %>"
                 />
               </label>
-              Discontinuo:<label for="producto-discontinuo">
+              Descuento:<label for="producto-discontinuo">
                 <input
                   id="producto-discontinuo"
                   class="input style-admin"
-                 
                   name="discount"
                   required
-                  placeholder="Producto discontinuo?"
+                  placeholder="Descuento"
                   value="<%= product.discount %>"
                 />
               </label>
@@ -187,21 +171,21 @@
                 />
               </label>
               Visible:<label for="producto-visible">
-                <input
-                  id="producto-visible"
-                  class="input style-admin"
-                 
-                  name="visible"
-                  required
-                  placeholder="Modificar visibilidad del producto"
-                  value="<%= product.visible %>"
-                />
+                <select class="input style-admin" name="visible" id="producto-visible" required>
+                  <% if(product.visible == 1) { %>
+                    <option value="1" selected>Si</option>
+                    <option value="0">No</option>
+                  <% } else { %>
+                    <option value="1">Si</option>
+                    <option value="0" selected>No</option>
+                  <% } %>
+                </select>
+              </label>
               </label>
               Stock:<label for="stock">
                 <input
                   id="stock"
                   class="input style-admin"
-                 
                   name="stock"
                   required
                   placeholder="Modificar stock"

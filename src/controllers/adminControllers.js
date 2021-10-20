@@ -195,24 +195,93 @@ module.exports = {
             productId: product.id,
           })
             .then(() => res.redirect("/admin/panelProductos"))
-            .catch((err) => console.log(err));
+            .catch(err => console.log(err));
         }
       });
   },
   formEditar: (req, res) => {
-    db.Products.findByPk(req.params.id).then((product) => {
-      res.render("editar", {
-        product,
-        session: req.session,
-      });
-    });
+    db.Products.findByPk(req.params.id)
+    .then(product => {
+      db.Colours.findAll({
+        include: [{
+          association: 'products',
+          include: [{
+            association: 'colours'
+          }]
+        }]
+      })
+        .then(colours => {
+          db.Brands.findAll({
+            include: [{
+              association: 'products'
+            }]
+          })
+            .then(brands => {
+              db.Categories.findAll({
+                include: [{
+                  association: 'subcategories'
+                }]
+              })
+              .then(categories => {
+                db.Subcategories.findAll({
+                  include: [{
+                    association: 'products',
+                    association: 'category'
+                  }]
+                })
+                .then(subcategories => {
+                  db.Talles.findAll({
+                    include: [{
+                      association: 'products'
+                    }]
+                  })
+                  .then(talles => {
+                    db.Talle_products.findOne({
+                      where: {
+                        id_product: product.id
+                      }
+                    })
+                      .then(talle_product => {
+                        db.Colour_products.findOne({
+                          where: {
+                            id_product: product.id
+                          }
+                        })
+                        .then(colour_product => {
+                          res.render("editar", {
+                            product,
+                            session: req.session,
+                            colours,
+                            brands,
+                            categories,
+                            subcategories,
+                            talles,
+                            talle_product,
+                            colour_product
+                        })
+                      })
+                    })
+                    .catch(err => console.log(err))
+                  })
+                  .catch(err => console.log(err))
+                })
+                .catch(err => console.log(err))
+              })
+              .catch(err => console.log(err))
+            })
+          .catch(err => console.log(err))
+        })
+      .catch(err => console.log(err))
+    })
   },
+
   editar: (req, res) => {
     let {
       name,
       id_marca,
       description,
       id_subcategory,
+      categoria,
       colour,
       id_talle,
       price,
@@ -221,29 +290,46 @@ module.exports = {
       stock,
     } = req.body;
 
-    db.Products.update(
-      {
+    db.Products.update({
         name,
         id_marca,
         description,
         id_subcategory,
-        colour,
-        id_talle,
         price,
         discount,
         visible,
-        stock,
+        stock
       },
       {
         where: {
           id: +req.params.id,
+        }
+      })
+      .then(() => {
+        db.Colour_products.update({
+          id_colour: colour
         },
-      }
-    ).then((productUpdated) => {
-      if (req.files) {//borre el lenght de la imagen
+        {
+          where: {
+            id_product: req.params.id
+          }
+        })
+      })
+      .then(() => {
+        db.Talle_products.update({
+          id_talle: id_talle,
+          },
+          {
+            where: {
+              id_product: req.params.id
+            }
+          })
+      })
+      .then(() => {
+      if (req.files) { //borre el lenght de la imagen
         db.Images.destroy({
           where: {
-            id_product: +req.params.id,
+            id_product: +req.params.id
           },
         })
           .then(() => {
@@ -251,8 +337,8 @@ module.exports = {
             let nameImages = req.files.map((image) => image.filename);
             nameImages.forEach((img) => {
               let newImage = {
-                id_product: req.params.id,
-                name: img,
+                id_product: +req.params.id,
+                name: img
               };
               images.push(newImage);
             });

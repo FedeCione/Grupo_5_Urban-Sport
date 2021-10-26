@@ -5,9 +5,10 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="/stylesheets/registro.css" />
-
+  <script src="/javascripts/hiddenEye.js" defer></script>
   <!-- Javascript -->
   <script src="/javascripts/home.js" defer></script>
+  
 
   <body>
     <!------------- HEADER -------------------->
@@ -18,90 +19,80 @@
     <!-- -----------Fin Dark Mode---------------- -->
 
     <main id="main-dark">
-      <form class="form-register" action="/users/register" method="POST" enctype="multipart/form-data">
+
+      <form class="form-register" action="/users/register" method="POST" enctype="multipart/form-data" id="form">
         <h4>Formulario de Registro</h4>
 
         <% if (locals.errors && errors.name) { %>
           <small class="text-danger"><%= errors.name.msg %> </small>
        <% } %>
-        <input
-          class="controls"
-          type="text"
-          name="name"
-          id="nombre"
-          placeholder="Ingrese su Nombre"
-          value="<%= locals.old && old.name %>"
-        />
+        <div class="controls">
+          <input type="text" name="name" id="nombre" placeholder="Ingrese su Nombre" value="<%= locals.old && old.name %>"/><i class="far" ></i>
+          
+        </div>
+        <span id="errorName" class="text-danger"></span>
+        
         
         <% if (locals.errors && errors.last_name) { %>
           <small class="text-danger"><%= errors.last_name.msg %> </small>
        <% } %>
-        <input
-          class="controls"
-          type="text"
-          name="last_name"
-          id="apellido"
-          placeholder="Ingrese su Apellido"
-          value="<%= locals.old && old.last_name %>"
-        />
+       <div class="controls">
+          <input class="controls" type="text" name="last_name" id="apellido" placeholder="Ingrese su Apellido" value="<%= locals.old && old.last_name %>"/><i class="lsNa far" ></i>
+          
+       </div>
+        <span id="errorLastName"  class="text-danger"></span>
 
         <% if (locals.errors && errors.email) { %>
           <small class="text-danger"><%= errors.email.msg %> </small>
        <% } %>
-        <input
-          class="controls"
-          type="email"
-          name="email"
-          id="correo"
-          placeholder="Ingrese su Correo"
-          value="<%= locals.old && old.email %>"
-          
-        />
 
+       <div class="controls">
+         <input class="controls" type="email" name="email" id="correo" placeholder="Ingrese su Correo" value="<%= locals.old && old.email %>"/><i class="isEmail far " ></i>
+
+       </div>
+       <span id="errorEmail" class="text-danger" ></span>
+        
         <% if (locals.errors && errors.password) { %>
           <small class="text-danger"><%= errors.password.msg %> </small>
        <% } %>
-        <input
-          class="controls"
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Ingrese su Contraseña"
-          
-        />
+
+       <div class="controls">
+         <input  type="password" name="password" id="password" placeholder="Ingrese su Contraseña" ></i><i class="isPass far fa-eye " id="visibilityBtn"></i>
+       </div>
+        <span  id="errorPassword" class="text-danger"></i></span>
 
         <% if (locals.errors && errors.password2) { %>
           <small class="text-danger"><%= errors.password2.msg %> </small>
        <% } %>
-        <input
-          class="controls"
-          type="password"
-          name="password2"
-          id="password_repeat"
-          placeholder="Repite tu Contraseña"
-        />
+
+       <div class="controls">
+         <input class="controls" type="password" name="password2" id="password_repeat" placeholder="Repite tu Contraseña"/><i class="isPass2 far" ></i>
         
-        <input
-          class="controls"
-          type="file"
-          name="avatar"
-          id="avatar"
-        />
-        
-        <% if (locals.errors && errors.terms) { %>
+       </div> 
+        <span id="errorPasswordRepeat" class="text-danger"></span>
+
+
+       <div class="controls">
+         <input class="controls" type="file" name="avatar" id="avatar"/>
+          
+       </div>  
+          <span id="errorAvatar" class="text-danger"></span> 
+      <% if (locals.errors && errors.terms) { %>
           <small class="text-danger"><%= errors.terms.msg %> </small>
        <% } %>
+
         <p class="condiciones">
-          <input type="checkbox" name="terms"  />
+          <input type="checkbox" name="terms" id="terms" class="" />
           <label for="terminos"
-            >Estoy de acuerdo con
+            >Acepto los
             <a class="condiciones" href="#">Terminos y condiciones</a></label>
         </p>
+        <span class="text-danger"id="errorTerms"></span>
 
         <button class="botons"
         type="submit"
         > Registrate</button>
-          
+          <span id="submitError"></span>
        
         <p class="condiciones">
           <a class="condiciones" href="http://localhost:3020/users/login"
@@ -114,6 +105,6 @@
     <!-------------- FOOTER ------------------------>
     <%- include("partials/footer.ejs") %>
     <!--------------FIN- FOOTER ------------------------>
-
+    <script src="/javascripts/validationRegister.js" ></script>
   </body>
 </html>

@@ -5,7 +5,10 @@
   <link rel="stylesheet" href="/stylesheets/login.css" />
 
   <!-- Javascript -->
+  <script src="/public/javascripts/validations.js" defer></script>
   <script src="/javascripts/home.js" defer></script>
+  <script src="/javascripts/hiddenEye.js" defer></script>
+  <script src="/javascripts/validationLogin.js" defer></script>
 
   <body>
     <!------------- HEADER -------------------->
@@ -16,27 +19,23 @@
     <!-- -----------Fin Dark Mode---------------- -->
 
     <main id="main-dark">
-      <form class="form-register" action="/users/login" method="POST">
+      <form class="form-register" action="/users/login" method="POST" id="form">
         <h4 class="titulo">Iniciar Sesión</h4>
-        <input
-          class="controls"
-          type="email"
-          name="email"
-          id="correo"
-          placeholder="Ingrese su Email"
-        />
+
+        <div class="controls">
+          <input  type="email" name="email" id="correo" placeholder="Ingrese su Email"/><i class="isEmail far " ></i>
+        </div>
+        <span id="errorEmail" class="text-danger" ></span>
+        
         <% if (locals.errors && errors.email) { %>
           <small class="text-danger"><%= errors.email.msg %> </small>
        <% } %>
 
-        <input
-          class="controls"
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Ingrese su Contraseña"
-          
-        />
+        <div class="controls">
+          <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña"/><i class="isPass far fa-eye " id="visibilityBtn"></i>
+        </div>
+        <span id="errorPass" class="text-danger"></span>
+        
         <% if (locals.errors && errors.password) { %>
           <small class="text-danger"><%= errors.password.msg %> </small>
        <% } %>
@@ -49,7 +48,9 @@
           <input type="checkbox" name="remember" />
           <label for="remember">¿Recordar usuario?</label>
         </p>
+
         <button class="botons" type="submit">Ingresar</button>
+        <span id="errorForm" class="text-danger"></span>
 
         <p class="condiciones">
           <a class="condiciones" href="http://localhost:3020/users/olvidecuenta"

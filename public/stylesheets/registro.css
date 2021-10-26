@@ -4,40 +4,62 @@
 .titulo {
   text-align: center;
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
+  
 }
-.text-danger{
-  color:rgb(250, 135, 135);
+
+.text-danger {
+  color:rgb(250, 89, 89);
+  font-size: .9rem;
+  padding-bottom: 5px;
+  
 }
 .form-register {
   border: solid 1px black;
   width: 300px;
-  background: #34495e;
+  background-color: #d1e1f165;
   padding: 30px;
   margin: 0 auto;
   margin-top: 25px;
   margin-bottom: 25px;
   border-radius: 4px;
   font-family: "calibri";
-  color: white;
+  color: darkcyan;
   box-shadow: 7px 13px 37px #000;
 }
 
 .form-register h4 {
   font-size: 22px;
   margin-bottom: 20px;
+  text-transform: uppercase;
+  color: rgb(12, 12, 11);
 }
 
-.controls {
+.controls input::placeholder{
+  color: rgb(179, 173, 173);
+}
+
+.controls input{
   width: 100%;
-  background: #24303c;
-  padding: 10px;
+  padding: 9px;
+  background: #e7ecf0;
   border-radius: 4px;
-  margin-bottom: 16px;
-  border: 1px solid #1f53c5;
+  margin-top: 16px;
   font-family: "calibri";
   font-size: 18px;
-  color: white;
+  border: 1px solid #1f53c5;
+  color: rgb(94, 92, 89);
+}
+
+.controls i {
+  color: #1f53c5;
+  cursor: pointer;
+  margin-left: -35px;
+}
+
+.controls .far{
+  color: rgb(57, 245, 57);
+  font-size: 1.3rem;
 }
 
 .form-register p {
@@ -48,12 +70,12 @@
 }
 
 .form-register a {
-  color: white;
+  color: darkcyan;
   text-decoration: none;
 }
 
 .form-register a:hover {
-  color: white;
+  color: rgba(233, 213, 31, 0.466);
   text-decoration: underline;
 }
 
@@ -61,16 +83,20 @@
   width: 100%;
   background: #1f53c5;
   border: none;
+  border-radius: 5px;
   padding: 12px;
   color: white;
   margin: 16px 0;
   font-size: 16px;
 }
-.condiciones p {
-  font-size: 10px;
+.botons:hover {
+  background-color: #467aeb ;
+}
+.condiciones {
+  margin-top: 25px;
 }
 .condiciones p {
-  font-size: 10px;
+  font-size: .3rem;
 }
 /*____________FIN LOGIN_________________________*/
 

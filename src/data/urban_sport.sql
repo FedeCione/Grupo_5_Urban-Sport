@@ -1,8 +1,8 @@
--- MariaDB dump 10.19  Distrib 10.4.21-MariaDB, for Win64 (AMD64)
+-- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
--- Host: 127.0.0.1    Database: urban_sport
+-- Host: localhost    Database: urban_sport
 -- ------------------------------------------------------
--- Server version	10.4.21-MariaDB
+-- Server version	5.5.5-10.1.36-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -377,7 +377,7 @@ CREATE TABLE `users` (
   `dark_mode` tinyint(2) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -386,9 +386,13 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'fede','cione','fede@mail.com','$2a$10$iL8h3UGO./CD1zbUrUmW9ekl703ePauq/cCtsxc7rzy7wZj2zoq1i',NULL,NULL,0,NULL,NULL,'default.png',NULL,NULL,0);
+INSERT INTO `users` VALUES (1,'fede','cione','fede@mail.com','$2a$10$iL8h3UGO./CD1zbUrUmW9ekl703ePauq/cCtsxc7rzy7wZj2zoq1i',NULL,NULL,0,NULL,NULL,'default.png',NULL,NULL,0),(2,'elias','kannemann','elias@mail.com','$2a$10$ELXrQQMZsV.FiYFw9ahyveyPbSH1tOlV6rDCHwb1rTBfL19Hnkr4a',NULL,NULL,1,NULL,NULL,'1635371358316_img_.png',NULL,NULL,0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'urban_sport'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -399,4 +403,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-19 12:52:23
+-- Dump completed on 2021-10-27 19:23:34

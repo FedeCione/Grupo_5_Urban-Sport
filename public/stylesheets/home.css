@@ -74,14 +74,14 @@ a{
 .categories .col-3 a{
     position:absolute;
     text-transform: uppercase;
-    color: rgb(255, 250, 250);
+    color: #f64749;
     font-size: 2rem;
     top: 40%;
     left: 30%;
     z-index: 1;
 }
 .categories .col-3 a:hover{
-    color: #f0bb3c;
+    color: #256eff;
 }
 
 
@@ -97,7 +97,7 @@ a{
 .carousel-container-one .carousel-element{ 
     background-color: #ffc10731;
     border: rgb(255, 255, 255) 5px solid;
-
+    max-width: 430px;
 }
 .carousel-container-one .carousel-element{
     width: 330px;
@@ -157,7 +157,7 @@ a{
 /*  --------------- CAROUSEL TWO ---------------  */
 .carousel-container{
     position: relative;
-    margin: 15px;
+    margin: 15px; 
 }
 
 .carousel-two .new-product{

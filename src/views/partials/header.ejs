@@ -11,10 +11,13 @@
   <!-- MENU DESKTOP -->
   <nav class="main-nav">
     <ul>
-      <li><a href="#">Hombre</a></li>
-      <li><a href="#">Mujer</a></li>
-      <li><a href="#">Niños</a></li>
-      <li><a href="#">Novedades</a></li>
+      <% locals.categories.forEach(category => { %>
+        <li >
+          <a href="#"><%= category.name %> 
+            </a>
+            
+        </li>
+    <% }) %>
       <li><a href="#">Contacto</a></li>
     </ul>
   </nav>
@@ -45,14 +48,15 @@
         <li>
           <a href="#">Hombre <i class="fas fa-angle-right"></i></a>
         </li>
-        <li><a href="#">Mujer</a></li>
-        <li><a href="#">Niños</a></li>
-        <li><a href="#">Colecciones</a></li>
-        <li><a href="#">Marcas</a></li>
-        <li><a href="#">Deportes</a></li>
-        <li><a href="#">Training</a></li>
-        <li><a href="#">Mi cuenta</a></li>
-        <li><a href="#">Buscador de tiendas</a></li>
+         
+          <% locals.categories.forEach(category => { %>
+              <li >
+                
+                <a href="#"><%= category.name %> <i class="fas fa-angle-right"></i></a>
+                  
+              </li>
+          <% }) %>
+          
         <li><a href="#">Ayuda</a></li>
         <li><a href="#">Autogestion de Devolucion</a></li>
         <li><a href="#">Seguimiento de Pedidos</a></li>
@@ -63,17 +67,16 @@
   <!-- menu del header mobile icons -->
   <% if (typeof session.user !== 'undefined') { %>
     <div class="icon-btn">
-      <i onclick="openOverlayUl()" class="fas fa-user"></i>
+      <i onclick="openOverlayUl()" class="far fa-address-card"></i>
       
       <%- include("./modalSession.ejs") %>
 
-      <a href="http://localhost:3020/products/carrito"><i class="fas fa-shopping-cart"></i></a>
-      <a href=""><i class="fas fa-heart"></i></a>
+      <a href="http://localhost:3020/products/carrito"><i class="fas fa-cart-plus"></i></a>
+      <a href=""><i class="far fa-heart"></i></a>
     </div>
   <% } else { %>
     <div class="icon-btn">
       <i onclick="openOverlayUl()" class="fas fa-user"></i>
-      
       <%- include("./modal.ejs") %>
 
       <a href="http://localhost:3020/products/carrito"><i class="fas fa-shopping-cart"></i></a>

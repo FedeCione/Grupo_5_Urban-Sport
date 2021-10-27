@@ -33,7 +33,15 @@
   color: var(--amarillo);
   opacity: 0.8;
 }
-
+.main-header .fa-address-card{
+  color: rgb(156, 216, 140);
+}
+.main-header .fa-address-card:hover{
+  color: rgb(7, 252, 19);
+}
+.main-header .fa-cart-plus{
+  font-size: 24px;
+}
 /* --------------- Desplegable --------------- */
 .overlay {
   height: 100vh;

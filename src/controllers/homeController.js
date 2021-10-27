@@ -1,11 +1,14 @@
 let { bannerCarousel, getproductos } = require('../data/dataBase')
 
+
 module.exports = {
   home: (req, res) => {
-    res.render("home", {
-      session: req.session,
-      carousel: bannerCarousel
-    });
+        
+        res.render('home',{
+              session: req.session,
+              carousel: bannerCarousel
+        })
+        
   },
     search:(req, res) => {
       let resultSearch = [];

@@ -5,7 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var methodOverride = require("method-override");
 var session = require('express-session')
-const localsCheck=require("./middelwares/localCheck")
+const localsCheck = require("./middelwares/localCheck")
 var app = express();
 
 // view engine setup
@@ -27,16 +27,18 @@ app.use(session({
 }));
 
 app.use(localsCheck)
+
 /* ENRUTADORES*/
 let homeRouter = require("./routes/home");
 let adminRouter = require("./routes/admin");
 let usersRouter = require("./routes/users");
 let productsRouter = require("./routes/products");
+let apiRouter = require('./routes/apiRoutes.js');
 /*FINALIZA ENRUTADORES */
 
 
 
-/*----RUTAS---- */
+/*----ROUTES---- */
 app.use(methodOverride("_method"));
 /*----HOME---- */
 app.use("/", homeRouter);
@@ -46,6 +48,8 @@ app.use("/admin", adminRouter);
 app.use("/users", usersRouter);
 /*----PRODUCTS---- */
 app.use("/products", productsRouter);
+/*----APIs---- */
+app.use('/api', apiRouter);
 
 app.use((req, res, next) => {
   res.status(404).render("error");

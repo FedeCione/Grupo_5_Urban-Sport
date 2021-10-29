@@ -3,7 +3,7 @@ const { Op } = require('sequelize');
 
 module.exports = {
   admin: (req, res) => {
-    res.render("admin", {
+    res.render("admin/admin", {
       session: req.session,
     });
   },
@@ -55,7 +55,7 @@ module.exports = {
                                       }]
                                     })
                                       .then(talles => {
-                                        res.render("panelProductos", {
+                                        res.render("admin/panelProductos", {
                                           session: req.session,
                                           products,
                                           colours,
@@ -121,7 +121,7 @@ module.exports = {
                   }]
                 })
                 .then(talles => {
-                  res.render("agregar", {
+                  res.render("admin/products/agregar", {
                     session: req.session,
                     colours,
                     brands,
@@ -187,7 +187,7 @@ module.exports = {
             };
           });
           db.Images.bulkCreate(images)
-            .then(() => res.redirect("panelProductos"))
+            .then(() => res.redirect("/admin/panelProductos"))
             .catch((err) => console.log(err));
         } else {
           db.Images.create({
@@ -248,7 +248,7 @@ module.exports = {
                           }
                         })
                         .then(colour_product => {
-                          res.render("editar", {
+                          res.render("admin/products/editar", {
                             product,
                             session: req.session,
                             colours,
@@ -382,7 +382,7 @@ module.exports = {
     })
       .then(products => {
 
-        res.render('adminProductSearch', {
+        res.render('admin/adminProductSearch', {
           product: products,
           search,
           session: req.session

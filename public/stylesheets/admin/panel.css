@@ -1,79 +1,78 @@
 :root {
-    --primary: #003F49;
-    --secondary: #008489;
-    --tertiary: #F0BB3C;
-    --light-grey: #F5F5F5;
-    --grey: #7C7C7C;
-    --font_roboto: 'Roboto', sans-serif;
-} 
+  --primary: #003F49;
+  --secondary: #008489;
+  --tertiary: #F0BB3C;
+  --light-grey: #F5F5F5;
+  --grey: #7C7C7C;
+  --font_roboto: 'Roboto', sans-serif;
+}
 
-.panel{
-    height: 400px;
-    line-height: 50px;
-    width: 95%;
-   margin: auto;
-   margin-bottom: 60px;
+.panel {
+  height: 400px;
+  line-height: 50px;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 60px;
+  text-align-last: center;
+}
 
+table {
+  height: 200px;
+  width: 100%;
 }
-table{
-    height: 200px;
-    width: 100%;
-    
+
+caption {
+  font-size: 25px;
+  padding: 5px
 }
-caption{
-    font-size: 25px;
-    padding:5px
-}
+
 table, th, td {
-    border-collapse: collapse;
-    text-align: center;
-  }
- 
-  th, td,h1,caption {
-    padding: 10px;
-    color: var(--primary);
+  border-collapse: collapse;
+  text-align: center;
+}
 
-  }
-  th {
-    background: linear-gradient(var(--grey),white);
+th, td, h1, caption {
+  padding: 10px;
+  color: var(--primary);
+}
 
-  }
-  tr:nth-child(even) {
-    background-color: #eee;
-  }
-  tr:nth-child(odd) {
-    background-color: #fff;
-   }
-   tr:hover {
-    transition:all 1.5s ease-in-out;
-    background-color: var(--tertiary);
-    }
+th {
+  background: linear-gradient(var(--grey), white);
+}
 
-   
-@media  screen and  (max-width: 361px){
-  
-  .panel{
+tr:nth-child(even) {
+  background-color: #eee;
+}
+
+tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+tr:hover {
+  transition: all 1.5s ease-in-out;
+  background-color: var(--tertiary);
+}
+
+@media screen and (max-width: 361px) {
+  .panel {
     font-size: 15px;
     line-height: 15px;
     height: 500px;
-}
-h1, caption{
+  }
+  h1, caption {
     font-size: 15px;
     text-align: justify;
-}
-}
- 
-@media screen and (max-width:768px){
-
-  
-    .panel{
-      font-size: 18px;
-      line-height: 22px;
-      height: 500px;
   }
-  h1, caption{
+}
+
+@media screen and (max-width:768px) {
+  .panel {
+    font-size: 18px;
+    line-height: 22px;
+    height: 500px;
+  }
+  h1, caption {
     font-size: 20px;
     text-align: justify;
+  }
 }
-}
-

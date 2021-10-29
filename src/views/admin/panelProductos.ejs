@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- HEAD-->
+<%- include("partials/head.ejs") %>
+<body>
+    <!-- dashboard admin -->
+    <%- include("partials/dashboard.ejs") %>
+
+  <div class="admin-content">
+    <%- include("partials/header.ejs") %>
+
+      <main id="main-dark">
+        <h1>Productos Actuales</h1>
+        <div style="overflow: auto" class="panel">
+          <table>
+            <thead>
+              <tr>
+                <th colspan="1" scope="col">#</th>
+                <th colspan="2" scope="col">Nombre</th>
+                <th colspan="3" scope="col">Marca</th>
+                <th colspan="4" scope="col">Descripcion</th>
+                <th colspan="5" scope="col">Categoria</th>
+                <th colspan="6" scope="col">Subcategoria</th>
+                <th colspan="7" scope="col">Color</th>
+                <th colspan="8" scope="col">Talle</th>
+                <th colspan="9" scope="col">Precio</th>
+                <th colspan="10" scope="col">Descuento</th>
+                <th colspan="11" scope="col">Imagen</th>
+                <th colspan="12" scope="col">Visible</th>
+                <th colspan="13" scope="col">Stock</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% products.forEach(product=> { %>
+                <% let brand=brands.find(brand=> product.id_marca == brand.id) %>
+                  <% let image=images.filter(image=> product.id == image.productId) %>
+                    <% let subcategory=subcategories.find(subcategory=> product.id_subcategory == subcategory.id) %>
+                      <% let category=categories.find(category=> category.id == subcategory.categories_id) %>
+                        <tr>
+                          <td colspan="1" scope="col">
+                            <%- product.id %>
+                          </td>
+                          <td colspan="2" scope="col">
+                            <%- product.name %>
+                          </td>
+                          <td colspan="3" scope="col">
+                            <%- brand.name %>
+                          </td>
+                          <td colspan="4" scope="col">
+                            <%- product.description %>
+                          </td>
+                          <td colspan="5" scope="col">
+                            <%- category.name %>
+                          </td>
+                          <td colspan="6" scope="col">
+                            <%- subcategory.name %>
+                          </td>
+                          <% for(let colour_product of colour_products) { %>
+                            <% for(let colour of colours) { %>
+                              <% if(colour_product.id_product==product.id && colour_product.id_colour==colour.id) { %>
+                                <td colspan="7" scope="col">
+                                  <%- colour.name %>
+                                </td>
+                                <% } %>
+                                  <% } %>
+                                    <% } %>
+                                      <% for(let talle_product of talle_products) { %>
+                                        <% for(let talle of talles) { %>
+                                          <% if(talle_product.id_product==product.id &&
+                                            talle_product.id_talle==talle.id) { %>
+                                            <td colspan="8" scope="col">
+                                              <%- talle.talle %>
+                                            </td>
+                                            <% } %>
+                                              <% } %>
+                                                <% } %>
+                                                  <td colspan="9" scope="col">$<%- product.price %>
+                                                  </td>
+                                                  <td colspan="10" scope="col">
+                                                    <%- product.discount %>
+                                                  </td>
+                                                  <% image.forEach(image=> { %>
+                                                    <td colspan="11" scope="col">
+                                                      <img width="30%"
+                                                        src="/images/admin/productos/<%- image.name %>" />
+                                                    </td>
+                                                    <% }) %>
+                                                      <td colspan="12" scope="col">
+                                                        <%- product.visible==1 ? "Si" : "No" %>
+                                                      </td>
+                                                      <td colspan="13" scope="col">
+                                                        <%- product.stock %>
+                                                          <form>
+                                                            <button style="cursor: pointer" type="submit"
+                                                              class="btn-admin style-admin">
+                                                              <a href="editar/<%-product.id %>?_method=PUT" class="edit-button-products">Editar</a>
+                                                            </button>
+                                                          </form>
+                                                          <form action="eliminar/<%-product.id %>?_method=DELETE"
+                                                            method="post">
+                                                            <button style="cursor: pointer"
+                                                              class="btn-admin style-admin" type="submit">
+                                                              Eliminar
+                                                            </button>
+                                                          </form>
+                                                      </td>
+                        </tr>
+                        <% }) %>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colspan="20" scope="col">
+                  Total productos:<%- products.length %>
+                </th>
+                <th colspan="40" scope="col">Total precio:$</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </main>
+  </div>
+</body>
+</html>

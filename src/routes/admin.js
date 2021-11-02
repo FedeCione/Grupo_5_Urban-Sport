@@ -8,6 +8,7 @@ let subcategoriesValidator = require('../validations/subcategoriesValidator')
 let upload = require('../middelwares/uploadFiles');
 let userSession = require('../middelwares/userSession');
 let adminCheckValidator = require('../middelwares/userAdminCheck');
+let local
 
 /* ADMIN */
 router.get("/",userSession, adminCheckValidator, admin);

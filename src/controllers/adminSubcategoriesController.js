@@ -1,39 +1,36 @@
 const { validationResult } = require("express-validator");
 const fs = require("fs");
 const db = require("../database/models");
+const categoriesValidator = require("../validations/categoriesValidator");
 
 module.exports = {
   subcategories: (req, res) => {
     db.Subcategories.findAll().then((subcategories) => {
-      res.render("admin/subcategories/adminSubcategories", {
+      res.render("admin/subcategories/panelSubcategories", {
         subcategories,
         session: req.session,
       });
     });
   },
   subcategoryCreate: (req, res) => {
-    res.render("admin/subcategories/adminSubcategoriesCreateForm", {
-      session: req.session,
+    db.Categories.findAll().then((categories) => {
+      res.render("admin/subcategories/addSubcategorie", {
+        categories,
+        session: req.session,
+      });
     });
   },
   subcategoryStore: (req, res) => {
     let errors = validationResult(req);
-    if (req.fileValidatorError) {
-      let image = {
-        param: "image",
-        msg: req.fileValidatorError,
-      };
-      errors.push(image);
-    }
     if (errors.isEmpty()) {
       db.Subcategories.create({
         name: req.body.name,
-        categoryId: req.body.category,
+        categories_id: req.body.categoria,
       }).then((result) => {
         res.redirect("/admin/subcategories");
       });
     } else {
-      res.render("adminSubcategoriesCreateForm", {
+      res.render("admin/subcategories/addSubcategorie", {
         errors: errors.mapped(),
         old: req.body,
         session: req.session,
@@ -41,28 +38,24 @@ module.exports = {
     }
   },
   subcategoryEdit: (req, res) => {
-    db.Categories.findByPk(req.params.id).then((category) => {
-      res.render("admin/subcategories/adminSubcategoriesEditForm", {
-        subcategory,
-        session: req.session,
+    db.Subcategories.findByPk(req.params.id).then((subcategory) => {
+      db.Categories.findAll().then((categories) => {
+        res.render("admin/subcategories/editSubcategorie", {
+          categories,
+          subcategory,
+          session: req.session,
+        });
       });
     });
   },
   subcategoryUpdate: (req, res) => {
     let errors = validationResult(req);
-    if (req.fileValidatorError) {
-      let image = {
-        param: "image",
-        msg: req.fileValidatorError,
-      };
-      errors.push(image);
-    }
     if (errors.isEmpty()) {
-      db.Subategories.findByPk(req.params.id).then((subcategory) => {
-        db.Subategories.update(
+      db.Subcategories.findByPk(req.params.id).then((subcategory) => {
+        db.Subcategories.update(
           {
             name: req.body.name,
-            image: req.file ? req.file.filename : subcategory.image,
+            categories_id: req.body.categoria,
           },
           {
             where: {
@@ -75,7 +68,7 @@ module.exports = {
       });
     } else {
       db.Subcategories.findByPk(req.params.id).then((subcategory) => {
-        res.render("admin/subcategories/adminSubcategoriesEditForm", {
+        res.render("admin/subcategories/editSubcategorie", {
           subcategory,
           errors: errors.mapped(),
           old: req.body,
@@ -87,7 +80,7 @@ module.exports = {
   subcategoryDestroy: (req, res) => {
     db.Products.destroy({
       where: {
-        subcategoryId: req.params.id,
+        id_subcategory: req.params.id,
       },
     }).then((result) => {
         db.Subcategories.destroy({

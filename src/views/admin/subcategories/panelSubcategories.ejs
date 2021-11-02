@@ -11,33 +11,37 @@
                 <%- include("../partials/header.ejs") %>
 
                     <main>
-                        <h1>Categorias</h1>
+                        <h1>Subcategorias</h1>
                         <div style="overflow: auto" class="panel">
                             <table>
                                 <thead>
                                     <tr>
                                         <th colspan="1" scope="col">#</th>
                                         <th colspan="2" scope="col">Nombre</th>
-                                        <th colspan="2" scope="col">Acciones</th>
+                                        <th colspan="3" scope="col">Categoria</th>
+                                        <th colspan="4" scope="col">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% categories.forEach(category => { %>
+                                    <% subcategories.forEach(subcategory => { %>
                                     <tr>
                                         <td colspan="1" scope="col">
-                                            <%- category.id %>
+                                            <%- subcategory.id %>
                                         </td>
                                         <td colspan="2" scope="col">
-                                            <%- category.name %>
+                                            <%- subcategory.name %>
                                         </td>
                                         <td colspan="3" scope="col">
+                                            <%- subcategory.categories_id %>
+                                        </td>
+                                        <td colspan="4" scope="col">
                                         <form>
                                             <button style="cursor: pointer" type="submit" class="btn-admin style-admin">
-                                                <a href="categories/edit/<%-category.id %>?_method=PUT"
+                                                <a href="subcategories/edit/<%- subcategory.id %>?_method=PUT"
                                                     class="edit-button-products">Editar</a>
                                             </button>
                                         </form>
-                                        <form action="categories/delete/<%-category.id %>?_method=DELETE" method="post">
+                                        <form action="subcategories/delete/<%- subcategory.id %>?_method=DELETE" method="post">
                                             <button style="cursor: pointer" class="btn-admin style-admin" type="submit">
                                                 Eliminar
                                             </button>
@@ -49,7 +53,7 @@
                                 <tfoot>
                                     <tr>
                                         <th colspan="5" scope="col">
-                                            Total de Categorias:<%- categories.length %>
+                                            Total de Subcategorias:<%- subcategories.length %>
                                         </th>
                                     </tr>
                                 </tfoot>

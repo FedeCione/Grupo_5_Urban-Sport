@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD-->
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <!-- dashboard admin -->
+        <%- include("../partials/dashboard.ejs") %>
+
+            <div class="admin-content">
+                <%- include("../partials/header.ejs") %>
+
+                    <main>
+                        <h1>Editar Categoria</h1>
+                        <form action="/admin/categories/edit/<%=category.id%>?_method=PUT" method="POST">
+                            <div class="form caja-agregar">
+                                Nombre:<label for="category-name"><input class="input style-admin" type="text"
+                                        name="name" id="category-name" required placeholder="Nombre de la categoria"
+                                        value="<%= category.name %> " />
+                                </label>
+                                <button type="submit" class="btn-admin style-admin">
+                                    EDITAR
+                                </button>
+                            </div>
+                        </form>
+                    </main>
+            </div>
+    </body>
+
+</html>

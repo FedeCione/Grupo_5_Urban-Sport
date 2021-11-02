@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <!-- HEAD-->
 <%- include("../partials/head.ejs") %>
 
@@ -9,7 +9,7 @@
     <div class="admin-content">
       <%- include("../partials/header.ejs") %>
 
-        <main id="main-dark">
+        <main>
           <div>
             <h1>Editar Producto <%= product.name %>
             </h1>
@@ -21,7 +21,6 @@
                 Marca:
                 <label for="marca-producto">
                   <select class="input style-admin" name="id_marca" id="marca_producto" required>
-                    <option selected hidden value="">Marca</option>
                     <% brands.forEach(brand=> { %>
                       <option value="<%- brand.id %>" <%- brand.id==product.id_marca ? "selected" : "" %>><%- brand.name
                           %>
@@ -33,7 +32,6 @@
                       <%= errors.brand.msg %>
                     </small>
                     <% } %>
-                      </select>
                 </label>
 
                 Descripción:<label for="descripción-producto"><input id="descripción-producto" cols="30" rows="10"
@@ -41,7 +39,6 @@
                     value="<%= product.description %> " /></label>
                     Categoría:<label for="categoria-producto">
                       <select class="input style-admin categorySelect" name="categoria" id="categoria-producto">
-                        <option selected hidden value="">Categorias</option>
                        <% locals.categories.forEach(category => { %>
                           <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%- category.name %></option>
                        <% }) %>
@@ -49,7 +46,6 @@
                       <% if (locals.errors && errors.category) { %>
                           <small class="text-danger"><%= errors.category.msg %></small>
                       <% } %>
-                      </select>
                     </label>
                     Subcategoría:<label for="subcategoria-producto">
                       <select class="input style-admin subcategorySelect" id="subcategoria-producto" name="id_subcategory">
@@ -59,12 +55,10 @@
                       <% if (locals.errors && errors.subcategory) { %>
                           <small class="text-danger"><%= errors.subcategory.msg %></small>
                       <% } %>
-                      </select>
                     </label>
                 Color:
                 <label for="colores-producto">
                   <select class="input style-admin" name="colour" id="colores-producto">
-                    <option selected hidden value="">Colores</option>
                     <% colours.forEach(colour=> { %>
                       <option value="<%- colour.id %>" <%- colour.id==colour_product.id_colour ? "selected" : "" %>><%-
                           colour.name %>
@@ -74,7 +68,6 @@
                 </label>
                 Talle:<label for="talles-producto">
                   <select class="input style-admin" name="id_talle" id="talles-producto">
-                    <option selected hidden value="">Talles</option>
                     <% talles.forEach(talle=> { %>
                       <option value="<%- talle.id %>" name="id_talle" <%- talle.id==talle_product.id_talle ? "selected"
                         : "" %>><%- talle.talle %>
@@ -103,7 +96,6 @@
                         <option value="0" selected>No</option>
                         <% } %>
                   </select>
-                </label>
                 </label>
                 Stock:<label for="stock">
                   <input id="stock" class="input style-admin" name="stock" required placeholder="Modificar stock"

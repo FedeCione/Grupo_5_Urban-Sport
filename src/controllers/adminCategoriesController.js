@@ -52,7 +52,7 @@ module.exports = {
       });
     } else {
       db.Categories.findByPk(req.params.id).then((category) => {
-        res.render("admin/categories/adminCategoriesEditForm", {
+        res.render("admin/categories/editCategorie", {
           category,
           errors: errors.mapped(),
           old: req.body,

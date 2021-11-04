@@ -11,12 +11,12 @@
                 <%- include("../partials/header.ejs") %>
 
                     <main>
-                        <h1>Editar categoria</h1>
-                        <form action="/admin/categories/edit/<%=category.id%>?_method=PUT" method="POST">
+                        <h1>Editar marca</h1>
+                        <form action="/admin/brands/edit/<%=brand.id%>?_method=PUT" method="POST">
                             <div class="form caja-agregar">
                                 Nombre:<label for="category-name"><input class="input style-admin" type="text"
-                                        name="name" id="category-name" required placeholder="Nombre de la categoria"
-                                        value="<%= category.name %> " />
+                                        name="name" id="category-name" required placeholder="Nombre de la marca"
+                                        value="<%= brand.name %> " />
                                 </label>
                                 <button type="submit" class="btn-admin style-admin">
                                     EDITAR

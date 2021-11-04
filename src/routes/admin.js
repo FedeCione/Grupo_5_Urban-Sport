@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
-let {admin,panelProductos,formAgregar,agregar,formEditar,editar,eliminar, searchProducts} = require("../controllers/adminControllers")
-let {categories, categoryCreate, categoryStore, categoryEdit, categoryUpdate, categoryDestroy} = require('../controllers/adminCategoriesController')
-let categoriesValidator = require('../validations/categoriesValidator')
-let {subcategories, subcategoryCreate, subcategoryStore, subcategoryEdit, subcategoryUpdate, subcategoryDestroy} = require('../controllers/adminSubcategoriesController')
-let subcategoriesValidator = require('../validations/subcategoriesValidator')
+let {admin,panelProductos,formAgregar,agregar,formEditar,editar,eliminar, searchProducts} = require("../controllers/adminControllers");
+let {categories, categoryCreate, categoryStore, categoryEdit, categoryUpdate, categoryDestroy} = require('../controllers/adminCategoriesController');
+let categoriesValidator = require('../validations/categoriesValidator');
+let {subcategories, subcategoryCreate, subcategoryStore, subcategoryEdit, subcategoryUpdate, subcategoryDestroy} = require('../controllers/adminSubcategoriesController');
+let subcategoriesValidator = require('../validations/subcategoriesValidator');
 let upload = require('../middelwares/uploadFiles');
 let userSession = require('../middelwares/userSession');
 let adminCheckValidator = require('../middelwares/userAdminCheck');
-let local
+let {brands, brandCreate, brandStore, brandEdit, brandUpdate, brandDestroy} = require('../controllers/adminBrandsController');
 
 /* ADMIN */
 router.get("/",userSession, adminCheckValidator, admin);
@@ -68,5 +68,23 @@ router.put('/subcategories/edit/:id', subcategoriesValidator, subcategoryUpdate)
 
 /* Delete subcategory */
 router.delete('/subcategories/delete/:id', subcategoryDestroy);
+
+/******************/
+/* CRUD BRANDS */
+/******************/
+
+/* All brands */
+router.get('/brands', userSession, adminCheckValidator, brands);
+
+/* Create brand */
+router.get('/brands/create', userSession, adminCheckValidator, brandCreate);
+router.post('/brands/create', brandStore);
+
+/* Edit brand */
+router.get('/brands/edit/:id', userSession, adminCheckValidator, brandEdit);
+router.put('/brands/edit/:id', brandUpdate);
+
+/* Delete brand */
+router.delete('/brands/delete/:id', brandDestroy);
  
 module.exports = router;

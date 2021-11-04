@@ -9,6 +9,7 @@ let upload = require('../middelwares/uploadFiles');
 let userSession = require('../middelwares/userSession');
 let adminCheckValidator = require('../middelwares/userAdminCheck');
 let {brands, brandCreate, brandStore, brandEdit, brandUpdate, brandDestroy} = require('../controllers/adminBrandsController');
+let {colours, colourCreate, colourStore, colourEdit, colourUpdate, colourDestroy} = require('../controllers/adminColoursController');
 
 /* ADMIN */
 router.get("/",userSession, adminCheckValidator, admin);
@@ -86,5 +87,23 @@ router.put('/brands/edit/:id', brandUpdate);
 
 /* Delete brand */
 router.delete('/brands/delete/:id', brandDestroy);
+
+/******************/
+/* CRUD COLOURS */
+/******************/
+
+/* All colours */
+router.get('/colours', userSession, adminCheckValidator, colours);
+
+/* Create colour */
+router.get('/colours/create', userSession, adminCheckValidator, colourCreate);
+router.post('/colours/create', colourStore);
+
+/* Edit colour */
+router.get('/colours/edit/:id', userSession, adminCheckValidator, colourEdit);
+router.put('/colours/edit/:id', colourUpdate);
+
+/* Delete colour */
+router.delete('/colours/delete/:id', colourDestroy);
  
 module.exports = router;

@@ -11,7 +11,7 @@
                 <%- include("../partials/header.ejs") %>
 
                     <main>
-                        <h1>Marcas</h1>
+                        <h1>Colores</h1>
                         <div style="overflow: auto" class="panel">
                             <table>
                                 <thead>
@@ -22,22 +22,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% brands.forEach(brand => { %>
+                                    <% colours.forEach(colour => { %>
                                     <tr>
                                         <td colspan="1" scope="col">
-                                            <%- brand.id %>
+                                            <%- colour.id %>
                                         </td>
                                         <td colspan="2" scope="col">
-                                            <%- brand.name %>
+                                            <%- colour.name %>
                                         </td>
                                         <td colspan="3" scope="col">
                                         <form>
                                             <button style="cursor: pointer" type="submit" class="btn-admin style-admin">
-                                                <a href="brands/edit/<%-brand.id %>?_method=PUT"
+                                                <a href="colours/edit/<%-colour.id %>?_method=PUT"
                                                     class="edit-button-products">Editar</a>
                                             </button>
                                         </form>
-                                        <form action="brands/delete/<%-brand.id %>?_method=DELETE" method="post">
+                                        <form action="colours/delete/<%-colour.id %>?_method=DELETE" method="post">
                                             <button style="cursor: pointer" class="btn-admin style-admin" type="submit">
                                                 Eliminar
                                             </button>
@@ -49,7 +49,7 @@
                                 <tfoot>
                                     <tr>
                                         <th colspan="5" scope="col">
-                                            Total de Marcas:<%- brands.length %>
+                                            Total de Colores:<%- colours.length %>
                                         </th>
                                     </tr>
                                 </tfoot>

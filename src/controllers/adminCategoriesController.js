@@ -36,7 +36,6 @@ module.exports = {
   categoryUpdate: (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      db.Categories.findByPk(req.params.id).then((category) => {
         db.Categories.update(
           {
             name: req.body.name,
@@ -49,7 +48,6 @@ module.exports = {
         ).then((result) => {
           res.redirect("/admin/categories");
         });
-      });
     } else {
       db.Categories.findByPk(req.params.id).then((category) => {
         res.render("admin/categories/editCategorie", {
@@ -62,18 +60,27 @@ module.exports = {
     }
   },
   categoryDestroy: (req, res) => {
+    let subcategoriesDeleted = [];
+    subcategoriesDeleted.push(db.Subcategories.findAll({ where: { categories_id: req.params.id } }));
+    subcategoriesDeleted.forEach(subcategoryDeleted => {
+        db.Products.destroy({
+          where: {
+            id_subcategory: subcategoryDeleted.id
+          }
+        })
+    })
     db.Subcategories.destroy({
       where: {
-        categoryId: req.params.id,
+        categories_id: req.params.id,
       },
     }).then((result) => {
-        db.Categories.destroy({
-          where: {
-            id: req.params.id,
-          },
-        }).then((result) => {
-          return res.redirect("/admin/categories");
-        });
+      db.Categories.destroy({
+        where: {
+          id: req.params.id,
+        },
+      }).then((result) => {
+        return res.redirect("/admin/categories");
+      });
     });
   },
 };

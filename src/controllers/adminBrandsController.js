@@ -36,7 +36,6 @@ module.exports = {
     brandUpdate: (req, res) => {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
-            db.Brands.findByPk(req.params.id).then((brand) => {
                 db.Brands.update(
                     {
                         name: req.body.name,
@@ -49,7 +48,6 @@ module.exports = {
                 ).then((result) => {
                     res.redirect("/admin/brands");
                 });
-            });
         } else {
             db.Brands.findByPk(req.params.id).then((brand) => {
                 res.render("admin/brands/editBrand", {
@@ -62,12 +60,18 @@ module.exports = {
         }
     },
     brandDestroy: (req, res) => {
-        db.Brands.destroy({
+        db.Products.destroy({
             where: {
-                id: req.params.id,
-            },
+                id_marca: req.params.id
+            }
         }).then((result) => {
-            return res.redirect("/admin/brands");
+            db.Brands.destroy({
+                where: {
+                    id: req.params.id,
+                },
+            }).then((result) => {
+                return res.redirect("/admin/brands");
+            });
         });
     },
 };

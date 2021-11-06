@@ -10,6 +10,7 @@ let userSession = require('../middelwares/userSession');
 let adminCheckValidator = require('../middelwares/userAdminCheck');
 let {brands, brandCreate, brandStore, brandEdit, brandUpdate, brandDestroy} = require('../controllers/adminBrandsController');
 let {colours, colourCreate, colourStore, colourEdit, colourUpdate, colourDestroy} = require('../controllers/adminColoursController');
+let {talles, talleCreate, talleStore, talleEdit, talleUpdate, talleDestroy} = require('../controllers/adminTallesController');
 
 /* ADMIN */
 router.get("/",userSession, adminCheckValidator, admin);
@@ -50,7 +51,7 @@ router.get('/categories/edit/:id', userSession, adminCheckValidator,categoryEdit
 router.put('/categories/edit/:id', categoriesValidator, categoryUpdate);
 
 /* Delete Category */
-router.delete('/categories/delete/:id', categoryDestroy);
+router.delete('/categories/delete/:id', userSession, adminCheckValidator, categoryDestroy);
 
 /******************/
 /* CRUD SUBCATEGORIES */
@@ -68,7 +69,7 @@ router.get('/subcategories/edit/:id', userSession, adminCheckValidator,subcatego
 router.put('/subcategories/edit/:id', subcategoriesValidator, subcategoryUpdate);
 
 /* Delete subcategory */
-router.delete('/subcategories/delete/:id', subcategoryDestroy);
+router.delete('/subcategories/delete/:id', userSession, adminCheckValidator, subcategoryDestroy);
 
 /******************/
 /* CRUD BRANDS */
@@ -79,14 +80,14 @@ router.get('/brands', userSession, adminCheckValidator, brands);
 
 /* Create brand */
 router.get('/brands/create', userSession, adminCheckValidator, brandCreate);
-router.post('/brands/create', brandStore);
+router.post('/brands/create', userSession, adminCheckValidator, brandStore);
 
 /* Edit brand */
 router.get('/brands/edit/:id', userSession, adminCheckValidator, brandEdit);
-router.put('/brands/edit/:id', brandUpdate);
+router.put('/brands/edit/:id', userSession, adminCheckValidator, brandUpdate);
 
 /* Delete brand */
-router.delete('/brands/delete/:id', brandDestroy);
+router.delete('/brands/delete/:id', userSession, adminCheckValidator, brandDestroy);
 
 /******************/
 /* CRUD COLOURS */
@@ -97,13 +98,49 @@ router.get('/colours', userSession, adminCheckValidator, colours);
 
 /* Create colour */
 router.get('/colours/create', userSession, adminCheckValidator, colourCreate);
-router.post('/colours/create', colourStore);
+router.post('/colours/create', userSession, adminCheckValidator, colourStore);
 
 /* Edit colour */
 router.get('/colours/edit/:id', userSession, adminCheckValidator, colourEdit);
-router.put('/colours/edit/:id', colourUpdate);
+router.put('/colours/edit/:id', userSession, adminCheckValidator, colourUpdate);
 
 /* Delete colour */
-router.delete('/colours/delete/:id', colourDestroy);
+router.delete('/colours/delete/:id', userSession, adminCheckValidator, colourDestroy);
+
+/******************/
+/* CRUD BRANDS */
+/******************/
+
+/* All brands */
+router.get('/brands', userSession, adminCheckValidator, brands);
+
+/* Create brand */
+router.get('/brands/create', userSession, adminCheckValidator, brandCreate);
+router.post('/brands/create', userSession, adminCheckValidator, brandStore);
+
+/* Edit brand */
+router.get('/brands/edit/:id', userSession, adminCheckValidator, brandEdit);
+router.put('/brands/edit/:id', userSession, adminCheckValidator, brandUpdate);
+
+/* Delete brand */
+router.delete('/brands/delete/:id', userSession, adminCheckValidator, brandDestroy);
+
+/******************/
+/* CRUD TALLES */
+/******************/
+
+/* All talles */
+router.get('/talles', userSession, adminCheckValidator, talles);
+
+/* Create talle */
+router.get('/talles/create', userSession, adminCheckValidator, talleCreate);
+router.post('/talles/create', userSession, adminCheckValidator, talleStore);
+
+/* Edit talle */
+router.get('/talles/edit/:id', userSession, adminCheckValidator, talleEdit);
+router.put('/talles/edit/:id', userSession, adminCheckValidator, talleUpdate);
+
+/* Delete talle */
+router.delete('/talles/delete/:id', userSession, adminCheckValidator, talleDestroy);
  
 module.exports = router;

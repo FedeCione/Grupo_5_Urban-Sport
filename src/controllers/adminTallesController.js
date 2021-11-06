@@ -2,43 +2,43 @@ const { validationResult } = require("express-validator");
 const db = require("../database/models");
 
 module.exports = {
-    colours: (req, res) => {
-        db.Colours.findAll().then((colours) => {
-            res.render("admin/colours/panelColours", {
-                colours,
+    talles: (req, res) => {
+        db.Talles.findAll().then((talles) => {
+            res.render("admin/talles/panelTalles", {
+                talles,
                 session: req.session,
             });
         });
     },
-    colourCreate: (req, res) => {
-        res.render("admin/colours/addColour", {
+    talleCreate: (req, res) => {
+        res.render("admin/talles/addTalle", {
             session: req.session,
         });
     },
-    colourStore: (req, res) => {
+    talleStore: (req, res) => {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
-            db.Colours.create({
-                name: req.body.name,
+            db.Talles.create({
+                talle: req.body.name,
             }).then((result) => {
-                res.redirect("/admin/colours");
+                res.redirect("/admin/talles");
             }).catch(error => console.log(error))
         }
     },
-    colourEdit: (req, res) => {
-        db.Colours.findByPk(req.params.id).then((colour) => {
-            res.render("admin/colours/editColour", {
-                colour,
+    talleEdit: (req, res) => {
+        db.Talles.findByPk(req.params.id).then((talle) => {
+            res.render("admin/talles/editTalle", {
+                talle,
                 session: req.session,
             });
         });
     },
-    colourUpdate: (req, res) => {
+    talleUpdate: (req, res) => {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
-            db.Colours.update(
+            db.Talles.update(
                 {
-                    name: req.body.name,
+                    talle: req.body.name,
                 },
                 {
                     where: {
@@ -46,11 +46,11 @@ module.exports = {
                     },
                 }
             ).then((result) => {
-                res.redirect("/admin/colours");
+                res.redirect("/admin/talles");
             });
         } else {
             db.Colours.findByPk(req.params.id).then((colour) => {
-                res.render("admin/colours/editColour", {
+                res.render("admin/talles/editTalle", {
                     colour,
                     errors: errors.mapped(),
                     old: req.body,
@@ -59,27 +59,27 @@ module.exports = {
             });
         }
     },
-    colourDestroy: (req, res) => {
-        let pivotColourProducts = [];
-        pivotColourProducts.push(db.Colour_products.findAll({ where: { id_colour: req.params.id } }));
-        pivotColourProducts.forEach(pivotColourProduct => {
+    talleDestroy: (req, res) => {
+        let pivotTalleProducts = [];
+        pivotTalleProducts.push(db.Talle_products.findAll({ where: { id_talle: req.params.id } }));
+        pivotTalleProducts.forEach(pivotTalleProduct => {
             db.Products.destroy({
                 where: {
-                    id: pivotColourProduct.id_product
+                    id: pivotTalleProduct.id_product
                 }
-            })
+            });
         });
-        db.Colour_products.destroy({
+        db.Talle_products.destroy({
             where: {
-                id_colour: req.params.id
+                id_talle: req.params.id
             }
         }).then((result) => {
-            db.Colours.destroy({
+            db.Talles.destroy({
                 where: {
                     id: req.params.id,
                 },
             }).then((result) => {
-                return res.redirect("/admin/colours");
+                return res.redirect("/admin/talles");
             });
         });
     },

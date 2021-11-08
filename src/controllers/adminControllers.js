@@ -326,7 +326,7 @@ module.exports = {
           })
       })
       .then(() => {
-      if (req.files) { //borre el lenght de la imagen
+      if (req.files) { //borre el length de la imagen
         db.Images.destroy({
           where: {
             id_product: +req.params.id

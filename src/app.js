@@ -4,8 +4,8 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var methodOverride = require("method-override");
-var session = require('express-session')
-const localsCheck = require("./middelwares/localCheck")
+var session = require('express-session');
+const localsCheck = require("./middelwares/localCheck");
 var app = express();
 
 // view engine setup
@@ -25,8 +25,7 @@ app.use(session({
   saveUninitialized: true ,
   cookie: { maxAge: 1*60*60*1000 }
 }));
-
-app.use(localsCheck)
+app.use(localsCheck);
 
 /* ENRUTADORES*/
 let homeRouter = require("./routes/home");

@@ -16,18 +16,18 @@
             <thead>
               <tr>
                 <th colspan="1" scope="col">#</th>
-                <th colspan="2" scope="col">Nombre</th>
-                <th colspan="3" scope="col">Marca</th>
-                <th colspan="4" scope="col">Descripcion</th>
-                <th colspan="5" scope="col">Categoria</th>
-                <th colspan="6" scope="col">Subcategoria</th>
-                <th colspan="7" scope="col">Color</th>
-                <th colspan="8" scope="col">Talle</th>
-                <th colspan="9" scope="col">Precio</th>
-                <th colspan="10" scope="col">Descuento</th>
-                <th colspan="11" scope="col">Imagen</th>
-                <th colspan="12" scope="col">Visible</th>
-                <th colspan="13" scope="col">Stock</th>
+                <th colspan="1" scope="col">Nombre</th>
+                <th colspan="1" scope="col">Marca</th>
+                <th colspan="1" scope="col">Descripcion</th>
+                <th colspan="1" scope="col">Categoria</th>
+                <th colspan="1" scope="col">Subcategoria</th>
+                <th colspan="1" scope="col">Color</th>
+                <th colspan="1" scope="col">Talle</th>
+                <th colspan="1" scope="col">Precio</th>
+                <th colspan="1" scope="col">Descuento</th>
+                <th colspan="1" scope="col">Imagen</th>
+                <th colspan="1" scope="col">Visible</th>
+                <th colspan="1" scope="col">Stock</th>
               </tr>
             </thead>
             <tbody>
@@ -40,25 +40,25 @@
                           <td colspan="1" scope="col">
                             <%- product.id %>
                           </td>
-                          <td colspan="2" scope="col">
+                          <td colspan="1" scope="col">
                             <%- product.name %>
                           </td>
-                          <td colspan="3" scope="col">
+                          <td colspan="1" scope="col">
                             <%- brand.name %>
                           </td>
-                          <td colspan="4" scope="col">
+                          <td colspan="1" scope="col">
                             <%- product.description %>
                           </td>
-                          <td colspan="5" scope="col">
+                          <td colspan="1" scope="col">
                             <%- category.name %>
                           </td>
-                          <td colspan="6" scope="col">
+                          <td colspan="1" scope="col">
                             <%- subcategory.name %>
                           </td>
                           <% for(let colour_product of colour_products) { %>
                             <% for(let colour of colours) { %>
                               <% if(colour_product.id_product==product.id && colour_product.id_colour==colour.id) { %>
-                                <td colspan="7" scope="col">
+                                <td colspan="1" scope="col">
                                   <%- colour.name %>
                                 </td>
                                 <% } %>
@@ -68,27 +68,27 @@
                                         <% for(let talle of talles) { %>
                                           <% if(talle_product.id_product==product.id &&
                                             talle_product.id_talle==talle.id) { %>
-                                            <td colspan="8" scope="col">
+                                            <td colspan="1" scope="col">
                                               <%- talle.talle %>
                                             </td>
                                             <% } %>
                                               <% } %>
                                                 <% } %>
-                                                  <td colspan="9" scope="col">$<%- product.price %>
+                                                  <td colspan="1" scope="col">$<%- product.price %>
                                                   </td>
-                                                  <td colspan="10" scope="col">
+                                                  <td colspan="1" scope="col">
                                                     <%- product.discount %>
                                                   </td>
                                                   <% image.forEach(image=> { %>
-                                                    <td colspan="11" scope="col">
+                                                    <td colspan="1" scope="col">
                                                       <img width="30%"
                                                         src="/images/admin/productos/<%- image.name %>" />
                                                     </td>
                                                     <% }) %>
-                                                      <td colspan="12" scope="col">
+                                                      <td colspan="1" scope="col">
                                                         <%- product.visible==1 ? "Si" : "No" %>
                                                       </td>
-                                                      <td colspan="13" scope="col">
+                                                      <td colspan="1" scope="col">
                                                         <%- product.stock %>
                                                           <form>
                                                             <button style="cursor: pointer" type="submit"
@@ -109,10 +109,9 @@
             </tbody>
             <tfoot>
               <tr>
-                <th colspan="20" scope="col">
+                <th colspan="13" scope="col">
                   Total productos:<%- products.length %>
                 </th>
-                <th colspan="40" scope="col">Total precio:$</th>
               </tr>
             </tfoot>
           </table>

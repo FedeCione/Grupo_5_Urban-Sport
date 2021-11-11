@@ -57,7 +57,7 @@
                   
               /></label>
               Categoría:<label for="categoria-producto">
-                <select class="input style-admin categorySelect" name="categoria" id="categoria-producto">
+                <select class="input style-admin categorySelect" name="categoria" id="categoria-producto" required>
                   <option selected hidden value="">Categorias</option>
                  <% locals.categories.forEach(category => { %>
                     <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%- category.name %></option>
@@ -69,7 +69,7 @@
                 </select>
               </label>
               Subcategoría:<label for="subcategoria-producto">
-                <select class="input style-admin subcategorySelect" id="subcategoria-producto" name="id_subcategory">
+                <select class="input style-admin subcategorySelect" id="subcategoria-producto" name="id_subcategory" required>
                   <option selected hidden value="">Subcategorias</option>
 
                 </select>
@@ -80,7 +80,7 @@
               </label>
               Color:
               <label for="colores-producto">
-                <select class="input style-admin" name="colour" id="colores-producto">
+                <select class="input style-admin" name="colour" id="colores-producto" required>
                 <option value="">Seleccionar color</option>
                 <% colours.forEach(colour => { %>
                   <option value="<%- colour.id %>"><%- colour.name %></option>
@@ -91,7 +91,7 @@
               <% } %>
                 </label>
               Talle:<label for="talles-producto">
-                <select class="input style-admin" name="id_talle" id="talles-producto">
+                <select class="input style-admin" name="id_talle" id="talles-producto" required>
                   <option value="">Seleccionar talle</option>
                     <% talles.forEach(talle => { %>
                       <option value="<%- talle.id %>" name="id_talle"><%- talle.talle %></option>
@@ -116,7 +116,6 @@
                 <input
                   id="producto-discontinuo"
                   class="input style-admin"
-                 
                   name="discount"
                   required
                   placeholder="Descuento"

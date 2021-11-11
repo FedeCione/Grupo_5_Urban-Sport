@@ -53,6 +53,14 @@ tr:hover {
   background-color: var(--tertiary);
 }
 
+.productImagesContainer {
+  width: 75px;
+}
+
+.productImages {
+  width: 100%;
+}
+
 @media screen and (max-width: 361px) {
   .panel {
     font-size: 15px;

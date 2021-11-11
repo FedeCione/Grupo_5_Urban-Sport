@@ -1,5 +1,7 @@
 const db = require("../database/models");
 const { Op } = require('sequelize');
+const fs = require("fs");
+const { validationResult } = require("express-validator");
 
 module.exports = {
   admin: (req, res) => {
@@ -55,7 +57,7 @@ module.exports = {
                                       }]
                                     })
                                       .then(talles => {
-                                        res.render("admin/panelProductos", {
+                                        res.render("admin/products/panelProducts", {
                                           session: req.session,
                                           products,
                                           colours,
@@ -107,44 +109,44 @@ module.exports = {
                 association: 'subcategories'
               }]
             })
-            .then(categories => {
-              db.Subcategories.findAll({
-                include: [{
-                  association: 'products',
-                  association: 'category'
-                }]
-              })
-              .then(subcategories => {
-                db.Talles.findAll({
+              .then(categories => {
+                db.Subcategories.findAll({
                   include: [{
-                    association: 'products'
+                    association: 'products',
+                    association: 'category'
                   }]
                 })
-                .then(talles => {
-                  res.render("admin/products/agregar", {
-                    session: req.session,
-                    colours,
-                    brands,
-                    categories,
-                    subcategories,
-                    talles
+                  .then(subcategories => {
+                    db.Talles.findAll({
+                      include: [{
+                        association: 'products'
+                      }]
+                    })
+                      .then(talles => {
+                        res.render("admin/products/addProduct", {
+                          session: req.session,
+                          colours,
+                          brands,
+                          categories,
+                          subcategories,
+                          talles
+                        })
+                      })
+                      .catch(err => console.log(err))
                   })
-                })
-                .catch(err => console.log(err))
+                  .catch(err => console.log(err))
               })
               .catch(err => console.log(err))
-            })
-            .catch(err => console.log(err))
           })
-        .catch(err => console.log(err))
+          .catch(err => console.log(err))
       })
-    .catch(err => console.log(err))
+      .catch(err => console.log(err))
   },
   agregar: (req, res) => {
     let arrayImages = [];
     if (req.files) {
-      req.files.forEach((imagen) => {
-        arrayImages.push(imagen.filename);
+      req.files.forEach((image) => {
+        arrayImages.push(image.filename);
       });
     }
     let {
@@ -175,185 +177,217 @@ module.exports = {
           id_colour: colour,
           id_product: product.id
         })
-        db.Talle_products.create({
-          id_talle: id_talle,
-          id_product: product.id
-        })
-        if (arrayImages.length > 0) {
-          let images = arrayImages.map((image) => {
-            return {
-              name: image,
-              productId: product.id,
-            };
-          });
-          db.Images.bulkCreate(images)
-            .then(() => res.redirect("/admin/panelProductos"))
-            .catch((err) => console.log(err));
-        } else {
-          db.Images.create({
-            name: "default-image.png",
-            productId: product.id,
+          .then(result => {
+            db.Talle_products.create({
+              id_talle: id_talle,
+              id_product: product.id
+            })
+              .then(result => {
+                if (arrayImages.length > 0) {
+                  let images = arrayImages.map((image) => {
+                    return {
+                      name: image,
+                      productId: product.id,
+                    };
+                  });
+                  db.Images.bulkCreate(images)
+                    .then(() => res.redirect("/admin/panelProductos"))
+                    .catch((err) => console.log(err));
+                } else {
+                  db.Images.create({
+                    name: "default.png",
+                    productId: product.id,
+                  })
+                    .then(() => res.redirect("/admin/panelProductos"))
+                    .catch(err => console.log(err));
+                }
+              })
+              .catch(err => console.log(err))
           })
-            .then(() => res.redirect("/admin/panelProductos"))
-            .catch(err => console.log(err));
-        }
-      });
+          .catch(err => console.log(err))
+      })
+      .catch(err => console.log(err))
   },
   formEditar: (req, res) => {
     db.Products.findByPk(req.params.id)
-    .then(product => {
-      db.Colours.findAll({
-        include: [{
-          association: 'products',
+      .then(product => {
+        db.Colours.findAll({
           include: [{
-            association: 'colours'
-          }]
-        }]
-      })
-        .then(colours => {
-          db.Brands.findAll({
+            association: 'products',
             include: [{
-              association: 'products'
+              association: 'colours'
             }]
-          })
-            .then(brands => {
-              db.Categories.findAll({
-                include: [{
-                  association: 'subcategories'
-                }]
-              })
-              .then(categories => {
-                db.Subcategories.findAll({
+          }]
+        })
+          .then(colours => {
+            db.Brands.findAll({
+              include: [{
+                association: 'products'
+              }]
+            })
+              .then(brands => {
+                db.Categories.findAll({
                   include: [{
-                    association: 'products',
-                    association: 'category'
+                    association: 'subcategories'
                   }]
                 })
-                .then(subcategories => {
-                  db.Talles.findAll({
-                    include: [{
-                      association: 'products'
-                    }]
-                  })
-                  .then(talles => {
-                    db.Talle_products.findOne({
-                      where: {
-                        id_product: product.id
-                      }
+                  .then(categories => {
+                    db.Subcategories.findAll({
+                      include: [{
+                        association: 'products',
+                        association: 'category'
+                      }]
                     })
-                      .then(talle_product => {
-                        db.Colour_products.findOne({
-                          where: {
-                            id_product: product.id
-                          }
+                      .then(subcategories => {
+                        db.Talles.findAll({
+                          include: [{
+                            association: 'products'
+                          }]
                         })
-                        .then(colour_product => {
-                          res.render("admin/products/editar", {
-                            product,
-                            session: req.session,
-                            colours,
-                            brands,
-                            categories,
-                            subcategories,
-                            talles,
-                            talle_product,
-                            colour_product
-                        })
+                          .then(talles => {
+                            db.Talle_products.findOne({
+                              where: {
+                                id_product: product.id
+                              }
+                            })
+                              .then(talle_product => {
+                                db.Colour_products.findOne({
+                                  where: {
+                                    id_product: product.id
+                                  }
+                                })
+                                  .then(colour_product => {
+                                    let productSubcategory = subcategories.find(subcategory => subcategory.id == product.id_subcategory);
+                                    let productCategory = categories.find(category => category.id == productSubcategory.categories_id);
+                                    let productSubcategories = subcategories.filter(subcategory => subcategory.categories_id == productCategory.id);
+                                    res.render("admin/products/editProduct", {
+                                      productSubcategories,
+                                      productSubcategory,
+                                      productCategory,
+                                      product,
+                                      session: req.session,
+                                      colours,
+                                      brands,
+                                      categories,
+                                      subcategories,
+                                      talles,
+                                      talle_product,
+                                      colour_product
+                                    })
+                                  })
+                              })
+                              .catch(err => console.log(err))
+                          })
+                          .catch(err => console.log(err))
                       })
-                    })
-                    .catch(err => console.log(err))
+                      .catch(err => console.log(err))
                   })
                   .catch(err => console.log(err))
-                })
-                .catch(err => console.log(err))
               })
               .catch(err => console.log(err))
-            })
+          })
           .catch(err => console.log(err))
-        })
-      .catch(err => console.log(err))
-    })
+      })
   },
 
   editar: (req, res) => {
-    let {
-      name,
-      id_marca,
-      description,
-      id_subcategory,
-      categoria,
-      colour,
-      id_talle,
-      price,
-      discount,
-      visible,
-      stock,
-    } = req.body;
+    let errors = validationResult(req);
+    if (req.fileValidatorError) {
+      let image = {
+        param: "image",
+        msg: req.fileValidatorError,
+      };
+      errors.push(image);
+    }
+    if (errors.isEmpty()) {
+      let { name, id_marca, description, id_subcategory, categoria, colour, id_talle, price, discount, visible, stock } =
+        req.body;
 
-    db.Products.update({
-        name,
-        id_marca,
-        description,
-        id_subcategory,
-        price,
-        discount,
-        visible,
-        stock
-      },
-      {
-        where: {
-          id: +req.params.id,
-        }
-      })
-      .then(() => {
-        db.Colour_products.update({
-          id_colour: colour
+      let arrayImages = [];
+      if (req.files) {
+        req.files.forEach((image) => {
+          arrayImages.push(image.filename);
+        });
+      }
+      db.Products.update(
+        {
+          name,
+          id_marca,
+          description,
+          id_subcategory,
+          price,
+          discount,
+          visible,
+          stock
         },
         {
           where: {
-            id_product: req.params.id
+            id: req.params.id,
+          },
+        }
+      )
+        .then((result) => {
+          if (result) {
+            if (arrayImages.length > 0) {
+              let images = arrayImages.map((image) => {
+                return {
+                  name: image,
+                  productId: req.params.id,
+                };
+              });
+              db.Images.findAll({
+                where: {
+                  productId: req.params.id,
+                },
+              }).then((result) => {
+                result.forEach((image) => {
+                  fs.existsSync("./public/images/admin/productos/", image.name)
+                    ? fs.unlinkSync("./public/images/admin/productos/" + image.name)
+                    : console.log("-- No se encontró");
+                });
+                db.Images.destroy({
+                  where: {
+                    productId: req.params.id,
+                  },
+                }).then(() => {
+                  db.Images.bulkCreate(images).then(() => {
+                      db.Colour_products.update({
+                        id_colour: colour
+                      },
+                        {
+                          where: {
+                            id_product: req.params.id
+                          }
+                        })
+                    })
+                    .then(() => {
+                      db.Talle_products.update({
+                        id_talle: id_talle,
+                      },
+                        {
+                          where: {
+                            id_product: req.params.id
+                          }
+                        })
+                        .then(() => {
+                          res.redirect("/admin/panelProductos");
+                        })
+                    });
+                  });
+                });
+            }
           }
         })
+    } else {
+      db.Products.findByPk(req.params.id).then(product => {
+        res.render("admin/products/editProduct", {
+          product,
+          errors: errors.mapped(),
+          old: req.body,
+          session: req.session,
+        });
       })
-      .then(() => {
-        db.Talle_products.update({
-          id_talle: id_talle,
-          },
-          {
-            where: {
-              id_product: req.params.id
-            }
-          })
-      })
-      .then(() => {
-      if (req.files) { //borre el length de la imagen
-        db.Images.destroy({
-          where: {
-            id_product: +req.params.id
-          },
-        })
-          .then(() => {
-            let images = [];
-            let nameImages = req.files.map((image) => image.filename);
-            nameImages.forEach((img) => {
-              let newImage = {
-                id_product: +req.params.id,
-                name: img
-              };
-              images.push(newImage);
-            });
-            db.images.bulkCreate(images).then((result) => {
-              res.redirect(`/admin/panelProductos`);
-            });
-          })
-          .then(() => {
-            res.redirect("/admin/panelProductos");
-          })
-          .catch((err) => console.log(err));
-      } else {
-        res.redirect("/admin/panelProductos");
-      }
-    });
+    }
   },
 
   eliminar: (req, res) => {
@@ -382,7 +416,7 @@ module.exports = {
     })
       .then(products => {
 
-        res.render('admin/adminProductSearch', {
+        res.render('/admin/adminProductSearch', {
           product: products,
           search,
           session: req.session

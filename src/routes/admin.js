@@ -5,10 +5,10 @@ let { categories, categoryCreate, categoryStore, categoryEdit, categoryUpdate, c
 let categoriesValidator = require('../validations/categoriesValidator');
 let { subcategories, subcategoryCreate, subcategoryStore, subcategoryEdit, subcategoryUpdate, subcategoryDestroy } = require('../controllers/adminSubcategoriesController');
 let subcategoriesValidator = require('../validations/subcategoriesValidator');
-let upload = require('../middelwares/uploadFiles');
-let avatarUpload = require('../middelwares/avatarUpload');
-let userSession = require('../middelwares/userSession');
-let adminCheckValidator = require('../middelwares/userAdminCheck');
+let upload = require('../middlewares/uploadFiles');
+let avatarUpload = require('../middlewares/avatarUpload');
+let userSession = require('../middlewares/userSession');
+let adminCheckValidator = require('../middlewares/userAdminCheck');
 let { brands, brandCreate, brandStore, brandEdit, brandUpdate, brandDestroy } = require('../controllers/adminBrandsController');
 let { colours, colourCreate, colourStore, colourEdit, colourUpdate, colourDestroy } = require('../controllers/adminColoursController');
 let { talles, talleCreate, talleStore, talleEdit, talleUpdate, talleDestroy } = require('../controllers/adminTallesController');
@@ -29,7 +29,7 @@ router.post('/agregar', upload.array('image'), userSession, adminCheckValidator,
 
 /* Edit Product*/
 router.get("/editar/:id", userSession, adminCheckValidator, formEditar);
-router.put("/editar/:id", userSession, adminCheckValidator, editar);
+router.put("/editar/:id", upload.array('image'), userSession, adminCheckValidator, editar);
 
 /* Delete Product*/
 router.delete("/eliminar/:id", userSession, adminCheckValidator, eliminar);

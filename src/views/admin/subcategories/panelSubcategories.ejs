@@ -23,32 +23,35 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% subcategories.forEach(subcategory => { %>
-                                    <tr>
-                                        <td colspan="1" scope="col">
-                                            <%- subcategory.id %>
-                                        </td>
-                                        <td colspan="1" scope="col">
-                                            <%- subcategory.name %>
-                                        </td>
-                                        <td colspan="1" scope="col">
-                                            <%- subcategory.categories_id %>
-                                        </td>
-                                        <td colspan="1" scope="col">
-                                        <form>
-                                            <button style="cursor: pointer" type="submit" class="btn-admin style-admin">
-                                                <a href="subcategories/edit/<%- subcategory.id %>?_method=PUT"
-                                                    class="edit-button-products">Editar</a>
-                                            </button>
-                                        </form>
-                                        <form action="subcategories/delete/<%- subcategory.id %>?_method=DELETE" method="post">
-                                            <button style="cursor: pointer" class="btn-admin style-admin" type="submit">
-                                                Eliminar
-                                            </button>
-                                        </form>
-                                        </td>
-                                    </tr>
-                                    <% }) %> 
+                                    <% subcategories.forEach(subcategory=> { %>
+                                        <tr>
+                                            <td colspan="1" scope="col">
+                                                <%- subcategory.id %>
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <%- subcategory.name %>
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <%- subcategory.categories_id %>
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <form>
+                                                    <button style="cursor: pointer" type="submit"
+                                                        class="btn-admin style-admin">
+                                                        <a href="subcategories/edit/<%- subcategory.id %>?_method=PUT"
+                                                            class="edit-button-products">Editar</a>
+                                                    </button>
+                                                </form>
+                                                <form action="subcategories/delete/<%- subcategory.id %>?_method=DELETE"
+                                                    method="post">
+                                                    <button style="cursor: pointer" class="btn-admin style-admin"
+                                                        type="submit">
+                                                        Eliminar
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
                                 </tbody>
                                 <tfoot>
                                     <tr>

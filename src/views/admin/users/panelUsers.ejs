@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD-->
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <!-- dashboard admin -->
+        <%- include("../partials/dashboard.ejs") %>
+
+            <div class="admin-content">
+                <%- include("../partials/header.ejs") %>
+
+                    <main>
+                        <h1>Usuarios</h1>
+                        <div style="overflow: auto" class="panel">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th colspan="1" scope="col">#</th>
+                                        <th colspan="1" scope="col">Nombre</th>
+                                        <th colspan="1" scope="col">Apellido</th>
+                                        <th colspan="1" scope="col">Email</th>
+                                        <th colspan="1" scope="col">Telefono</th>
+                                        <th colspan="1" scope="col">Direccion</th>
+                                        <th colspan="1" scope="col">Rol</th>
+                                        <th colspan="1" scope="col">Provincia</th>
+                                        <th colspan="1" scope="col">Cuidad</th>
+                                        <th colspan="1" scope="col">Avatar</th>
+                                        <th colspan="1" scope="col">DNI</th>
+                                        <th colspan="1" scope="col">Codigo Postal</th>
+                                        <th colspan="1" scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% users.forEach(user=> { %>
+                                        <tr>
+                                            <td colspan="1" scope="col">
+                                                <%- user.id %>
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <%- user.name %>
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <%- user.last_name %>
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <%- user.email %>
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <%- user.phone %>
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <%- user.address %>
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <%- user.rol_id==1 ? "Administrador" : "Usuario" %>
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <%- user.province %>
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <%- user.city %>
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <img width="30%" src="/images/users/<%- user.avatar %>" />
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <%- user.dni %>
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <%- user.postalcode %>
+                                            </td>
+                                            <td colspan="1" scope="col">
+                                                <form>
+                                                    <button style="cursor: pointer" type="submit"
+                                                        class="btn-admin style-admin">
+                                                        <a href="/admin/users/edit/<%-user.id %>?_method=PUT"
+                                                            class="edit-button-products">Editar</a>
+                                                    </button>
+                                                </form>
+                                                <form action="/admin/users/delete/<%-user.id %>?_method=DELETE" method="post">
+                                                    <button style="cursor: pointer" class="btn-admin style-admin"
+                                                        type="submit">
+                                                        Eliminar
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="13" scope="col">
+                                            Total de Usuarios:<%- users.length %>
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </main>
+            </div>
+    </body>
+
+</html>

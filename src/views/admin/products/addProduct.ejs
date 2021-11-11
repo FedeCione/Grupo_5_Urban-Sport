@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- HEAD-->
+  <%- include("../partials/head.ejs") %>
+  <body>
+      <!-- dashboard admin -->
+      <%- include("../partials/dashboard.ejs") %>
+    <div class="admin-content">
+      <%- include("../partials/header.ejs") %>
+
+      <main id="main-dark">
+        <div>
+          <h1>Agregar Producto</h1>
+          <form
+            action="/admin/agregar"
+            method="POST"
+            enctype="multipart/form-data"
+            style="margin-top: 5.5em"
+            name="formAdd"
+          >
+             <!-- empieza caja con caracteristicas del producto-->
+             <div class="form caja-agregar">
+              Nombre:<label for="nombre-producto"
+                ><input
+                  class="input style-admin"
+                  type="text"
+                  name="name"
+                  id="nombre-producto"
+                  required
+                  placeholder="Nombre del producto"
+                />
+              </label>
+              
+              Marca:
+              <label for="marca-producto">
+                <select class="input style-admin" name="id_marca" id="marca_producto" required>
+                <option>Seleccionar marca</option>
+                <% brands.forEach(brand => { %>
+                  <option value="<%- brand.id %>"><%- brand.name %></option>
+                <% }) %>
+                 </select>
+                <% if (locals.errors && errors.brand) { %>
+                  <small class="text-danger"><%= errors.brand.msg %></small>
+                <% } %>
+                </select>
+              </label>
+
+              Descripción:<label for="descripción-producto"
+                ><input
+                  id="descripción-producto"
+                  cols="30"
+                  rows="10"
+                  class="input style-admin"
+                  name="description"
+                  required
+                  placeholder="Descripción del producto"
+                  
+              /></label>
+              Categoría:<label for="categoria-producto">
+                <select class="input style-admin categorySelect" name="categoria" id="categoria-producto" required>
+                  <option selected hidden value="">Categorias</option>
+                 <% locals.categories.forEach(category => { %>
+                    <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%- category.name %></option>
+                 <% }) %>
+                </select>
+                <% if (locals.errors && errors.category) { %>
+                    <small class="text-danger"><%= errors.category.msg %></small>
+                <% } %>
+                </select>
+              </label>
+              Subcategoría:<label for="subcategoria-producto">
+                <select class="input style-admin subcategorySelect" id="subcategoria-producto" name="id_subcategory" required>
+                  <option selected hidden value="">Subcategorias</option>
+
+                </select>
+                <% if (locals.errors && errors.subcategory) { %>
+                    <small class="text-danger"><%= errors.subcategory.msg %></small>
+                <% } %>
+                </select>
+              </label>
+              Color:
+              <label for="colores-producto">
+                <select class="input style-admin" name="colour" id="colores-producto" required>
+                <option value="">Seleccionar color</option>
+                <% colours.forEach(colour => { %>
+                  <option value="<%- colour.id %>"><%- colour.name %></option>
+                <% }) %>
+                 </select>
+                 <% if (locals.errors && errors.colour) { %>
+                  <small class="text-danger"><%= errors.colour.msg %></small>
+              <% } %>
+                </label>
+              Talle:<label for="talles-producto">
+                <select class="input style-admin" name="id_talle" id="talles-producto" required>
+                  <option value="">Seleccionar talle</option>
+                    <% talles.forEach(talle => { %>
+                      <option value="<%- talle.id %>" name="id_talle"><%- talle.talle %></option>
+                    <% }) %>
+                  </select>
+                  <% if (locals.errors && errors.talle) { %>
+                    <small class="text-danger"><%= errors.talle.msg %></small>
+                <% } %>
+              </label>
+              Precio:<label for="precio-producto">
+                <input
+                  id="precio-producto"
+                  class="input style-admin"
+                  type="number"
+                  name="price"
+                  required
+                  placeholder="Modificar precio del producto"
+                  
+                />
+              </label>
+              Descuento:<label for="producto-discontinuo">
+                <input
+                  id="producto-discontinuo"
+                  class="input style-admin"
+                  name="discount"
+                  required
+                  placeholder="Descuento"
+                  
+                />
+              </label>
+              Imagen:<label for="imagen-producto"
+                ><input
+                  id="imagen-producto"
+                  class="input style-admin"
+                  type="file"
+                  name="image"
+                  multiple
+                />
+                <% if (locals.errors && errors.image) { %>
+                  <small class="text-danger"><%= errors.image.msg %> </small>
+                <% } %>
+              </label>
+              Visible:<label for="producto-visible">
+                <select class="input style-admin" name="visible" id="producto-visible" required>
+                  <option value="1">Si</option>
+                  <option value="0">No</option>
+                </select>
+              </label>
+              Stock:<label for="stock">
+                <input
+                  id="stock"
+                  class="input style-admin"
+                 
+                  name="stock"
+                  required
+                  placeholder="Modificar stock"
+                  
+                />
+              </label>
+            </div>
+            <div class="form">
+              <button
+                type="submit"
+                class="btn-admin style-admin"
+                value="guardar"
+              >
+                GUARDAR
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+    <script src="/javascripts/adminCategories.js"></script>
+  </body>
+</html>

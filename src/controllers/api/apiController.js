@@ -1,6 +1,21 @@
 let db = require('../../database/models');
 
 module.exports = {
+    allProducts: (req, res)=>{
+        db.Products.findAll({
+            include: [{association: "images"}]
+        })
+        .then(products => {
+            res.status(200).json({
+                meta: {
+                    status: 200,
+                    total: products.length
+                },
+                data: products
+            })
+        })
+        .catch(error => res.status(400).send(error))
+    },
     allCategories : (req, res)=>{
         db.Categories.findAll({
             include: [{association: "subcategories"}]

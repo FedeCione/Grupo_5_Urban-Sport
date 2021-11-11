@@ -6,7 +6,7 @@ var logger = require("morgan");
 var methodOverride = require("method-override");
 var session = require('express-session')
 const localsCheck=require("./middelwares/localCheck");
-var categoriesHeader = require('./middelwares/categoriesHeader')
+var categoriesHeader = require('./middelwares/categoriesHeader');
 var app = express();
 
 // view engine setup

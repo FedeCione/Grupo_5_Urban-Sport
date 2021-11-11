@@ -268,3 +268,23 @@
   .search.active .btn-1 {
     transform: translateX(198px);
   } */
+.container_btn{
+  color: #fafafa;
+  background: #34495e;
+  display: inline;
+  border-radius: 10px;
+  width: 115px;
+  height: 25px;
+  cursor: pointer;
+}
+.container_btn a{
+  padding: 5px;
+  color: #fafafa;
+}
+  .container_btn:hover{
+    background-color:#425d79;
+    color: #fafafa;
+  }
+  .container_btn a:hover{
+    color: rgb(207, 200, 200);
+  }

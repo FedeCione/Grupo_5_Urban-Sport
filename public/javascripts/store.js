@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function(){
     
 
 db(); 
-   
-swal("Bienvenido, No olvides registrarte para obener los mejores descuentos en Urban-sport");
+
+
 })
     
 const createTemplateCard = data => {

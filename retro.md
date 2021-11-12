@@ -132,31 +132,3 @@
 
 
 5. __Dejar de hacer:__
-
------------------------------------------------------------------------------------------------------------------------------------------------------
-
-## Sprint Nº 6: Base de Datos
-1. __Comenzar a hacer:__
-2.  
-  
-2. __Hacer más:__
-  
-
-3. __Continuar haciendo:__
-  >* Mantener comunicación.
-  >* Hacer mas de lo que pide el sprint.
-  >* Pedir ayuda a los demás.
-  >* Reunión para trello y distribución de tareas.
-  >* Revisar repositorio y hacer pull si hay cambios.
-  >* Seguir usando trello.
-  >* Ver errores.
-  >* Ser proactivos.
-  >* Estudiar y practicar mas antes de empezar el sprint.
-  >* Adelantar trabajo para el próximo sprint.
-  >* Reunión semanal.
-  
-
-4. __Hacer menos:__
-
-
-5. __Dejar de hacer:__

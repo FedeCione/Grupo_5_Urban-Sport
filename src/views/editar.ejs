@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/general.css" />
+    <link rel="stylesheet" href="/stylesheets/variables.css" />
+    <link rel="stylesheet" href="/stylesheets/admin/loginAdministrador.css" />
+    <link rel="stylesheet" href="/stylesheets/admin/adminHeader.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="nav-toggle-admin" />
+    <div class="sidebar-admin">
+      <div class="sidebar-admin-principal">
+        <h2>
+          <img class="icons8-casa" src="/images/admin/icons8-casa.gif" alt="" />
+          <a href="/admin/editar/<%= product.id %>?_method=PUT" class="active">
+            <span
+              >Administrador
+              <i class="las la-times"></i>
+            </span>
+          </a>
+        </h2>
+      </div>
+
+      <!-- dashboard admin -->
+      <div class="sidebar-admin-menu">
+        <ul>
+          <li>
+            <a href="/admin/panelProductos" class="active"
+              ><span class="lab la-dropbox"></span>
+              <span>Panel de Productos</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/agregar"
+              ><span class="las la-plus-circle"></span>
+              <span>Agregar Producto</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="las la-users"></span> <span>Clientes</span></a
+            >
+          </li>
+          <li>
+            <a href="/"
+              ><span class="las la-user-slash"></span> <span>Salir</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="admin-content">
+      <%- include("partials/admin/header.ejs") %>
+
+      <main id="main-dark">
+        <div>
+          <h1>Editar Producto <%= product.name %></h1>
+          <form
+            action="/admin/editar/<%= product.id %>?_method=PUT"
+            method="POST"
+            style="margin-top: 5.5em"
+          >
+            <div class="form caja-agregar">
+              Nombre:<label for="nombre-producto"
+                ><input
+                  class="input style-admin"
+                  type="text"
+                  name="name"
+                  id="nombre-producto"
+                  required
+                  placeholder="Nombre del producto"
+                  value="<%= product.name %> "
+                />
+              </label>
+              Marca:
+              <label for="marca-producto">
+                <select class="input style-admin" name="id_marca" id="marca_producto" required>
+                  <option selected hidden value="">Marca</option>
+                <% brands.forEach(brand => { %>
+                  <option value="<%- brand.id %>" <%- brand.id == product.id_marca ? "selected" : "" %>><%- brand.name %></option>
+                <% }) %>
+                 </select>
+                <% if (locals.errors && errors.brand) { %>
+                  <small class="text-danger"><%= errors.brand.msg %></small>
+                <% } %>
+                </select>
+              </label>
+
+              Descripción:<label for="descripción-producto"
+                ><input
+                  id="descripción-producto"
+                  cols="30"
+                  rows="10"
+                  class="input style-admin"
+                  name="description"
+                  required
+                  placeholder="Descripción del producto"
+                  value="<%= product.description %> "
+              /></label>
+              Categoría:<label for="categoria-producto">
+                <select class="input style-admin" name="categoria" id="categoria-producto">
+                  <option selected hidden value="">Categorias</option>
+                  <% categories.forEach(category => { %>
+                    <option value="<%- category.id %>"><%- category.name %></option>
+                  <% }) %>
+                </select>
+              </label>
+              Subcategoría:<label for="subcategoria-producto">
+                <select class="input style-admin" id="subcategoria-producto" name="id_subcategory">
+                  <option selected hidden value="">Subcategorias</option>
+                  <% subcategories.forEach(subcategory => { %>
+                    <option value="<%- subcategory.id %>" <%- subcategory.id == product.id_subcategory ? "selected" : "" %>><%- subcategory.name %></option>
+                  <% }) %>
+                </select>
+              </label>
+              Color:
+              <label for="colores-producto">
+                <select class="input style-admin" name="colour" id="colores-producto">
+                  <option selected hidden value="">Colores</option>
+                  <% colours.forEach(colour => { %>
+                    <option value="<%- colour.id %>" <%- colour.id ==  colour_product.id_colour ? "selected" : "" %>><%- colour.name %></option>
+                  <% }) %>
+                </select>
+              </label>
+              Talle:<label for="talles-producto">
+                <select class="input style-admin" name="id_talle" id="talles-producto">
+                  <option selected hidden value="">Talles</option>
+                    <% talles.forEach(talle => { %>
+                      <option value="<%- talle.id %>" name="id_talle" <%- talle.id == talle_product.id_talle ? "selected" : "" %>><%- talle.talle %></option>
+                    <% }) %>
+                  </select>
+              </label>
+              Precio:<label for="precio-producto">
+                <input
+                  id="precio-producto"
+                  class="input style-admin"
+                  type="number"
+                  name="price"
+                  required
+                  placeholder="Modificar precio del producto"
+                  value="<%= product.price %>"
+                />
+              </label>
+              Descuento:<label for="producto-discontinuo">
+                <input
+                  id="producto-discontinuo"
+                  class="input style-admin"
+                  name="discount"
+                  required
+                  placeholder="Descuento"
+                  value="<%= product.discount %>"
+                />
+              </label>
+              Imagen:<label for="imagen-producto"
+                ><input
+                  id="imagen-producto"
+                  class="input style-admin"
+                  type="file"
+                  name="image"
+                  multiple
+                  value="<%= product.id_image %> "
+                />
+              </label>
+              Visible:<label for="producto-visible">
+                <select class="input style-admin" name="visible" id="producto-visible" required>
+                  <% if(product.visible == 1) { %>
+                    <option value="1" selected>Si</option>
+                    <option value="0">No</option>
+                  <% } else { %>
+                    <option value="1">Si</option>
+                    <option value="0" selected>No</option>
+                  <% } %>
+                </select>
+              </label>
+              </label>
+              Stock:<label for="stock">
+                <input
+                  id="stock"
+                  class="input style-admin"
+                  name="stock"
+                  required
+                  placeholder="Modificar stock"
+                  value="<%= product.stock %>"
+                />
+              </label>
+            </div>
+            <div class="form">
+              <button type="submit" class="btn-admin style-admin">
+                EDITAR
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- los values del select no funcan -->
+      </main>
+    </div>
+
+    <script src="/javascripts/darkMode.js"></script>
+    <script src="/javascripts/home.js"></script>
+  </body>
+</html>

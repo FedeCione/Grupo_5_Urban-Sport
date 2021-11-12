@@ -1,8 +1,10 @@
 let express = require('express');
 let router = express.Router();
-let controller = require('../controllers/api/apiController.js')
+let {allProducts, allCategories, oneCategory} = require('../controllers/api/apiController');
+let userSession = require('../middlewares/userSession');
 
-router.get('/categories', controller.allCategories);
-router.get('/categories/:id', controller.oneCategory);
+router.get('/categories', allCategories);
+router.get('/categories/:id', oneCategory);
+router.get('/products', allProducts)
 
 module.exports = router;

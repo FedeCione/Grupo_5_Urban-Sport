@@ -283,6 +283,92 @@ body header {
     font-size: 22px;
   }
 }
+/*  ----------------ARTICLES CART ITEMS -------------------*/
+.cart-page{
+  margin: 50px auto;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-info{
+  display: flex;
+  padding: 5px;
+}
+.detail-info{
+  padding: 0px 7px;
+}
+th {
+  text-align: center;
+  padding: 5px;
+  color: #fff;
+  background: #ff523b;
+  font-weight: normal;
+}
+
+td{
+  padding: 10px 5px;
+}
+td input {
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+
+}
+
+.container-cart img{
+  width: 70px;
+  height: 70px;
+  
+}
+.total-price{
+  display: flex;
+  justify-content: flex-end;
+}
+.total-price table{
+  border-top: 1px solid #ff523b;
+  width: 100%;
+  max-width: 350px;
+}
+
+
+.product{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.price{
+  width: 15%;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+}
+
+.quantity{
+  width: 30%;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+}
+
+.product i{
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  color: blue;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.product span{
+  width: 15%;
+}
 
 @media screen and (min-width: 1024px) {
   .main-header .main-nav {

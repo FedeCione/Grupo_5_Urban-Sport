@@ -249,60 +249,56 @@ a{
 /*  --------------- PRODUCTO MAIN ---------------  */
 .product-main{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
-    justify-content: center;
-    /* border: 3px solid red; */
+    justify-content: space-around;  
+      
 }
-
-
-.product-main .img-container{
+.card{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    padding: 10px;
-    min-width: 200px;
-    margin: 15px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    margin: 20px;
-    text-align: center;
-    transition: all 0.25s;
-    
-}
-.product-main .img-container img{
-    width: 100%;
-}
-
-.product-main .img-container h3{
-    margin: 5px 0;
-    font-size: 1rem;
-    text-transform: uppercase;
-}
-
-.product-main .img-container .btn {
-    padding: 4px;
-    margin-top: 10px;
-    font-weight: 500;
-    text-align: center;
-    text-transform: uppercase;
-    border: solid .2px rgb(28, 3, 85);
-    background-color:var(--amarillo);
+    align-items: center;
     border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    padding: 5px;
+    font-family: arial;
+}
+.card p{
+    max-width: 120px;
+    text-align: center;
+}
+.card h6{
+    color: forestgreen;
+    font-size: 15px;
+}
+.card h3{
+    text-transform: capitalize;
+    border-bottom: solid 1px rgba(179, 173, 173, 0.897);
+}
+
+.card .choreo-src{
+    max-width: 200px;
+    max-height: 190px;
+    
+    border-radius: 5px;
+}
+.card .btn {
+    padding: 2px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    border: solid .1px rgb(48, 48, 49);
+    background-color:var(--amarillo);
+    border-radius: 10px;
     color: #fff;
 
 }
-.product-main .img-container .btn:hover {
-    opacity: .9;
+.product-main  .btn:hover {
+    opacity: .5;
 }
-.product-main .img-container .rating i{
+.card .rating i{
     color: var(--amarillo);
+    padding: 3px;
 }
-
 /* NEWSLETTER */
 
 .news-letter{
@@ -558,4 +554,7 @@ button.more-btn a:hover{
 @media screen and (min-width: 1440px){
     .product-main .img-container {
         max-width: 420px;}
+        .choreo-src img{
+            max-width: 420px;
+        }
 }

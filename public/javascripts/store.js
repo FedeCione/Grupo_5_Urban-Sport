@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
 db(); 
    
-
+swal("Bienvenido, No olvides registrarte para obener los mejores descuentos en Urban-sport");
 })
     
 const createTemplateCard = data => {
     data.data.forEach(element => {
         
        templateCard.querySelector('h3').textContent = element.name
-       templateCard.querySelector('p').textContent = element.description 
+       templateCard.querySelector('p').textContent = `${element.description.slice(0,16)}...` 
        templateCard.querySelector('h6').textContent = `${element.price} `
        templateCard.querySelector('.btn').dataset.id = element.id
 

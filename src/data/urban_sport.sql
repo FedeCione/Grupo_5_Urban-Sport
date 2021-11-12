@@ -82,7 +82,7 @@ CREATE TABLE `colour_product` (
   KEY `FK_c45cb2d4-8597-4012-a0c1-5335bd5990c1` (`id_colour`),
   CONSTRAINT `FK_c45cb2d4-8597-4012-a0c1-5335bd5990c1` FOREIGN KEY (`id_colour`) REFERENCES `colours` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_f9b6a6fc-50db-43a2-817d-d0e781dbaed7` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,6 +91,7 @@ CREATE TABLE `colour_product` (
 
 LOCK TABLES `colour_product` WRITE;
 /*!40000 ALTER TABLE `colour_product` DISABLE KEYS */;
+INSERT INTO `colour_product` VALUES (1,5,1),(2,5,2),(3,11,3);
 /*!40000 ALTER TABLE `colour_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -195,7 +196,7 @@ CREATE TABLE `images` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `FK_65c6b2a2-0c62-43ea-b689-48b04f696280` (`productId`),
   CONSTRAINT `FK_65c6b2a2-0c62-43ea-b689-48b04f696280` FOREIGN KEY (`productId`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -204,6 +205,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
+INSERT INTO `images` VALUES (1,'1635617137601_img_.png',1),(2,'1635791992898_img_.png',2),(3,'1636686975422_img_.png',3);
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -230,7 +232,7 @@ CREATE TABLE `products` (
   KEY `FK_9516ac4a-dc7a-4444-9503-c42112400384` (`id_subcategory`),
   CONSTRAINT `FK_1d153105-769b-4362-973e-db8d4a7ba32d` FOREIGN KEY (`id_marca`) REFERENCES `brand` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_9516ac4a-dc7a-4444-9503-c42112400384` FOREIGN KEY (`id_subcategory`) REFERENCES `subcategories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -239,6 +241,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Pantalon','una prende para uso habitual',1200.00,10,14,1,10,4),(2,'zapatillas urban','Un producto cómodo para usarlo diariamente ',2134.00,5,3,1,15,9),(3,'remera','Remera de algodon 100%, ideal para el verano ',1400.00,5,7,1,13,9);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -316,7 +319,7 @@ CREATE TABLE `talle_product` (
   KEY `FK_363fd09c-443b-4bfd-9b5b-e9a23d2a83ce` (`id_product`),
   CONSTRAINT `FK_363fd09c-443b-4bfd-9b5b-e9a23d2a83ce` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_50ba203a-dc6f-4412-83f2-7f4e3faca988` FOREIGN KEY (`id_talle`) REFERENCES `talles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -325,6 +328,7 @@ CREATE TABLE `talle_product` (
 
 LOCK TABLES `talle_product` WRITE;
 /*!40000 ALTER TABLE `talle_product` DISABLE KEYS */;
+INSERT INTO `talle_product` VALUES (1,4,1),(2,4,2),(3,4,3);
 /*!40000 ALTER TABLE `talle_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -386,7 +390,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'fede','cione','fede@mail.com','$2a$10$iL8h3UGO./CD1zbUrUmW9ekl703ePauq/cCtsxc7rzy7wZj2zoq1i',NULL,NULL,0,NULL,NULL,'default.png',NULL,NULL,0),(2,'elias','kannemann','elias@mail.com','$2a$10$ELXrQQMZsV.FiYFw9ahyveyPbSH1tOlV6rDCHwb1rTBfL19Hnkr4a',NULL,NULL,1,NULL,NULL,'1635371358316_img_.png',NULL,NULL,0);
+INSERT INTO `users` VALUES (1,'fede','cione','fede@mail.com','$2a$10$iL8h3UGO./CD1zbUrUmW9ekl703ePauq/cCtsxc7rzy7wZj2zoq1i',NULL,NULL,0,NULL,NULL,'default.png',NULL,NULL,0),(2,'elias','kannemann','elias@mail.com','$2a$10$ELXrQQMZsV.FiYFw9ahyveyPbSH1tOlV6rDCHwb1rTBfL19Hnkr4a',0,'',1,'','','1635371358316_img_.png',0,0,0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -403,4 +407,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-27 19:23:34
+-- Dump completed on 2021-11-12  0:31:04

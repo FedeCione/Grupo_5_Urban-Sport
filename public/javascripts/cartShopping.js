@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function(){
             Object.values(cartItems).map(item => {
                 console.log(item)
                 productContainer.innerHTML += `
-                <div class="product">
-                <i class="fas fa-times-circle"></i>
+                <div class="product"><i class="fas fa-times-circle"></i>
+                
                 <img src="${item.image}">
                 <span>${item.name}</span> 
                 
@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function(){
                 
                 `
                 totalPrice.innerHTML = '$' + cartCost+ ",00"            })
-           
         }
     }
 
@@ -42,6 +41,3 @@ displayCart();
      
     
 })
-  
-     
-  

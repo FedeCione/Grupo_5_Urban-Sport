@@ -2,8 +2,8 @@ let express = require('express');
 let router = express.Router();
 let {register, processRegister, login, processLogin, logout, olvidecuenta, profile, editProfile, updateProfile} = require("../controllers/usersControllers");
 
-let avatarUpload = require('../middelwares/avatarUpload');
-let userSession = require('../middelwares/userSession');
+let avatarUpload = require('../middlewares/avatarUpload');
+let userSession = require('../middlewares/userSession');
 
 let loginValidator = require('../validations/loginValidation');
 let registerValidator = require('../validations/registerValidation');

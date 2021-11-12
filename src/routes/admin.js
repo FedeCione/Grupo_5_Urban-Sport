@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 let {admin,panelProductos,formAgregar,agregar,formEditar,editar,eliminar, searchProducts} = require("../controllers/adminControllers")
 
-let upload = require('../middelwares/uploadFiles');
-let userSession = require('../middelwares/userSession');
-let adminCheckValidator = require('../middelwares/userAdminCheck');
+let upload = require('../middlewares/uploadFiles');
+let userSession = require('../middlewares/userSession');
+let adminCheckValidator = require('../middlewares/userAdminCheck');
 
 /* GET  admin*/
 router.get("/",userSession, adminCheckValidator, admin);

@@ -3,11 +3,17 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var methodOverride = require("method-override");
-var session = require('express-session')
-const localsCheck=require("./middelwares/localCheck");
-var categoriesHeader = require('./middelwares/categoriesHeader')
+let methodOverride = require("method-override");
+let session = require('express-session');
+const localsCheck = require('./middlewares/localsCheck');
 var app = express();
+
+/* ENRUTADORES*/
+let homeRouter = require("./routes/home");
+let adminRouter = require("./routes/admin");
+let usersRouter = require("./routes/users");
+let productsRouter = require("./routes/products");
+let apiRouter = require('./routes/apiRoutes.js');
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -26,22 +32,9 @@ app.use(session({
   saveUninitialized: true ,
   cookie: { maxAge: 1*60*60*1000 }
 }));
-
-app.use(localsCheck)
-
-app.use(categoriesHeader)
-/* ENRUTADORES*/
-let homeRouter = require("./routes/home");
-let adminRouter = require("./routes/admin");
-let usersRouter = require("./routes/users");
-let productsRouter = require("./routes/products");
-let apiRouter = require("./routes/apiRoutes")
-/*FINALIZA ENRUTADORES */
+app.use(localsCheck);
 
 
-
-/*----RUTAS---- */
-app.use(methodOverride("_method"));
 /*----HOME---- */
 app.use("/", homeRouter);
 /*----ADMIN---- */
@@ -50,9 +43,8 @@ app.use("/admin", adminRouter);
 app.use("/users", usersRouter);
 /*----PRODUCTS---- */
 app.use("/products", productsRouter);
-/* ----API---- */
-app.use("/api", apiRouter);
-
+/*----APIs---- */
+app.use('/api', apiRouter);
 
 app.use((req, res, next) => {
   res.status(404).render("error");

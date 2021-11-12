@@ -35,6 +35,10 @@ module.exports =(sequelize,dataTypes)=>{
       type:dataTypes.INTEGER(11),
       allowNull:false
     },
+    id_marca:{
+      type:dataTypes.INTEGER(11),
+      allowNull:false
+    }
   }
   let config ={
       tableName:"products",

@@ -1,9 +1,8 @@
 let express = require('express');
 let router = express.Router();
-let {allCategories, oneCategory} = require('../controllers/api/apiController');
-let userSession = require('../middelwares/userSession');
+let controller = require('../controllers/api/apiController.js')
 
-router.get('/categories', allCategories);
-router.get('/categories/:id', oneCategory);
+router.get('/categories', controller.allCategories);
+router.get('/categories/:id', controller.oneCategory);
 
 module.exports = router;

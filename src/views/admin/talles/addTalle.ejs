@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD-->
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <!-- dashboard admin -->
+        <%- include("../partials/dashboard.ejs") %>
+
+            <div class="admin-content">
+                <%- include("../partials/header.ejs") %>
+                    <main>
+                        <h1>Agregar talle</h1>
+                        <form action="/admin/talles/create" method="POST">
+                            <div class="form caja-agregar">
+                            Nombre:<label for="name-category"><input class="input style-admin" type="text"
+                                    name="name" id="name-category" required
+                                    placeholder="Nombre del talle" />
+                            </label>
+                            <button type="submit" class="btn-admin style-admin">
+                                CREAR
+                            </button>
+                            </div>
+                        </form>
+                    </main>
+            </div>
+    </body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD-->
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <!-- dashboard admin -->
+        <%- include("../partials/dashboard.ejs") %>
+
+            <div class="admin-content">
+                <%- include("../partials/header.ejs") %>
+
+                    <main>
+                        <h1>Editar subcategoria</h1>
+                        <form action="/admin/subcategories/edit/<%=subcategory.id%>?_method=PUT" method="POST">
+                            <div class="form caja-agregar">
+                                Nombre:<label for="subcategory-name"><input class="input style-admin" type="text"
+                                        name="name" id="subcategory-name" required placeholder="Nombre de la subcategoria"
+                                        value="<%= subcategory.name %>" />
+                                </label>
+                                Categoría:<label for="categoria-producto">
+                                    <select class="input style-admin categorySelect" name="categoria" id="categoria-producto">
+                                     <% categories.forEach(category => { %>
+                                        <option value="<%- category.id %>" <%- subcategory.categories_id == category.id ? "selected" : "" %>><%- category.name %></option>
+                                     <% }) %>
+                                    </select>
+                                  </label>
+                                <button type="submit" class="btn-admin style-admin">
+                                    EDITAR
+                                </button>
+                            </div>
+                        </form>
+                    </main>
+            </div>
+    </body>
+
+</html>

@@ -1,13 +1,26 @@
 let { bannerCarousel, getproductos } = require('../data/dataBase')
+let db = require('../database/models')
+const sequelize = db.sequelize;
 
 
 module.exports = {
   home: (req, res) => {
-        
-        res.render('home',{
-              session: req.session,
-              carousel: bannerCarousel
-        })
+    db.Products.findAll({
+      include: [{association: "subcategories"},
+        {
+          association: "images",
+        }
+      ]
+  })
+.then(products => {
+  res.render('home',{
+    title: "products test",
+    products,
+    session: req.session,
+    carousel: bannerCarousel
+   })   
+}).catch(err => console.log(err))
+     
         
   },
     search:(req, res) => {

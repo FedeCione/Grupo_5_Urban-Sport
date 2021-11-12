@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="/stylesheets/carrito.css"/>
 
   <!-- Javascript -->
-  <script src="/javascripts/home.js" defer></script>
 
+ 
   <body>
     <!-- Header -->
     <%- include("partials/header.ejs") %>
@@ -22,157 +22,62 @@
         <h2 class="title-cart">Mi Carrito</h2>
         <a href=""><h2 class="keep-buying">Seguir Comprando</h2></a>
       </div>
-      <div class="articles-subtitles-div">
-        <!-- ARTICLES -->
-        <div class="articles-container">
-          <article class="product-container">
-            <div class="title-trash-div">
-              <div class="title-product-div">
-                <h3 class="title-product">Nombre del producto</h3>
-              </div>
-              <div class="trash-icon-div">
-                <button>
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </div>
-            </div>
-            <div class="img-details-container">
-              <div class="img-product-div">
-                <img
-                  class="img-product"
-                  src="/images/image-article.png"
-                  alt="Imagen del articulo"
-                />
-              </div>
-              <div class="product-details">
-                <p>Talle:</p>
-                <p>Item Nº:</p>
-                <a href=""><p>Editar</p></a>
-                <p class="quantity">Cantidad</p>
-                <select name="Cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-                <p class="total-article-p">Total</p>
-                <p>$ 0</p>
-              </div>
-            </div>
-          </article>
-          <article class="product-container">
-            <div class="title-trash-div">
-              <div class="title-product-div">
-                <h3 class="title-product">Nombre del producto</h3>
-              </div>
-              <div class="trash-icon-div">
-                <button>
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </div>
-            </div>
-            <div class="img-details-container">
-              <div class="img-product-div">
-                <img
-                  class="img-product"
-                  src="/images/image-article.png"
-                  alt="Imagen del articulo"
-                />
-              </div>
-              <div class="product-details">
-                <p>Talle:</p>
-                <p>Item Nº:</p>
-                <a href=""><p>Editar</p></a>
-                <p class="quantity">Cantidad</p>
-                <select name="Cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-                <p class="total-article-p">Total</p>
-                <p>$ 0</p>
-              </div>
-            </div>
-          </article>
-          <article class="product-container">
-            <div class="title-trash-div">
-              <div class="title-product-div">
-                <h3 class="title-product">Nombre del producto</h3>
-              </div>
-              <div class="trash-icon-div">
-                <button>
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </div>
-            </div>
-            <div class="img-details-container">
-              <div class="img-product-div">
-                <img
-                  class="img-product"
-                  src="/images/image-article.png"
-                  alt="Imagen del articulo"
-                />
-              </div>
-              <div class="product-details">
-                <p>Talle:</p>
-                <p>Item Nº:</p>
-                <a href=""><p>Editar</p></a>
-                <p class="quantity">Cantidad</p>
-                <select name="Cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-                <p class="total-article-p">Total</p>
-                <p>$ 0</p>
-              </div>
-            </div>
-          </article>
-          <article class="product-container">
-            <div class="title-trash-div">
-              <div class="title-product-div">
-                <h3 class="title-product">Nombre del producto</h3>
-              </div>
-              <div class="trash-icon-div">
-                <button>
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </div>
-            </div>
-            <div class="img-details-container">
-              <div class="img-product-div">
-                <img
-                  class="img-product"
-                  src="/images/image-article.png"
-                  alt="Imagen del articulo"
-                />
-              </div>
-              <div class="product-details">
-                <p>Talle:</p>
-                <p>Item Nº:</p>
-                <a href=""><p>Editar</p></a>
-                <p class="quantity">Cantidad</p>
-                <select name="Cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-                <p class="total-article-p">Total</p>
-                <p>$ 0</p>
-              </div>
-            </div>
-          </article>
+      <!-- <div class="articles-subtitles-div"> -->
+        <!-- ARTICLES CART ITEMS-->
+        
+      <div class="cart-page">
+        
+        <table>
+          <tr>
+            <th>product</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+          </tr>
+         
+        </table>
+        
+        <div class="container-cart ">
+
         </div>
+        <div class="total-price">
+          <table>
+            <tr>
+              <td>Total</td>
+              <td class="final-price">total</td>
+            </tr>
+          </table>
+        </div>
+  <!--      <div id="total"></div>
+
+        <tr class="container-cart" id="template-cart">
+          <td>
+             <div class="cart-info">
+               <img src="" alt="">
+               <div class="detail-info">
+                 <p>name product</p>
+                 <small>price</small>
+                 <br>
+                 <a class="remove" href=""><i class="fas fa-times-circle"></i></a>
+               </div>
+             </div>
+           </td>
+           <td ><input id="quantity" type="number" value="1"></td>
+           <td class="priceProduct">Price</td>
+         </template>
+ 
+         
+       <template id="total-cart">
+       
+       </template> -->
+           
+
+
+      </div>
+      
+
 
         <!-- SUBTITLES PRICE -->
-        <div class="promo-shipping-div">
+        <!-- <div class="promo-shipping-div">
           <div class="promotional-code-div">
             <p class="promotional-code-p">¿Tenés un código de promoción?</p>
             <input type="text" placeholder="Ingresá tu Código" />
@@ -199,7 +104,7 @@
             <button class="buy-button">Comprar</button>
           </div>
         </div>
-      </div>
+      </div> -->
     </main>
 
     <!-- ICON ADD PRODUCT -->
@@ -208,5 +113,8 @@
     </div>
     <!-- FOOTER -->
     <%- include("partials/footer.ejs") %>
+    <script src="/javascripts/modal.js" ></script>
+   
+    <script src="/javascripts/cartShopping.js" ></script>
   </body>
 </html>

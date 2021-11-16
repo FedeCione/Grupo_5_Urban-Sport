@@ -20,45 +20,64 @@
         <main id="main-dark">
           <form class="form-register" action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST"
             enctype="multipart/form-data">
-            <h4>Edita tu perfil</h4>
+            <h4>Editar perfil      <i class="fas fa-users"></i></h4>
 
             <% if (locals.errors && errors.name) { %>
               <small class="text-danger">
                 <%= errors.name.msg %>
               </small>
               <% } %>
-                <input class="controls" type="text" name="name" value="<%= user.name %>"
+              <div class="controls">
+                <input type="text" name="name" value="<%= user.name %>"
                   placeholder="Ingrese su Nombre" />
+              </div>
+                
 
                 <% if (locals.errors && errors.last_name) { %>
                   <small class="text-danger">
                     <%= errors.last_name.msg %>
                   </small>
                   <% } %>
-                    <input class="controls" type="text" name="last_name" value="<%= user.last_name %>"
+                  <div class="controls">
+                    <input type="text" name="last_name" value="<%= user.last_name %>"
                       placeholder="Ingrese su Apellido" />
-
-                    <input class="controls" type="email" name="email" value="<%= user.email %>"
+                  </div>
+                    
+                  <div class="controls">
+                    <input type="email" name="email" value="<%= user.email %>"
                       placeholder="Ingrese su Email" />
-
-                    <input class="controls" type="text" name="dni" value="<%= user.dni ? user.dni : "" %>"
+                  </div>
+                    
+                  <div class="controls">
+                    <input type="text" name="dni" value="<%= user.dni ? user.dni : "" %>"
                       placeholder="Ingrese su DNI" />
-
-                    <input class="controls" type="tel" name="tel" value="<%= user.phone ? user.phone : "" %>"
+                  </div>
+                    
+                  <div class="controls">
+                    <input type="tel" name="tel" value="<%= user.phone ? user.phone : "" %>"
                       placeholder="Ingrese un Telefono" />
-
-                    <input class="controls" type="text" name="address" value="<%= user.address ? user.address : "" %>"
+                  </div>
+                    
+                  <div class="controls">
+                    <input type="text" name="address" value="<%= user.address ? user.address : "" %>"
                       placeholder="Ingrese su domicilio" />
-
-                    <input class="controls" type="number" name="postalcode" value="<%= user.postalcode ? user.postalcode : "" %>"
+                  </div>
+                    
+                  <div class="controls">
+                    <input type="number" name="postalcode" value="<%= user.postalcode ? user.postalcode : "" %>"
                       placeholder="Ingrese su Codigo Postal" />
-
-                    <input class="controls" type="text" name="province" value="<%= user.province ? user.province : "" %>"
+                  </div>
+                    
+                  <div class="controls">
+                    <input type="text" name="province" value="<%= user.province ? user.province : "" %>"
                       placeholder="Ingrese su Provincia" />
-
-                    <input class="controls" type="text" name="city" value="<%= user.city ? user.city : "" %>"
+                  </div>
+                    
+                  <div class="controls">
+                    <input type="text" name="city" value="<%= user.city ? user.city : "" %>"
                       placeholder="Ingrese su Ciudad" />
-
+                  </div>
+                  
                     <div class="controls">
                       <p>Cambiar foto de perfil</p>
                       <input class="controls" type="file" name="avatar" id="avatar" />

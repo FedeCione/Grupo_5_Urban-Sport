@@ -52,6 +52,9 @@ cards.addEventListener('click', e => {
     addCart(e)
     cartNumbers(cart)
     totalCost(cart)
+    swal("Se agrego al carrito");
+    e.preventDefault()
+
 })
 
 const addCart = e => {

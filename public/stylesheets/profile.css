@@ -14,7 +14,7 @@
   height: 80%;
   border-radius: 10px;
   box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.2);
-  background: #151515;
+  background: #ccc1c1;
   overflow: hidden;
 }
 .ds-top {
@@ -101,21 +101,22 @@
 .card-profile a {
       padding: 5px 20px;
       border-radius: 10px;
-      color: white;
+      background-color: salmon;
+      color: rgb(226, 238, 54);
       letter-spacing: 0.05em;
       text-decoration: none;
       font-size: 10px;
       transition: all 1s;
 }
 .card-profile    a:hover {
-        color: white;
+        color: rgb(250, 191, 191);
         background: crimson;
       }
    
   .ds-info {
     position: absolute;
     margin: auto;
-    top: 24px;
+    top: 29px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -151,7 +152,7 @@
       margin-bottom: 5px;
       font-weight: 400;
       text-transform: uppercase;
-      color: #f0bb3c;
+      color: #4d4949;
     }
     
     .card-profile      p {

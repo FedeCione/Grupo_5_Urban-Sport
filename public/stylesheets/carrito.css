@@ -333,8 +333,23 @@ td input {
   max-width: 350px;
 }
 
+.btn-purchase{
+  display: flex;
+  justify-content: flex-end;
+  margin: 50px 190px;
+}
+.btn-purchase button{
+  border-radius: 15px;
+  background-color: #ff523b;
+  padding: 5px 25px ;
+}
 
-.product{
+.btn-purchase button:hover {
+  color: rgb(250, 191, 191);
+  background: crimson;
+}
+
+.productItem{
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -356,7 +371,7 @@ td input {
   align-items: center;
 }
 
-.product i{
+.productItem i{
   display: flex;
   align-items: center;
   font-size: 25px;
@@ -366,7 +381,7 @@ td input {
   cursor: pointer;
 }
 
-.product span{
+.productItem span{
   width: 15%;
 }
 

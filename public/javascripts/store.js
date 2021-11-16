@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function(){
     
 
 db(); 
-   
-swal("Bienvenido, No olvides registrarte para obener los mejores descuentos en Urban-sport");
+
+
 })
     
 const createTemplateCard = data => {
@@ -52,6 +52,9 @@ cards.addEventListener('click', e => {
     addCart(e)
     cartNumbers(cart)
     totalCost(cart)
+    swal("Se agrego al carrito");
+    e.preventDefault()
+
 })
 
 const addCart = e => {

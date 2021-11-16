@@ -67,19 +67,20 @@
   <!-- menu del header mobile icons -->
   <% if (typeof session.user !== 'undefined') { %>
     <div class="icon-btn">
-      <i onclick="openOverlayUl()" class="far fa-address-card"></i>
       
+      <img  onclick="openOverlayUl()" src="/images/users/<%= session.user.avatar %>" alt="" width="50px" height="50px"
+            class="rounded-circle">
       <%- include("./modalSession.ejs") %>
 
       <a href="http://localhost:3020/products/carrito"><i class="fas fa-cart-plus"><span class="add-cart-icon">0</span></i></a>
-      <a href=""><i class="far fa-heart"></i></a>
+      <a href=""><i class="fas fa-heart"></i></a>
     </div>
   <% } else { %>
     <div class="icon-btn">
       <i onclick="openOverlayUl()" class="fas fa-user"></i>
       <%- include("./modal.ejs") %>
 
-      <a href="http://localhost:3020/products/carrito"><i class="fas fa-shopping-cart"><span class="add-cart-icon"></span></i></a>
+      <a href="http://localhost:3020/products/carrito"><i class="fas fa-shopping-cart"><span class="add-cart-icon">0</span></i></a>
       <a href=""><i class="fas fa-heart"></i></a>
     </div>
   <% } %> 

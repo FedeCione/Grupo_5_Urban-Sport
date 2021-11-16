@@ -299,6 +299,15 @@ a{
     color: var(--amarillo);
     padding: 3px;
 }
+
+.imgContainer{
+    width: 100px;
+    text-align: center;
+}
+
+.choreo-src{
+    width: 100%;
+}
 /* NEWSLETTER */
 
 .news-letter{

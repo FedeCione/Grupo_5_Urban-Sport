@@ -8,12 +8,19 @@
 }
 
 .panel {
-  height: 400px;
+  height: 70vh;
   line-height: 50px;
   width: 95%;
   margin: auto;
   margin-bottom: 60px;
   text-align-last: center;
+}
+
+.text-danger{
+  color: firebrick;
+  position: relative;
+  left: 30px;
+  top: 5px;
 }
 
 table {

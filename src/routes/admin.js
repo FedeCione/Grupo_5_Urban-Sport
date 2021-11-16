@@ -13,6 +13,7 @@ let { brands, brandCreate, brandStore, brandEdit, brandUpdate, brandDestroy } = 
 let { colours, colourCreate, colourStore, colourEdit, colourUpdate, colourDestroy } = require('../controllers/adminColoursController');
 let { talles, talleCreate, talleStore, talleEdit, talleUpdate, talleDestroy } = require('../controllers/adminTallesController');
 let { users, userEdit, userUpdate, userDestroy } = require('../controllers/adminUsersController');
+let productValidator = require('../validations/productsValidator');
 
 /* ADMIN */
 router.get("/", userSession, adminCheckValidator, admin);
@@ -25,7 +26,7 @@ router.get("/panelProductos", userSession, adminCheckValidator, panelProductos);
 
 /* Create Product */
 router.get('/agregar', userSession, adminCheckValidator, formAgregar);
-router.post('/agregar', upload.array('image'), userSession, adminCheckValidator, agregar);
+router.post('/agregar', upload.array('image'),productValidator , userSession, adminCheckValidator, agregar);
 
 /* Edit Product*/
 router.get("/editar/:id", userSession, adminCheckValidator, formEditar);

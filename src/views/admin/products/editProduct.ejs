@@ -11,33 +11,38 @@
 
           <main>
             <div>
-              <h1>Editar Producto <%= product.name %>
+              <h1>Editar Producto <%= product.id %>
               </h1>
               <form action="/admin/editar/<%= product.id %>?_method=PUT" method="POST" style="margin-top: 5.5em"
                 enctype="multipart/form-data">
                 <div class="form caja-agregar">
                   Nombre:<label for="nombre-producto"><input class="input style-admin" type="text" name="name"
-                      id="nombre-producto" required placeholder="Nombre del producto" value="<%= product.name %> " />
+                      id="nombre-producto" placeholder="Nombre del producto" value="<%= product.name %>" />
+                      <% if (locals.errors && errors.name) { %>
+                        <small class="text-danger"><%= errors.name.msg %></small>
+                      <% } %>
                   </label>
                   Marca:
                   <label for="marca-producto">
-                    <select class="input style-admin" name="id_marca" id="marca_producto" required>
+                    <select class="input style-admin" name="id_marca" id="marca_producto">
                       <% brands.forEach(brand=> { %>
                         <option value="<%- brand.id %>" <%- brand.id==product.id_marca ? "selected" : "" %>><%-
                             brand.name %>
                         </option>
                         <% }) %>
                     </select>
-                    <% if (locals.errors && errors.brand) { %>
-                      <small class="text-danger">
-                        <%= errors.brand.msg %>
-                      </small>
-                      <% } %>
+                    <% if (locals.errors && errors.id_marca) { %>
+                      <small class="text-danger"><%= errors.id_marca.msg %></small>
+                    <% } %>
                   </label>
 
                   Descripción:<label for="descripción-producto"><input id="descripción-producto" cols="30" rows="10"
-                      class="input style-admin" name="description" required placeholder="Descripción del producto"
-                      value="<%= product.description %> " /></label>
+                      class="input style-admin" name="description" placeholder="Descripción del producto"
+                      value="<%= product.description %> "/>
+                      <% if (locals.errors && errors.description) { %>
+                        <small class="text-danger"><%= errors.description.msg %></small>
+                      <% } %>
+                    </label>
                   Categoría:<label for="category-product">
                     <select class="input style-admin categorySelect" name="categoria" id="category-product">
                       <option selected hidden value="">Categorias</option>
@@ -46,6 +51,9 @@
                         </option>
                         <% }) %>
                     </select>
+                    <% if (locals.errors && errors.categoria) { %>
+                      <small class="text-danger"><%= errors.categoria.msg %></small>
+                  <% } %>
                   </label>
                   Subcategoría:<label for="subcategory-product">
                     <select class="input style-admin subcategorySelect" id="subcategory-product" name="id_subcategory">
@@ -65,6 +73,9 @@
                         </option>
                         <% }) %>
                     </select>
+                    <% if (locals.errors && errors.colour) { %>
+                      <small class="text-danger"><%= errors.colour.msg %></small>
+                  <% } %>
                   </label>
                   Talle:<label for="talles-producto">
                     <select class="input style-admin" name="id_talle" id="talles-producto">
@@ -74,17 +85,29 @@
                         </option>
                         <% }) %>
                     </select>
+                    <% if (locals.errors && errors.id_talle) { %>
+                      <small class="text-danger"><%= errors.id_talle.msg %></small>
+                  <% } %>
                   </label>
                   Precio:<label for="precio-producto">
                     <input id="precio-producto" class="input style-admin" type="number" name="price" required
                       placeholder="Modificar precio del producto" value="<%= product.price %>" />
+                      <% if (locals.errors && errors.price) { %>
+                        <small class="text-danger"><%= errors.price.msg %></small>
+                      <% } %>
                   </label>
                   Descuento:<label for="producto-discontinuo">
                     <input id="producto-discontinuo" class="input style-admin" name="discount" required
                       placeholder="Descuento" value="<%= product.discount %>" />
+                      <% if (locals.errors && errors.discount) { %>
+                        <small class="text-danger"><%= errors.discount.msg %></small>
+                      <% } %>
                   </label>
                   Imagen:<label for="image-product"><input id="image-product" class="input style-admin" type="file"
                       name="image" multiple value="<%= product.id_image %> " />
+                      <% if (locals.errors && errors.image) { %>
+                        <small class="text-danger"><%= errors.image.msg %> </small>
+                      <% } %>
                   </label>
                   Visible:<label for="producto-visible">
                     <select class="input style-admin" name="visible" id="producto-visible" required>
@@ -100,6 +123,9 @@
                   Stock:<label for="stock">
                     <input id="stock" class="input style-admin" name="stock" required placeholder="Modificar stock"
                       value="<%= product.stock %>" />
+                      <% if (locals.errors && errors.stock) { %>
+                        <small class="text-danger"><%= errors.stock.msg %></small>
+                      <% } %>
                   </label>
                 </div>
                 <div class="form">

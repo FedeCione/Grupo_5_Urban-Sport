@@ -195,6 +195,11 @@ main {
     color: initial;
 }
 
+#imagen-producto {
+    text-align-last: center;
+    padding-top: 9px;
+}
+
 @media only screen and (max-width:1200px) {
     .sidebar-admin {
         width: 70px;

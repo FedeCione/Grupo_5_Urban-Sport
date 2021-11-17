@@ -17,9 +17,9 @@
 }
 
 .text-danger{
-  color: firebrick;
+  color: tomato;
   position: relative;
-  left: 30px;
+  left: 15px;
   top: 5px;
 }
 

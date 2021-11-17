@@ -471,12 +471,85 @@ module.exports = {
     } else {
       db.Products.findByPk(req.params.id)
         .then(product => {
-          res.render("admin/products/editProduct", {
-            product,
-            errors: errors.mapped(),
-            old: req.body,
-            session: req.session,
-          });
+          db.Colours.findAll({
+            include: [{
+              association: 'products',
+              include: [{
+                association: 'colours'
+              }]
+            }]
+          })
+            .then(colours => {
+              db.Brands.findAll({
+                include: [{
+                  association: 'products'
+                }]
+              })
+                .then(brands => {
+                  db.Categories.findAll({
+                    include: [{
+                      association: 'subcategories'
+                    }]
+                  })
+                    .then(categories => {
+                      db.Subcategories.findAll({
+                        include: [{
+                          association: 'products',
+                          association: 'category'
+                        }]
+                      })
+                        .then(subcategories => {
+                          db.Talles.findAll({
+                            include: [{
+                              association: 'products'
+                            }]
+                          })
+                            .then(talles => {
+                              db.Talle_products.findOne({
+                                where: {
+                                  id_product: product.id
+                                }
+                              })
+                                .then(talle_product => {
+                                  db.Colour_products.findOne({
+                                    where: {
+                                      id_product: product.id
+                                    }
+                                  })
+                                    .then(colour_product => {
+                                      let productSubcategory = subcategories.find(subcategory => subcategory.id == product.id_subcategory);
+                                      let productCategory = categories.find(category => category.id == productSubcategory.categories_id);
+                                      let productSubcategories = subcategories.filter(subcategory => subcategory.categories_id == productCategory.id);
+                                      res.render("admin/products/editProduct", {
+                                        productSubcategories,
+                                        productSubcategory,
+                                        productCategory,
+                                        product,
+                                        session: req.session,
+                                        colours,
+                                        brands,
+                                        categories,
+                                        subcategories,
+                                        talles,
+                                        talle_product,
+                                        colour_product,
+                                        errors: errors.mapped(),
+                                        old: req.body,
+                                        session: req.session
+                                      })
+                                    })
+                                })
+                                .catch(err => console.log(err))
+                            })
+                            .catch(err => console.log(err))
+                        })
+                        .catch(err => console.log(err))
+                    })
+                    .catch(err => console.log(err))
+                })
+                .catch(err => console.log(err))
+            })
+            .catch(err => console.log(err))
         })
     }
   },

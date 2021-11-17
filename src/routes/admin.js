@@ -26,11 +26,11 @@ router.get("/panelProductos", userSession, adminCheckValidator, panelProductos);
 
 /* Create Product */
 router.get('/agregar', userSession, adminCheckValidator, formAgregar);
-router.post('/agregar', upload.array('image'),productValidator , userSession, adminCheckValidator, agregar);
+router.post('/agregar', upload.array('image'), productValidator, userSession, adminCheckValidator, agregar);
 
 /* Edit Product*/
 router.get("/editar/:id", userSession, adminCheckValidator, formEditar);
-router.put("/editar/:id", upload.array('image'), userSession, adminCheckValidator, editar);
+router.put("/editar/:id", upload.array('image'), productValidator, userSession, adminCheckValidator, editar);
 
 /* Delete Product*/
 router.delete("/eliminar/:id", userSession, adminCheckValidator, eliminar);

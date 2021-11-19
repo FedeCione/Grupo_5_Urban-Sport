@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }
 
-displayCart();  
+displayCart()
      
     
 })
@@ -50,6 +50,21 @@ let buttonPurchase = document.querySelector('.btn-purchase-cart');
 
 buttonPurchase.addEventListener('click', function(e){
     var home = "http://localhost:3020/"
-    swal("Good!",`Su compra se realizo con exito! <a href="${home}">Inicio</a>`, "success");
+    swal("Good!",`Su compra se realizo con exito! `, "success");
     
 })
+
+function onLoadCartNumbers() {
+    let productNumbers = localStorage.getItem('cartNumbers')
+    console.log(productNumbers)
+    if(productNumbers){
+        document.querySelector('.add-cart-icon').textContent = productNumbers
+    }
+}
+
+
+
+
+
+
+onLoadCartNumbers()

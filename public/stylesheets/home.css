@@ -10,7 +10,7 @@
 }
 
 body{
-    padding: 10px 12px 0 12px;
+    padding: 70px 0 0 0;
     font-family: var(--font-roboto);
     line-height: 1.5;
 }
@@ -78,7 +78,7 @@ a{
     font-size: 2rem;
     top: 40%;
     left: 30%;
-    z-index: 1;
+    z-index: .5;
 }
 .categories .col-3 a:hover{
     color: #256eff;

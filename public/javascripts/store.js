@@ -30,7 +30,7 @@ const createTemplateCard = data => {
     data.data.forEach(element => {
         
        templateCard.querySelector('h3').textContent = element.name
-       templateCard.querySelector('p').textContent = `${element.description.slice(0,16)}...` 
+       templateCard.querySelector('p').textContent = `${element.description.slice(0,26)}...` 
        templateCard.querySelector('h6').textContent = `${element.price} `
        templateCard.querySelector('.btn').dataset.id = element.id
 
@@ -50,9 +50,8 @@ const createTemplateCard = data => {
 
 cards.addEventListener('click', e => {
     addCart(e)
-    cartNumbers(cart)
+    
     totalCost(cart)
-    swal("Se agrego al carrito");
     e.preventDefault()
 
 })
@@ -65,6 +64,8 @@ const addCart = e => {
     if(e.target.classList.contains('btn')){
         console.log(e.target.parentElement)
         setCart(e.target.parentElement) //enviamos toda la info del producto 
+        swal("Se agrego al carrito");
+        cartNumbers(cart)
     }
     /* Detiene cualquier otro evento que se genera en el item */
     e.stopPropagation()

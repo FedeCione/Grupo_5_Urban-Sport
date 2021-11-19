@@ -1,11 +1,20 @@
 
 
 /* --------------- HEADER ---------------*/
+
 .main-header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  max-width: 100vw;
+  padding: 8px 5px 0px 5px;
   display: flex;
   justify-content: space-between;
   text-align: flex-start;
-  margin-bottom: 15px;
+  
+  background-color: rgba(253, 247, 247, 0.548);
+  box-shadow: 0px 4px 3px rgba(59, 59, 59, 0.5);
 }
 .main-header {
   border-bottom: 1px solid rgb(179, 175, 175);
@@ -16,6 +25,7 @@
   object-fit: cover;
   cursor: pointer;
   margin-bottom: 3px;
+  padding: 5px;
 }
 .main-header .toggle-nav {
   order: -1;
@@ -27,7 +37,7 @@
 }
 .main-header .icon-btn {
   font-size: 25px;
-  padding-left: 10px;
+  padding: 0px 10px 0 10px;
 }
 .main-header .icon-btn i:hover {
   color: var(--amarillo);
@@ -45,15 +55,18 @@
 
 .main-header .rounded-circle{
   border-radius: 50px;
-  width: auto;
-  height: 27px;
-  border: solid 2px rgb(68, 71, 67);
-  margin-bottom: -3px;
+  width: 28px;
+  height: 28px;
+  border: solid 2px rgb(68, 136, 46);
+  margin-bottom: -5px;
 }
 
 .main-header .rounded-circle:hover{
-  color: green;
+  color: rgb(165, 202, 62);
   opacity: .9;
+}
+.main-header .rounded-circle img:hover{
+  color: gold;
 }
 /* --------------- Desplegable --------------- */
 .overlay {

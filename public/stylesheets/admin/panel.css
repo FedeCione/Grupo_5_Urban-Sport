@@ -21,6 +21,8 @@
   position: relative;
   left: 15px;
   top: 5px;
+  font-size: 15px;
+  display: block;
 }
 
 table {

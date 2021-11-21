@@ -15,14 +15,23 @@
                         <form action="/admin/users/edit/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                             <div class="form caja-agregar">
                                 Nombre:<label for="name"><input class="input style-admin" type="text" name="name"
-                                        id="name" required placeholder="Nombre" value="<%= user.name %>" />
+                                        id="name" placeholder="Nombre" value="<%= locals.old && old.name ? old.name : user.name %>" />
+                                        <% if (locals.errors && errors.name) { %>
+                                                <small class="text-danger"><%= errors.name.msg %> </small>
+                                        <% } %>
                                 </label>
                                 Apellido:<label for="last_name"><input class="input style-admin" type="text"
-                                        name="last_name" id="last-name" required placeholder="Apellido"
-                                        value="<%= user.last_name %>" />
+                                        name="last_name" id="last-name" placeholder="Apellido"
+                                        value="<%= locals.old && old.last_name ? old.last_name : user.last_name %>" />
+                                        <% if (locals.errors && errors.last_name) { %>
+                                                <small class="text-danger"><%= errors.last_name.msg %> </small>
+                                        <% } %>
                                 </label>
                                 Email:<label for="email"><input class="input style-admin" type="text" name="email"
-                                        id="email" required placeholder="Email" value="<%= user.email %>" />
+                                        id="email" placeholder="Email" value="<%= locals.old && old.email ? old.email : user.email %>" />
+                                        <% if (locals.errors && errors.email) { %>
+                                                <small class="text-danger"><%= errors.email.msg %> </small>
+                                             <% } %>
                                 </label>
                                 Telefono:<label for="phone"><input class="input style-admin" type="text" name="phone"
                                         id="phone" placeholder="Telefono" value="<%= user.phone %>" />
@@ -49,8 +58,8 @@
                                 Ciudad:<label for="city"><input class="input style-admin" type="text" name="city"
                                         id="city" placeholder="Ciudad" value="<%= user.city %>" />
                                 </label>
-                                Avatar:<label for="avatar"><input class="input style-admin" type="file" name="avatar"
-                                        id="avatar" placeholder="Avatar" value="<%= user.avatar %>" />
+                                Avatar:<label for="images-files"><input class="input style-admin" type="file" name="avatar"
+                                        id="images-files" placeholder="Avatar" value="<%= user.avatar %>" />
                                 </label>
                                 DNI:<label for="dni"><input class="input style-admin" type="text" name="dni" id="dni"
                                         placeholder="DNI" value="<%= user.dni %>" />

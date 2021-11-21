@@ -1,22 +1,20 @@
 let { check, body } = require('express-validator');
-//const { users } = require('../data/dataBase');
 const db = require("../database/models")
 
 
 module.exports = [
     check('name')
-        .notEmpty().withMessage('El nombres es requerido'),
+        .notEmpty().withMessage('El nombre es requerido').bail()
+        .isLength({ min: 3 }).withMessage("El nombre del usuario debe tener como mínimo 3 caracteres"),
     
     check('last_name')
-        .notEmpty().withMessage('El apellido es requerido'),
+        .notEmpty().withMessage('El apellido es requerido').bail()
+        .isLength({ min: 3 }).withMessage("El apellido del usuario debe tener como mínimo 3 caracteres"),
 
     check('email')
         .isEmail().withMessage('Debes ingresar un email valido'),
     
         body('email').custom(value => {
-            /*   let user = users.filter(user=>{ 
-                  return user.email == value 
-              }) */
               return db.Users.findOne({
                   where : {
                       email : value

@@ -5,12 +5,17 @@ const categoriesValidator = require("../validations/categoriesValidator");
 
 module.exports = {
   subcategories: (req, res) => {
-    db.Subcategories.findAll().then((subcategories) => {
-      res.render("admin/subcategories/panelSubcategories", {
-        subcategories,
-        session: req.session,
+    db.Subcategories.findAll()
+      .then((subcategories) => {
+        db.Categories.findAll()
+          .then((categories) => {
+            res.render("admin/subcategories/panelSubcategories", {
+              subcategories,
+              categories,
+              session: req.session,
+            });
+          });
       });
-    });
   },
   subcategoryCreate: (req, res) => {
     db.Categories.findAll().then((categories) => {
@@ -83,13 +88,13 @@ module.exports = {
         id_subcategory: req.params.id,
       },
     }).then((result) => {
-        db.Subcategories.destroy({
-          where: {
-            id: req.params.id,
-          },
-        }).then((result) => {
-          return res.redirect("/admin/subcategories");
-        });
+      db.Subcategories.destroy({
+        where: {
+          id: req.params.id,
+        },
+      }).then((result) => {
+        return res.redirect("/admin/subcategories");
       });
+    });
   },
 };

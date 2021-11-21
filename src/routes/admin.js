@@ -14,6 +14,7 @@ let { colours, colourCreate, colourStore, colourEdit, colourUpdate, colourDestro
 let { talles, talleCreate, talleStore, talleEdit, talleUpdate, talleDestroy } = require('../controllers/adminTallesController');
 let { users, userEdit, userUpdate, userDestroy } = require('../controllers/adminUsersController');
 let productValidator = require('../validations/productsValidator');
+let userEditValidator = require('../validations/registerValidation');
 
 /* ADMIN */
 router.get("/", userSession, adminCheckValidator, admin);
@@ -155,7 +156,7 @@ router.get('/users', userSession, adminCheckValidator, users);
 
 /* Edit user */
 router.get('/users/edit/:id', userSession, adminCheckValidator, userEdit);
-router.put('/users/edit/:id', avatarUpload.single('avatar'), userSession, adminCheckValidator, userUpdate);
+router.put('/users/edit/:id', avatarUpload.single('avatar'), userEditValidator, userSession, adminCheckValidator, userUpdate);
 
 /* Delete user */
 router.delete('/users/delete/:id', userSession, adminCheckValidator, userDestroy);

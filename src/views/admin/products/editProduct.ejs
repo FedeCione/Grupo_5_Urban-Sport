@@ -18,8 +18,10 @@
                 <div class="form caja-agregar">
                   Nombre:<label for="nombre-producto"><input class="input style-admin" type="text" name="name"
                       id="nombre-producto" placeholder="Nombre del producto" value="<%= product.name %>" />
-                      <% if (locals.errors && errors.name) { %>
-                        <small class="text-danger"><%= errors.name.msg %></small>
+                    <% if (locals.errors && errors.name) { %>
+                      <small class="text-danger">
+                        <%= errors.name.msg %>
+                      </small>
                       <% } %>
                   </label>
                   Marca:
@@ -32,34 +34,42 @@
                         <% }) %>
                     </select>
                     <% if (locals.errors && errors.id_marca) { %>
-                      <small class="text-danger"><%= errors.id_marca.msg %></small>
-                    <% } %>
+                      <small class="text-danger">
+                        <%= errors.id_marca.msg %>
+                      </small>
+                      <% } %>
                   </label>
 
                   Descripción:<label for="descripción-producto"><input id="descripción-producto" cols="30" rows="10"
                       class="input style-admin" name="description" placeholder="Descripción del producto"
-                      value="<%= product.description %> "/>
-                      <% if (locals.errors && errors.description) { %>
-                        <small class="text-danger"><%= errors.description.msg %></small>
+                      value="<%= product.description %> " />
+                    <% if (locals.errors && errors.description) { %>
+                      <small class="text-danger">
+                        <%= errors.description.msg %>
+                      </small>
                       <% } %>
-                    </label>
+                  </label>
                   Categoría:<label for="category-product">
                     <select class="input style-admin categorySelect" name="categoria" id="category-product">
                       <option selected hidden value="">Categorias</option>
                       <% categories.forEach(category=> { %>
-                        <option value="<%- category.id %>" <%- category.id==productCategory.id ? "selected" : "" %>><%- category.name %>
+                        <option value="<%- category.id %>" <%- category.id==productCategory.id ? "selected" : "" %>><%-
+                            category.name %>
                         </option>
                         <% }) %>
                     </select>
                     <% if (locals.errors && errors.categoria) { %>
-                      <small class="text-danger"><%= errors.categoria.msg %></small>
-                  <% } %>
+                      <small class="text-danger">
+                        <%= errors.categoria.msg %>
+                      </small>
+                      <% } %>
                   </label>
                   Subcategoría:<label for="subcategory-product">
                     <select class="input style-admin subcategorySelect" id="subcategory-product" name="id_subcategory">
                       <option selected hidden value="">Subcategorias</option>
-                      <% productSubcategories.forEach(subcategory => { %>
-                        <option value="<%- subcategory.id %>" <%- subcategory.id == productSubcategory.id ? "selected" : "" %>><%- subcategory.name %>
+                      <% productSubcategories.forEach(subcategory=> { %>
+                        <option value="<%- subcategory.id %>" <%- subcategory.id==productSubcategory.id ? "selected"
+                          : "" %>><%- subcategory.name %>
                         </option>
                         <% }) %>
                     </select>
@@ -74,8 +84,10 @@
                         <% }) %>
                     </select>
                     <% if (locals.errors && errors.colour) { %>
-                      <small class="text-danger"><%= errors.colour.msg %></small>
-                  <% } %>
+                      <small class="text-danger">
+                        <%= errors.colour.msg %>
+                      </small>
+                      <% } %>
                   </label>
                   Talle:<label for="talles-producto">
                     <select class="input style-admin" name="id_talle" id="talles-producto">
@@ -86,31 +98,39 @@
                         <% }) %>
                     </select>
                     <% if (locals.errors && errors.id_talle) { %>
-                      <small class="text-danger"><%= errors.id_talle.msg %></small>
-                  <% } %>
+                      <small class="text-danger">
+                        <%= errors.id_talle.msg %>
+                      </small>
+                      <% } %>
                   </label>
                   Precio:<label for="precio-producto">
-                    <input id="precio-producto" class="input style-admin" type="number" name="price" required
+                    <input id="precio-producto" class="input style-admin" type="number" name="price"
                       placeholder="Modificar precio del producto" value="<%= product.price %>" />
-                      <% if (locals.errors && errors.price) { %>
-                        <small class="text-danger"><%= errors.price.msg %></small>
+                    <% if (locals.errors && errors.price) { %>
+                      <small class="text-danger">
+                        <%= errors.price.msg %>
+                      </small>
                       <% } %>
                   </label>
                   Descuento:<label for="producto-discontinuo">
-                    <input id="producto-discontinuo" class="input style-admin" name="discount" required
-                      placeholder="Descuento" value="<%= product.discount %>" />
-                      <% if (locals.errors && errors.discount) { %>
-                        <small class="text-danger"><%= errors.discount.msg %></small>
+                    <input id="producto-discontinuo" class="input style-admin" name="discount" placeholder="Descuento"
+                      value="<%= product.discount %>" />
+                    <% if (locals.errors && errors.discount) { %>
+                      <small class="text-danger">
+                        <%= errors.discount.msg %>
+                      </small>
                       <% } %>
                   </label>
-                  Imagen:<label for="image-product"><input id="image-product" class="input style-admin" type="file"
+                  Imagen:<label for="images-files"><input id="images-files" class="input style-admin" type="file"
                       name="image" multiple value="<%= product.id_image %> " />
-                      <% if (locals.errors && errors.image) { %>
-                        <small class="text-danger"><%= errors.image.msg %> </small>
+                    <% if (locals.errors && errors.image) { %>
+                      <small class="text-danger">
+                        <%= errors.image.msg %>
+                      </small>
                       <% } %>
                   </label>
                   Visible:<label for="producto-visible">
-                    <select class="input style-admin" name="visible" id="producto-visible" required>
+                    <select class="input style-admin" name="visible" id="producto-visible">
                       <% if(product.visible==1) { %>
                         <option value="1" selected>Si</option>
                         <option value="0">No</option>
@@ -121,14 +141,14 @@
                     </select>
                   </label>
                   Stock:<label for="stock">
-                    <input id="stock" class="input style-admin" name="stock" required placeholder="Modificar stock"
+                    <input id="stock" class="input style-admin" name="stock" placeholder="Modificar stock"
                       value="<%= product.stock %>" />
-                      <% if (locals.errors && errors.stock) { %>
-                        <small class="text-danger"><%= errors.stock.msg %></small>
+                    <% if (locals.errors && errors.stock) { %>
+                      <small class="text-danger">
+                        <%= errors.stock.msg %>
+                      </small>
                       <% } %>
                   </label>
-                </div>
-                <div class="form">
                   <button type="submit" class="btn-admin style-admin">
                     EDITAR
                   </button>

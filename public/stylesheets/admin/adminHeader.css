@@ -163,7 +163,7 @@ header label span {
 }
 
 main {
-    margin-top: 85px;
+    margin-top: 25px;
     padding: 2rem 1.5rem;
     min-height: calc(100vh - 90px);
 }
@@ -195,7 +195,7 @@ main {
     color: initial;
 }
 
-#imagen-producto {
+#images-files {
     text-align-last: center;
     padding-top: 9px;
 }

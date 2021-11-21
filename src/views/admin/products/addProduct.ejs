@@ -1,168 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
-  <!-- HEAD-->
-  <%- include("../partials/head.ejs") %>
+<!-- HEAD-->
+<%- include("../partials/head.ejs") %>
+
   <body>
-      <!-- dashboard admin -->
-      <%- include("../partials/dashboard.ejs") %>
-    <div class="admin-content">
-      <%- include("../partials/header.ejs") %>
+    <!-- dashboard admin -->
+    <%- include("../partials/dashboard.ejs") %>
+      <div class="admin-content">
+        <%- include("../partials/header.ejs") %>
 
-      <main id="main-dark">
-        <div>
-          <h1>Agregar Producto</h1>
-          <form
-            action="/admin/agregar"
-            method="POST"
-            enctype="multipart/form-data"
-            style="margin-top: 5.5em"
-            name="formAdd"
-          >
-             <!-- empieza caja con caracteristicas del producto-->
-             <div class="form caja-agregar">
-              Nombre:<label for="nombre-producto"
-                ><input
-                  class="input style-admin"
-                  type="text"
-                  name="name"
-                  id="nombre-producto"
-                  placeholder="Nombre del producto"
-                />
-                <% if (locals.errors && errors.name) { %>
-                  <small class="text-danger"><%= errors.name.msg %></small>
-                <% } %>
-              </label>
-              
-              Marca:
-              <label for="marca-producto">
-                <select class="input style-admin" name="id_marca" id="marca_producto">
-                  <option selected hidden value="">Seleccionar marca</option>
-                <% brands.forEach(brand => { %>
-                  <option value="<%- brand.id %>"><%- brand.name %></option>
-                <% }) %>
-                 </select>
-                <% if (locals.errors && errors.id_marca) { %>
-                  <small class="text-danger"><%= errors.id_marca.msg %></small>
-                <% } %>
-                </select>
-              </label>
+          <main id="main-dark">
+            <div>
+              <h1>Agregar Producto</h1>
+              <form action="/admin/agregar" method="POST" enctype="multipart/form-data" style="margin-top: 5.5em"
+                name="formAdd" id="form">
+                <div class="form caja-agregar">
+                  Nombre:<label for="productName">
+                    <input class="input style-admin" type="text" name="name" id="productName"
+                      placeholder="Nombre del producto" value="<%= locals.old && old.name %>" />
+                    <% if (locals.errors && errors.name) { %>
+                      <small class="text-danger">
+                        <%= errors.name.msg %>
+                      </small>
+                      <% } %>
+                        <span id="errorName" class="text-danger"></span>
+                  </label>
 
-              Descripción:<label for="descripción-producto"
-                ><input
-                  id="descripción-producto"
-                  cols="30"
-                  rows="10"
-                  class="input style-admin"
-                  name="description"
-                  placeholder="Descripción del producto"
-                  />
-                  <% if (locals.errors && errors.description) { %>
-                    <small class="text-danger"><%= errors.description.msg %></small>
-                  <% } %>
-                </label>
-              Categoría:<label for="categoria-producto">
-                <select class="input style-admin categorySelect" name="categoria" id="categoria-producto">
-                  <option selected hidden value="">Seleccionar categoria</option>
-                 <% locals.categories.forEach(category => { %>
-                    <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%- category.name %></option>
-                 <% }) %>
-                </select>
-                <% if (locals.errors && errors.categoria) { %>
-                    <small class="text-danger"><%= errors.categoria.msg %></small>
-                <% } %>
-              </label>
-              Subcategoría:<label for="subcategoria-producto">
-                <select class="input style-admin subcategorySelect" id="subcategoria-producto" name="id_subcategory">
-                  <option selected hidden value="">Seleccionar subcategoria</option>
+                  Marca:
+                  <label for="product-brand">
+                    <select class="input style-admin" name="id_marca" id="product-brand">
+                      <option selected hidden value="">Seleccionar marca</option>
+                      <% brands.forEach(brand=> { %>
+                        <option value="<%- brand.id %>" <%=locals.old && old.id_marca==brand.id ? "selected" : "" %> >
+                          <%- brand.name %>
+                        </option>
+                        <% }) %>
+                    </select>
+                    <% if (locals.errors && errors.id_marca) { %>
+                      <small class="text-danger">
+                        <%= errors.id_marca.msg %>
+                      </small>
+                      <% } %>
+                        </select>
+                        <span id="errorBrand" class="text-danger"></span>
+                  </label>
 
-                </select>
-                <% if (locals.errors && errors.id_subcategory) { %>
-                    <small class="text-danger"><%= errors.id_subcategory.msg %></small>
-                <% } %>
-              </label>
-              Color:
-              <label for="colores-producto">
-                <select class="input style-admin" name="colour" id="colores-producto">
-                <option value="">Seleccionar color</option>
-                <% colours.forEach(colour => { %>
-                  <option value="<%- colour.id %>"><%- colour.name %></option>
-                <% }) %>
-                 </select>
-                 <% if (locals.errors && errors.colour) { %>
-                  <small class="text-danger"><%= errors.colour.msg %></small>
-              <% } %>
-                </label>
-              Talle:<label for="talles-producto">
-                <select class="input style-admin" name="id_talle" id="talles-producto">
-                  <option value="">Seleccionar talle</option>
-                    <% talles.forEach(talle => { %>
-                      <option value="<%- talle.id %>" name="id_talle"><%- talle.talle %></option>
-                    <% }) %>
-                  </select>
-                  <% if (locals.errors && errors.id_talle) { %>
-                    <small class="text-danger"><%= errors.id_talle.msg %></small>
-                <% } %>
-              </label>
-              Precio:<label for="precio-producto">
-                <input
-                  id="precio-producto"
-                  class="input style-admin"
-                  type="number"
-                  name="price"
-                  placeholder="Colocar precio del producto"
-                />
-                <% if (locals.errors && errors.price) { %>
-                  <small class="text-danger"><%= errors.price.msg %></small>
-                <% } %>
-              </label>
-              Descuento:<label for="product-discount">
-                <input
-                  id="product-discount"
-                  class="input style-admin"
-                  name="discount"
-                  placeholder="Colocar descuento del producto"
-                  />
-                  <% if (locals.errors && errors.discount) { %>
-                    <small class="text-danger"><%= errors.discount.msg %></small>
-                  <% } %>
-              </label>
-              Imagen/es:<label for="imagen-producto"
-                ><input
-                  id="imagen-producto"
-                  class="input style-admin"
-                  type="file"
-                  name="image"
-                  multiple
-                />
-                <% if (locals.errors && errors.image) { %>
-                  <small class="text-danger"><%= errors.image.msg %> </small>
-                <% } %>
-              </label>
-              Visible:<label for="producto-visible">
-                <select class="input style-admin" name="visible" id="producto-visible">
-                  <option value="1">Si</option>
-                  <option value="0">No</option>
-                </select>
-              </label>
-              Stock:<label for="stock">
-                <input
-                  id="stock"
-                  class="input style-admin"
-                  name="stock"
-                  placeholder="Colocar stock del producto"
-                />
-                <% if (locals.errors && errors.stock) { %>
-                  <small class="text-danger"><%= errors.stock.msg %></small>
-                <% } %>
-              </label>
-                <button type="submit" class="btn-admin style-admin" id="guardar">
-                  GUARDAR
-                </button>
+                  Descripción:<label for="product-description"><input id="product-description" cols="30" rows="10"
+                      class="input style-admin" name="description" placeholder="Descripción del producto"
+                      value="<%= locals.old && old.description %>" />
+                    <% if (locals.errors && errors.description) { %>
+                      <small class="text-danger">
+                        <%= errors.description.msg %>
+                      </small>
+                      <% } %>
+                        <span id="errorDescription" class="text-danger"></span>
+                  </label>
+                  Categoría:<label for="category-product">
+                    <select class="input style-admin categorySelect" name="categoria" id="category-product">
+                      <option selected hidden value="">Seleccionar categoria</option>
+                      <% locals.categories.forEach(category=> { %>
+                        <option value="<%- category.id %>" <%=locals.old && old.categoria==category.id ? "selected" : ""
+                          %> ><%- category.name %>
+                        </option>
+                        <% }) %>
+                    </select>
+                    <% if (locals.errors && errors.categoria) { %>
+                      <small class="text-danger">
+                        <%= errors.categoria.msg %>
+                      </small>
+                      <% } %>
+                        <span id="errorCategory" class="text-danger"></span>
+                  </label>
+                  Subcategoría:<label for="subcategoria-producto">
+                    <select class="input style-admin subcategorySelect" id="subcategoria-producto"
+                      name="id_subcategory">
+                      <option selected hidden value="">Seleccionar subcategoria</option>
+                      <% if(locals.old && old.id_subcategory){ %>
+                        <% let subcategoriesFiltered=subcategories.filter(subcategory=> old.categoria ==
+                          subcategory.categories_id) %>
+                          <% subcategoriesFiltered.forEach(subcategory=> { %>
+                            <option value="<%- subcategory.id %>" <%=locals.old && old.id_subcategory==subcategory.id
+                              ? "selected" : "" %> ><%- subcategory.name %>
+                            </option>
+                            <% }) %>
+                              <% } %>
+                    </select>
+                    <% if (locals.errors && errors.id_subcategory) { %>
+                      <small class="text-danger">
+                        <%= errors.id_subcategory.msg %>
+                      </small>
+                      <% } %>
+                  </label>
+                  Color:
+                  <label for="colour-product">
+                    <select class="input style-admin" name="colour" id="colour-product">
+                      <option value="">Seleccionar color</option>
+                      <% colours.forEach(colour=> { %>
+                        <option value="<%- colour.id %>" <%=locals.old && old.colour==colour.id ? "selected" : "" %>><%-
+                            colour.name %>
+                        </option>
+                        <% }) %>
+                    </select>
+                    <% if (locals.errors && errors.colour) { %>
+                      <small class="text-danger">
+                        <%= errors.colour.msg %>
+                      </small>
+                      <% } %>
+                        <span id="errorColour" class="text-danger"></span>
+                  </label>
+                  Talle:<label for="talle-product">
+                    <select class="input style-admin" name="id_talle" id="talle-product">
+                      <option selected hidden value="">Seleccionar talle</option>
+                      <% locals.talles.forEach(talle=> { %>
+                        <option value="<%- talle.id %>" <%=locals.old && old.id_talle==talle.id ? "selected" : "" %>><%-
+                            talle.talle %>
+                        </option>
+                        <% }) %>
+                    </select>
+                    <% if (locals.errors && errors.id_talle) { %>
+                      <small class="text-danger">
+                        <%= errors.id_talle.msg %>
+                      </small>
+                      <% } %>
+                        <span id="errorTalle" class="text-danger"></span>
+                  </label>
+                  Precio:<label for="price-product">
+                    <input id="price-product" class="input style-admin" type="number" name="price"
+                      placeholder="Colocar precio del producto" value="<%= locals.old && old.price %>" />
+                    <% if (locals.errors && errors.price) { %>
+                      <small class="text-danger">
+                        <%= errors.price.msg %>
+                      </small>
+                      <% } %>
+                        <span id="errorPrice" class="text-danger"></span>
+                  </label>
+                  Descuento:<label for="product-discount">
+                    <input id="product-discount" class="input style-admin" name="discount"
+                      placeholder="Colocar descuento del producto" value="<%= locals.old && old.discount %>" />
+                    <% if (locals.errors && errors.discount) { %>
+                      <small class="text-danger">
+                        <%= errors.discount.msg %>
+                      </small>
+                      <% } %>
+                        <span id="errorDiscount" class="text-danger"></span>
+                  </label>
+                  Imagen/es:<label for="images-files"><input id="images-files" class="input style-admin" type="file"
+                      name="image" multiple />
+                    <% if (locals.errors && errors.image) { %>
+                      <small class="text-danger">
+                        <%= errors.image.msg %>
+                      </small>
+                      <% } %>
+                      <span id="errorImage" class="text-danger"></span>
+                  </label>
+                  Visible:<label for="producto-visible">
+                    <select class="input style-admin" name="visible" id="producto-visible">
+                      <option value="1">Si</option>
+                      <option value="0">No</option>
+                    </select>
+                  </label>
+                  Stock:<label for="stock">
+                    <input id="stock" class="input style-admin" name="stock" placeholder="Colocar stock del producto"
+                      value="<%= locals.old && old.stock %>" />
+                    <% if (locals.errors && errors.stock) { %>
+                      <small class="text-danger">
+                        <%= errors.stock.msg %>
+                      </small>
+                      <% } %>
+                        <span id="errorStock" class="text-danger"></span>
+                  </label>
+                  <button type="submit" class="btn-admin style-admin" id="guardar">
+                    GUARDAR
+                  </button>
+                </div>
+              </form>
             </div>
-          </form>
-        </div>
-      </main>
-    </div>
-    <script src="/javascripts/adminCategories.js"></script>
+          </main>
+      </div>
+      <script src="/javascripts/adminCategories.js"></script>
+      <script src="/javascripts/validationProduct.js"></script>
   </body>
+
 </html>

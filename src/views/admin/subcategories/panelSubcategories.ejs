@@ -32,7 +32,11 @@
                                                 <%- subcategory.name %>
                                             </td>
                                             <td colspan="1" scope="col">
-                                                <%- subcategory.categories_id %>
+                                                <% categories.forEach(category=> { %>
+                                                    <% if(category.id == subcategory.categories_id) { %>
+                                                    <%- category.name %>
+                                                    <% } %>
+                                                <% }) %>
                                             </td>
                                             <td colspan="1" scope="col">
                                                 <form>

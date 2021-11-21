@@ -1,5 +1,3 @@
-
-
 /* --------------- HEADER ---------------*/
 
 .main-header {
@@ -12,48 +10,59 @@
   display: flex;
   justify-content: space-between;
   text-align: flex-start;
-  
+
   background-color: rgba(253, 247, 247, 0.548);
   box-shadow: 0px 4px 3px rgba(59, 59, 59, 0.5);
 }
+
 .main-header {
   border-bottom: 1px solid rgb(179, 175, 175);
 }
+
 .main-header img {
-  width: 100px;
-  height: 37px;
+  width: 100%;
   object-fit: cover;
   cursor: pointer;
   margin-bottom: 3px;
-  padding: 5px;
 }
+
+.logo-container {
+  width: 120px;
+}
+
 .main-header .toggle-nav {
   order: -1;
   width: 20%;
 }
+
 .main-header .toggle-nav span {
   font-size: 25px;
   color: black;
 }
+
 .main-header .icon-btn {
   font-size: 25px;
   padding: 0px 10px 0 10px;
 }
+
 .main-header .icon-btn i:hover {
   color: var(--amarillo);
   opacity: 0.8;
 }
-.main-header .fa-address-card{
+
+.main-header .fa-address-card {
   color: rgb(156, 216, 140);
 }
-.main-header .fa-address-card:hover{
+
+.main-header .fa-address-card:hover {
   color: rgb(7, 252, 19);
 }
-.main-header .fa-cart-plus{
+
+.main-header .fa-cart-plus {
   font-size: 24px;
 }
 
-.main-header .rounded-circle{
+.main-header .rounded-circle {
   border-radius: 50px;
   width: 28px;
   height: 28px;
@@ -61,13 +70,15 @@
   margin-bottom: -5px;
 }
 
-.main-header .rounded-circle:hover{
+.main-header .rounded-circle:hover {
   color: rgb(165, 202, 62);
   opacity: .9;
 }
-.main-header .rounded-circle img:hover{
+
+.main-header .rounded-circle img:hover {
   color: gold;
 }
+
 /* --------------- Desplegable --------------- */
 .overlay {
   height: 100vh;
@@ -81,16 +92,19 @@
   transition: 0.5s;
   padding-bottom: 30px;
 }
+
 .header-overlay {
   display: flex;
   justify-content: center;
   padding: 15px;
 }
+
 .header-overlay img {
   width: 100px;
   height: 50px;
   object-fit: cover;
 }
+
 .overlay-content {
   position: relative;
   top: 5%;
@@ -98,6 +112,7 @@
   text-align: left;
   margin-top: 20px;
 }
+
 .overlay a {
   padding: 15px;
   text-decoration: none;
@@ -107,10 +122,12 @@
   display: block;
   transition: 0.3s;
 }
+
 .overlay i {
   text-align: right;
   font-size: 1rem;
 }
+
 .overlay a:hover,
 .overlay a:focus {
   color: var(--amarillo);
@@ -128,12 +145,14 @@
   .overlay a {
     font-size: 20px;
   }
+
   .overlay .closebtn {
     font-size: 30px;
     top: 15px;
     right: 35px;
   }
 }
+
 /* --------------- header desktop --------------- */
 .main-header .main-nav {
   display: none;
@@ -145,16 +164,19 @@
   align-items: center;
   gap: 24px;
 }
+
 .main-header .main-nav ul li a {
   color: var(--azul-oscuro);
   font-weight: 700;
   font-size: 1.4rem;
 }
+
 .main-header .main-nav ul li a:hover {
   color: var(--amarillo);
   border-bottom: 2px var(--amarillo) solid;
   opacity: 0.8;
 }
+
 /* --------------- SEARCH-BOX  ---------------*/
 
 .search-box {
@@ -168,21 +190,26 @@
   border-radius: 29px;
   padding: .3px;
 }
+
 .search-box button i {
   color: #000;
   font-size: 1rem;
 }
+
 .search-box button i:hover {
   color: var(--amarillo);
   opacity: 0.9;
 }
-.search-box:hover > .search-txt {
+
+.search-box:hover>.search-txt {
   width: 150px;
   padding: 0 4px;
 }
-.search-box:hover > .search-btn {
+
+.search-box:hover>.search-btn {
   background: #fff;
 }
+
 .search-btn {
   color: var(--tertiary);
   float: right;
@@ -294,7 +321,7 @@
   .search.active .btn-1 {
     transform: translateX(198px);
   } */
-.container_btn{
+.container_btn {
   color: #fafafa;
   background: #34495e;
   display: inline;
@@ -303,14 +330,17 @@
   height: 25px;
   cursor: pointer;
 }
-.container_btn a{
+
+.container_btn a {
   padding: 5px;
   color: #fafafa;
 }
-  .container_btn:hover{
-    background-color:#425d79;
-    color: #fafafa;
-  }
-  .container_btn a:hover{
-    color: rgb(207, 200, 200);
-  }
+
+.container_btn:hover {
+  background-color: #425d79;
+  color: #fafafa;
+}
+
+.container_btn a:hover {
+  color: rgb(207, 200, 200);
+}

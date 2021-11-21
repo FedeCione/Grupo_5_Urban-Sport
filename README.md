@@ -60,7 +60,7 @@
 
 
 * __Federico Cione__:
-    * Edad: 24
+    * Edad: 25
     * Localidad: Buenos Aires, Campana
     * Sobre mi: Actualmente estoy haciendo un curso de Programador Web Full Stack Developer con NodeJS con
                 varios conocimientos previos sobre programacion y desarrollo web por hacer cursos

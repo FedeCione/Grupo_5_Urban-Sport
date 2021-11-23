@@ -62,8 +62,7 @@
 * __Federico Cione__:
     * Edad: 25
     * Localidad: Buenos Aires, Campana
-    * Sobre mi: Actualmente estoy haciendo un curso de Programador Web Full Stack Developer con NodeJS con
-                varios conocimientos previos sobre programacion y desarrollo web por hacer cursos
+    * Sobre mi: Programador Web Full Stack Developer Junior con NodeJS con varios conocimientos previos sobre programacion y desarrollo web por hacer cursos
                 de Platzi desde 2020.
 
 * __Juliana Lezcano__:
